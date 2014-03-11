@@ -44,4 +44,5 @@ public class UsersController {
 		return "user_created";
 	}
 
+	
 }
