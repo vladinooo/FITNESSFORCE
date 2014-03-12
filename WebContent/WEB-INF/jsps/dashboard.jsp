@@ -7,6 +7,16 @@
 <title>Dashboard</title>
 </head>
 <body>
-
+	<table>
+		<tr>
+			<td>Dashboard</td>
+		</tr>
+		<tr>
+			<td>Profile</td>
+		</tr>
+		<tr>
+			<td>Pages</td>
+		</tr>
+	</table>
 </body>
 </html>
