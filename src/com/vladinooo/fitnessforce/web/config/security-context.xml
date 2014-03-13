@@ -10,22 +10,25 @@
 
 	<security:authentication-manager>
 		<security:authentication-provider>
-			<security:user-service>
-				<security:user authorities="admin" name="vladh"
-					password="12345" />
-			</security:user-service>
+			
+			<security:jdbc-user-service
+				users-by-username-query="SELECT username, password, CASE ENABLED WHEN 1 THEN 'true' ELSE 'false' END 'ENABLED' FROM users WHERE username=?;"
+				authorities-by-username-query="SELECT u.username, r.rolename FROM users u, user_roles r WHERE u.user_id = r.user_id AND u.username=?;"
+				data-source-ref="dataSource" />
 		</security:authentication-provider>
 	</security:authentication-manager>
+	
 	<security:http use-expressions="true">
-		<security:intercept-url pattern="/dashboard" access="isAuthenticated()" />
 		<security:intercept-url pattern="/" access="permitAll" />
 		<security:intercept-url pattern="/static/**" access="permitAll" />
 		<security:intercept-url pattern="/login" access="permitAll" />
 		<security:intercept-url pattern="/create_user" access="permitAll" />
 		<security:intercept-url pattern="/do_create_user" access="permitAll" />
 		<security:intercept-url pattern="/user_created" access="permitAll" />
+		<security:intercept-url pattern="/dashboard" access="isAuthenticated()" />
 		<security:intercept-url pattern="/**" access="denyAll" />
-		<security:form-login />
+		<security:form-login login-page="/login"
+			default-target-url="/dashboard" />
 	</security:http>
 	
 	

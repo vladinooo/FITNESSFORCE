@@ -25,12 +25,6 @@ public class UsersController {
 		return "home";
 	}
 
-	@RequestMapping("/login")
-	public String showLogin() {
-
-		return "login";
-	}
-
 	@RequestMapping("/create_user")
 	public String showCreateUser(Model model) {
 		model.addAttribute("user", new User());

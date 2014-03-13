@@ -11,6 +11,7 @@ import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 @Component("usersDao")
 public class UsersDao {
@@ -47,11 +48,14 @@ public class UsersDao {
 //		return jdbc.update("update offers set name=:name, text=:text, email=:email where id=:id", params) == 1;
 //	}
 //	
+	@Transactional
 	public boolean createUser(User user) {
 		
 		BeanPropertySqlParameterSource params = new BeanPropertySqlParameterSource(user);
 		
-		return jdbc.update("insert into users (username, password, email) values (:username, :password, :email)", params) == 1;
+		jdbc.update("insert into users (username, password, email) values (:username, :password, :email)", params);
+		
+		return jdbc.update("insert into user_roles (rolename, password, email) values (:username, :password, :email)", params) == 1;
 	}
 //	
 //	@Transactional
