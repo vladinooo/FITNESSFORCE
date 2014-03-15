@@ -5,7 +5,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
 <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/main.css">
+
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/static/easy-ui/themes/gray/easyui.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/static/easy-ui/themes/icon.css">
+<script type="text/javascript" src="${pageContext.request.contextPath}/static/easy-ui/jquery.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/static/easy-ui/jquery.easyui.min.js"></script>
 
 <title><tiles:insertAttribute name="title"></tiles:insertAttribute></title>
 </head>
