@@ -5,6 +5,7 @@ import java.util.Date;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -43,10 +44,16 @@ public class UsersController {
 			System.out.println("Duplicate Key!");
 			return "login";
 		}
-		
+
 		usersService.createUser(user);
 
 		return "user_created";
+	}
+
+	@ExceptionHandler(Exception.class)
+	public String handleExceptions(Exception ex) {
+		ex.printStackTrace();
+		return "error";
 	}
 
 }
