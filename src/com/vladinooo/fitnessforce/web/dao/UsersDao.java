@@ -7,8 +7,9 @@ import java.util.List;
 import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.RowMapper;
-import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
+import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
@@ -51,12 +52,25 @@ public class UsersDao {
 	@Transactional
 	public boolean createUser(User user) {
 		
-		BeanPropertySqlParameterSource params = new BeanPropertySqlParameterSource(user);
+		MapSqlParameterSource params = new MapSqlParameterSource();
 		
-		jdbc.update("insert into users (username, password, email) values (:username, :password, :email)", params);
+		params.addValue("username", user.getUsername());
+		params.addValue("password", user.getPassword());
+		params.addValue("email", user.getEmail());
+		params.addValue("dateRegistered", user.getDateRegistered());
+		params.addValue("rolename", user.getRolename());
 		
-		return jdbc.update("insert into user_roles (rolename, password, email) values (:username, :password, :email)", params) == 1;
+		jdbc.update("insert into users (username, password, email, date_registered) values (:username, :password, :email, :dateRegistered)", params);
+		
+		return  jdbc.update("insert into user_roles (rolename, user_id) values (:rolename, (select user_id from users where username = :username))", params) == 1;
 	}
+	
+	public User getUser(String username) {
+		return jdbc.queryForObject("select * from users where username = :username", 
+				new MapSqlParameterSource("username", username), User.class);
+	}
+	
+
 //	
 //	@Transactional
 //	public int[] create(List<Offer> offers) {
@@ -94,5 +108,10 @@ public class UsersDao {
 //
 //				});
 //	}
+
+	public boolean userExists(String username) {
+		return jdbc.queryForObject("select count(*) from users where username=:username", 
+				new MapSqlParameterSource("username", username), Integer.class) > 0;
+	}
 	
 }

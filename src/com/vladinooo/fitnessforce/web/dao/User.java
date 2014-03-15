@@ -7,6 +7,7 @@ public class User {
 	private String email;
 	private String dateRegistered;
 	private boolean enabled;
+	private String rolename;
 
 	public int getUserId() {
 		return userId;
@@ -56,12 +57,22 @@ public class User {
 		this.enabled = enabled;
 	}
 
+	public String getRolename() {
+		return rolename;
+	}
+
+	public void setRolename(String rolename) {
+		this.rolename = rolename;
+	}
+
 	@Override
 	public String toString() {
-		return "User [userId=" + userId + ", userName=" + username
+		return "User [userId=" + userId + ", username=" + username
 				+ ", password=" + password + ", email=" + email
 				+ ", dateRegistered=" + dateRegistered + ", enabled=" + enabled
-				+ "]";
+				+ ", rolename=" + rolename + "]";
 	}
+
+
 
 }

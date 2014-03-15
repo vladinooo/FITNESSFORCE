@@ -1,5 +1,7 @@
 package com.vladinooo.fitnessforce.web.controllers;
 
+import java.util.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -31,12 +33,20 @@ public class UsersController {
 		return "create_user";
 	}
 
-	@RequestMapping(value="/do_create_user", method=RequestMethod.POST)
+	@RequestMapping(value = "/do_create_user", method = RequestMethod.POST)
 	public String doCreateUser(User user) {
 
+		user.setDateRegistered(new Date().toString());
+		user.setRolename("ROLE_ADMIN");
+
+		if (usersService.userExists(user.getUsername())) {
+			System.out.println("Duplicate Key!");
+			return "login";
+		}
+		
 		usersService.createUser(user);
+
 		return "user_created";
 	}
 
-	
 }
