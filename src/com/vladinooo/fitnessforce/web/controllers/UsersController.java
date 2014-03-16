@@ -7,6 +7,7 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -31,11 +32,15 @@ public class UsersController {
 		return "home";
 	}
 	
-	@RequestMapping("/login")
-	public String showLogin(User user) {
-
+	@RequestMapping(value="/login", method = RequestMethod.GET)
+	public String showLogin(ModelMap model) {
 		return "login";
-	}
+	}  
+	
+	@RequestMapping(value="/logout", method = RequestMethod.GET)  
+	public String logout(ModelMap model) {  
+		return "login";  
+	}  
 
 	@RequestMapping("/create_user")
 	public String showCreateUser(Model model) {
@@ -47,9 +52,7 @@ public class UsersController {
 	public String doCreateUser(@Valid User user, BindingResult result) {
 		
 		if (result.hasErrors()) {
-			System.out.println("Form has errors!");
-		} else {
-			System.out.println("Form is validated.");
+			return "create_user";
 		}
 
 		user.setDateRegistered(new Date().toString());
@@ -57,7 +60,7 @@ public class UsersController {
 
 		if (usersService.userExists(user.getUsername())) {
 			System.out.println("Duplicate Key!");
-			return "login";
+			return "create_user";
 		}
 
 		usersService.createUser(user);

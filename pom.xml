@@ -122,5 +122,10 @@
   		<artifactId>hibernate-validator</artifactId>
   		<version>5.1.0.Final</version>
   	</dependency>
+  	<dependency>
+  		<groupId>org.springframework.security</groupId>
+  		<artifactId>spring-security-taglibs</artifactId>
+  		<version>3.2.2.RELEASE</version>
+  	</dependency>
   </dependencies>
 </project>

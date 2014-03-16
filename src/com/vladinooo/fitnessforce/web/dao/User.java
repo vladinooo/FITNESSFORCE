@@ -1,14 +1,19 @@
 package com.vladinooo.fitnessforce.web.dao;
 
+import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 public class User {
 
 	private int userId;
 	
-	@Size(min=5, max=20, message="Username must have min 5 and max 20 characters.")
+	@Pattern(regexp="^[a-z0-9]{5,20}$", message="*Username must be 5 - 20 charactes long and contain combination of lower-case alphabetical characters and numbers")
 	private String username;
+	
+	@Size(min=5, max=20, message="*Password must be between 5 - 10 characters")
 	private String password;
+	
+	@Pattern(regexp="^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$", message="*Invalid email")
 	private String email;
 	private String dateRegistered;
 	private boolean enabled;
