@@ -1,28 +1,42 @@
 
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+
 <script>
 	$(document).ready(function() {
-		document.f.j_username.focus();
+		$('[name="j_username"]').focus();
 	});
 </script>
 
-<h3>Login with Username and Password</h3>
-<form name="f"
-	action="${pageContext.request.contextPath}/j_spring_security_check"
-	method="POST">
-	<table>
-		<tbody>
-			<tr>
-				<td>User:</td>
-				<td><input type="text" name="j_username" value=""></td>
-			</tr>
-			<tr>
-				<td>Password:</td>
-				<td><input type="password" name="j_password"></td>
-			</tr>
-			<tr>
-				<td colspan="2"><input name="submit" type="submit"
-					value="Login"></td>
-			</tr>
-		</tbody>
-	</table>
-</form>
+
+<div id="loginForm" class="easyui-panel" title="Login"
+	style="width: 400px">
+	<div style="padding: 10px 0 10px 60px">
+		<form
+			action="${pageContext.request.contextPath}/j_spring_security_check"
+			method="POST">
+			<table>
+				<tr>
+					<td>Username:</td>
+					<td><input class="easyui-validatebox" type="text"
+						name="j_username"></input></td>
+					<td><form:errors path="username" cssClass="fieldValError"></form:errors></td>
+				</tr>
+				<tr>
+					<td>Password:</td>
+					<td><input class="easyui-validatebox" type="text"
+						name="j_password"></input></td>
+				</tr>
+				<tr>
+					<td colspan="2" align="right" style="padding: 10px 0;"><a
+						href="javascript:void(0)" class="easyui-linkbutton"
+						onclick="submitForm()">Login</a></td>
+				</tr>
+			</table>
+		</form>
+	</div>
+</div>
+<script>
+	function submitForm() {
+		$('#loginForm form').submit();
+	}
+</script>

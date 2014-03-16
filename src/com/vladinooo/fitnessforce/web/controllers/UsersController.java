@@ -2,9 +2,12 @@ package com.vladinooo.fitnessforce.web.controllers;
 
 import java.util.Date;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -27,6 +30,12 @@ public class UsersController {
 
 		return "home";
 	}
+	
+	@RequestMapping("/login")
+	public String showLogin(User user) {
+
+		return "login";
+	}
 
 	@RequestMapping("/create_user")
 	public String showCreateUser(Model model) {
@@ -35,7 +44,13 @@ public class UsersController {
 	}
 
 	@RequestMapping(value = "/do_create_user", method = RequestMethod.POST)
-	public String doCreateUser(User user) {
+	public String doCreateUser(@Valid User user, BindingResult result) {
+		
+		if (result.hasErrors()) {
+			System.out.println("Form has errors!");
+		} else {
+			System.out.println("Form is validated.");
+		}
 
 		user.setDateRegistered(new Date().toString());
 		user.setRolename("ROLE_ADMIN");

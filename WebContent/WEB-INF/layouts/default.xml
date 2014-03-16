@@ -31,6 +31,11 @@
 		<put-attribute name="content" value="/WEB-INF/tiles/user_created.jsp"></put-attribute>
     </definition>
     
+    <definition name="dashboard" extends="fitnessForce.base">
+        <put-attribute name="title" value="Fitness Force - Dashboard"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/tiles/dashboard.jsp"></put-attribute>
+    </definition>
+    
     <definition name="error" extends="fitnessForce.base">
         <put-attribute name="title" value="Fitness Force - Error"></put-attribute>
 		<put-attribute name="content" value="/WEB-INF/tiles/error.jsp"></put-attribute>

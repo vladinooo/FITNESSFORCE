@@ -1,7 +1,12 @@
 package com.vladinooo.fitnessforce.web.dao;
 
+import javax.validation.constraints.Size;
+
 public class User {
+
 	private int userId;
+	
+	@Size(min=5, max=20, message="Username must have min 5 and max 20 characters.")
 	private String username;
 	private String password;
 	private String email;
@@ -72,7 +77,5 @@ public class User {
 				+ ", dateRegistered=" + dateRegistered + ", enabled=" + enabled
 				+ ", rolename=" + rolename + "]";
 	}
-
-
 
 }
