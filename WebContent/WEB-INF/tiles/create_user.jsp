@@ -9,6 +9,9 @@
 		commandName="user">
 
 		<div class="loginValidMsg">
+			<c:if test="${duplicateUser != null}">
+				<p>*User already exists!</p>
+			</c:if>
 			<p><form:errors path="username" cssClass="fieldValError"></form:errors></p>
 			<p><form:errors path="password" cssClass="fieldValError"></form:errors></p>
 			<p><form:errors path="email" cssClass="fieldValError"></form:errors></p>

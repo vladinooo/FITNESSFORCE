@@ -27,7 +27,7 @@ public class UsersService {
 		usersDao.createUser(user);
 	}
 
-	public boolean userExists(String username) {
-		return usersDao.userExists(username);
+	public User getUser(String username) {
+		return usersDao.getUser(username);
 	}
 }

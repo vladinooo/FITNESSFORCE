@@ -49,7 +49,7 @@ public class UsersController {
 	}
 
 	@RequestMapping(value = "/do_create_user", method = RequestMethod.POST)
-	public String doCreateUser(@Valid User user, BindingResult result) {
+	public String doCreateUser(@Valid User user, BindingResult result, Model model) {
 		
 		if (result.hasErrors()) {
 			return "create_user";
@@ -58,8 +58,9 @@ public class UsersController {
 		user.setDateRegistered(new Date().toString());
 		user.setRolename("ROLE_ADMIN");
 
-		if (usersService.userExists(user.getUsername())) {
-			System.out.println("Duplicate Key!");
+		User duplicateUser = usersService.getUser(user.getUsername());
+		if (duplicateUser != null) {
+			model.addAttribute("duplicateUser", duplicateUser);
 			return "create_user";
 		}
 
