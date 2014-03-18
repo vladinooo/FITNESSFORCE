@@ -22,7 +22,7 @@
 		class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
 		<property name="definitions">
 			<list>
-				<value>/WEB-INF/layouts/default.xml</value>
+				<value>/WEB-INF/layouts/admin.xml</value>
 			</list>
 		</property>
 	</bean>

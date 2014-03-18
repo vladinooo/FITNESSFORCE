@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Genyx admin v1.0</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="SuggeElson" />
+    <meta name="description" content="Genyx admin template - new premium responsive admin template. This template is designed to help you build the site administration without losing valuable time.Template contains all the important functions which must have one backend system.Build on great twitter boostrap framework" />
+    <meta name="keywords" content="admin, admin template, admin theme, responsive, responsive admin, responsive admin template, responsive theme, themeforest, 960 grid system, grid, grid theme, liquid, jquery, administration, administration template, administration theme, mobile, touch , responsive layout, boostrap, twitter boostrap" />
+    <meta name="application-name" content="Genyx admin template" />
+
+    <!-- Headings -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,800,700' rel='stylesheet' type='text/css'>
+    <!-- Text -->
+    <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css' />
+
+     <!--[if lt IE 9]>
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400" rel="stylesheet" type="text/css" />
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:700" rel="stylesheet" type="text/css" />
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:800" rel="stylesheet" type="text/css" />
+    <link href="http://fonts.googleapis.com/css?family=Droid+Sans:400" rel="stylesheet" type="text/css" />
+    <link href="http://fonts.googleapis.com/css?family=Droid+Sans:700" rel="stylesheet" type="text/css" />
+    <![endif]-->
+
+    <!-- Core stylesheets do not remove -->
+    <link href="css/bootstrap/bootstrap.css" rel="stylesheet" />
+    <link href="css/bootstrap/bootstrap-theme.css" rel="stylesheet" />
+    <link href="css/icons.css" rel="stylesheet" />
+
+    <!-- Plugins stylesheets -->
+    <link href="js/plugins/forms/uniform/uniform.default.css" rel="stylesheet" /> 
+
+    <!-- app stylesheets -->
+    <link href="css/app.css" rel="stylesheet" /> 
+
+    <!-- Custom stylesheets ( Put your own changes here ) -->
+    <link href="css/custom.css" rel="stylesheet" /> 
+
+    <!--[if IE 8]><link href="css/ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
+
+    <!-- Force IE9 to render in normal mode -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
+                    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+                                   <link rel="shortcut icon" href="images/ico/favicon.png">
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Important plugins put in all pages -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="js/bootstrap/bootstrap.js"></script>  
+    <script src="js/conditionizr.min.js"></script>  
+    <script src="js/plugins/core/nicescroll/jquery.nicescroll.min.js"></script>
+    <script src="js/plugins/core/jrespond/jRespond.min.js"></script>
+    <script src="js/jquery.genyxAdmin.js"></script>
+
+    <!-- Form plugins -->
+    <script src="js/plugins/forms/uniform/jquery.uniform.min.js"></script>
+
+    <!-- Init plugins -->
+    <script src="js/app.js"></script><!-- Core js functions -->
+
+  </head>
+  <body>
+    <header id="header">
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <a class="navbar-brand" href="dashboard.html"><img src="images/logo.png" alt="Genyx admin" class="img-responsive"></a>
+            <button type="button" class="navbar-toggle btn-danger" data-toggle="collapse" data-target="#navbar-to-collapse">
+                <span class="sr-only">Toggle right menu</span>
+                <i class="icon16 i-arrow-8"></i>
+            </button>          
+            <div class="collapse navbar-collapse" id="navbar-to-collapse">  
+                <form id="top-search" class="navbar-form navbar-left" role="search">
+                    <div class="input-group">
+                        <input type="text" name="tsearch" id="tsearch" placeholder="Search here ..." class="search-query form-control">
+                        <span class="input-group-btn">
+                            <button type="submit" class="btn"><i class="icon16 i-search-2 gap-right0"></i></button>
+                        </span>
+                    </div>
+                </form>  
+                <ul class="nav navbar-nav pull-right">
+                    <li class="divider-vertical"></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="icon24 i-bell-2"></i>
+                            <span class="notification red">6</span>
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li role="presentation"><a href="#" class=""><i class="icon16 i-calendar-2"></i> Admin Jenny add event</a></li>
+                            <li role="presentation"><a href="#" class=""><i class="icon16 i-file-zip"></i> User Dexter attach file</a></li>
+                            <li role="presentation"><a href="#" class=""><i class="icon16 i-stack-picture"></i> User Dexter attach 3 pictures</a></li>
+                            <li role="presentation"><a href="#" class=""><i class="icon16 i-cart-add"></i> New orders <span class="notification green">2</span></a></li>
+                            <li role="presentation"><a href="#" class=""><i class="icon16 i-bubbles-2"></i> New comments <span class="notification red">5</span></a></li>
+                            <li role="presentation"><a href="#" class=""><i class="icon16 i-pie-5"></i> Daily stats is generated</a></li>
+                        </ul>
+                    </li>
+                    <li class="divider-vertical"></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="icon24 i-envelop-2"></i>
+                            <span class="notification red">3</span>
+                        </a>
+                        <ul class="dropdown-menu messages" role="menu">
+                            <li class="head" role="presentation">
+                                <h4>Inbox</h4>
+                                <span class="count">3 messages</span>
+                                <span class="new-msg"><a href="#" class="tipB" title="Write message"><i class="icon16 i-pencil-5"></i></a></span>
+                            </li>
+                            <li role="presentation">
+                                <a href="#" class="clearfix">
+                                    <span class="avatar"><img src="images/avatars/peter.jpg" alt="avatar"></span>
+                                    <span class="msg">Call me i need to talk with you</span>
+                                    <button class="btn close"><i class="icon12 i-close-2"></i></button>
+                                </a>
+                            </li>
+                            <li role="presentation">
+                                <a href="#" class="clearfix">
+                                    <span class="avatar"><img src="images/avatars/milen.jpg" alt="avatar"></span>
+                                    <span class="msg">Problem with registration</span>
+                                    <button class="btn close"><i class="icon12 i-close-2"></i></button>
+                                </a>
+                            </li>
+                            <li role="presentation">
+                                <a href="#" class="clearfix">
+                                    <span class="avatar"><img src="images/avatars/anonime.jpg" alt="avatar"></span>
+                                    <span class="msg">I have question about ...</span>
+                                    <button class="btn close"><i class="icon12 i-close-2"></i></button>
+                                </a>
+                            </li>
+                            <li class="foot" role="presentation"><a href="email.html">View all messages</a></li>
+                        </ul>
+                    </li>
+                    <li class="divider-vertical"></li>
+                    <li class="dropdown user">
+                         <a href="#" class="dropdown-toggle avatar" data-toggle="dropdown">
+                            <img src="images/avatars/sugge.jpg" alt="sugge">
+                            <span class="more"><i class="icon16 i-arrow-down-2"></i></span>
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li role="presentation"><a href="#" class=""><i class="icon16 i-cogs"></i> Settings</a></li>
+                            <li role="presentation"><a href="profile.html" class=""><i class="icon16 i-user"></i> Profile</a></li>
+                            <li role="presentation"><a href="index.html" class=""><i class="icon16 i-exit"></i> Logout</a></li>
+                        </ul>
+                    </li>
+                    <li class="divider-vertical"></li>
+                </ul>
+            </div><!--/.nav-collapse -->
+        </nav>
+    </header> <!-- End #header  -->
+    <div class="main">
+        <aside id="sidebar">
+            <div class="side-options">
+                <ul>
+                    <li><a href="#" id="collapse-nav" class="act act-primary tip" title="Collapse navigation"><i class="icon16 i-arrow-left-7"></i></a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-wrapper">
+                <nav id="mainnav">
+                    <ul class="nav nav-list">
+                        <li>
+                            <a href="dashboard.html">
+                                <span class="icon"><i class="icon20 i-screen"></i></span>
+                                <span class="txt">Dashboard</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="charts.html">
+                                <span class="icon"><i class="icon20 i-stats-up"></i></span>
+                                <span class="txt">Charts</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="icon"><i class="icon20 i-menu-6"></i></span>
+                                <span class="txt">Forms</span>
+                            </a>
+                            <ul class="sub">
+                                <li>
+                                    <a href="form-elements.html">
+                                        <span class="icon"><i class="icon20 i-stack-list"></i></span>
+                                        <span class="txt">Form elements</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="form-validation.html">
+                                        <span class="icon"><i class="icon20 i-stack-checkmark"></i></span>
+                                        <span class="txt">Form validation</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="form-wizard.html">
+                                        <span class="icon"><i class="icon20 i-stack-star"></i></span>
+                                        <span class="txt">Form wizard</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="icon"><i class="icon20 i-table-2"></i></span>
+                                <span class="txt">Tables</span>
+                            </a>
+                            <ul class="sub">
+                                <li>
+                                    <a href="tables.html">
+                                        <span class="icon"><i class="icon20 i-table"></i></span>
+                                        <span class="txt">Static tables</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="data-tables.html">
+                                        <span class="icon"><i class="icon20 i-table"></i></span>
+                                        <span class="txt">Data tables</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="grid.html">
+                                <span class="icon"><i class="icon20 i-grid-5"></i></span>
+                                <span class="txt">Grid</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="typo.html">
+                                <span class="icon"><i class="icon20 i-font"></i></span>
+                                <span class="txt">Typography</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="calendar.html">
+                                <span class="icon"><i class="icon20 i-calendar"></i></span>
+                                <span class="txt">Calendar</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="icon"><i class="icon20 i-cogs"></i></span>
+                                <span class="txt">Ui Elements</span>
+                            </a>
+                            <ul class="sub">
+                                <li>
+                                    <a href="icons.html">
+                                        <span class="icon"><i class="icon20 i-IcoMoon"></i></span>
+                                        <span class="txt">Icons</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="buttons.html">
+                                        <span class="icon"><i class="icon20 i-point-up"></i></span>
+                                        <span class="txt">Buttons</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="ui-elements.html">
+                                        <span class="icon"><i class="icon20 i-puzzle"></i></span>
+                                        <span class="txt">UI Elements</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="gallery.html">
+                                <span class="icon"><i class="icon20 i-images"></i></span>
+                                <span class="txt">Gallery</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="maps.html">
+                                <span class="icon"><i class="icon20 i-location-4"></i></span>
+                                <span class="txt">Maps</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="file-manager.html">
+                                <span class="icon"><i class="icon20 i-cloud-upload"></i></span>
+                                <span class="txt">File manager</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="widgets.html">
+                                <span class="icon"><i class="icon20 i-cube-3"></i></span>
+                                <span class="txt">Widgets</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="icon"><i class="icon20 i-file-8"></i></span>
+                                <span class="txt">Pages</span>
+                            </a>
+                            <ul class="sub">
+                                <li>
+                                    <a href="#">
+                                        <span class="icon"><i class="icon20 i-warning"></i></span>
+                                        <span class="txt">Error Pages</span>
+                                    </a>
+                                    <ul class="sub">
+                                        <li>
+                                            <a href="403.html">
+                                                <span class="icon"><i class="icon20 i-notification"></i></span>
+                                                <span class="txt">Error 403</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="404.html">
+                                                <span class="icon"><i class="icon20 i-notification"></i></span>
+                                                <span class="txt">Error 404</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="405.html">
+                                                <span class="icon"><i class="icon20 i-notification"></i></span>
+                                                <span class="txt">Error 405</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="500.html">
+                                                <span class="icon"><i class="icon20 i-notification"></i></span>
+                                                <span class="txt">Error 500</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="503.html">
+                                                <span class="icon"><i class="icon20 i-notification"></i></span>
+                                                <span class="txt">Error 503</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="offline.html">
+                                                <span class="icon"><i class="icon20 i-notification"></i></span>
+                                                <span class="txt">Offline page</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="invoice.html">
+                                        <span class="icon"><i class="icon20 i-credit"></i></span>
+                                        <span class="txt">Invoice page</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="profile.html">
+                                        <span class="icon"><i class="icon20 i-user"></i></span>
+                                        <span class="txt">Profile page</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="search.html">
+                                        <span class="icon"><i class="icon20 i-search-2"></i></span>
+                                        <span class="txt">Search page</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="email.html">
+                                        <span class="icon"><i class="icon20 i-envelop-2"></i></span>
+                                        <span class="txt">Email page</span>
+                                    </a>
+                                </li>                                
+                                <li>
+                                    <a href="faq.html">
+                                        <span class="icon"><i class="icon20 i-question"></i></span>
+                                        <span class="txt">FAQ page</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="blank.html">
+                                        <span class="icon"><i class="icon20 i-file-7"></i></span>
+                                        <span class="txt">Blank page</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav> <!-- End #mainnav -->
+            </div> <!-- End .sidebar-wrapper  -->
+        </aside><!-- End #sidebar  -->
+
+        <section id="content">
+            <div class="wrapper">
+                <div class="crumb">
+                    <ul class="breadcrumb">
+                      <li><a href="#"><i class="icon16 i-home-4"></i>Home</a></li>
+                      <li><a href="#">Library</a></li>
+                      <li class="active">Data</li>
+                    </ul>
+                </div>
+                
+                <div class="container-fluid">
+                    <div id="heading" class="page-header">
+                        <h1><i class="icon20 i-file-7"></i> Search Page</h1>
+                    </div>
+
+                    <div class="row">
+                        <ul class="search-results">
+                            <li>
+                                <a href="#" class="search-string">How to Find some</a>
+                                <span class="search-url">http://suggeelson.com/find.html</span>
+                                <span class="search-txt">
+                                    <div class="search-type"><i class="icon64 i-file-8"></i></div>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, quibusdam, facilis, labore saepe vel ut aliquid molestias eaque sint amet distinctio harum tempore fuga nulla enim earum ea laudantium fugiat excepturi hic deleniti facere nesciunt ullam? Quaerat, dolor necessitatibus impedit placeat repellat deserunt doloremque debitis aut aliquam porro illo libero corporis blanditiis odio ratione quas amet facere dolores praesentium id ad fugit perspiciatis esse culpa maiores est rerum quibusdam eveniet?
+                                </span>
+                            </li>
+                            <li>
+                                <a href="#" class="search-string">How to Find some</a>
+                                <span class="search-url">http://suggeelson.com/find.html</span>
+                                <span class="search-txt">
+                                    <div class="search-type"><i class="icon64 i-image-2"></i></div>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, quibusdam, facilis, labore saepe vel ut aliquid molestias eaque sint amet distinctio harum tempore fuga nulla enim earum ea laudantium fugiat excepturi hic deleniti facere nesciunt ullam? Quaerat, dolor necessitatibus impedit placeat repellat deserunt doloremque debitis aut aliquam porro illo libero corporis blanditiis odio ratione quas amet facere dolores praesentium id ad fugit perspiciatis esse culpa maiores est rerum quibusdam eveniet?
+                                </span>
+                            </li>
+                            <li>
+                                <a href="#" class="search-string">How to Find some</a>
+                                <span class="search-url">http://suggeelson.com/find.html</span>
+                                <span class="search-txt">
+                                    <div class="search-type"><i class="icon64 i-file-pdf"></i></div>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, quibusdam, facilis, labore saepe vel ut aliquid molestias eaque sint amet distinctio harum tempore fuga nulla enim earum ea laudantium fugiat excepturi hic deleniti facere nesciunt ullam? Quaerat, dolor necessitatibus impedit placeat repellat deserunt doloremque debitis aut aliquam porro illo libero corporis blanditiis odio ratione quas amet facere dolores praesentium id ad fugit perspiciatis esse culpa maiores est rerum quibusdam eveniet?
+                                </span>
+                            </li>
+                            <li>
+                                <a href="#" class="search-string">How to Find some</a>
+                                <span class="search-url">http://suggeelson.com/find.html</span>
+                                <span class="search-txt">
+                                    <div class="search-type"><i class="icon64 i-play"></i></div>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, quibusdam, facilis, labore saepe vel ut aliquid molestias eaque sint amet distinctio harum tempore fuga nulla enim earum ea laudantium fugiat excepturi hic deleniti facere nesciunt ullam? Quaerat, dolor necessitatibus impedit placeat repellat deserunt doloremque debitis aut aliquam porro illo libero corporis blanditiis odio ratione quas amet facere dolores praesentium id ad fugit perspiciatis esse culpa maiores est rerum quibusdam eveniet?
+                                </span>
+                            </li>
+                            <li>
+                                <a href="#" class="search-string">How to Find some</a>
+                                <span class="search-url">http://suggeelson.com/find.html</span>
+                                <span class="search-txt">
+                                    <div class="search-type"><i class="icon64 i-music-5"></i></div>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, quibusdam, facilis, labore saepe vel ut aliquid molestias eaque sint amet distinctio harum tempore fuga nulla enim earum ea laudantium fugiat excepturi hic deleniti facere nesciunt ullam? Quaerat, dolor necessitatibus impedit placeat repellat deserunt doloremque debitis aut aliquam porro illo libero corporis blanditiis odio ratione quas amet facere dolores praesentium id ad fugit perspiciatis esse culpa maiores est rerum quibusdam eveniet?
+                                </span>
+                            </li>
+                        </ul>
+                        <div class="center">
+                            <div class="pagination">
+                              <ul class="pagination">
+                                <li><a href="#">← Previous</a></li>
+                                <li class="active">
+                                  <a href="#">1</a>
+                                </li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li><a href="#">4</a></li>
+                                <li><a href="#">Next →</a></li>
+                              </ul>
+                            </div>
+                        </div>
+                    </div><!-- End .row-fluid  -->
+
+                </div> <!-- End .container-fluid  -->
+            </div> <!-- End .wrapper  -->
+        </section>
+    </div><!-- End .main  -->
+  </body>
+</html>

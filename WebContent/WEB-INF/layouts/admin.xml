@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+       
+<tiles-definitions>
+    <definition name="fitnessForce.admin" template="/WEB-INF/templates/admin.jsp">
+        <put-attribute name="title" value="Fitness Force - Admin"></put-attribute>
+        <put-attribute name="header" value="/WEB-INF/tiles/admin/header.jsp"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/tiles/admin/content.jsp"></put-attribute>
+		<put-attribute name="footer" value="/WEB-INF/tiles/admin/footer.jsp"></put-attribute>
+    </definition>
+    
+     <definition name="home" extends="fitnessForce.admin">
+        <put-attribute name="title" value="Fitness Force - Home"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/tiles/admin/home.jsp"></put-attribute>
+    </definition>
+    
+    <definition name="login" extends="fitnessForce.admin">
+        <put-attribute name="title" value="Fitness Force - Login"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/tiles/admin/login.jsp"></put-attribute>
+    </definition>
+    
+    <definition name="create_user" extends="fitnessForce.admin">
+        <put-attribute name="title" value="Fitness Force - Create User"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/tiles/admin/create_user.jsp"></put-attribute>
+    </definition>
+    
+    <definition name="user_created" extends="fitnessForce.admin">
+        <put-attribute name="title" value="Fitness Force - User Created"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/tiles/admin/user_created.jsp"></put-attribute>
+    </definition>
+    
+    <definition name="dashboard" extends="fitnessForce.admin">
+        <put-attribute name="title" value="Fitness Force - Dashboard"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/tiles/admin/dashboard.jsp"></put-attribute>
+    </definition>
+    
+    <definition name="error" extends="fitnessForce.admin">
+        <put-attribute name="title" value="Fitness Force - Error"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/tiles/admin/error.jsp"></put-attribute>
+    </definition>
+    
+</tiles-definitions>

@@ -1,0 +1,1294 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Genyx admin v1.0</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="SuggeElson" />
+    <meta name="description" content="Genyx admin template - new premium responsive admin template. This template is designed to help you build the site administration without losing valuable time.Template contains all the important functions which must have one backend system.Build on great twitter boostrap framework" />
+    <meta name="keywords" content="admin, admin template, admin theme, responsive, responsive admin, responsive admin template, responsive theme, themeforest, 960 grid system, grid, grid theme, liquid, jquery, administration, administration template, administration theme, mobile, touch , responsive layout, boostrap, twitter boostrap" />
+    <meta name="application-name" content="Genyx admin template" />
+
+    <!-- Headings -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,800,700' rel='stylesheet' type='text/css'>
+    <!-- Text -->
+    <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css' />
+
+     <!--[if lt IE 9]>
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400" rel="stylesheet" type="text/css" />
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:700" rel="stylesheet" type="text/css" />
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:800" rel="stylesheet" type="text/css" />
+    <link href="http://fonts.googleapis.com/css?family=Droid+Sans:400" rel="stylesheet" type="text/css" />
+    <link href="http://fonts.googleapis.com/css?family=Droid+Sans:700" rel="stylesheet" type="text/css" />
+    <![endif]-->
+
+    <!-- Core stylesheets do not remove -->
+    <link href="css/bootstrap/bootstrap.css" rel="stylesheet" />
+    <link href="css/bootstrap/bootstrap-theme.css" rel="stylesheet" />
+    <link href="css/icons.css" rel="stylesheet" />
+
+    <!-- Plugins stylesheets -->
+    <link href="js/plugins/forms/uniform/uniform.default.css" rel="stylesheet" /> 
+    <link href="js/plugins/forms/switch/bootstrapSwitch.css" rel="stylesheet" /> 
+
+    <!-- app stylesheets -->
+    <link href="css/app.css" rel="stylesheet" /> 
+
+    <!-- Custom stylesheets ( Put your own changes here ) -->
+    <link href="css/custom.css" rel="stylesheet" /> 
+
+    <!--[if IE 8]><link href="css/ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
+
+    <!-- Force IE9 to render in normal mode -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
+                    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+                                   <link rel="shortcut icon" href="images/ico/favicon.png">
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Important plugins put in all pages -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
+    <script src="js/bootstrap/bootstrap.js"></script>  
+    <script src="js/conditionizr.min.js"></script>  
+    <script src="js/plugins/core/nicescroll/jquery.nicescroll.min.js"></script>
+    <script src="js/jquery.mousewheel.js"></script>
+    <script src="js/plugins/core/jrespond/jRespond.min.js"></script>
+    <script src="js/jquery.genyxAdmin.js"></script>
+
+    <!-- Forms plugins -->
+    <script src="js/plugins/forms/uniform/jquery.uniform.min.js"></script>
+    <script src="js/plugins/forms/switch/bootstrapSwitch.js"></script>
+        
+    <!-- Charts plugins -->
+    <script src="js/plugins/charts/sparklines/jquery.sparkline.min.js"></script>
+
+    <!-- Misc plugins -->
+    <script src="js/plugins/misc/listnav/jquery.listnav.min-2.1.js"></script>
+                
+    <!-- Init plugins -->
+    <script src="js/app.js"></script><!-- Core js functions -->
+    <script src="js/pages/widgets.js"></script><!-- Init plugins only for page -->
+
+  </head>
+  <body>
+    <header id="header">
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <a class="navbar-brand" href="dashboard.html"><img src="images/logo.png" alt="Genyx admin" class="img-responsive"></a>
+            <button type="button" class="navbar-toggle btn-danger" data-toggle="collapse" data-target="#navbar-to-collapse">
+                <span class="sr-only">Toggle right menu</span>
+                <i class="icon16 i-arrow-8"></i>
+            </button>          
+            <div class="collapse navbar-collapse" id="navbar-to-collapse">  
+                <form id="top-search" class="navbar-form navbar-left" role="search">
+                    <div class="input-group">
+                        <input type="text" name="tsearch" id="tsearch" placeholder="Search here ..." class="search-query form-control">
+                        <span class="input-group-btn">
+                            <button type="submit" class="btn"><i class="icon16 i-search-2 gap-right0"></i></button>
+                        </span>
+                    </div>
+                </form>  
+                <ul class="nav navbar-nav pull-right">
+                    <li class="divider-vertical"></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="icon24 i-bell-2"></i>
+                            <span class="notification red">6</span>
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li role="presentation"><a href="#" class=""><i class="icon16 i-calendar-2"></i> Admin Jenny add event</a></li>
+                            <li role="presentation"><a href="#" class=""><i class="icon16 i-file-zip"></i> User Dexter attach file</a></li>
+                            <li role="presentation"><a href="#" class=""><i class="icon16 i-stack-picture"></i> User Dexter attach 3 pictures</a></li>
+                            <li role="presentation"><a href="#" class=""><i class="icon16 i-cart-add"></i> New orders <span class="notification green">2</span></a></li>
+                            <li role="presentation"><a href="#" class=""><i class="icon16 i-bubbles-2"></i> New comments <span class="notification red">5</span></a></li>
+                            <li role="presentation"><a href="#" class=""><i class="icon16 i-pie-5"></i> Daily stats is generated</a></li>
+                        </ul>
+                    </li>
+                    <li class="divider-vertical"></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="icon24 i-envelop-2"></i>
+                            <span class="notification red">3</span>
+                        </a>
+                        <ul class="dropdown-menu messages" role="menu">
+                            <li class="head" role="presentation">
+                                <h4>Inbox</h4>
+                                <span class="count">3 messages</span>
+                                <span class="new-msg"><a href="#" class="tipB" title="Write message"><i class="icon16 i-pencil-5"></i></a></span>
+                            </li>
+                            <li role="presentation">
+                                <a href="#" class="clearfix">
+                                    <span class="avatar"><img src="images/avatars/peter.jpg" alt="avatar"></span>
+                                    <span class="msg">Call me i need to talk with you</span>
+                                    <button class="btn close"><i class="icon12 i-close-2"></i></button>
+                                </a>
+                            </li>
+                            <li role="presentation">
+                                <a href="#" class="clearfix">
+                                    <span class="avatar"><img src="images/avatars/milen.jpg" alt="avatar"></span>
+                                    <span class="msg">Problem with registration</span>
+                                    <button class="btn close"><i class="icon12 i-close-2"></i></button>
+                                </a>
+                            </li>
+                            <li role="presentation">
+                                <a href="#" class="clearfix">
+                                    <span class="avatar"><img src="images/avatars/anonime.jpg" alt="avatar"></span>
+                                    <span class="msg">I have question about ...</span>
+                                    <button class="btn close"><i class="icon12 i-close-2"></i></button>
+                                </a>
+                            </li>
+                            <li class="foot" role="presentation"><a href="email.html">View all messages</a></li>
+                        </ul>
+                    </li>
+                    <li class="divider-vertical"></li>
+                    <li class="dropdown user">
+                         <a href="#" class="dropdown-toggle avatar" data-toggle="dropdown">
+                            <img src="images/avatars/sugge.jpg" alt="sugge">
+                            <span class="more"><i class="icon16 i-arrow-down-2"></i></span>
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li role="presentation"><a href="#" class=""><i class="icon16 i-cogs"></i> Settings</a></li>
+                            <li role="presentation"><a href="profile.html" class=""><i class="icon16 i-user"></i> Profile</a></li>
+                            <li role="presentation"><a href="index.html" class=""><i class="icon16 i-exit"></i> Logout</a></li>
+                        </ul>
+                    </li>
+                    <li class="divider-vertical"></li>
+                </ul>
+            </div><!--/.nav-collapse -->
+        </nav>
+    </header> <!-- End #header  -->
+    <div class="main">
+        <aside id="sidebar">
+            <div class="side-options">
+                <ul>
+                    <li><a href="#" id="collapse-nav" class="act act-primary tip" title="Collapse navigation"><i class="icon16 i-arrow-left-7"></i></a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-wrapper">
+                <nav id="mainnav">
+                    <ul class="nav nav-list">
+                        <li>
+                            <a href="dashboard.html">
+                                <span class="icon"><i class="icon20 i-screen"></i></span>
+                                <span class="txt">Dashboard</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="charts.html">
+                                <span class="icon"><i class="icon20 i-stats-up"></i></span>
+                                <span class="txt">Charts</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="icon"><i class="icon20 i-menu-6"></i></span>
+                                <span class="txt">Forms</span>
+                            </a>
+                            <ul class="sub">
+                                <li>
+                                    <a href="form-elements.html">
+                                        <span class="icon"><i class="icon20 i-stack-list"></i></span>
+                                        <span class="txt">Form elements</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="form-validation.html">
+                                        <span class="icon"><i class="icon20 i-stack-checkmark"></i></span>
+                                        <span class="txt">Form validation</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="form-wizard.html">
+                                        <span class="icon"><i class="icon20 i-stack-star"></i></span>
+                                        <span class="txt">Form wizard</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="icon"><i class="icon20 i-table-2"></i></span>
+                                <span class="txt">Tables</span>
+                            </a>
+                            <ul class="sub">
+                                <li>
+                                    <a href="tables.html">
+                                        <span class="icon"><i class="icon20 i-table"></i></span>
+                                        <span class="txt">Static tables</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="data-tables.html">
+                                        <span class="icon"><i class="icon20 i-table"></i></span>
+                                        <span class="txt">Data tables</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="grid.html">
+                                <span class="icon"><i class="icon20 i-grid-5"></i></span>
+                                <span class="txt">Grid</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="typo.html">
+                                <span class="icon"><i class="icon20 i-font"></i></span>
+                                <span class="txt">Typography</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="calendar.html">
+                                <span class="icon"><i class="icon20 i-calendar"></i></span>
+                                <span class="txt">Calendar</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="icon"><i class="icon20 i-cogs"></i></span>
+                                <span class="txt">Ui Elements</span>
+                            </a>
+                            <ul class="sub">
+                                <li>
+                                    <a href="icons.html">
+                                        <span class="icon"><i class="icon20 i-IcoMoon"></i></span>
+                                        <span class="txt">Icons</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="buttons.html">
+                                        <span class="icon"><i class="icon20 i-point-up"></i></span>
+                                        <span class="txt">Buttons</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="ui-elements.html">
+                                        <span class="icon"><i class="icon20 i-puzzle"></i></span>
+                                        <span class="txt">UI Elements</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="gallery.html">
+                                <span class="icon"><i class="icon20 i-images"></i></span>
+                                <span class="txt">Gallery</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="maps.html">
+                                <span class="icon"><i class="icon20 i-location-4"></i></span>
+                                <span class="txt">Maps</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="file-manager.html">
+                                <span class="icon"><i class="icon20 i-cloud-upload"></i></span>
+                                <span class="txt">File manager</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="widgets.html">
+                                <span class="icon"><i class="icon20 i-cube-3"></i></span>
+                                <span class="txt">Widgets</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="icon"><i class="icon20 i-file-8"></i></span>
+                                <span class="txt">Pages</span>
+                            </a>
+                            <ul class="sub">
+                                <li>
+                                    <a href="#">
+                                        <span class="icon"><i class="icon20 i-warning"></i></span>
+                                        <span class="txt">Error Pages</span>
+                                    </a>
+                                    <ul class="sub">
+                                        <li>
+                                            <a href="403.html">
+                                                <span class="icon"><i class="icon20 i-notification"></i></span>
+                                                <span class="txt">Error 403</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="404.html">
+                                                <span class="icon"><i class="icon20 i-notification"></i></span>
+                                                <span class="txt">Error 404</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="405.html">
+                                                <span class="icon"><i class="icon20 i-notification"></i></span>
+                                                <span class="txt">Error 405</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="500.html">
+                                                <span class="icon"><i class="icon20 i-notification"></i></span>
+                                                <span class="txt">Error 500</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="503.html">
+                                                <span class="icon"><i class="icon20 i-notification"></i></span>
+                                                <span class="txt">Error 503</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="offline.html">
+                                                <span class="icon"><i class="icon20 i-notification"></i></span>
+                                                <span class="txt">Offline page</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="invoice.html">
+                                        <span class="icon"><i class="icon20 i-credit"></i></span>
+                                        <span class="txt">Invoice page</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="profile.html">
+                                        <span class="icon"><i class="icon20 i-user"></i></span>
+                                        <span class="txt">Profile page</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="search.html">
+                                        <span class="icon"><i class="icon20 i-search-2"></i></span>
+                                        <span class="txt">Search page</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="email.html">
+                                        <span class="icon"><i class="icon20 i-envelop-2"></i></span>
+                                        <span class="txt">Email page</span>
+                                    </a>
+                                </li>                                
+                                <li>
+                                    <a href="faq.html">
+                                        <span class="icon"><i class="icon20 i-question"></i></span>
+                                        <span class="txt">FAQ page</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="blank.html">
+                                        <span class="icon"><i class="icon20 i-file-7"></i></span>
+                                        <span class="txt">Blank page</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav> <!-- End #mainnav -->
+            </div> <!-- End .sidebar-wrapper  -->
+        </aside><!-- End #sidebar  -->
+
+        <section id="content">
+            <div class="wrapper">
+                <div class="crumb">
+                    <ul class="breadcrumb">
+                      <li><a href="#"><i class="icon16 i-home-4"></i>Home</a></li>
+                      <li><a href="#">Library</a></li>
+                      <li class="active">Data</li>
+                    </ul>
+                </div>
+                
+                <div class="container-fluid">
+                    <div id="heading" class="page-header">
+                        <h1><i class="icon20 i-cube"></i> Widgets</h1>
+                    </div>
+                    
+                    <!-- Enable drag and sort for widgets -->
+                    <div id="sort">
+
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <div class="icon"><i class="icon20 i-power"></i></div> 
+                                        <h4>Recent activity</h4>
+                                        <a href="#" class="minimize"></a>
+                                    </div><!-- End .panel-heading -->
+                                
+                                    <div class="panel-body noPadding">
+                                        <ul class="recent-activity">
+                                            <li class="item">
+                                                <span class="icon gray"><i class="icon16 i-upload-2"></i></span>
+                                                <div class="text">admin <a href="#">SuggeElson</a> upload <a href="#">2 files</a></div>
+                                                <span class="ago">10 sec ago</span>
+                                            </li>
+                                            <li class="item">
+                                                <span class="icon green"><i class="icon16 i-images"></i></span>
+                                                <span class="text">user <a href="#">Dean Jonson</a> delete <a href="#">3 pictures</a></span>
+                                                <span class="ago">5 min ago</span>
+                                            </li>
+                                            <li class="item">
+                                                <span class="icon red"><i class="icon16 i-bubbles-4"></i></span>
+                                                <span class="text">user <a href="#">Klaydia Simson</a> add <a href="#">2 comments</a></span>
+                                                <span class="ago">26 min ago</span>
+                                            </li>
+                                            <li class="item">
+                                                <span class="icon blue"><i class="icon16 i-blog-2"></i></span>
+                                                <span class="text">admin <a href="#">SuggeElson</a> add <a href="#">1 post</a></span>
+                                                <span class="ago">2 hours ago</span>
+                                            </li>
+                                            <li class="item">
+                                                <span class="icon yellow"><i class="icon16 i-support"></i></span>
+                                                <span class="text">user <a href="#">Jacky Konnel</a> make <a href="#">1 support request</a></span>
+                                                <span class="ago">17 hours ago</span>
+                                            </li>
+                                            <li class="item">
+                                                <span class="icon orange"><i class="icon16 i-lock"></i></span>
+                                                <span class="text">user <a href="#">Dean Jonson</a> has <a href="#">5 failed login attempts</a></span>
+                                                <span class="ago">2 days ago</span>
+                                            </li>
+                                        </ul>
+                                    </div><!-- End .panel-body -->
+                                </div><!-- End .widget -->
+                            </div><!-- End .col-lg-6  --> 
+                            <div class="col-lg-6">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <div class="icon"><i class="icon20 i-envelop-2"></i></div> 
+                                        <h4>Send PM</h4>
+                                        <a href="#" class="minimize"></a>
+                                    </div><!-- End .panel-heading -->
+                                
+                                    <div class="panel-body">
+                                        <form class="form-horizontal pad15 pad-bottom0" role="form">
+                                            <div class="form-group">
+                                                <input id="multi-users" class="form-control" type="text" placeholder="Find user with @ ">
+                                            </div><!-- End .form-group  -->
+                                            <div class="form-group">
+                                                <textarea name="text" id="" class="form-control" rows="4" placeholder="Type your message here ..."></textarea>
+                                               
+                                            </div><!-- End .form-group  -->
+                                            <div class="form-group">
+                                                <button class="btn btn-link tip pad5" title="Insert link"><i class="icon16 i-link gap-left0 gap-right0"></i></button>
+                                                <button class="btn btn-link tip pad5" title="Attach file"><i class="icon16 i-file-plus-2 gap-left0 gap-right0"></i></button>
+                                                <button class="btn btn-link tip pad5" title="Add video"><i class="icon16 i-camera gap-left0 gap-right0"></i></button>
+                                                <button class="btn btn-link gap-right10 tip pad5" title="Upload image"><i class="icon16 i-image-2 gap-left0 gap-right0"></i></button>
+                                                <button type="submit" class="btn btn-primary pull-right">Send Message</button>
+                                            </div><!-- End .form-group  -->
+                                        </form>
+                                    </div><!-- End .panel-body -->
+                                </div><!-- End .widget -->
+                            </div><!-- End .col-lg-6  -->                        
+                        </div><!-- End .row  -->
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <div class="icon"><i class="icon20 i-users"></i></div> 
+                                        <h4>Recent users</h4>
+                                        <a href="#" class="minimize"></a>
+                                    </div><!-- End .panel-heading -->
+                                
+                                    <div class="panel-body">
+                                        <ul class="recent-users stripes">
+                                            <li class="clearfix">
+                                                <div class="image">
+                                                    <img src="https://si0.twimg.com/profile_images/2820247531/ad30b5932f3bf9e089db3e9417a41376_normal.png" alt="Jay Robinson">
+                                                </div>
+                                                <span class="name"><a href="#">Jay Robinson</a></span>
+                                                <div class="actions">
+                                                    <a href="#" class="act act-primary gap-right10"><i class="icon12 i-user gap-left0"></i>Profile</a>
+                                                    <a href="#" class="act act-primary"><i class="icon12 i-envelop-2 gap-left0"></i>Send PM</a>
+                                                </div>
+                                                <span class="status online tip" title="Online"><i class="icon12 i-circle-2"></i></span>
+                                            </li>
+                                            <li class="clearfix">
+                                                <div class="image">
+                                                    <img src="https://si0.twimg.com/profile_images/3406728806/aea5b28541ce71882252187a6473f62b_normal.png" alt="Roy Barber">
+                                                </div>
+                                                <span class="name"><a href="#">Roy Barber</a></span>
+                                                <div class="actions">
+                                                    <a href="#" class="act act-primary gap-right10"><i class="icon12 i-user gap-left0"></i>Profile</a>
+                                                    <a href="#" class="act act-primary"><i class="icon12 i-envelop-2 gap-left0"></i>Send PM</a>
+                                                </div>
+                                                <span class="status offline tip" title="Offline"><i class="icon12 i-circle-2"></i></span>
+                                            </li>
+                                            <li class="clearfix">
+                                                <div class="image">
+                                                    <img src="https://si0.twimg.com/profile_images/1907250901/vin-avatar_normal.jpg" alt="Vin Thomas">
+                                                </div>
+                                                <span class="name"><a href="#">Vin Thomas</a></span>
+                                                <div class="actions">
+                                                    <a href="#" class="act act-primary gap-right10"><i class="icon12 i-user gap-left0"></i>Profile</a>
+                                                    <a href="#" class="act act-primary"><i class="icon12 i-envelop-2 gap-left0"></i>Send PM</a>
+                                                </div>
+                                                <span class="status online tip" title="Online"><i class="icon12 i-circle-2"></i></span>
+                                            </li>
+                                            <li class="clearfix">
+                                                <div class="image">
+                                                    <img src="https://si0.twimg.com/profile_images/3580798446/296848b795e27b90bf10a7f6a735c815_normal.jpeg" alt="Louis Bullock">
+                                                </div>
+                                                <span class="name"><a href="#">Louis Bullock</a></span>
+                                                <div class="actions">
+                                                    <a href="#" class="act act-primary gap-right10"><i class="icon12 i-user gap-left0"></i>Profile</a>
+                                                    <a href="#" class="act act-primary"><i class="icon12 i-envelop-2 gap-left0"></i>Send PM</a>
+                                                </div>
+                                                <span class="status online tip" title="Online"><i class="icon12 i-circle-2"></i></span>
+                                            </li>
+                                            <li class="clearfix">
+                                                <div class="image">
+                                                    <img src="https://si0.twimg.com/profile_images/1758037485/twitter01_normal.jpg" alt="Cibelle Chalot">
+                                                </div>
+                                                <span class="name"><a href="#">Cibelle Chalot</a></span>
+                                                <div class="actions">
+                                                    <a href="#" class="act act-primary gap-right10"><i class="icon12 i-user gap-left0"></i>Profile</a>
+                                                    <a href="#" class="act act-primary"><i class="icon12 i-envelop-2 gap-left0"></i>Send PM</a>
+                                                </div>
+                                                <span class="status online tip" title="Online"><i class="icon12 i-circle-2"></i></span>
+                                            </li>
+                                            <li class="clearfix">
+                                                <div class="image">
+                                                    <img src="https://si0.twimg.com/profile_images/2880705947/06b30922d06e66c451438e97a85155d8_normal.jpeg" alt="Maria Kalalang">
+                                                </div>
+                                                <span class="name"><a href="#">Maria Kalalang</a></span>
+                                                <div class="actions">
+                                                    <a href="#" class="act act-primary gap-right10"><i class="icon12 i-user gap-left0"></i>Profile</a>
+                                                    <a href="#" class="act act-primary"><i class="icon12 i-envelop-2 gap-left0"></i>Send PM</a>
+                                                </div>
+                                                <span class="status offline tip" title="Offline"><i class="icon12 i-circle-2"></i></span>
+                                            </li>
+                                        </ul>
+                                    </div><!-- End .panel-body -->
+                                </div><!-- End .widget -->
+                            </div><!-- End .col-lg-6  -->  
+                        
+                            <div class="col-lg-6">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <div class="icon"><i class="icon20 i-cube"></i></div> 
+                                        <h4>Chat layout</h4>
+                                        <a href="#" class="minimize"></a>
+                                    </div><!-- End .panel-heading -->
+                                
+                                    <div class="panel-body ">
+                                        
+                                        <div class="chat-layout">
+                                            <ul>
+                                                <li class="clearfix leftside">
+                                                    <div class="user">
+                                                        <div class="avatar">
+                                                            <img src="https://si0.twimg.com/profile_images/3163619940/8170a820d02cdda8f34d0059fea5b381_normal.jpeg" alt="Daniel Haim">
+                                                        </div>
+                                                        <span class="ago">5 min</span>
+                                                    </div>
+                                                    <div class="message">
+                                                        <span class="name">Daniel Haim</span>
+                                                        <span class="txt">Hey Stéphanie how are you doing?</span>
+                                                    </div>
+                                                </li>
+                                                <li class="clearfix rightside">
+                                                    <div class="user">
+                                                        <div class="avatar">
+                                                            <img src="https://si0.twimg.com/profile_images/3014918750/1c905a604c4060230444d25424ea7a47_normal.jpeg" alt="Stéphanie Walter">
+                                                        </div>
+                                                        <span class="ago">3 min</span>
+                                                    </div>
+                                                    <div class="message">
+                                                        <span class="name">Stéphanie Walter</span>
+                                                        <span class="txt">Pretty good, browsing themeforest new items.</span>
+                                                    </div>
+                                                </li>
+                                                <li class="clearfix leftside">
+                                                    <div class="user">
+                                                        <div class="avatar">
+                                                            <img src="https://si0.twimg.com/profile_images/3163619940/8170a820d02cdda8f34d0059fea5b381_normal.jpeg" alt="Daniel Haim">
+                                                        </div>
+                                                        <span class="ago">just now</span>
+                                                    </div>
+                                                    <div class="message">
+                                                        <span class="name">Daniel Haim</span>
+                                                        <span class="txt">Did you find something cool ?</span>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                            <form class="form-horizontal pad15 pad-bottom0" role="form">
+                                                <div class="form-group">
+                                                    <div class="col-lg-9">
+                                                        <input class="form-control" type="text" name="message" placeholder="Enter your message ...">
+                                                    </div> 
+                                                    <div class="col-lg-3">
+                                                        <button class="btn btn-primary col-lg-12" type="submit">Send</button>
+                                                    </div>                                                    
+                                                    
+                                                </div><!-- End .form-group  -->
+                                            </form>
+                                        </div>
+
+                                    </div><!-- End .panel-body -->
+                                </div><!-- End .widget -->
+                            </div><!-- End .col-lg-6  -->
+                        </div><!-- End .row  -->
+
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <div class="icon"><i class="icon20 i-temperature"></i></div> 
+                                        <h4>Weather widget</h4>
+                                        <a href="#" class="minimize"></a>
+                                    </div><!-- End .panel-heading -->
+                                
+                                    <div class="panel-body">
+                                        <div class="weather">
+                                            <div class="center"><div class="location"><i class="icon16 i-location"></i> Los Angeles California</div></div>
+                                            <div class="center clearfix">
+                                                <div class="pull-left">
+                                                    <div class="icon"><i class="icon64 i-sun-2 orange"></i></div>
+                                                    <span class="today">currently</span>
+                                                </div>
+                                                <div class="pull-right"><span class="degree blue">24&deg;</span></div>
+                                            </div>
+                                            <ul class="clearfix">
+                                                <li>
+                                                    <span class="day">Mon</span>
+                                                    <span class="dayicon"><i class="icon24 i-sun orange"></i></span>
+                                                    <span class="max">30&deg;</span>
+                                                    <span class="min">16&deg;</span>
+                                                </li>
+                                                <li>
+                                                    <span class="day">Tue</span>
+                                                    <span class="dayicon"><i class="icon24 i-cloud-2 dark"></i></span>
+                                                    <span class="max">24&deg;</span>
+                                                    <span class="min">10&deg;</span>
+                                                </li>
+                                                <li>
+                                                    <span class="day">Wed</span>
+                                                    <span class="dayicon"><i class="icon24 i-weather-rain dark"></i></span>
+                                                    <span class="max">17&deg;</span>
+                                                    <span class="min">8&deg;</span>
+                                                </li>
+                                                <li>
+                                                    <span class="day">Thu</span>
+                                                    <span class="dayicon"><i class="icon24 i-weather-lightning red-smooth"></i></span>
+                                                    <span class="max">20&deg;</span>
+                                                    <span class="min">11&deg;</span>
+                                                </li>
+                                                <li>
+                                                    <span class="day">Fri</span>
+                                                    <span class="dayicon"><i class="icon24 i-weather-snow blue"></i></span>
+                                                    <span class="max">4&deg;</span>
+                                                    <span class="min">-5&deg;</span>
+                                                </li>
+                                                <li>
+                                                    <span class="day">Sat</span>
+                                                    <span class="dayicon"><i class="icon24 i-snowflake blue"></i></span>
+                                                    <span class="max">0&deg;</span>
+                                                    <span class="min">-10&deg;</span>
+                                                </li>
+                                                
+                                            </ul>
+                                        </div>
+                                    </div><!-- End .panel-body -->
+                                </div><!-- End .widget -->
+                            </div><!-- End .col-lg-6  -->
+                            <div class="col-lg-6">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <div class="icon"><i class="icon20 i-file-8"></i></div> 
+                                        <h4>ToDo widget</h4>
+                                        <a href="#" class="minimize"></a>
+                                    </div><!-- End .panel-heading -->
+                                
+                                    <div class="panel-body">
+
+                                        <div class="toDo">
+                                            <h4 class="period">Today</h4>
+                                            <ul class="todo-list" id="today">
+                                                <li class="task-item clearfix">
+                                                    <span class="chbox"><input type="checkbox"></span>
+                                                    <span class="priority medium tip" title="Medium priority"><i class="icon12 i-circle-2"></i></span>
+                                                    <span class="label category"> css </span>
+                                                    <span class="task">
+                                                        Add some shadows to buttons
+                                                    </span>
+                                                    <a href="#" class="act"><i class="icon12 i-close-2"></i></a>
+                                                </li>
+                                                <li class="task-item clearfix">
+                                                    <span class="chbox"><input type="checkbox"></span>
+                                                    <span class="priority high tip" title="High priority"><i class="icon12 i-circle-2"></i></span>
+                                                    <span class="label label-info category"> html </span>
+                                                    <span class="task">
+                                                        Change html structure
+                                                    </span>
+                                                    <a href="#" class="act"><i class="icon12 i-close-2"></i></a>
+                                                </li>
+                                                <li class="task-item clearfix">
+                                                    <span class="chbox"><input type="checkbox"></span>
+                                                    <span class="priority normal tip" title="Normal priority"><i class="icon12 i-circle-2"></i></span>
+                                                    <span class="label label-inverse category"> javascript </span>
+                                                    <span class="task">
+                                                        Update jquery plugin.
+                                                    </span>
+                                                    <a href="#" class="act"><i class="icon12 i-close-2"></i></a>
+                                                </li>
+                                            </ul>
+                                            <h4 class="period">Tomorrow</h4>
+                                            <ul class="todo-list" id="tomorrow">
+                                                 <li class="task-item clearfix">
+                                                    <span class="chbox"><input type="checkbox"></span>
+                                                    <span class="priority tip" title="Priority none"><i class="icon12 i-circle-2"></i></span>
+                                                    <span class="label label-important category"> php </span>
+                                                    <span class="task">
+                                                        Create category controller
+                                                    </span>
+                                                    <a href="#" class="act"><i class="icon12 i-close-2"></i></a>
+                                                </li>
+                                            </ul>
+
+                                            <div class="addToDo">
+                                                <form class="form-horizontal">
+                                                    <div class="form-group">
+                                                        <label class="col-lg-2 control-label" for="priority">Priority:</label>
+                                                        <div class="col-lg-10">
+                                                            <select name="priority" class="col-lg-6">
+                                                                <option value="None">None</option>
+                                                                <option value="Normal">Normal</option>
+                                                                <option value="Medium">Medium</option>
+                                                                <option value="High">High</option>
+                                                            </select>  
+                                                        </div>
+                                                    </div><!-- End .form-group  -->
+                                                    <div class="form-group">
+                                                        <label class="col-lg-2 control-label" for="category">Category</label>
+                                                        <div class="col-lg-10">
+                                                            <select name="category" class="col-lg-6">
+                                                                <option value="Css">Css</option>
+                                                                <option value="Html">Html</option>
+                                                                <option value="Javascript">Javascript</option>
+                                                                <option value="Php">Php</option>
+                                                            </select>
+                                                        </div>
+                                                    </div><!-- End .form-group  -->
+                                                    <div class="form-group">
+                                                        <label class="col-lg-2 control-label" for="task">Task:</label>
+                                                        <div class="col-lg-10">
+                                                            <textarea name="task" class="col-lg-12" rows="3"></textarea>
+                                                        </div>
+                                                    </div><!-- End .form-group  -->
+                                                    <div class="form-actions">
+                                                        <button type="submit" class="btn btn-primary">Create task</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        
+                                    </div><!-- End .panel-body -->
+                                </div><!-- End .widget -->
+                            </div><!-- End .col-lg-6  --> 
+                        </div><!-- End .row  -->
+
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="panel closed">
+                                    <div class="panel-heading">
+                                        <div class="icon"><i class="icon20 i-cube"></i></div> 
+                                        <h4>Closed by default</h4>
+                                        <a href="#" class="minimize"></a>
+                                    </div><!-- End .panel-heading -->
+                                
+                                    <div class="panel-body">
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime exercitationem pariatur maiores aliquid voluptatibus laborum quia eum molestiae adipisci voluptatum. Possimus eligendi animi pariatur excepturi sapiente aperiam voluptatem numquam a?
+                                    </div><!-- End .panel-body -->
+                                </div><!-- End .widget -->
+                            </div><!-- End .col-lg-6  -->
+                            <div class="col-lg-6">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <div class="icon"><i class="icon20 i-cube"></i></div> 
+                                        <h4>With loader icon</h4>
+                                        <a href="#" class="minimize"></a>
+                                        <div class="w-right">
+                                            <img src="images/preloaders/dark/1.gif">
+                                        </div>
+                                    </div><!-- End .panel-heading -->
+                                
+                                    <div class="panel-body">
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime exercitationem pariatur maiores aliquid voluptatibus laborum quia eum molestiae adipisci voluptatum. Possimus eligendi animi pariatur excepturi sapiente aperiam voluptatem numquam a?
+                                    </div><!-- End .panel-body -->
+                                </div><!-- End .widget -->
+                            </div><!-- End .col-lg-6  -->                         
+                        </div><!-- End .row  -->
+
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <div class="icon"><i class="icon20 i-cube"></i></div> 
+                                        <h4>With label</h4>
+                                        <a href="#" class="minimize"></a>
+                                        <div class="w-right">
+                                            <span class="label label-important">HOT</span>
+                                        </div>
+                                    </div><!-- End .panel-heading -->
+                                
+                                    <div class="panel-body">
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime exercitationem pariatur maiores aliquid voluptatibus laborum quia eum molestiae adipisci voluptatum. Possimus eligendi animi pariatur excepturi sapiente aperiam voluptatem numquam a?
+                                    </div><!-- End .panel-body -->
+                                </div><!-- End .widget -->
+                            </div><!-- End .col-lg-6  --> 
+                        
+                            <div class="col-lg-6">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <div class="icon"><i class="icon20 i-cube"></i></div> 
+                                        <h4>With badge</h4>
+                                        <a href="#" class="minimize"></a>
+                                        <div class="w-right">
+                                            <span class="badge badge-info">+76</span>
+                                        </div>
+                                    </div><!-- End .panel-heading -->
+                                
+                                    <div class="panel-body">
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime exercitationem pariatur maiores aliquid voluptatibus laborum quia eum molestiae adipisci voluptatum. Possimus eligendi animi pariatur excepturi sapiente aperiam voluptatem numquam a?
+                                    </div><!-- End .panel-body -->
+                                </div><!-- End .widget -->
+                            </div><!-- End .col-lg-6  --> 
+                        </div><!-- End .row  -->
+
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading clearfix">
+                                        <div class="icon"><i class="icon20 i-cube"></i></div> 
+                                        <h4>With progress bar</h4>
+                                        <a href="#" class="minimize"></a>
+                                        <div class="w-right">
+                                            <div class="progress progress-mini tip" title="35%">
+                                                <div class="progress-bar" style="width:35%;"></div>
+                                            </div>
+                                        </div>
+                                    </div><!-- End .panel-heading -->
+                                
+                                    <div class="panel-body">
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime exercitationem pariatur maiores aliquid voluptatibus laborum quia eum molestiae adipisci voluptatum. Possimus eligendi animi pariatur excepturi sapiente aperiam voluptatem numquam a?
+                                    </div><!-- End .panel-body -->
+                                </div><!-- End .widget -->
+                            </div><!-- End .col-lg-6  -->
+                            <div class="col-lg-6">
+                                <div class="panel drag">
+                                    <div class="panel-heading">
+                                        <div class="icon"><i class="icon20 i-cube"></i></div> 
+                                        <h4>Draggable widget</h4>
+                                        <a href="#" class="minimize"></a>
+                                    </div><!-- End .panel-heading -->
+                                
+                                    <div class="panel-body">
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime exercitationem pariatur maiores aliquid voluptatibus laborum quia eum molestiae adipisci voluptatum. Possimus eligendi animi pariatur excepturi sapiente aperiam voluptatem numquam a?
+                                    </div><!-- End .panel-body -->
+                                </div><!-- End .widget -->
+                            </div><!-- End .col-lg-6  -->  
+                        </div><!-- End .row  -->
+
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <div class="icon"><i class="icon20 i-cube"></i></div> 
+                                        <h4>With search field</h4>
+                                        <a href="#" class="minimize"></a>
+                                        <div class="w-right">
+                                            <form class="form-horizontal" role="form">
+                                                <input type="text" class="search-query col-lg-12 form-control" placeholder="Search">
+                                            </form>
+                                        </div>
+                                        <div class="clearfix"> </div>
+                                    </div><!-- End .panel-heading -->
+                                
+                                    <div class="panel-body">
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime exercitationem pariatur maiores aliquid voluptatibus laborum quia eum molestiae adipisci voluptatum. Possimus eligendi animi pariatur excepturi sapiente aperiam voluptatem numquam a?
+                                    </div><!-- End .panel-body -->
+                                </div><!-- End .widget -->
+                            </div><!-- End .col-lg-6  -->
+
+                            <div class="col-lg-6">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <div class="icon"><i class="icon20 i-cube"></i></div> 
+                                        <h4>With bars</h4>
+                                        <a href="#" class="minimize"></a>
+                                        <div class="w-right">
+                                            <span class="spark">
+                                                <span class="positive">5,3,9,6,5,9,7,3,5,2</span>
+                                            </span>
+                                        </div>
+                                    </div><!-- End .panel-heading -->
+                                
+                                    <div class="panel-body">
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime exercitationem pariatur maiores aliquid voluptatibus laborum quia eum molestiae adipisci voluptatum. Possimus eligendi animi pariatur excepturi sapiente aperiam voluptatem numquam a?
+                                    </div><!-- End .panel-body -->
+                                </div><!-- End .widget -->
+                            </div><!-- End .col-lg-6  -->
+                        </div><!-- End .row  -->
+
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <div class="icon"><i class="icon20 i-cube"></i></div> 
+                                        <h4>With sparkline</h4>
+                                        <a href="#" class="minimize"></a>
+                                        <div class="w-right">
+                                            <span class="spark-line">
+                                                <span class="positive">5,3,9,6,5,9,7,3,5,2</span>
+                                            </span>
+                                        </div>
+                                    </div><!-- End .panel-heading -->
+                                
+                                    <div class="panel-body">
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime exercitationem pariatur maiores aliquid voluptatibus laborum quia eum molestiae adipisci voluptatum. Possimus eligendi animi pariatur excepturi sapiente aperiam voluptatem numquam a?
+                                    </div><!-- End .panel-body -->
+                                </div><!-- End .widget -->
+                            </div><!-- End .col-lg-6  -->
+
+                            <div class="col-lg-6">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <div class="icon"><i class="icon20 i-cube"></i></div> 
+                                        <h4>With button</h4>
+                                        <a href="#" class="minimize"></a>
+                                        <div class="w-right">
+                                            <button class="btn btn-success btn-xs"> Save </button>
+                                        </div>
+                                    </div><!-- End .panel-heading -->
+                                
+                                    <div class="panel-body">
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime exercitationem pariatur maiores aliquid voluptatibus laborum quia eum molestiae adipisci voluptatum. Possimus eligendi animi pariatur excepturi sapiente aperiam voluptatem numquam a?
+                                    </div><!-- End .panel-body -->
+                                </div><!-- End .widget -->
+                            </div><!-- End .col-lg-6  -->
+                        </div><!-- End .row  -->
+
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <div class="icon"><i class="icon20 i-cube"></i></div> 
+                                        <h4>With Checkbox</h4>
+                                        <a href="#" class="minimize"></a>
+                                        <div class="w-right">
+                                            <form class="form-horizontal">
+                                                <input type="checkbox" value="1">
+                                            </form>
+                                        </div>
+                                    </div><!-- End .panel-heading -->
+                                
+                                    <div class="panel-body">
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime exercitationem pariatur maiores aliquid voluptatibus laborum quia eum molestiae adipisci voluptatum. Possimus eligendi animi pariatur excepturi sapiente aperiam voluptatem numquam a?
+                                    </div><!-- End .panel-body -->
+                                </div><!-- End .widget -->
+                            </div><!-- End .col-lg-6  -->
+
+                            <div class="col-lg-6">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading clearfix">
+                                        <div class="icon"><i class="icon20 i-cube"></i></div> 
+                                        <h4>With Select</h4>
+                                        <a href="#" class="minimize"></a>
+                                        <div class="w-right">
+                                            <form class="form-horizontal">
+                                                <select name="select">
+                                                    <option>Who</option>
+                                                    <option selected="selected">What</option>
+                                                    <option>When</option>
+                                                    <option>Where</option>
+                                                    <option>How</option>
+                                                </select>  
+                                            </form>
+                                        </div>
+                                    </div><!-- End .panel-heading -->
+                                
+                                    <div class="panel-body">
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime exercitationem pariatur maiores aliquid voluptatibus laborum quia eum molestiae adipisci voluptatum. Possimus eligendi animi pariatur excepturi sapiente aperiam voluptatem numquam a?
+                                    </div><!-- End .panel-body -->
+                                </div><!-- End .widget -->
+                            </div><!-- End .col-lg-6  -->
+                            
+                        </div><!-- End .row  -->
+
+                        <div class="row">
+
+                            <div class="col-lg-6">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading clearfix">
+                                        <div class="icon"><i class="icon20 i-cube"></i></div> 
+                                        <h4>With toggle button</h4>
+                                        <a href="#" class="minimize"></a>
+                                        <div class="w-right">
+                                            <form class="form-horizontal">
+                                                <div class="switch" data-on="primary" data-off="danger" data-on-label="<i class='i-checkmark-3'></i>" data-off-label="<i class='i-close'></i>">
+                                                    <input class="toggle" type="checkbox" checked />
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div><!-- End .panel-heading -->
+                                
+                                    <div class="panel-body">
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime exercitationem pariatur maiores aliquid voluptatibus laborum quia eum molestiae adipisci voluptatum. Possimus eligendi animi pariatur excepturi sapiente aperiam voluptatem numquam a?
+                                    </div><!-- End .panel-body -->
+                                </div><!-- End .widget -->
+                            </div><!-- End .col-lg-6  -->
+
+                            <div class="col-lg-6">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <div class="icon"><i class="icon20 i-cube"></i></div> 
+                                        <h4>Vertical scrollbar</h4>
+                                        <a href="#" class="minimize"></a>
+                                    </div><!-- End .panel-heading -->
+                                
+                                    <div class="panel-body">
+                                        <div class="scroll" style="height:200px; overflow:auto; margin-top:10px;">                                   
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                                            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                                            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                                            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                                            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                                            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                                            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                                            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                                            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                                            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                                            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                        </div>
+                                    </div><!-- End .panel-body -->
+                                </div><!-- End .widget -->
+                            </div><!-- End .col-lg-6  -->
+                        </div><!-- End .row  -->
+
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <div class="icon"><i class="icon20 i-cube"></i></div> 
+                                        <h4>Horizontal scrollbar</h4>
+                                        <a href="#" class="minimize"></a>
+                                    </div><!-- End .panel-heading -->
+                                
+                                    <div class="panel-body">
+                                        <div class="scroll" style="overflow:auto; margin-top:10px;">   
+                                            <div style="width:1000px;">                                
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                                                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                                                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                                                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                                                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                            </div>
+                                        </div>
+                                    </div><!-- End .panel-body -->
+                                </div><!-- End .widget -->
+                            </div><!-- End .col-lg-6  -->
+                        </div><!-- End .row  -->
+
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <div class="icon"><i class="icon20 i-phone-2"></i></div> 
+                                        <h4>Contacts widget</h4>
+                                        <a href="#" class="minimize"></a>
+                                    </div><!-- End .panel-heading -->
+                                
+                                    <div class="panel-body noPadding">
+
+                                        <div id="contact-list-nav" class="contact-nav"></div>
+
+                                        <ul class="contact-list" id="contact-list">
+                                            <li class="row">
+                                                <div class="col-lg-3">
+                                                    <div class="image">
+                                                        <img src="https://si0.twimg.com/profile_images/2820247531/ad30b5932f3bf9e089db3e9417a41376_normal.png" alt="Jay Robinson">
+                                                    </div>
+                                                    <span class="name"><a href="#">Jay Robinson</a></span>
+                                                    <span class="location"><i class="icon16 i-location-2 gap-left0"></i> L.A California</span>
+                                                </div>
+                                                <div class="col-lg-3">
+                                                    <span class="email">jayrob@gmail.com</span>
+                                                    <span class="phone"><i class="icon16 i-phone gap-left0"></i> 044 - 777 256 354</span>
+                                                </div>
+                                                <div class="col-lg-3">
+                                                    <span class="mobile"><i class="icon16 i-mobile-2 gap-left0"></i> 045 - 775 236 154</span>
+                                                    <span class="mobile"><i class="icon16 i-mobile-2 gap-left0"></i> 043 - 700 236 122</span>
+                                                </div>
+                                                <div class="col-lg-3">
+                                                    <div class="actions">
+                                                        <a href="#" class="act act-primary"><i class="icon12 i-user gap-left0"></i>View profile</a>
+                                                        <a href="#" class="act act-primary"><i class="icon12 i-envelop-2 gap-left0"></i>Send message</a>
+                                                    </div>
+                                                </div>                                            
+                                            </li>
+                                            <li class="row">
+                                                <div class="col-lg-3">
+                                                    <div class="image">
+                                                        <img src="https://si0.twimg.com/profile_images/3406728806/aea5b28541ce71882252187a6473f62b_normal.png" alt="Roy Barber">
+                                                    </div>
+                                                    <span class="name"><a href="#">Roy Barber</a></span>
+                                                    <span class="location"><i class="icon16 i-location-2 gap-left0"></i> France, Paris</span>
+                                                </div>
+                                                <div class="col-lg-3">
+                                                    <span class="email">royBarber@gmail.com</span>
+                                                    <span class="phone"><i class="icon16 i-phone gap-left0"></i> 044 - 777 256 354</span>
+                                                </div>
+                                                <div class="col-lg-3">
+                                                    <span class="mobile"><i class="icon16 i-mobile-2 gap-left0"></i> 045 - 775 236 154</span>
+                                                    <span class="mobile"><i class="icon16 i-mobile-2 gap-left0"></i> 043 - 700 236 122</span>
+                                                </div>
+                                                <div class="col-lg-3">
+                                                    <div class="actions">
+                                                        <a href="#" class="act act-primary"><i class="icon12 i-user gap-left0"></i>View profile</a>
+                                                        <a href="#" class="act act-primary"><i class="icon12 i-envelop-2 gap-left0"></i>Send message</a>
+                                                    </div>
+                                                </div>                                            
+                                            </li>
+                                            <li class="row">
+                                                <div class="col-lg-3">
+                                                    <div class="image">
+                                                        <img src="https://si0.twimg.com/profile_images/1907250901/vin-avatar_normal.jpg" alt="Vin Thomas">
+                                                    </div>
+                                                    <span class="name"><a href="#">Vin Thomas</a></span>
+                                                    <span class="location"><i class="icon16 i-location-2 gap-left0"></i> England, London</span>
+                                                </div>
+                                                <div class="col-lg-3">
+                                                    <span class="email">vindisel@gmail.com</span>
+                                                    <span class="phone"><i class="icon16 i-phone gap-left0"></i> 044 - 777 256 354</span>
+                                                </div>
+                                                <div class="col-lg-3">
+                                                    <span class="mobile"><i class="icon16 i-mobile-2 gap-left0"></i> 045 - 775 236 154</span>
+                                                    <span class="mobile"><i class="icon16 i-mobile-2 gap-left0"></i> 043 - 700 236 122</span>
+                                                </div>
+                                                <div class="col-lg-3">
+                                                    <div class="actions">
+                                                        <a href="#" class="act act-primary"><i class="icon12 i-user gap-left0"></i>View profile</a>
+                                                        <a href="#" class="act act-primary"><i class="icon12 i-envelop-2 gap-left0"></i>Send message</a>
+                                                    </div>
+                                                </div>                                            
+                                            </li>
+                                            <li class="row">
+                                                <div class="col-lg-3">
+                                                    <div class="image">
+                                                        <img src="https://si0.twimg.com/profile_images/3580798446/296848b795e27b90bf10a7f6a735c815_normal.jpeg" alt="Louis Bullock">
+                                                    </div>
+                                                    <span class="name"><a href="#">Louis Bullock</a></span>
+                                                    <span class="location"><i class="icon16 i-location-2 gap-left0"></i> England, London</span>
+                                                </div>
+                                                <div class="col-lg-3">
+                                                    <span class="email">bullock@gmail.com</span>
+                                                    <span class="phone"><i class="icon16 i-phone gap-left0"></i> 044 - 777 256 354</span>
+                                                </div>
+                                                <div class="col-lg-3">
+                                                    <span class="mobile"><i class="icon16 i-mobile-2 gap-left0"></i> 045 - 775 236 154</span>
+                                                    <span class="mobile"><i class="icon16 i-mobile-2 gap-left0"></i> 043 - 700 236 122</span>
+                                                </div>
+                                                <div class="col-lg-3">
+                                                    <div class="actions">
+                                                        <a href="#" class="act act-primary"><i class="icon12 i-user gap-left0"></i>View profile</a>
+                                                        <a href="#" class="act act-primary"><i class="icon12 i-envelop-2 gap-left0"></i>Send message</a>
+                                                    </div>
+                                                </div>                                            
+                                            </li>
+                                            <li class="row">
+                                                <div class="col-lg-3">
+                                                    <div class="image">
+                                                        <img src="https://si0.twimg.com/profile_images/1758037485/twitter01_normal.jpg" alt="Cibelle Chalot">
+                                                    </div>
+                                                    <span class="name"><a href="#">Cibelle Chalot</a></span>
+                                                    <span class="location"><i class="icon16 i-location-2 gap-left0"></i> France, Monacco</span>
+                                                </div>
+                                                <div class="col-lg-3">
+                                                    <span class="email">cibelle@gmail.com</span>
+                                                    <span class="phone"><i class="icon16 i-phone gap-left0"></i> 044 - 777 256 354</span>
+                                                </div>
+                                                <div class="col-lg-3">
+                                                    <span class="mobile"><i class="icon16 i-mobile-2 gap-left0"></i> 045 - 775 236 154</span>
+                                                    <span class="mobile"><i class="icon16 i-mobile-2 gap-left0"></i> 043 - 700 236 122</span>
+                                                </div>
+                                                <div class="col-lg-3">
+                                                    <div class="actions">
+                                                        <a href="#" class="act act-primary"><i class="icon12 i-user gap-left0"></i>View profile</a>
+                                                        <a href="#" class="act act-primary"><i class="icon12 i-envelop-2 gap-left0"></i>Send message</a>
+                                                    </div>
+                                                </div>                                            
+                                            </li>
+                                            <li class="row">
+                                                <div class="col-lg-3">
+                                                    <div class="image">
+                                                        <img src="https://si0.twimg.com/profile_images/2880705947/06b30922d06e66c451438e97a85155d8_normal.jpeg">
+                                                    </div>
+                                                    <span class="name"><a href="#">Maria Kalalang</a></span>
+                                                    <span class="location"><i class="icon16 i-location-2 gap-left0"></i> Germany, Berlin</span>
+                                                </div>
+                                                <div class="col-lg-3">
+                                                    <span class="email">mariaK@gmail.com</span>
+                                                    <span class="phone"><i class="icon16 i-phone gap-left0"></i> 044 - 777 256 354</span>
+                                                </div>
+                                                <div class="col-lg-3">
+                                                    <span class="mobile"><i class="icon16 i-mobile-2 gap-left0"></i> 045 - 775 236 154</span>
+                                                    <span class="mobile"><i class="icon16 i-mobile-2 gap-left0"></i> 043 - 700 236 122</span>
+                                                </div>
+                                                <div class="col-lg-3">
+                                                    <div class="actions">
+                                                        <a href="#" class="act act-primary"><i class="icon12 i-user gap-left0"></i>View profile</a>
+                                                        <a href="#" class="act act-primary"><i class="icon12 i-envelop-2 gap-left0"></i>Send message</a>
+                                                    </div>
+                                                </div>                                            
+                                            </li>
+                                        </ul>
+                                        
+                                    </div><!-- End .panel-body -->
+
+                                </div><!-- End .widget -->
+                            </div><!-- End .col-lg-12  -->
+
+                        </div><!-- End .row  -->
+                        
+                    </div><!-- End #sort -->
+
+                </div> <!-- End .container-fluid  -->
+            </div> <!-- End .wrapper  -->
+        </section>
+    </div><!-- End .main  -->
+  </body>
+</html>

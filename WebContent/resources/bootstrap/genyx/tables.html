@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Genyx admin v1.0</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="SuggeElson" />
+    <meta name="description" content="Genyx admin template - new premium responsive admin template. This template is designed to help you build the site administration without losing valuable time.Template contains all the important functions which must have one backend system.Build on great twitter boostrap framework" />
+    <meta name="keywords" content="admin, admin template, admin theme, responsive, responsive admin, responsive admin template, responsive theme, themeforest, 960 grid system, grid, grid theme, liquid, jquery, administration, administration template, administration theme, mobile, touch , responsive layout, boostrap, twitter boostrap" />
+    <meta name="application-name" content="Genyx admin template" />
+
+    <!-- Headings -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,800,700' rel='stylesheet' type='text/css'>
+    <!-- Text -->
+    <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css' />
+
+     <!--[if lt IE 9]>
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400" rel="stylesheet" type="text/css" />
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:700" rel="stylesheet" type="text/css" />
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:800" rel="stylesheet" type="text/css" />
+    <link href="http://fonts.googleapis.com/css?family=Droid+Sans:400" rel="stylesheet" type="text/css" />
+    <link href="http://fonts.googleapis.com/css?family=Droid+Sans:700" rel="stylesheet" type="text/css" />
+    <![endif]-->
+
+    <!-- Core stylesheets do not remove -->
+    <link href="css/bootstrap/bootstrap.css" rel="stylesheet" />
+    <link href="css/bootstrap/bootstrap-theme.css" rel="stylesheet" />
+    <link href="css/icons.css" rel="stylesheet" />
+
+    <!-- Plugins stylesheets -->
+    <link href="js/plugins/forms/uniform/uniform.default.css" rel="stylesheet" /> 
+
+    <!-- app stylesheets -->
+    <link href="css/app.css" rel="stylesheet" /> 
+
+    <!-- Custom stylesheets ( Put your own changes here ) -->
+    <link href="css/custom.css" rel="stylesheet" /> 
+
+    <!--[if IE 8]><link href="css/ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
+
+    <!-- Force IE9 to render in normal mode -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
+                    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+                                   <link rel="shortcut icon" href="images/ico/favicon.png">
+    
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Important plugins put in all pages -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="js/bootstrap/bootstrap.js"></script>  
+    <script src="js/conditionizr.min.js"></script>  
+    <script src="js/plugins/core/nicescroll/jquery.nicescroll.min.js"></script>
+    <script src="js/plugins/core/jrespond/jRespond.min.js"></script>
+    <script src="js/jquery.genyxAdmin.js"></script>
+
+    <!-- Form plugins -->
+    <script src="js/plugins/forms/uniform/jquery.uniform.min.js"></script>
+
+    <!-- Init plugins -->
+    <script src="js/app.js"></script><!-- Core js functions -->
+    <script src="js/pages/tables.js"></script><!-- Init plugins only for page -->
+
+  </head>
+  <body>
+    <header id="header">
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <a class="navbar-brand" href="dashboard.html"><img src="images/logo.png" alt="Genyx admin" class="img-responsive"></a>
+            <button type="button" class="navbar-toggle btn-danger" data-toggle="collapse" data-target="#navbar-to-collapse">
+                <span class="sr-only">Toggle right menu</span>
+                <i class="icon16 i-arrow-8"></i>
+            </button>          
+            <div class="collapse navbar-collapse" id="navbar-to-collapse">  
+                <form id="top-search" class="navbar-form navbar-left" role="search">
+                    <div class="input-group">
+                        <input type="text" name="tsearch" id="tsearch" placeholder="Search here ..." class="search-query form-control">
+                        <span class="input-group-btn">
+                            <button type="submit" class="btn"><i class="icon16 i-search-2 gap-right0"></i></button>
+                        </span>
+                    </div>
+                </form>  
+                <ul class="nav navbar-nav pull-right">
+                    <li class="divider-vertical"></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="icon24 i-bell-2"></i>
+                            <span class="notification red">6</span>
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li role="presentation"><a href="#" class=""><i class="icon16 i-calendar-2"></i> Admin Jenny add event</a></li>
+                            <li role="presentation"><a href="#" class=""><i class="icon16 i-file-zip"></i> User Dexter attach file</a></li>
+                            <li role="presentation"><a href="#" class=""><i class="icon16 i-stack-picture"></i> User Dexter attach 3 pictures</a></li>
+                            <li role="presentation"><a href="#" class=""><i class="icon16 i-cart-add"></i> New orders <span class="notification green">2</span></a></li>
+                            <li role="presentation"><a href="#" class=""><i class="icon16 i-bubbles-2"></i> New comments <span class="notification red">5</span></a></li>
+                            <li role="presentation"><a href="#" class=""><i class="icon16 i-pie-5"></i> Daily stats is generated</a></li>
+                        </ul>
+                    </li>
+                    <li class="divider-vertical"></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="icon24 i-envelop-2"></i>
+                            <span class="notification red">3</span>
+                        </a>
+                        <ul class="dropdown-menu messages" role="menu">
+                            <li class="head" role="presentation">
+                                <h4>Inbox</h4>
+                                <span class="count">3 messages</span>
+                                <span class="new-msg"><a href="#" class="tipB" title="Write message"><i class="icon16 i-pencil-5"></i></a></span>
+                            </li>
+                            <li role="presentation">
+                                <a href="#" class="clearfix">
+                                    <span class="avatar"><img src="images/avatars/peter.jpg" alt="avatar"></span>
+                                    <span class="msg">Call me i need to talk with you</span>
+                                    <button class="btn close"><i class="icon12 i-close-2"></i></button>
+                                </a>
+                            </li>
+                            <li role="presentation">
+                                <a href="#" class="clearfix">
+                                    <span class="avatar"><img src="images/avatars/milen.jpg" alt="avatar"></span>
+                                    <span class="msg">Problem with registration</span>
+                                    <button class="btn close"><i class="icon12 i-close-2"></i></button>
+                                </a>
+                            </li>
+                            <li role="presentation">
+                                <a href="#" class="clearfix">
+                                    <span class="avatar"><img src="images/avatars/anonime.jpg" alt="avatar"></span>
+                                    <span class="msg">I have question about ...</span>
+                                    <button class="btn close"><i class="icon12 i-close-2"></i></button>
+                                </a>
+                            </li>
+                            <li class="foot" role="presentation"><a href="email.html">View all messages</a></li>
+                        </ul>
+                    </li>
+                    <li class="divider-vertical"></li>
+                    <li class="dropdown user">
+                         <a href="#" class="dropdown-toggle avatar" data-toggle="dropdown">
+                            <img src="images/avatars/sugge.jpg" alt="sugge">
+                            <span class="more"><i class="icon16 i-arrow-down-2"></i></span>
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li role="presentation"><a href="#" class=""><i class="icon16 i-cogs"></i> Settings</a></li>
+                            <li role="presentation"><a href="profile.html" class=""><i class="icon16 i-user"></i> Profile</a></li>
+                            <li role="presentation"><a href="index.html" class=""><i class="icon16 i-exit"></i> Logout</a></li>
+                        </ul>
+                    </li>
+                    <li class="divider-vertical"></li>
+                </ul>
+            </div><!--/.nav-collapse -->
+        </nav>
+    </header> <!-- End #header  -->
+    <div class="main">
+        <aside id="sidebar">
+            <div class="side-options">
+                <ul>
+                    <li><a href="#" id="collapse-nav" class="act act-primary tip" title="Collapse navigation"><i class="icon16 i-arrow-left-7"></i></a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-wrapper">
+                <nav id="mainnav">
+                    <ul class="nav nav-list">
+                        <li>
+                            <a href="dashboard.html">
+                                <span class="icon"><i class="icon20 i-screen"></i></span>
+                                <span class="txt">Dashboard</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="charts.html">
+                                <span class="icon"><i class="icon20 i-stats-up"></i></span>
+                                <span class="txt">Charts</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="icon"><i class="icon20 i-menu-6"></i></span>
+                                <span class="txt">Forms</span>
+                            </a>
+                            <ul class="sub">
+                                <li>
+                                    <a href="form-elements.html">
+                                        <span class="icon"><i class="icon20 i-stack-list"></i></span>
+                                        <span class="txt">Form elements</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="form-validation.html">
+                                        <span class="icon"><i class="icon20 i-stack-checkmark"></i></span>
+                                        <span class="txt">Form validation</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="form-wizard.html">
+                                        <span class="icon"><i class="icon20 i-stack-star"></i></span>
+                                        <span class="txt">Form wizard</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="icon"><i class="icon20 i-table-2"></i></span>
+                                <span class="txt">Tables</span>
+                            </a>
+                            <ul class="sub">
+                                <li>
+                                    <a href="tables.html">
+                                        <span class="icon"><i class="icon20 i-table"></i></span>
+                                        <span class="txt">Static tables</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="data-tables.html">
+                                        <span class="icon"><i class="icon20 i-table"></i></span>
+                                        <span class="txt">Data tables</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="grid.html">
+                                <span class="icon"><i class="icon20 i-grid-5"></i></span>
+                                <span class="txt">Grid</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="typo.html">
+                                <span class="icon"><i class="icon20 i-font"></i></span>
+                                <span class="txt">Typography</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="calendar.html">
+                                <span class="icon"><i class="icon20 i-calendar"></i></span>
+                                <span class="txt">Calendar</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="icon"><i class="icon20 i-cogs"></i></span>
+                                <span class="txt">Ui Elements</span>
+                            </a>
+                            <ul class="sub">
+                                <li>
+                                    <a href="icons.html">
+                                        <span class="icon"><i class="icon20 i-IcoMoon"></i></span>
+                                        <span class="txt">Icons</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="buttons.html">
+                                        <span class="icon"><i class="icon20 i-point-up"></i></span>
+                                        <span class="txt">Buttons</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="ui-elements.html">
+                                        <span class="icon"><i class="icon20 i-puzzle"></i></span>
+                                        <span class="txt">UI Elements</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="gallery.html">
+                                <span class="icon"><i class="icon20 i-images"></i></span>
+                                <span class="txt">Gallery</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="maps.html">
+                                <span class="icon"><i class="icon20 i-location-4"></i></span>
+                                <span class="txt">Maps</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="file-manager.html">
+                                <span class="icon"><i class="icon20 i-cloud-upload"></i></span>
+                                <span class="txt">File manager</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="widgets.html">
+                                <span class="icon"><i class="icon20 i-cube-3"></i></span>
+                                <span class="txt">Widgets</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="icon"><i class="icon20 i-file-8"></i></span>
+                                <span class="txt">Pages</span>
+                            </a>
+                            <ul class="sub">
+                                <li>
+                                    <a href="#">
+                                        <span class="icon"><i class="icon20 i-warning"></i></span>
+                                        <span class="txt">Error Pages</span>
+                                    </a>
+                                    <ul class="sub">
+                                        <li>
+                                            <a href="403.html">
+                                                <span class="icon"><i class="icon20 i-notification"></i></span>
+                                                <span class="txt">Error 403</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="404.html">
+                                                <span class="icon"><i class="icon20 i-notification"></i></span>
+                                                <span class="txt">Error 404</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="405.html">
+                                                <span class="icon"><i class="icon20 i-notification"></i></span>
+                                                <span class="txt">Error 405</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="500.html">
+                                                <span class="icon"><i class="icon20 i-notification"></i></span>
+                                                <span class="txt">Error 500</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="503.html">
+                                                <span class="icon"><i class="icon20 i-notification"></i></span>
+                                                <span class="txt">Error 503</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="offline.html">
+                                                <span class="icon"><i class="icon20 i-notification"></i></span>
+                                                <span class="txt">Offline page</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="invoice.html">
+                                        <span class="icon"><i class="icon20 i-credit"></i></span>
+                                        <span class="txt">Invoice page</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="profile.html">
+                                        <span class="icon"><i class="icon20 i-user"></i></span>
+                                        <span class="txt">Profile page</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="search.html">
+                                        <span class="icon"><i class="icon20 i-search-2"></i></span>
+                                        <span class="txt">Search page</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="email.html">
+                                        <span class="icon"><i class="icon20 i-envelop-2"></i></span>
+                                        <span class="txt">Email page</span>
+                                    </a>
+                                </li>                               
+                                <li>
+                                    <a href="faq.html">
+                                        <span class="icon"><i class="icon20 i-question"></i></span>
+                                        <span class="txt">FAQ page</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="blank.html">
+                                        <span class="icon"><i class="icon20 i-file-7"></i></span>
+                                        <span class="txt">Blank page</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav> <!-- End #mainnav -->
+            </div> <!-- End .sidebar-wrapper  -->
+        </aside><!-- End #sidebar  -->
+
+        <section id="content">
+            <div class="wrapper">
+                <div class="crumb">
+                    <ul class="breadcrumb">
+                      <li><a href="#"><i class="icon16 i-home-4"></i>Home</a></li>
+                      <li><a href="#">Library</a></li>
+                      <li class="active">Data</li>
+                    </ul>
+                </div>
+                
+                <div class="container-fluid">
+                    <div id="heading" class="page-header">
+                        <h1><i class="icon20 i-table-2"></i> Tables</h1>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="page-header">
+                                <h4>Default table</h4>
+                            </div>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>First Name</th>
+                                        <th>Last Name</th>
+                                        <th>Username</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Mark</td>
+                                        <td>Otto</td>
+                                        <td>@mdo</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>Jacob</td>
+                                        <td>Thornton</td>
+                                        <td>@fat</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>Larry</td>
+                                        <td>the Bird</td>
+                                        <td>@twitter</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div><!-- End .col-lg-6  --> 
+                        <div class="col-lg-6">
+                            <div class="page-header">
+                                <h4>Striped table</h4>
+                            </div>
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>First Name</th>
+                                        <th>Last Name</th>
+                                        <th>Username</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Mark</td>
+                                        <td>Otto</td>
+                                        <td>@mdo</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>Jacob</td>
+                                        <td>Thornton</td>
+                                        <td>@fat</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>Larry</td>
+                                        <td>the Bird</td>
+                                        <td>@twitter</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div><!-- End .col-lg-6  -->
+                    </div><!-- End .row-fluid  -->
+
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="page-header">
+                                <h4>Bordered table</h4>
+                            </div>
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th >#</th>
+                                        <th>First Name</th>
+                                        <th>Last Name</th>
+                                        <th>Username</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="center">1</td>
+                                        <td>Mark</td>
+                                        <td>Otto</td>
+                                        <td>@mdo</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center">2</td>
+                                        <td>Jacob</td>
+                                        <td>Thornton</td>
+                                        <td>@fat</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center">3</td>
+                                        <td>Larry</td>
+                                        <td>the Bird</td>
+                                        <td>@twitter</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div><!-- End .col-lg-6  -->
+                        <div class="col-lg-6">
+                            <div class="page-header">
+                                <h4>Hover table</h4>
+                            </div>
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>First Name</th>
+                                        <th>Last Name</th>
+                                        <th>Username</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Mark</td>
+                                        <td>Otto</td>
+                                        <td>@mdo</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>Jacob</td>
+                                        <td>Thornton</td>
+                                        <td>@fat</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>Larry</td>
+                                        <td>the Bird</td>
+                                        <td>@twitter</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div><!-- End .col-lg-6  -->
+                    </div><!-- End .row-fluid  -->
+
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="page-header">
+                                <h4>Condensed table</h4>
+                            </div>
+                            <table class="table table-condensed">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>First Name</th>
+                                        <th>Last Name</th>
+                                        <th>Username</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Mark</td>
+                                        <td>Otto</td>
+                                        <td>@mdo</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>Jacob</td>
+                                        <td>Thornton</td>
+                                        <td>@fat</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>Larry</td>
+                                        <td>the Bird</td>
+                                        <td>@twitter</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div><!-- End .col-lg-6  -->
+
+                        <div class="col-lg-6">
+                            <div class="page-header">
+                                <h4>Optional row classes</h4>
+                            </div>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Product</th>
+                                        <th>Payment Taken</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="success">
+                                        <td>1</td>
+                                        <td>TB - Monthly</td>
+                                        <td>01/04/2012</td>
+                                        <td>Approved</td>
+                                    </tr>
+                                    <tr class="error">
+                                        <td>2</td>
+                                        <td>TB - Monthly</td>
+                                        <td>02/04/2012</td>
+                                        <td>Declined</td>
+                                    </tr>
+                                    <tr class="warning">
+                                        <td>3</td>
+                                        <td>TB - Monthly</td>
+                                        <td>03/04/2012</td>
+                                        <td>Pending</td>
+                                    </tr>
+                                    <tr class="info">
+                                        <td>4</td>
+                                        <td>TB - Monthly</td>
+                                        <td>04/04/2012</td>
+                                        <td>Call in to confirm</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                        </div><!-- End .col-lg-6  -->
+                    </div><!-- End .row-fluid  -->
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="page-header">
+                                <h4>Combined header cells</h4>
+                            </div>
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>First Name</th>
+                                        <th>Last Name</th>
+                                        <th>Username</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th>1</th>
+                                        <td>Mark</td>
+                                        <td>Otto</td>
+                                        <td>@mdo</td>
+                                    </tr>
+                                    <tr>
+                                        <th>2</th>
+                                        <td>Jacob</td>
+                                        <td>Thornton</td>
+                                        <td>@fat</td>
+                                    </tr>
+                                    <tr>
+                                        <th>3</th>
+                                        <td>Larry</td>
+                                        <td>the Bird</td>
+                                        <td>@twitter</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div><!-- End .col-lg-6  -->
+                        <div class="col-lg-6">
+                            <div class="page-header">
+                                <h4>With row link</h4>
+                            </div>
+                            <table data-provides="rowlink" class="table table-striped table-bordered table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Description</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="rowlink">
+                                        <td>Modals</td>
+                                        <td>A streamlined, but flexible, take on the traditional javascript modal plugin with only the minimum required functionality and smart defaults.</td>
+                                        <td><a href="#action">Action</a></td>
+                                    </tr>
+                                    <tr class="rowlink">
+                                        <td>Dropdowns</td>
+                                        <td>Add dropdown menus to nearly anything in Bootstrap with this simple plugin. Bootstrap features full dropdown menu support on in the navbar, tabs, and pills.</td>
+                                        <td class="nolink"><a href="#">Action</a></td>
+                                    </tr>
+                                    <tr class="rowlink">
+                                        <td>Scrollspy</td>
+                                        <td>Use scrollspy to automatically update the links in your navbar to show the current active link based on scroll position.</td>
+                                        <td class="nolink"><a href="#">Action</a></td>
+                                    </tr>
+                                    <tr class="rowlink">
+                                        <td>Togglable tabs</td>
+                                        <td>Use this plugin to make tabs and pills more useful by allowing them to toggle through tabbable panes of local content.</td>
+                                        <td class="nolink"><a href="#">Action</a></td>
+                                    </tr>
+                                    <tr class="rowlink">
+                                        <td>Tooltips</td>
+                                        <td>A new take on the jQuery Tipsy plugin, Tooltips don't rely on images, uss CSS3 for animations, and data-attributes for local title storage.</td>
+                                        <td class="nolink"><a href="#">Action</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div><!-- End .col-lg-6  --> 
+                    </div><!-- End .row-fluid  -->
+
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <div class="icon"><i class="icon20 i-cube"></i></div>
+                                    <h4>Inside widget box <small>with no padding</small></h4>
+                                    <a href="#" class="minimize"></a>
+                                </div><!-- End .panel-heading -->
+                            
+                                <div class="panel-body noPadding">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>First Name</th>
+                                                <th>Last Name</th>
+                                                <th>Username</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Mark</td>
+                                                <td>Otto</td>
+                                                <td>@mdo</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Jacob</td>
+                                                <td>Thornton</td>
+                                                <td>@fat</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Larry</td>
+                                                <td>the Bird</td>
+                                                <td>@twitter</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div><!-- End .panel-body -->
+                            </div><!-- End .widget -->
+                        </div><!-- End .col-lg-6  --> 
+                        <div class="col-lg-6">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <div class="icon"><i class="icon20 i-cube"></i></div> 
+                                    <h4>Table with checkboxes</h4>
+                                    <a href="#" class="minimize"></a>
+                                </div><!-- End .panel-heading -->
+                            
+                                <div class="panel-body">
+                                    <table class="table table-bordered checkAll">
+                                        <thead>
+                                            <tr>
+                                                <th><input type="checkbox" value="all" class="master-check"></th>
+                                                <th>First Name</th>
+                                                <th>Last Name</th>
+                                                <th>Username</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="center"><input type="checkbox" value="1" class="checkIt"></td>
+                                                <td>Mark</td>
+                                                <td>Otto</td>
+                                                <td>@mdo</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="center"><input type="checkbox" value="2" class="checkIt"></td>
+                                                <td>Jacob</td>
+                                                <td>Thornton</td>
+                                                <td>@fat</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="center"><input type="checkbox" value="3" class="checkIt"></td>
+                                                <td>Larry</td>
+                                                <td>the Bird</td>
+                                                <td>@twitter</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div><!-- End .panel-body -->
+                            </div><!-- End .widget -->
+                        </div><!-- End .col-lg-6  -->
+                    </div><!-- End .row-fluid  -->
+
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="page-header">
+                                <h4>Table with footer</h4>
+                            </div>
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>First Name</th>
+                                        <th>Last Name</th>
+                                        <th>Username</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Mark</td>
+                                        <td>Otto</td>
+                                        <td>@mdo</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>Jacob</td>
+                                        <td>Thornton</td>
+                                        <td>@fat</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>Larry</td>
+                                        <td>the Bird</td>
+                                        <td>@twitter</td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td class="center">#</td>
+                                        <td class="center">First Name</td>
+                                        <td class="center">Last Name</td>
+                                        <td class="center">Username</td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div><!-- End .col-lg-6  -->
+
+                        <div class="col-lg-6">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <div class="icon"><i class="icon20 i-cube"></i></div> 
+                                    <h4>Table with toolbar</h4>
+                                    <a href="#" class="minimize"></a>
+                                </div><!-- End .panel-heading -->
+                            
+                                <div class="panel-body noPadding">
+
+                                    <div class="table-toolbar btn-toolbar">
+                                        <div class="btn-group">
+                                            <a href="#" class="btn btn-default btn-xs select-all"> <i class="icon12 i-checkbox-checked-2"></i> Check All</a>
+                                            <a href="#" class="btn btn-default btn-xs deselect-all"><i class="icon12 i-checkbox-unchecked-3"></i> Uncheck All</a>
+                                        </div>
+                                        <div class="btn-group pull-right">
+                                            <a href="#" class="btn btn-xs btn-danger"><i class="icon12 i-remove"></i> Delete</a>
+                                        </div>
+                                    </div>
+
+                                    <table class="table table-bordered checkAll">
+                                        <thead>
+                                            <tr>
+                                                <th></th>
+                                                <th>First Name</th>
+                                                <th>Last Name</th>
+                                                <th>Username</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="center"><input type="checkbox" value="1" class="checkIt"></td>
+                                                <td>Mark</td>
+                                                <td>Otto</td>
+                                                <td>@mdo</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="center"><input type="checkbox" value="2" class="checkIt"></td>
+                                                <td>Jacob</td>
+                                                <td>Thornton</td>
+                                                <td>@fat</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="center"><input type="checkbox" value="3" class="checkIt"></td>
+                                                <td>Larry</td>
+                                                <td>the Bird</td>
+                                                <td>@twitter</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    
+                                </div><!-- End .panel-body -->
+                            </div><!-- End .widget -->
+                        </div><!-- End .col-lg-6  -->
+                    </div><!-- End .row-fluid  -->
+
+                    <div class="row">
+
+                        <div class="col-lg-12">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <div class="icon"><i class="icon20 i-images"></i></div> 
+                                    <h4>Media table</h4>
+                                    <a href="#" class="minimize"></a>
+                                </div><!-- End .panel-heading -->
+                            
+                                <div class="panel-body noPadding">
+
+                                    <table class="table table-bordered table-hover table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>Thumbnail</th>
+                                                <th>Title</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="center vcenter">1</td>
+                                                <td class="center"><img src="images/avatars/sugge.jpg" alt="sugge"></td>
+                                                <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum, qui nostrum nisi reprehenderit provident sunt accusamus ipsum nobis necessitatibus aperiam non at soluta impedit consequatur officiis ea pariatur animi reiciendis.</td>
+                                                <td class="center vcenter">
+                                                    <div class="btn-group">
+                                                        <a href="#" class="btn btn-default tip" title="View image"><i class="icon16 i-eye-3"></i></a>
+                                                        <a href="#" class="btn btn-default tip" title="Edit image"><i class="icon16 i-pencil"></i></a>
+                                                        <a href="#" class="btn btn-default tip" title="Remove this image"><i class="icon16 i-remove"></i></a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="center vcenter">2</td>
+                                                <td class="center"><img src="images/avatars/sugge.jpg" alt="sugge"></td>
+                                                <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, eos similique dolorum incidunt deserunt neque ipsam exercitationem odit aspernatur consectetur! Ab, laborum non expedita placeat nobis architecto assumenda maiores ullam.</td>
+                                                <td class="center vcenter">
+                                                    <div class="btn-group">
+                                                        <a href="#" class="btn btn-default tip" title="View image"><i class="icon16 i-eye-3"></i></a>
+                                                        <a href="#" class="btn btn-default tip" title="Edit image"><i class="icon16 i-pencil"></i></a>
+                                                        <a href="#" class="btn btn-default tip" title="Remove this image"><i class="icon16 i-remove"></i></a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="center vcenter">3</td>
+                                                <td class="center"><img src="images/avatars/sugge.jpg" alt="sugge"></td>
+                                                <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro, aspernatur, illo voluptatum velit incidunt omnis iure facere eveniet eos aliquam accusamus autem molestiae officiis sequi cum fugiat aliquid voluptate et.</td>
+                                                <td class="center vcenter">
+                                                    <div class="btn-group">
+                                                        <a href="#" class="btn btn-default tip" title="View image"><i class="icon16 i-eye-3"></i></a>
+                                                        <a href="#" class="btn btn-default tip" title="Edit image"><i class="icon16 i-pencil"></i></a>
+                                                        <a href="#" class="btn btn-default tip" title="Remove this image"><i class="icon16 i-remove"></i></a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="center vcenter">4</td>
+                                                <td class="center"><img src="images/avatars/sugge.jpg" alt="sugge"></td>
+                                                <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro, aspernatur, illo voluptatum velit incidunt omnis iure facere eveniet eos aliquam accusamus autem molestiae officiis sequi cum fugiat aliquid voluptate et.</td>
+                                                <td class="center vcenter">
+                                                    <div class="btn-group">
+                                                        <a href="#" class="btn btn-default tip" title="View image"><i class="icon16 i-eye-3"></i></a>
+                                                        <a href="#" class="btn btn-default tip" title="Edit image"><i class="icon16 i-pencil"></i></a>
+                                                        <a href="#" class="btn btn-default tip" title="Remove this image"><i class="icon16 i-remove"></i></a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="center vcenter">5</td>
+                                                <td class="center"><img src="images/avatars/sugge.jpg" alt="sugge"></td>
+                                                <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro, aspernatur, illo voluptatum velit incidunt omnis iure facere eveniet eos aliquam accusamus autem molestiae officiis sequi cum fugiat aliquid voluptate et.</td>
+                                                <td class="center vcenter">
+                                                    <div class="btn-group">
+                                                        <a href="#" class="btn btn-default tip" title="View image"><i class="icon16 i-eye-3"></i></a>
+                                                        <a href="#" class="btn btn-default tip" title="Edit image"><i class="icon16 i-pencil"></i></a>
+                                                        <a href="#" class="btn btn-default tip" title="Remove this image"><i class="icon16 i-remove"></i></a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="center vcenter">6</td>
+                                                <td class="center"><img src="images/avatars/sugge.jpg" alt="sugge"></td>
+                                                <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro, aspernatur, illo voluptatum velit incidunt omnis iure facere eveniet eos aliquam accusamus autem molestiae officiis sequi cum fugiat aliquid voluptate et.</td>
+                                                <td class="center vcenter">
+                                                    <div class="btn-group">
+                                                        <a href="#" class="btn btn-default tip" title="View image"><i class="icon16 i-eye-3"></i></a>
+                                                        <a href="#" class="btn btn-default tip" title="Edit image"><i class="icon16 i-pencil"></i></a>
+                                                        <a href="#" class="btn btn-default tip" title="Remove this image"><i class="icon16 i-remove"></i></a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="center vcenter">7</td>
+                                                <td class="center"><img src="images/avatars/sugge.jpg" alt="sugge"></td>
+                                                <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro, aspernatur, illo voluptatum velit incidunt omnis iure facere eveniet eos aliquam accusamus autem molestiae officiis sequi cum fugiat aliquid voluptate et.</td>
+                                                <td class="center vcenter">
+                                                    <div class="btn-group">
+                                                        <a href="#" class="btn btn-default tip" title="View image"><i class="icon16 i-eye-3"></i></a>
+                                                        <a href="#" class="btn btn-default tip" title="Edit image"><i class="icon16 i-pencil"></i></a>
+                                                        <a href="#" class="btn btn-default tip" title="Remove this image"><i class="icon16 i-remove"></i></a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="center vcenter">8</td>
+                                                <td class="center"><img src="images/avatars/sugge.jpg" alt="sugge"></td>
+                                                <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro, aspernatur, illo voluptatum velit incidunt omnis iure facere eveniet eos aliquam accusamus autem molestiae officiis sequi cum fugiat aliquid voluptate et.</td>
+                                                <td class="center vcenter">
+                                                    <div class="btn-group">
+                                                        <a href="#" class="btn btn-default tip" title="View image"><i class="icon16 i-eye-3"></i></a>
+                                                        <a href="#" class="btn btn-default tip" title="Edit image"><i class="icon16 i-pencil"></i></a>
+                                                        <a href="#" class="btn btn-default tip" title="Remove this image"><i class="icon16 i-remove"></i></a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="center vcenter">9</td>
+                                                <td class="center"><img src="images/avatars/sugge.jpg" alt="sugge"></td>
+                                                <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro, aspernatur, illo voluptatum velit incidunt omnis iure facere eveniet eos aliquam accusamus autem molestiae officiis sequi cum fugiat aliquid voluptate et.</td>
+                                                <td class="center vcenter">
+                                                    <div class="btn-group">
+                                                        <a href="#" class="btn btn-default tip" title="View image"><i class="icon16 i-eye-3"></i></a>
+                                                        <a href="#" class="btn btn-default tip" title="Edit image"><i class="icon16 i-pencil"></i></a>
+                                                        <a href="#" class="btn btn-default tip" title="Remove this image"><i class="icon16 i-remove"></i></a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="center vcenter">10</td>
+                                                <td class="center"><img src="images/avatars/sugge.jpg" alt="sugge"></td>
+                                                <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro, aspernatur, illo voluptatum velit incidunt omnis iure facere eveniet eos aliquam accusamus autem molestiae officiis sequi cum fugiat aliquid voluptate et.</td>
+                                                <td class="center vcenter">
+                                                    <div class="btn-group">
+                                                        <a href="#" class="btn btn-default tip" title="View image"><i class="icon16 i-eye-3"></i></a>
+                                                        <a href="#" class="btn btn-default tip" title="Edit image"><i class="icon16 i-pencil"></i></a>
+                                                        <a href="#" class="btn btn-default tip" title="Remove this image"><i class="icon16 i-remove"></i></a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    
+                                </div><!-- End .panel-body -->
+                            </div><!-- End .widget -->
+                        </div><!-- End .col-lg-12  --> 
+                                            
+                    </div><!-- End .row-fluid  -->
+
+                </div> <!-- End .container-fluid  -->
+            </div> <!-- End .wrapper  -->
+        </section>
+    </div><!-- End .main  -->
+  </body>
+</html>

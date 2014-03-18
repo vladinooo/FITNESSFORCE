@@ -1,0 +1,1263 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Genyx admin v1.0</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="SuggeElson" />
+    <meta name="description" content="Genyx admin template - new premium responsive admin template. This template is designed to help you build the site administration without losing valuable time.Template contains all the important functions which must have one backend system.Build on great twitter boostrap framework" />
+    <meta name="keywords" content="admin, admin template, admin theme, responsive, responsive admin, responsive admin template, responsive theme, themeforest, 960 grid system, grid, grid theme, liquid, jquery, administration, administration template, administration theme, mobile, touch , responsive layout, boostrap, twitter boostrap" />
+    <meta name="application-name" content="Genyx admin template" />
+
+    <!-- Headings -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,800,700' rel='stylesheet' type='text/css'>
+    <!-- Text -->
+    <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css' />
+
+     <!--[if lt IE 9]>
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400" rel="stylesheet" type="text/css" />
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:700" rel="stylesheet" type="text/css" />
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:800" rel="stylesheet" type="text/css" />
+    <link href="http://fonts.googleapis.com/css?family=Droid+Sans:400" rel="stylesheet" type="text/css" />
+    <link href="http://fonts.googleapis.com/css?family=Droid+Sans:700" rel="stylesheet" type="text/css" />
+    <![endif]-->
+
+    <!-- Core stylesheets do not remove -->
+    <link href="css/bootstrap/bootstrap.css" rel="stylesheet" />
+    <link href="css/bootstrap/bootstrap-theme.css" rel="stylesheet" />
+    <link href="css/icons.css" rel="stylesheet" />
+    <link href="css/genyx-theme/jquery.ui.genyx.css" rel="stylesheet" />
+    
+    <!-- Plugins stylesheets -->
+    <link href="js/plugins/forms/uniform/uniform.default.css" rel="stylesheet" /> 
+    <link href="js/plugins/forms/switch/bootstrapSwitch.css" rel="stylesheet" /> 
+    <link href="js/plugins/forms/spectrum/spectrum.css" rel="stylesheet" /> 
+    <link href="js/plugins/forms/datepicker/datepicker.css" rel="stylesheet" /> 
+    <link href="js/plugins/forms/select2/select2.css" rel="stylesheet" />
+    <link href="js/plugins/forms/multiselect/ui.multiselect.css" rel="stylesheet" />
+     
+    <!-- app stylesheets -->
+    <link href="css/app.css" rel="stylesheet" /> 
+    <!-- <link rel="stylesheet/less" type="text/css" href="css/app.less" /> -->
+
+    <!-- Custom stylesheets ( Put your own changes here ) -->
+    <link href="css/custom.css" rel="stylesheet" /> 
+
+    <!--[if IE 8]><link href="css/ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
+
+    <!-- Force IE9 to render in normal mode -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
+                    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+                                   <link rel="shortcut icon" href="images/ico/favicon.png">
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Important plugins put in all pages -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script> 
+    <script src="js/bootstrap/bootstrap.js"></script>  
+    <script src="js/conditionizr.min.js"></script>  
+    <script src="js/plugins/core/nicescroll/jquery.nicescroll.min.js"></script>
+    <script src="js/plugins/core/jrespond/jRespond.min.js"></script>
+    <script src="js/jquery.genyxAdmin.js"></script>
+
+    <!-- Form plugins -->
+    <script src="js/jquery.mousewheel.js"></script>
+    <script src="js/plugins/forms/uniform/jquery.uniform.min.js"></script>
+    <script src="js/plugins/forms/autosize/jquery.autosize-min.js"></script>
+    <script src="js/plugins/forms/inputlimit/jquery.inputlimiter.1.3.min.js"></script>
+    <script src="js/plugins/forms/mask/jquery.mask.min.js"></script>
+    <script src="js/plugins/forms/switch/bootstrapSwitch.js"></script>
+    <script src="js/plugins/forms/globalize/globalize.js"></script>
+    <script src="js/plugins/forms/spectrum/spectrum.js"></script><!--  Color picker -->
+    <script src="js/plugins/forms/datepicker/bootstrap-datepicker.js"></script> 
+    <script src="js/plugins/forms/select2/select2.js"></script> 
+    <script src="js/plugins/forms/multiselect/ui.multiselect.js"></script>
+    <script src="js/plugins/forms/tinymce/tinymce.min.js"></script>
+    
+    <!-- Init plugins -->
+    <script src="js/app.js"></script><!-- Core js functions -->
+    <script src="js/pages/form-elements.js"></script><!-- Init plugins only for page -->
+
+  </head>
+  <body>
+    <header id="header">
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <a class="navbar-brand" href="dashboard.html"><img src="images/logo.png" alt="Genyx admin" class="img-responsive"></a>
+            <button type="button" class="navbar-toggle btn-danger" data-toggle="collapse" data-target="#navbar-to-collapse">
+                <span class="sr-only">Toggle right menu</span>
+                <i class="icon16 i-arrow-8"></i>
+            </button>          
+            <div class="collapse navbar-collapse" id="navbar-to-collapse">  
+                <form id="top-search" class="navbar-form navbar-left" role="search">
+                    <div class="input-group">
+                        <input type="text" name="tsearch" id="tsearch" placeholder="Search here ..." class="search-query form-control">
+                        <span class="input-group-btn">
+                            <button type="submit" class="btn"><i class="icon16 i-search-2 gap-right0"></i></button>
+                        </span>
+                    </div>
+                </form>  
+                <ul class="nav navbar-nav pull-right">
+                    <li class="divider-vertical"></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="icon24 i-bell-2"></i>
+                            <span class="notification red">6</span>
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li role="presentation"><a href="#" class=""><i class="icon16 i-calendar-2"></i> Admin Jenny add event</a></li>
+                            <li role="presentation"><a href="#" class=""><i class="icon16 i-file-zip"></i> User Dexter attach file</a></li>
+                            <li role="presentation"><a href="#" class=""><i class="icon16 i-stack-picture"></i> User Dexter attach 3 pictures</a></li>
+                            <li role="presentation"><a href="#" class=""><i class="icon16 i-cart-add"></i> New orders <span class="notification green">2</span></a></li>
+                            <li role="presentation"><a href="#" class=""><i class="icon16 i-bubbles-2"></i> New comments <span class="notification red">5</span></a></li>
+                            <li role="presentation"><a href="#" class=""><i class="icon16 i-pie-5"></i> Daily stats is generated</a></li>
+                        </ul>
+                    </li>
+                    <li class="divider-vertical"></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="icon24 i-envelop-2"></i>
+                            <span class="notification red">3</span>
+                        </a>
+                        <ul class="dropdown-menu messages" role="menu">
+                            <li class="head" role="presentation">
+                                <h4>Inbox</h4>
+                                <span class="count">3 messages</span>
+                                <span class="new-msg"><a href="#" class="tipB" title="Write message"><i class="icon16 i-pencil-5"></i></a></span>
+                            </li>
+                            <li role="presentation">
+                                <a href="#" class="clearfix">
+                                    <span class="avatar"><img src="images/avatars/peter.jpg" alt="avatar"></span>
+                                    <span class="msg">Call me i need to talk with you</span>
+                                    <button class="btn close"><i class="icon12 i-close-2"></i></button>
+                                </a>
+                            </li>
+                            <li role="presentation">
+                                <a href="#" class="clearfix">
+                                    <span class="avatar"><img src="images/avatars/milen.jpg" alt="avatar"></span>
+                                    <span class="msg">Problem with registration</span>
+                                    <button class="btn close"><i class="icon12 i-close-2"></i></button>
+                                </a>
+                            </li>
+                            <li role="presentation">
+                                <a href="#" class="clearfix">
+                                    <span class="avatar"><img src="images/avatars/anonime.jpg" alt="avatar"></span>
+                                    <span class="msg">I have question about ...</span>
+                                    <button class="btn close"><i class="icon12 i-close-2"></i></button>
+                                </a>
+                            </li>
+                            <li class="foot" role="presentation"><a href="email.html">View all messages</a></li>
+                        </ul>
+                    </li>
+                    <li class="divider-vertical"></li>
+                    <li class="dropdown user">
+                         <a href="#" class="dropdown-toggle avatar" data-toggle="dropdown">
+                            <img src="images/avatars/sugge.jpg" alt="sugge">
+                            <span class="more"><i class="icon16 i-arrow-down-2"></i></span>
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li role="presentation"><a href="#" class=""><i class="icon16 i-cogs"></i> Settings</a></li>
+                            <li role="presentation"><a href="profile.html" class=""><i class="icon16 i-user"></i> Profile</a></li>
+                            <li role="presentation"><a href="index.html" class=""><i class="icon16 i-exit"></i> Logout</a></li>
+                        </ul>
+                    </li>
+                    <li class="divider-vertical"></li>
+                </ul>
+            </div><!--/.nav-collapse -->
+        </nav>
+    </header> <!-- End #header  -->
+    <div class="main">
+        <aside id="sidebar">
+            <div class="side-options">
+                <ul>
+                    <li><a href="#" id="collapse-nav" class="act act-primary tip" title="Collapse navigation"><i class="icon16 i-arrow-left-7"></i></a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-wrapper">
+                <nav id="mainnav">
+                    <ul class="nav nav-list">
+                        <li>
+                            <a href="dashboard.html">
+                                <span class="icon"><i class="icon20 i-screen"></i></span>
+                                <span class="txt">Dashboard</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="charts.html">
+                                <span class="icon"><i class="icon20 i-stats-up"></i></span>
+                                <span class="txt">Charts</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="icon"><i class="icon20 i-menu-6"></i></span>
+                                <span class="txt">Forms</span>
+                            </a>
+                            <ul class="sub">
+                                <li>
+                                    <a href="form-elements.html">
+                                        <span class="icon"><i class="icon20 i-stack-list"></i></span>
+                                        <span class="txt">Form elements</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="form-validation.html">
+                                        <span class="icon"><i class="icon20 i-stack-checkmark"></i></span>
+                                        <span class="txt">Form validation</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="form-wizard.html">
+                                        <span class="icon"><i class="icon20 i-stack-star"></i></span>
+                                        <span class="txt">Form wizard</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="icon"><i class="icon20 i-table-2"></i></span>
+                                <span class="txt">Tables</span>
+                            </a>
+                            <ul class="sub">
+                                <li>
+                                    <a href="tables.html">
+                                        <span class="icon"><i class="icon20 i-table"></i></span>
+                                        <span class="txt">Static tables</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="data-tables.html">
+                                        <span class="icon"><i class="icon20 i-table"></i></span>
+                                        <span class="txt">Data tables</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="grid.html">
+                                <span class="icon"><i class="icon20 i-grid-5"></i></span>
+                                <span class="txt">Grid</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="typo.html">
+                                <span class="icon"><i class="icon20 i-font"></i></span>
+                                <span class="txt">Typography</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="calendar.html">
+                                <span class="icon"><i class="icon20 i-calendar"></i></span>
+                                <span class="txt">Calendar</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="icon"><i class="icon20 i-cogs"></i></span>
+                                <span class="txt">Ui Elements</span>
+                            </a>
+                            <ul class="sub">
+                                <li>
+                                    <a href="icons.html">
+                                        <span class="icon"><i class="icon20 i-IcoMoon"></i></span>
+                                        <span class="txt">Icons</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="buttons.html">
+                                        <span class="icon"><i class="icon20 i-point-up"></i></span>
+                                        <span class="txt">Buttons</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="ui-elements.html">
+                                        <span class="icon"><i class="icon20 i-puzzle"></i></span>
+                                        <span class="txt">UI Elements</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="gallery.html">
+                                <span class="icon"><i class="icon20 i-images"></i></span>
+                                <span class="txt">Gallery</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="maps.html">
+                                <span class="icon"><i class="icon20 i-location-4"></i></span>
+                                <span class="txt">Maps</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="file-manager.html">
+                                <span class="icon"><i class="icon20 i-cloud-upload"></i></span>
+                                <span class="txt">File manager</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="widgets.html">
+                                <span class="icon"><i class="icon20 i-cube-3"></i></span>
+                                <span class="txt">Widgets</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="icon"><i class="icon20 i-file-8"></i></span>
+                                <span class="txt">Pages</span>
+                            </a>
+                            <ul class="sub">
+                                <li>
+                                    <a href="#">
+                                        <span class="icon"><i class="icon20 i-warning"></i></span>
+                                        <span class="txt">Error Pages</span>
+                                    </a>
+                                    <ul class="sub">
+                                        <li>
+                                            <a href="403.html">
+                                                <span class="icon"><i class="icon20 i-notification"></i></span>
+                                                <span class="txt">Error 403</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="404.html">
+                                                <span class="icon"><i class="icon20 i-notification"></i></span>
+                                                <span class="txt">Error 404</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="405.html">
+                                                <span class="icon"><i class="icon20 i-notification"></i></span>
+                                                <span class="txt">Error 405</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="500.html">
+                                                <span class="icon"><i class="icon20 i-notification"></i></span>
+                                                <span class="txt">Error 500</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="503.html">
+                                                <span class="icon"><i class="icon20 i-notification"></i></span>
+                                                <span class="txt">Error 503</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="offline.html">
+                                                <span class="icon"><i class="icon20 i-notification"></i></span>
+                                                <span class="txt">Offline page</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="invoice.html">
+                                        <span class="icon"><i class="icon20 i-credit"></i></span>
+                                        <span class="txt">Invoice page</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="profile.html">
+                                        <span class="icon"><i class="icon20 i-user"></i></span>
+                                        <span class="txt">Profile page</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="search.html">
+                                        <span class="icon"><i class="icon20 i-search-2"></i></span>
+                                        <span class="txt">Search page</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="email.html">
+                                        <span class="icon"><i class="icon20 i-envelop-2"></i></span>
+                                        <span class="txt">Email page</span>
+                                    </a>
+                                </li>                                
+                                <li>
+                                    <a href="faq.html">
+                                        <span class="icon"><i class="icon20 i-question"></i></span>
+                                        <span class="txt">FAQ page</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="blank.html">
+                                        <span class="icon"><i class="icon20 i-file-7"></i></span>
+                                        <span class="txt">Blank page</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav> <!-- End #mainnav -->
+            </div> <!-- End .sidebar-wrapper  -->
+        </aside><!-- End #sidebar  -->
+        <section id="content">
+            <div class="wrapper">
+                <div class="crumb">
+                    <ul class="breadcrumb">
+                      <li><a href="#"><i class="icon16 i-home-4"></i>Home</a></li>
+                      <li><a href="#">Library</a></li>
+                      <li class="active">Data</li>
+                    </ul>
+                </div>
+                
+                <div class="container-fluid">
+                    <div id="heading" class="page-header">
+                        <h1><i class="icon20 i-list-4"></i> Form elements</h1>
+                    </div>
+
+                    <div class="row">
+                        
+                        <div class="col-lg-6">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <div class="icon"><i class="icon20 i-menu-6"></i></div>
+                                    <h4>Text fields</h4>
+                                    <a href="#" class="minimize"></a>
+                                </div><!-- End .panel-heading -->
+                            
+                                <div class="panel-body">
+                                    
+                                    <form class="form-horizontal" role="form" action="#">
+
+                                        <div class="form-group">
+                                            <label class="col-lg-2 control-label" for="normal">Normal field</label>
+                                            <div class="col-lg-10">
+                                                <input class="form-control" type="text" id="normalField">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-lg-2 control-label" for="focused">Focused input</label>
+                                            <div class="col-lg-10">
+                                                <input class="form-control" id="focusedInput" type="text" value="This is focused…" autofocus="autofocus" />
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-lg-2 control-label" for="password">Password field</label>
+                                            <div class="col-lg-10">
+                                                <input class="form-control" id="passwordInput" type="password" />
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-lg-2 control-label" for="tooltip">With tooltip</label>
+                                            <div class="col-lg-10">
+                                                <input class="form-control tip" id="tooltipInput" type="text" title="What nice tooltip" />
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-lg-2 control-label" for="placeholder">With placeholder</label>
+                                            <div class="col-lg-10">
+                                                <input class="form-control" id="placeholderInput" type="text" placeholder="This is placeholder text" />
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-lg-2 control-label" for="readonly">Read only input</label>
+                                            <div class="col-lg-10">
+                                                <input class="form-control" type="text" readonly="readonly" value="Some value here" />
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-lg-2 control-label" for="disabled">Disabled input</label>
+                                            <div class="col-lg-10">
+                                                <input class="form-control disabled" id="disabledInput" type="text" placeholder="Disabled input here…" disabled="disabled" />
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-lg-2 control-label" for="maxlenght">Max lenght</label>
+                                            <div class="col-lg-10">
+                                                <input class="form-control" id="maxlengthInput" type="text" placeholder="Max lenght 20 characters" maxlength="20"/>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-lg-2 control-label" for="normal">Block help</label>
+                                            <div class="col-lg-10">
+                                                <input class="form-control" type="text"><span class="help-block">Some help text</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-lg-2 control-label" for="preapend">Prepended text</label>
+                                            <div class="col-lg-10">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">@</span>
+                                                    <input class="form-control" id="prependedInput" type="text" placeholder="Username">
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-lg-2 control-label" for="preapend">Appended text</label>
+                                            <div class="col-lg-10">
+                                                <div class="input-group">
+                                                    <input class="form-control" id="appendedInput" type="text">
+                                                    <span class="input-group-addon">.00</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-lg-2 control-label" for="buttons">With button</label>
+                                            <div class="col-lg-10">
+                                                <div class="input-group">
+                                                    <input class="form-control" id="appendedInputButton" type="text">
+                                                    <span class="input-group-btn">
+                                                        <button class="btn btn-default" type="button">Go!</button>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-lg-2 control-label" for="tags">Tags</label>
+                                            <div class="col-lg-10">
+                                                <input id="tags" type="text" value="awesome,nice" />
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-lg-2 control-label" for="fileinput">File input</label>
+                                            <div class="col-lg-10">
+                                                <input type="file" name="fileinput" id="file" />
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            
+                                            <div class="col-lg-offset-2">
+                                                <div class="pad-left15">
+                                                    <button type="submit" class="btn btn-primary">Save changes</button>
+                                                    <button type="button" class="btn">Cancel</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                            
+                                    </form>
+
+                                </div><!-- End .panel-body -->
+                            </div><!-- End .widget -->
+                        </div><!-- End .col-lg-6  -->                      
+
+                        <div class="col-lg-6">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <div class="icon"><i class="icon20 i-menu-6"></i></div>
+                                    <h4>Masked input</h4>
+                                    <a href="#" class="minimize"></a>
+                                </div><!-- End .panel-heading -->
+                            
+                                <div class="panel-body">
+                                    <form class="form-horizontal" role="form">
+                                        <div class="form-group">
+                                            <label class="col-lg-2 control-label" for="date">Date field</label>
+                                            <div class="col-lg-10">
+                                                <input class="form-control date" type="text" />
+                                                <span class="help-block blue">11/11/1111</span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-lg-2 control-label" for="hour">Hour field</label>
+                                            <div class="col-lg-10">
+                                                <input class="form-control time" type="text" />
+                                                <span class="help-block blue">00:00:00</span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-lg-2 control-label" for="datetime">Date &amp; time</label>
+                                            <div class="col-lg-10">
+                                                <input class="form-control date_time" type="text" />
+                                                <span class="help-block blue">99/99/9999 00:00:00</span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-lg-2 control-label" for="zipcode">Zip code</label>
+                                            <div class="col-lg-10">
+                                                <input class="form-control cep" type="text" />
+                                                <span class="help-block blue">99999-999</span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-lg-2 control-label" for="zip_callback">Zip code with callback</label>
+                                            <div class="col-lg-10">
+                                                <input class="form-control cep_with_callback" type="text" />
+                                                <span class="help-block blue">99999-999</span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-lg-2 control-label" for="crazy_cep">Crazy zip code</label>
+                                            <div class="col-lg-10">
+                                                <input class="form-control crazy_cep"  type="text" />
+                                                <span class="help-block blue">0-00-00-00</span>    
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-lg-2 control-label" for="money">Money</label>
+                                            <div class="col-lg-10">
+                                                <input class="form-control money" type="text" />
+                                                <span class="help-block blue">000.000.000.000.000,00</span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-lg-2 control-label" for="telephone">Telephone</label>
+                                            <div class="col-lg-10">
+                                                <input class="form-control phone" type="text" />
+                                                <span class="help-block blue">9999-9999</span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-lg-2 control-label" for="telephone_area">Telephone with codearea</label>
+                                            <div class="col-lg-10">
+                                                <input class="form-control phone_with_ddd" type="text" />
+                                                <span class="help-block blue">(99) 9999-9999</span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-lg-2 control-label" for="telephone_area">Us telephone</label>
+                                            <div class="col-lg-10">
+                                                <input class="form-control phone_us" type="text" />
+                                                <span class="help-block blue">(999) 999-9999</span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-lg-2 control-label" for="telephone_area">Sao Paulo Celphone</label>
+                                            <div class="col-lg-10">
+                                                <input class="form-control sp_celphones" type="text" />
+                                                <span class="help-block blue">(00) 0000-0000</span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-lg-2 control-label" for="mixed">Mixed type mask</label>
+                                            <div class="col-lg-10">
+                                                <input class="form-control mixed" type="text" />
+                                                <span class="help-block blue">AAA 000-S0S</span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-lg-2 control-label" for="ip">Ip address</label>
+                                            <div class="col-lg-10">
+                                                <input class="form-control ip_address" type="text" />
+                                                <span class="help-block blue">0ZZ.0ZZ.0ZZ.0ZZ</span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-lg-2 control-label" for="ip">Custom field</label>
+                                            <div class="col-lg-10">
+                                                <input class="form-control custom" type="text" />
+                                                <span class="help-block blue">00/00/0000</span>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div><!-- End .panel-body -->
+                            </div><!-- End .widget -->
+                        </div><!-- End .col-lg-6  --> 
+
+                    </div><!-- End .row-fluid  -->
+
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <div class="icon"><i class="icon20 i-menu-6"></i></div> 
+                                    <h4>Text areas</h4>
+                                    <a href="#" class="minimize"></a>
+                                </div><!-- End .panel-heading -->
+                            
+                                <div class="panel-body">
+                                    <form class="form-horizontal">
+                                        <div class="form-group">
+                                            <label class="col-lg-2 control-label" for="normal">Normal text area</label>
+                                            <div class="col-lg-10">
+                                                <textarea class="form-control" id="textarea" rows="3"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-lg-2 control-label" for="elastic">Elastic text area</label>
+                                            <div class="col-lg-10">
+                                                <textarea class="form-control elastic" id="textarea1" rows="3"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-lg-2 control-label" for="inputlimit">With input limit</label>
+                                            <div class="col-lg-10">
+                                                <textarea class="form-control limit" id="textarea2" rows="3"></textarea>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div><!-- End .panel-body -->
+                            </div><!-- End .widget -->
+                        </div><!-- End .col-lg-6  -->
+
+                        <div class="col-lg-6">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <div class="icon"><i class="icon20 i-menu-6"></i></div> 
+                                    <h4>Radio and Checkboxes</h4>
+                                    <a href="#" class="minimize"></a>
+                                </div><!-- End .panel-heading -->
+                            
+                                <div class="panel-body">
+                                    <form class="form-horizontal">
+                                        <div class="form-group">
+                                            <label class="col-lg-2 control-label" for="checkboxes">Checkboxes</label>
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" value="1"> Unchecked
+                                            </label>
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" value="2" checked="checked"> Checked
+                                            </label>
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" value="3" disabled="disabled"> Disabled
+                                            </label>
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" value="3" checked="checked" disabled="disabled"> Checked and Disabled
+                                            </label>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-lg-2 control-label" for="radio">Radio</label>
+                                            <label class="radio-inline">
+                                                <input type="radio" name="radio" value="1"> Unchecked
+                                            </label>
+                                            <label class="radio-inline">
+                                                <input type="radio" name="radio" value="2" checked> Checked
+                                            </label>
+                                            <label class="radio-inline">
+                                                <input type="radio" name="radio" value="3" disabled> Disabled
+                                            </label>
+                                            <label class="radio-inline">
+                                                <input type="radio" name="radio1" value="3" checked disabled> Checked and Disabled
+                                            </label>
+                                            
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-lg-2 control-label" for="toggle">Toggle buttons</label>
+                                            <div class="col-lg-10">
+                                                <div class="col-lg-12">
+
+                                                    <div class="switch" data-on="primary" data-off="danger" data-on-label="<i class='i-checkmark-3'></i>" data-off-label="<i class='i-close'></i>">
+                                                        <input class="toggle" type="checkbox" checked />
+                                                    </div>
+                                                     
+                                                    <div class="switch" data-on="info" data-off="success">
+                                                        <input class="toggle" type="checkbox" checked />
+                                                    </div>
+                                                     
+                                                    <div class="switch" data-on="success" data-off="warning">
+                                                        <input class="toggle"controls-row type="checkbox" checked />
+                                                    </div>
+                                                     
+                                                    <div class="switch" data-on="warning" data-off="danger">
+                                                        <input class="toggle" type="checkbox" checked />
+                                                    </div>
+                                                     
+                                                    <div class="switch" data-on="danger" data-off="primary">
+                                                        <input class="toggle" type="checkbox" checked />
+                                                    </div>
+                                                </div><!-- End .col-lg-12  --> 
+                                            </div>
+                                        </div>
+                                       
+                                    </form>
+                                </div><!-- End .panel-body -->
+                            </div><!-- End .widget -->
+                        </div><!-- End .col-lg-6  --> 
+                    </div><!-- End .row-fluid  -->
+
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <div class="icon"><i class="icon20 i-menu-6"></i></div> 
+                                    <h4>Spinners and pickers</h4>
+                                    <a href="#" class="minimize"></a>
+                                </div><!-- End .panel-heading -->
+                            
+                                <div class="panel-body">
+                                    <form class="form-horizontal">
+                                        <div class="form-group">
+                                            <label class="col-lg-2 control-label" for="spinner">Spinner</label>
+                                            <div class="col-lg-10">
+                                                <input class="form-control" type="text" id="spinner" name="spinner" value="1" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-lg-2 control-label" for="decimal">Decimal spinner</label>
+                                            <div class="col-lg-10">
+                                                <input class="form-control" type="text" id="spinner-decimal" name="spinner-decimal" value="5.06" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-lg-2 control-label" for="currency">Currency spinner</label>
+                                            <div class="col-lg-10">
+                                                <input class="form-control" type="text" id="spinner-currency" name="spinner-currency" value="5" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-lg-2 control-label" for="time">Time spinner</label>
+                                            <div class="col-lg-10">
+                                                <input class="form-control" type="text" id="spinner-time" name="spinner-time" value="08:30 PM" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-lg-2 control-label" for="colorpicker">Color picker</label>
+                                            <div class="col-lg-10">
+                                                <input type="text" id="color-picker" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-lg-2 control-label" for="colorpicker">Flat color picker</label>
+                                            <div class="col-lg-10">
+                                                <input type="text" id="color-picker-flat" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-lg-2 control-label" for="datepicker">Date picker</label>
+                                            <div class="col-lg-4">
+                                                <div id="datepicker" class="input-group date" data-date="12-02-2012" data-date-format="dd-mm-yyyy">
+                                                    <input size="16" class="form-control" type="text" value="12-02-2012">
+                                                    <span class="input-group-addon"><i class="icon16 i-calendar-4"></i></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-lg-2 control-label" for="inlinedate">Inline datepicker</label>
+                                            <div class="col-lg-10">
+                                                <div id="datepicker-inline"></div>
+                                            </div>
+                                        </div>
+                                    </form>     
+                                </div><!-- End .panel-body -->
+                            </div><!-- End .widget -->
+                        </div><!-- End .col-lg-6  --> 
+                        <div class="col-lg-6">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <div class="icon"><i class="icon20 i-menu-6"></i></div> 
+                                    <h4>Selects</h4>
+                                    <a href="#" class="minimize"></a>
+                                </div><!-- End .panel-heading -->
+                            
+                                <div class="panel-body">
+                                    <form class="form-horizontal">
+                                        <div class="form-group">
+                                            <label class="col-lg-2 control-label" for="select">Simple select</label>
+                                            <div class="col-lg-10"> 
+                                                <select name="select" class="form-control">
+                                                    <option>Who</option>
+                                                    <option selected="selected">What</option>
+                                                    <option>When</option>
+                                                    <option>Where</option>
+                                                    <option>How</option>
+                                                </select>  
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-lg-2 control-label" for="multiple">Simple multiselect</label>
+                                            <div class="col-lg-10">
+                                                <select name="select" multiple class="form-control">
+                                                    <option>Who</option>
+                                                    <option selected="selected">What</option>
+                                                    <option>When</option>
+                                                    <option>Where</option>
+                                                    <option>How</option>
+                                                </select> 
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-lg-2 control-label" for="selectFilter">Select with filter</label>
+                                            <div class="col-lg-10">
+                                                <select name="select" id="select1" class="select2">
+                                                    <option></option>
+                                                   <optgroup label="Alaskan/Hawaiian Time Zone">
+                                                       <option value="AK">Alaska</option>
+                                                       <option value="HI">Hawaii</option>
+                                                   </optgroup>
+                                                   <optgroup label="Pacific Time Zone">
+                                                       <option value="CA">California</option>
+                                                       <option value="NV">Nevada</option>
+                                                       <option value="OR">Oregon</option>
+                                                       <option value="WA">Washington</option>
+                                                   </optgroup>
+                                                   <optgroup label="Mountain Time Zone">
+                                                       <option value="AZ">Arizona</option>
+                                                       <option value="CO">Colorado</option>
+                                                       <option value="ID">Idaho</option>
+                                                       <option value="MT">Montana</option><option value="NE">Nebraska</option>
+                                                       <option value="NM">New Mexico</option>
+                                                       <option value="ND">North Dakota</option>
+                                                       <option value="UT">Utah</option>
+                                                       <option value="WY">Wyoming</option>
+                                                   </optgroup>
+                                                   <optgroup label="Central Time Zone">
+                                                       <option value="AL">Alabama</option>
+                                                       <option value="AR">Arkansas</option>
+                                                       <option value="IL">Illinois</option>
+                                                       <option value="IA">Iowa</option>
+                                                       <option value="KS">Kansas</option>
+                                                       <option value="KY">Kentucky</option>
+                                                       <option value="LA">Louisiana</option>
+                                                       <option value="MN">Minnesota</option>
+                                                       <option value="MS">Mississippi</option>
+                                                       <option value="MO">Missouri</option>
+                                                       <option value="OK">Oklahoma</option>
+                                                       <option value="SD">South Dakota</option>
+                                                       <option value="TX">Texas</option>
+                                                       <option value="TN">Tennessee</option>
+                                                       <option value="WI">Wisconsin</option>
+                                                   </optgroup>
+                                                   <optgroup label="Eastern Time Zone">
+                                                       <option value="CT">Connecticut</option>
+                                                       <option value="DE">Delaware</option>
+                                                       <option value="FL">Florida</option>
+                                                       <option value="GA">Georgia</option>
+                                                       <option value="IN">Indiana</option>
+                                                       <option value="ME">Maine</option>
+                                                       <option value="MD">Maryland</option>
+                                                       <option value="MA">Massachusetts</option>
+                                                       <option value="MI">Michigan</option>
+                                                       <option value="NH">New Hampshire</option><option value="NJ">New Jersey</option>
+                                                       <option value="NY">New York</option>
+                                                       <option value="NC">North Carolina</option>
+                                                       <option value="OH">Ohio</option>
+                                                       <option value="PA">Pennsylvania</option><option value="RI">Rhode Island</option><option value="SC">South Carolina</option>
+                                                       <option value="VT">Vermont</option><option value="VA">Virginia</option>
+                                                       <option value="WV">West Virginia</option>
+                                                   </optgroup>
+                                                </select>
+                                                
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-lg-2 control-label" for="multifilter">Multiselect with Filter</label>
+                                            <div class="col-lg-10">
+                                                
+                                                <select name="select" id="select2" class="select2" multiple>
+                                                   <optgroup label="Alaskan/Hawaiian Time Zone">
+                                                       <option value="AK">Alaska</option>
+                                                       <option value="HI">Hawaii</option>
+                                                   </optgroup>
+                                                   <optgroup label="Pacific Time Zone">
+                                                       <option value="CA">California</option>
+                                                       <option value="NV">Nevada</option>
+                                                       <option value="OR">Oregon</option>
+                                                       <option value="WA">Washington</option>
+                                                   </optgroup>
+                                                   <optgroup label="Mountain Time Zone">
+                                                       <option value="AZ">Arizona</option>
+                                                       <option value="CO">Colorado</option>
+                                                       <option value="ID">Idaho</option>
+                                                       <option value="MT">Montana</option><option value="NE">Nebraska</option>
+                                                       <option value="NM">New Mexico</option>
+                                                       <option value="ND">North Dakota</option>
+                                                       <option value="UT">Utah</option>
+                                                       <option value="WY">Wyoming</option>
+                                                   </optgroup>
+                                                   <optgroup label="Central Time Zone">
+                                                       <option value="AL">Alabama</option>
+                                                       <option value="AR">Arkansas</option>
+                                                       <option value="IL">Illinois</option>
+                                                       <option value="IA">Iowa</option>
+                                                       <option value="KS">Kansas</option>
+                                                       <option value="KY">Kentucky</option>
+                                                       <option value="LA">Louisiana</option>
+                                                       <option value="MN">Minnesota</option>
+                                                       <option value="MS">Mississippi</option>
+                                                       <option value="MO">Missouri</option>
+                                                       <option value="OK">Oklahoma</option>
+                                                       <option value="SD">South Dakota</option>
+                                                       <option value="TX">Texas</option>
+                                                       <option value="TN">Tennessee</option>
+                                                       <option value="WI">Wisconsin</option>
+                                                   </optgroup>
+                                                   <optgroup label="Eastern Time Zone">
+                                                       <option value="CT">Connecticut</option>
+                                                       <option value="DE">Delaware</option>
+                                                       <option value="FL">Florida</option>
+                                                       <option value="GA">Georgia</option>
+                                                       <option value="IN">Indiana</option>
+                                                       <option value="ME">Maine</option>
+                                                       <option value="MD">Maryland</option>
+                                                       <option value="MA">Massachusetts</option>
+                                                       <option value="MI">Michigan</option>
+                                                       <option value="NH">New Hampshire</option><option value="NJ">New Jersey</option>
+                                                       <option value="NY">New York</option>
+                                                       <option value="NC">North Carolina</option>
+                                                       <option value="OH">Ohio</option>
+                                                       <option value="PA">Pennsylvania</option><option value="RI">Rhode Island</option><option value="SC">South Carolina</option>
+                                                       <option value="VT">Vermont</option><option value="VA">Virginia</option>
+                                                       <option value="WV">West Virginia</option>
+                                                   </optgroup>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-lg-2 control-label" for="dualmultiselect">Dual Multiselect</label>
+                                            <div class="col-lg-10">
+                                                <select id="countries" class="multiselect" multiple="multiple" name="countries[]" style="height:200px;">
+                                                    <option value="AFG">Afghanistan</option>
+                                                    <option value="ALB">Albania</option>
+                                                    <option value="DZA">Algeria</option>
+                                                    <option value="AND">Andorra</option>
+                                                    <option value="ARG">Argentina</option>
+                                                    <option value="ARM">Armenia</option>
+                                                    <option value="ABW">Aruba</option>
+                                                    <option value="AUS">Australia</option>
+                                                    <option value="AUT" selected="selected">Austria</option>
+
+                                                    <option value="AZE">Azerbaijan</option>
+                                                    <option value="BGD">Bangladesh</option>
+                                                    <option value="BLR">Belarus</option>
+                                                    <option value="BEL">Belgium</option>
+                                                    <option value="BIH">Bosnia and Herzegovina</option>
+                                                    <option value="BRA">Brazil</option>
+                                                    <option value="BRN">Brunei</option>
+                                                    <option value="BGR">Bulgaria</option>
+                                                    <option value="CAN">Canada</option>
+
+                                                    <option value="CHN">China</option>
+                                                    <option value="COL">Colombia</option>
+                                                    <option value="HRV">Croatia</option>
+                                                    <option value="CYP">Cyprus</option>
+                                                    <option value="CZE">Czech Republic</option>
+                                                    <option value="DNK">Denmark</option>
+                                                    <option value="EGY">Egypt</option>
+                                                    <option value="EST">Estonia</option>
+                                                    <option value="FIN">Finland</option>
+
+                                                    <option value="FRA">France</option>
+                                                    <option value="GEO">Georgia</option>
+                                                    <option value="DEU" selected="selected">Germany</option>
+                                                    <option value="GRC">Greece</option>
+                                                    <option value="HKG">Hong Kong</option>
+                                                    <option value="HUN">Hungary</option>
+                                                    <option value="ISL">Iceland</option>
+                                                    <option value="IND">India</option>
+                                                    <option value="IDN">Indonesia</option>
+
+                                                    <option value="IRN">Iran</option>
+                                                    <option value="IRL">Ireland</option>
+                                                    <option value="ISR">Israel</option>
+                                                    <option value="ITA">Italy</option>
+                                                    <option value="JPN">Japan</option>
+                                                    <option value="JOR">Jordan</option>
+                                                    <option value="KAZ">Kazakhstan</option>
+                                                    <option value="KWT">Kuwait</option>
+                                                    <option value="KGZ">Kyrgyzstan</option>
+
+                                                    <option value="LVA">Latvia</option>
+                                                    <option value="LBN">Lebanon</option>
+                                                    <option value="LIE">Liechtenstein</option>
+                                                    <option value="LTU">Lithuania</option>
+                                                    <option value="LUX">Luxembourg</option>
+                                                    <option value="MAC">Macau</option>
+                                                    <option value="MKD">Macedonia</option>
+                                                    <option value="MYS">Malaysia</option>
+                                                    <option value="MLT">Malta</option>
+
+                                                    <option value="MEX">Mexico</option>
+                                                    <option value="MDA">Moldova</option>
+                                                    <option value="MNG">Mongolia</option>
+                                                    <option value="NLD" selected="selected">Netherlands</option>
+                                                    <option value="NZL">New Zealand</option>
+                                                    <option value="NGA">Nigeria</option>
+                                                    <option value="NOR">Norway</option>
+                                                    <option value="PER">Peru</option>
+                                                    <option value="PHL">Philippines</option>
+
+                                                    <option value="POL">Poland</option>
+                                                    <option value="PRT">Portugal</option>
+                                                    <option value="QAT">Qatar</option>
+                                                    <option value="ROU">Romania</option>
+                                                    <option value="RUS">Russia</option>
+                                                    <option value="SMR">San Marino</option>
+                                                    <option value="SAU">Saudi Arabia</option>
+                                                    <option value="CSG">Serbia and Montenegro</option>
+                                                    <option value="SGP">Singapore</option>
+
+                                                    <option value="SVK">Slovakia</option>
+                                                    <option value="SVN">Slovenia</option>
+                                                    <option value="ZAF">South Africa</option>
+                                                    <option value="KOR">South Korea</option>
+                                                    <option value="ESP">Spain</option>
+                                                    <option value="LKA">Sri Lanka</option>
+                                                    <option value="SWE">Sweden</option>
+                                                    <option value="CHE">Switzerland</option>
+                                                    <option value="SYR">Syria</option>
+
+                                                    <option value="TWN">Taiwan</option>
+                                                    <option value="TJK">Tajikistan</option>
+                                                    <option value="THA">Thailand</option>
+                                                    <option value="TUR">Turkey</option>
+                                                    <option value="TKM">Turkmenistan</option>
+                                                    <option value="UKR">Ukraine</option>
+                                                    <option value="ARE">United Arab Emirates</option>
+                                                    <option value="GBR">United Kingdom</option>
+                                                    <option value="USA" selected="selected">United States</option>
+
+                                                    <option value="UZB">Uzbekistan</option>
+                                                    <option value="VAT">Vatican City</option>
+                                                    <option value="VNM">Vietnam</option>
+                                                  </select>
+                                            </div>
+                                        </div><!-- End .controls-group  -->
+                                    </form>
+                                </div><!-- End .panel-body -->
+                            </div><!-- End .widget -->
+                        </div><!-- End .col-lg-6  --> 
+
+                        <div class="col-lg-6">
+                            <div class="panel second">
+                                <div class="panel-heading">
+                                    <div class="icon"><i class="icon20 i-menu-6"></i></div>
+                                    <h4>WYSIWYG editor</h4>
+                                    <a href="#" class="minimize"></a>
+                                </div><!-- End .panel-heading -->
+                            
+                                <div class="panel-body noPadding">
+                                    <form role="form">
+                                        <textarea id="text-editor" name="text-editor" class="form-control" rows="4">
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, suscipit, veritatis, in ea doloremque aspernatur saepe ad non debitis beatae id vitae pariatur laborum assumenda nulla libero facilis delectus eveniet.
+                                        </textarea>
+                                    </form>
+                                </div><!-- End .panel-body -->
+                            </div><!-- End .panel -->
+                        </div><!-- End .col-lg-6  --> 
+                    </div><!-- End .row-fluid  -->
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <div class="icon"><i class="icon20 i-menu-6"></i></div> 
+                                    <h4>Grid input fields</h4>
+                                    <a href="#" class="minimize"></a>
+                                </div><!-- End .panel-heading -->
+                            
+                                <div class="panel-body">
+                                    <form class="form-horizontal" role="form">
+                                        <div class="form-group">
+                                            <label class="col-lg-2 control-label" for="grid">Grid field</label>
+                                            <div class="col-lg-10">
+                                                <div class="col-lg-6">
+                                                    <input class="form-control" type="text" placeholder="col-lg-6">
+                                                </div>
+                                                <div class="col-lg-6">
+                                                    <input class="form-control" type="text" placeholder="col-lg-6">
+                                                </div>
+                                            </div>
+                                        </div><!-- End .control-group  -->
+                                        <div class="form-group">
+                                            <label class="col-lg-2 control-label" for="grid">Grid field</label>
+                                            <div class="col-lg-10">
+                                                <div class="col-lg-4">
+                                                    <input class="form-control" type="text" placeholder="col-lg-4">
+                                                </div>
+                                                <div class="col-lg-4">
+                                                    <input class="form-control" type="text" placeholder="col-lg-4">
+                                                </div>
+                                                <div class="col-lg-4">
+                                                    <input class="form-control" type="text" placeholder="col-lg-4">
+                                                </div>
+                                            </div>
+                                        </div><!-- End .control-group  -->
+                                        <div class="form-group">
+                                            <label class="col-lg-2 control-label" for="grid">Grid field</label>
+                                            <div class="col-lg-10">
+                                                <div class="col-lg-3">
+                                                    <input class="form-control" type="text" placeholder="col-lg-3">
+                                                </div>
+                                                <div class="col-lg-3">
+                                                    <input class="form-control" type="text" placeholder="col-lg-3">
+                                                </div>
+                                                <div class="col-lg-3">
+                                                    <input class="form-control" type="text" placeholder="col-lg-3">
+                                                </div>
+                                                <div class="col-lg-3">
+                                                    <input class="form-control" type="text" placeholder="col-lg-3">
+                                                </div>
+                                            </div>
+                                        </div><!-- End .control-group  -->
+                                        <div class="form-group">
+                                            <label class="col-lg-2 control-label" for="grid">Grid field</label>
+                                            <div class="col-lg-10">
+                                                <div class="col-lg-8">
+                                                    <input class="form-control" type="text" placeholder="col-lg-8">
+                                                </div>
+                                                <div class="col-lg-4">
+                                                    <input class="form-control" type="text" placeholder="col-lg-4">
+                                                </div>
+                                            </div>
+                                        </div><!-- End .control-group  -->
+                                     
+                                        <div class="page-header">
+                                            <h4>Without label</h4>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-lg-6">
+                                                <input class="form-control" type="text" placeholder="col-lg-6">
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <input class="form-control" type="text" placeholder="col-lg-6">
+                                            </div>                                            
+                                        </div><!-- End .control-group  -->
+                                        <div class="form-group">
+                                            <div class="col-lg-4">
+                                                <input class="form-control" type="text" placeholder="col-lg-4">
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <input class="form-control" type="text" placeholder="col-lg-4">
+                                            </div>    
+                                            <div class="col-lg-4">
+                                                <input class="form-control" type="text" placeholder="col-lg-4">
+                                            </div>                                            
+                                        </div><!-- End .control-group  -->
+                                        <div class="form-group">
+                                            <div class="col-lg-3">
+                                                <input class="form-control" type="text" placeholder="col-lg-3">
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <input class="form-control" type="text" placeholder="col-lg-3">
+                                            </div>    
+                                            <div class="col-lg-3">
+                                                <input class="form-control" type="text" placeholder="col-lg-3">
+                                            </div>                                            
+                                            <div class="col-lg-3">
+                                                <input class="form-control" type="text" placeholder="col-lg-3">
+                                            </div>  
+                                        </div><!-- End .control-group  -->
+                                       
+                                    </form>
+                                </div><!-- End .panel-body -->
+                            </div><!-- End .widget -->
+                        </div><!-- End .col-lg-12  --> 
+                    </div><!-- End .row-fluid  -->
+
+                </div> <!-- End .container-fluid  -->
+            </div> <!-- End .wrapper  -->
+        </section>
+    </div><!-- End .main  -->
+  </body>
+</html>

@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Genyx admin v1.0</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="SuggeElson" />
+    <meta name="description" content="Genyx admin template - new premium responsive admin template. This template is designed to help you build the site administration without losing valuable time.Template contains all the important functions which must have one backend system.Build on great twitter boostrap framework" />
+    <meta name="keywords" content="admin, admin template, admin theme, responsive, responsive admin, responsive admin template, responsive theme, themeforest, 960 grid system, grid, grid theme, liquid, jquery, administration, administration template, administration theme, mobile, touch , responsive layout, boostrap, twitter boostrap" />
+    <meta name="application-name" content="Genyx admin template" />
+        
+    <!-- Headings -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,800,700' rel='stylesheet' type='text/css'>
+    <!-- Text -->
+    <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css' />
+
+     <!--[if lt IE 9]>
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400" rel="stylesheet" type="text/css" />
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:700" rel="stylesheet" type="text/css" />
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:800" rel="stylesheet" type="text/css" />
+    <link href="http://fonts.googleapis.com/css?family=Droid+Sans:400" rel="stylesheet" type="text/css" />
+    <link href="http://fonts.googleapis.com/css?family=Droid+Sans:700" rel="stylesheet" type="text/css" />
+    <![endif]-->
+
+    <!-- Core stylesheets do not remove -->
+    <link href="css/bootstrap/bootstrap.css" rel="stylesheet" />
+    <link href="css/bootstrap/bootstrap-theme.css" rel="stylesheet" />
+    <link href="css/icons.css" rel="stylesheet" />
+
+    <!-- Plugins stylesheets -->
+    <link href="js/plugins/forms/uniform/uniform.default.css" rel="stylesheet" /> 
+
+    <!-- app stylesheets -->
+    <link href="css/app.css" rel="stylesheet" /> 
+
+    <!-- Custom stylesheets ( Put your own changes here ) -->
+    <link href="css/custom.css" rel="stylesheet" /> 
+
+    <!--[if IE 8]><link href="css/ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
+
+    <!-- Force IE9 to render in normal mode -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
+                    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+                                   <link rel="shortcut icon" href="images/ico/favicon.png">
+    
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Important plugins put in all pages -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="js/bootstrap/bootstrap.js"></script>  
+    <script src="js/conditionizr.min.js"></script>  
+    <script src="js/plugins/core/nicescroll/jquery.nicescroll.min.js"></script>
+    <script src="js/plugins/core/jrespond/jRespond.min.js"></script>
+    <script src="js/jquery.genyxAdmin.js"></script>
+
+    <!-- Form plugins -->
+    <script src="js/plugins/forms/uniform/jquery.uniform.min.js"></script>
+
+    <!-- Init plugins -->
+    <script src="js/app.js"></script><!-- Core js functions -->
+
+  </head>
+  <body>
+    <header id="header">
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <a class="navbar-brand" href="dashboard.html"><img src="images/logo.png" alt="Genyx admin" class="img-responsive"></a>
+            <button type="button" class="navbar-toggle btn-danger" data-toggle="collapse" data-target="#navbar-to-collapse">
+                <span class="sr-only">Toggle right menu</span>
+                <i class="icon16 i-arrow-8"></i>
+            </button>          
+            <div class="collapse navbar-collapse" id="navbar-to-collapse">  
+                <form id="top-search" class="navbar-form navbar-left" role="search">
+                    <div class="input-group">
+                        <input type="text" name="tsearch" id="tsearch" placeholder="Search here ..." class="search-query form-control">
+                        <span class="input-group-btn">
+                            <button type="submit" class="btn"><i class="icon16 i-search-2 gap-right0"></i></button>
+                        </span>
+                    </div>
+                </form>  
+                <ul class="nav navbar-nav pull-right">
+                    <li class="divider-vertical"></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="icon24 i-bell-2"></i>
+                            <span class="notification red">6</span>
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li role="presentation"><a href="#" class=""><i class="icon16 i-calendar-2"></i> Admin Jenny add event</a></li>
+                            <li role="presentation"><a href="#" class=""><i class="icon16 i-file-zip"></i> User Dexter attach file</a></li>
+                            <li role="presentation"><a href="#" class=""><i class="icon16 i-stack-picture"></i> User Dexter attach 3 pictures</a></li>
+                            <li role="presentation"><a href="#" class=""><i class="icon16 i-cart-add"></i> New orders <span class="notification green">2</span></a></li>
+                            <li role="presentation"><a href="#" class=""><i class="icon16 i-bubbles-2"></i> New comments <span class="notification red">5</span></a></li>
+                            <li role="presentation"><a href="#" class=""><i class="icon16 i-pie-5"></i> Daily stats is generated</a></li>
+                        </ul>
+                    </li>
+                    <li class="divider-vertical"></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="icon24 i-envelop-2"></i>
+                            <span class="notification red">3</span>
+                        </a>
+                        <ul class="dropdown-menu messages" role="menu">
+                            <li class="head" role="presentation">
+                                <h4>Inbox</h4>
+                                <span class="count">3 messages</span>
+                                <span class="new-msg"><a href="#" class="tipB" title="Write message"><i class="icon16 i-pencil-5"></i></a></span>
+                            </li>
+                            <li role="presentation">
+                                <a href="#" class="clearfix">
+                                    <span class="avatar"><img src="images/avatars/peter.jpg" alt="avatar"></span>
+                                    <span class="msg">Call me i need to talk with you</span>
+                                    <button class="btn close"><i class="icon12 i-close-2"></i></button>
+                                </a>
+                            </li>
+                            <li role="presentation">
+                                <a href="#" class="clearfix">
+                                    <span class="avatar"><img src="images/avatars/milen.jpg" alt="avatar"></span>
+                                    <span class="msg">Problem with registration</span>
+                                    <button class="btn close"><i class="icon12 i-close-2"></i></button>
+                                </a>
+                            </li>
+                            <li role="presentation">
+                                <a href="#" class="clearfix">
+                                    <span class="avatar"><img src="images/avatars/anonime.jpg" alt="avatar"></span>
+                                    <span class="msg">I have question about ...</span>
+                                    <button class="btn close"><i class="icon12 i-close-2"></i></button>
+                                </a>
+                            </li>
+                            <li class="foot" role="presentation"><a href="email.html">View all messages</a></li>
+                        </ul>
+                    </li>
+                    <li class="divider-vertical"></li>
+                    <li class="dropdown user">
+                         <a href="#" class="dropdown-toggle avatar" data-toggle="dropdown">
+                            <img src="images/avatars/sugge.jpg" alt="sugge">
+                            <span class="more"><i class="icon16 i-arrow-down-2"></i></span>
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li role="presentation"><a href="#" class=""><i class="icon16 i-cogs"></i> Settings</a></li>
+                            <li role="presentation"><a href="profile.html" class=""><i class="icon16 i-user"></i> Profile</a></li>
+                            <li role="presentation"><a href="index.html" class=""><i class="icon16 i-exit"></i> Logout</a></li>
+                        </ul>
+                    </li>
+                    <li class="divider-vertical"></li>
+                </ul>
+            </div><!--/.nav-collapse -->
+        </nav>
+    </header> <!-- End #header  -->
+    <div class="main">
+        <aside id="sidebar">
+            <div class="side-options">
+                <ul>
+                    <li><a href="#" id="collapse-nav" class="act act-primary tip" title="Collapse navigation"><i class="icon16 i-arrow-left-7"></i></a></li>
+                </ul>
+            </div>
+        
+            <div class="sidebar-wrapper">
+                <nav id="mainnav">
+                    <ul class="nav nav-list">
+                        <li>
+                            <a href="dashboard.html">
+                                <span class="icon"><i class="icon20 i-screen"></i></span>
+                                <span class="txt">Dashboard</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="charts.html">
+                                <span class="icon"><i class="icon20 i-stats-up"></i></span>
+                                <span class="txt">Charts</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="icon"><i class="icon20 i-menu-6"></i></span>
+                                <span class="txt">Forms</span>
+                            </a>
+                            <ul class="sub">
+                                <li>
+                                    <a href="form-elements.html">
+                                        <span class="icon"><i class="icon20 i-stack-list"></i></span>
+                                        <span class="txt">Form elements</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="form-validation.html">
+                                        <span class="icon"><i class="icon20 i-stack-checkmark"></i></span>
+                                        <span class="txt">Form validation</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="form-wizard.html">
+                                        <span class="icon"><i class="icon20 i-stack-star"></i></span>
+                                        <span class="txt">Form wizard</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="icon"><i class="icon20 i-table-2"></i></span>
+                                <span class="txt">Tables</span>
+                            </a>
+                            <ul class="sub">
+                                <li>
+                                    <a href="tables.html">
+                                        <span class="icon"><i class="icon20 i-table"></i></span>
+                                        <span class="txt">Static tables</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="data-tables.html">
+                                        <span class="icon"><i class="icon20 i-table"></i></span>
+                                        <span class="txt">Data tables</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="grid.html">
+                                <span class="icon"><i class="icon20 i-grid-5"></i></span>
+                                <span class="txt">Grid</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="typo.html">
+                                <span class="icon"><i class="icon20 i-font"></i></span>
+                                <span class="txt">Typography</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="calendar.html">
+                                <span class="icon"><i class="icon20 i-calendar"></i></span>
+                                <span class="txt">Calendar</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="icon"><i class="icon20 i-cogs"></i></span>
+                                <span class="txt">Ui Elements</span>
+                            </a>
+                            <ul class="sub">
+                                <li>
+                                    <a href="icons.html">
+                                        <span class="icon"><i class="icon20 i-IcoMoon"></i></span>
+                                        <span class="txt">Icons</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="buttons.html">
+                                        <span class="icon"><i class="icon20 i-point-up"></i></span>
+                                        <span class="txt">Buttons</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="ui-elements.html">
+                                        <span class="icon"><i class="icon20 i-puzzle"></i></span>
+                                        <span class="txt">UI Elements</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="gallery.html">
+                                <span class="icon"><i class="icon20 i-images"></i></span>
+                                <span class="txt">Gallery</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="maps.html">
+                                <span class="icon"><i class="icon20 i-location-4"></i></span>
+                                <span class="txt">Maps</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="file-manager.html">
+                                <span class="icon"><i class="icon20 i-cloud-upload"></i></span>
+                                <span class="txt">File manager</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="widgets.html">
+                                <span class="icon"><i class="icon20 i-cube-3"></i></span>
+                                <span class="txt">Widgets</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="icon"><i class="icon20 i-file-8"></i></span>
+                                <span class="txt">Pages</span>
+                            </a>
+                            <ul class="sub">
+                                <li>
+                                    <a href="#">
+                                        <span class="icon"><i class="icon20 i-warning"></i></span>
+                                        <span class="txt">Error Pages</span>
+                                    </a>
+                                    <ul class="sub">
+                                        <li>
+                                            <a href="403.html">
+                                                <span class="icon"><i class="icon20 i-notification"></i></span>
+                                                <span class="txt">Error 403</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="404.html">
+                                                <span class="icon"><i class="icon20 i-notification"></i></span>
+                                                <span class="txt">Error 404</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="405.html">
+                                                <span class="icon"><i class="icon20 i-notification"></i></span>
+                                                <span class="txt">Error 405</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="500.html">
+                                                <span class="icon"><i class="icon20 i-notification"></i></span>
+                                                <span class="txt">Error 500</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="503.html">
+                                                <span class="icon"><i class="icon20 i-notification"></i></span>
+                                                <span class="txt">Error 503</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="offline.html">
+                                                <span class="icon"><i class="icon20 i-notification"></i></span>
+                                                <span class="txt">Offline page</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="invoice.html">
+                                        <span class="icon"><i class="icon20 i-credit"></i></span>
+                                        <span class="txt">Invoice page</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="profile.html">
+                                        <span class="icon"><i class="icon20 i-user"></i></span>
+                                        <span class="txt">Profile page</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="search.html">
+                                        <span class="icon"><i class="icon20 i-search-2"></i></span>
+                                        <span class="txt">Search page</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="email.html">
+                                        <span class="icon"><i class="icon20 i-envelop-2"></i></span>
+                                        <span class="txt">Email page</span>
+                                    </a>
+                                </li>                               
+                                <li>
+                                    <a href="faq.html">
+                                        <span class="icon"><i class="icon20 i-question"></i></span>
+                                        <span class="txt">FAQ page</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="blank.html">
+                                        <span class="icon"><i class="icon20 i-file-7"></i></span>
+                                        <span class="txt">Blank page</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav> <!-- End #mainnav -->
+            </div> <!-- End .sidebar-wrapper  -->
+        </aside><!-- End #sidebar  -->
+
+        <section id="content">
+            <div class="wrapper">
+                <div class="crumb">
+                    <ul class="breadcrumb">
+                      <li><a href="#"><i class="icon16 i-home-4"></i>Home</a></li>
+                      <li><a href="#">Library</a></li>
+                      <li class="active">Data</li>
+                    </ul>
+                </div>
+                
+                <div class="container-fluid">
+                    <div id="heading" class="page-header">
+                        <h1><i class="icon20 i-play-3"></i> Buttons</h1>
+                    </div>
+
+                    <div class="row">
+                        
+                        <div class="col-lg-6">
+                            
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <div class="icon"><i class="icon20 i-cube"></i></div> 
+                                    <h4>Normal buttons</h4>
+                                    <a href="#" class="minimize"></a>
+                                </div><!-- End .panel-heading -->
+                            
+                                <div class="panel-body">
+                                    <table class="table table-bordered table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>Button</th>
+                                                <th>class=""</th>
+                                                <th>Description</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><button type="button" class="btn btn-default">Default</button></td>
+                                                <td><code>btn</code></td>
+                                                <td>Standard gray button with gradient</td>
+                                            </tr>
+                                            <tr>
+                                                <td><button type="button" class="btn btn-primary">Primary</button></td>
+                                                <td><code>btn btn-primary</code></td>
+                                                <td>Provides extra visual weight and identifies the primary action in a set of buttons</td>
+                                            </tr>
+                                            <tr>
+                                                <td><button type="button" class="btn btn-info">Info</button></td>
+                                                <td><code>btn btn-info</code></td>
+                                                <td>Used as an alternative to the default styles</td>
+                                            </tr>
+                                            <tr>
+                                                <td><button type="button" class="btn btn-success">Success</button></td>
+                                                <td><code>btn btn-success</code></td>
+                                                <td>Indicates a successful or positive action</td>
+                                            </tr>
+                                            <tr>
+                                                <td><button type="button" class="btn btn-warning">Warning</button></td>
+                                                <td><code>btn btn-warning</code></td>
+                                                <td>Indicates caution should be taken with this action</td>
+                                            </tr>
+                                            <tr>
+                                                <td><button type="button" class="btn btn-danger">Danger</button></td>
+                                                <td><code>btn btn-danger</code></td>
+                                                <td>Indicates a dangerous or potentially negative action</td>
+                                            </tr>
+                                            <tr>
+                                                <td><button type="button" class="btn btn-inverse">Inverse</button></td>
+                                                <td><code>btn btn-inverse</code></td>
+                                                <td>Alternate dark gray button, not tied to a semantic action or use</td>
+                                            </tr>
+                                            <tr>
+                                                <td><button type="button" class="btn btn-link">Link</button></td>
+                                                <td><code>btn btn-link</code></td>
+                                                <td>Deemphasize a button by making it look like a link while maintaining button behavior</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div><!-- End .panel-body -->
+                            </div><!-- End .widget -->
+
+                        </div><!-- End .col-lg-6  --> 
+
+                        <div class="col-lg-6">
+                            
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <div class="icon"><i class="icon20 i-cube"></i></div>
+                                    <h4>Mini buttons</h4>
+                                    <a href="#" class="minimize"></a>
+                                </div><!-- End .panel-heading -->
+                            
+                                <div class="panel-body">
+                                    <table class="table table-bordered table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>Button</th>
+                                                <th>class=""</th>
+                                                <th>Description</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><button type="button" class="btn btn-default btn-xs">Default</button></td>
+                                                <td><code>btn btn-xs</code></td>
+                                                <td>Standard gray button with gradient</td>
+                                            </tr>
+                                            <tr>
+                                                <td><button type="button" class="btn btn-primary btn-xs">Primary</button></td>
+                                                <td><code>btn btn-primary btn-xs</code></td>
+                                                <td>Provides extra visual weight and identifies the primary action in a set of buttons</td>
+                                            </tr>
+                                            <tr>
+                                                <td><button type="button" class="btn btn-info btn-xs">Info</button></td>
+                                                <td><code>btn btn-info btn-xs</code></td>
+                                                <td>Used as an alternative to the default styles</td>
+                                            </tr>
+                                            <tr>
+                                                <td><button type="button" class="btn btn-success btn-xs">Success</button></td>
+                                                <td><code>btn btn-success btn-xs</code></td>
+                                                <td>Indicates a successful or positive action</td>
+                                            </tr>
+                                            <tr>
+                                                <td><button type="button" class="btn btn-warning btn-xs">Warning</button></td>
+                                                <td><code>btn btn-warning btn-xs</code></td>
+                                                <td>Indicates caution should be taken with this action</td>
+                                            </tr>
+                                            <tr>
+                                                <td><button type="button" class="btn btn-danger btn-xs">Danger</button></td>
+                                                <td><code>btn btn-danger btn-xs</code></td>
+                                                <td>Indicates a dangerous or potentially negative action</td>
+                                            </tr>
+                                            <tr>
+                                                <td><button type="button" class="btn btn-inverse btn-xs">Inverse</button></td>
+                                                <td><code>btn btn-inverse btn-xs</code></td>
+                                                <td>Alternate dark gray button, not tied to a semantic action or use</td>
+                                            </tr>
+                                            <tr>
+                                                <td><button type="button" class="btn btn-link btn-xs">Link</button></td>
+                                                <td><code>btn btn-link btn-xs</code></td>
+                                                <td>Deemphasize a button by making it look like a link while maintaining button behavior</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div><!-- End .panel-body -->
+                            </div><!-- End .widget -->
+
+                        </div><!-- End .col-lg-6  -->                     
+                    </div><!-- End .row-fluid  -->
+                    <div class="row">
+                        <div class="col-lg-6">
+                            
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <div class="icon"><i class="icon20 i-cube"></i></div> 
+                                    <h4>Small buttons</h4>
+                                    <a href="#" class="minimize"></a>
+                                </div><!-- End .panel-heading -->
+                            
+                                <div class="panel-body">
+                                    <table class="table table-bordered table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>Button</th>
+                                                <th>class=""</th>
+                                                <th>Description</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><button type="button" class="btn btn-default btn-sm">Default</button></td>
+                                                <td><code>btn btn-sm</code></td>
+                                                <td>Standard gray button with gradient</td>
+                                            </tr>
+                                            <tr>
+                                                <td><button type="button" class="btn btn-primary btn-sm">Primary</button></td>
+                                                <td><code>btn btn-primary btn-sm</code></td>
+                                                <td>Provides extra visual weight and identifies the primary action in a set of buttons</td>
+                                            </tr>
+                                            <tr>
+                                                <td><button type="button" class="btn btn-info btn-sm">Info</button></td>
+                                                <td><code>btn btn-info btn-sm</code></td>
+                                                <td>Used as an alternative to the default styles</td>
+                                            </tr>
+                                            <tr>
+                                                <td><button type="button" class="btn btn-success btn-sm">Success</button></td>
+                                                <td><code>btn btn-success btn-sm</code></td>
+                                                <td>Indicates a successful or positive action</td>
+                                            </tr>
+                                            <tr>
+                                                <td><button type="button" class="btn btn-warning btn-sm">Warning</button></td>
+                                                <td><code>btn btn-warning btn-sm</code></td>
+                                                <td>Indicates caution should be taken with this action</td>
+                                            </tr>
+                                            <tr>
+                                                <td><button type="button" class="btn btn-danger btn-sm">Danger</button></td>
+                                                <td><code>btn btn-danger btn-sm</code></td>
+                                                <td>Indicates a dangerous or potentially negative action</td>
+                                            </tr>
+                                            <tr>
+                                                <td><button type="button" class="btn btn-inverse btn-sm">Inverse</button></td>
+                                                <td><code>btn btn-inverse btn-sm</code></td>
+                                                <td>Alternate dark gray button, not tied to a semantic action or use</td>
+                                            </tr>
+                                            <tr>
+                                                <td><button type="button" class="btn btn-link btn-sm">Link</button></td>
+                                                <td><code>btn btn-link btn-sm</code></td>
+                                                <td>Deemphasize a button by making it look like a link while maintaining button behavior</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div><!-- End .panel-body -->
+                            </div><!-- End .widget -->
+
+                        </div><!-- End .col-lg-6  --> 
+
+                        <div class="col-lg-6">
+                            
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <div class="icon"><i class="icon20 i-cube"></i></div>
+                                    <h4>Large buttons</h4>
+                                    <a href="#" class="minimize"></a>
+                                </div><!-- End .panel-heading -->
+                            
+                                <div class="panel-body">
+                                    <table class="table table-bordered table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>Button</th>
+                                                <th>class=""</th>
+                                                <th>Description</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><button type="button" class="btn btn-default btn-lg">Default</button></td>
+                                                <td><code>btn btn-lg</code></td>
+                                                <td>Standard gray button with gradient</td>
+                                            </tr>
+                                            <tr>
+                                                <td><button type="button" class="btn btn-primary btn-lg">Primary</button></td>
+                                                <td><code>btn btn-primary btn-lg</code></td>
+                                                <td>Provides extra visual weight and identifies the primary action in a set of buttons</td>
+                                            </tr>
+                                            <tr>
+                                                <td><button type="button" class="btn btn-info btn-lg">Info</button></td>
+                                                <td><code>btn btn-info btn-lg</code></td>
+                                                <td>Used as an alternative to the default styles</td>
+                                            </tr>
+                                            <tr>
+                                                <td><button type="button" class="btn btn-success btn-lg">Success</button></td>
+                                                <td><code>btn btn-success btn-lg</code></td>
+                                                <td>Indicates a successful or positive action</td>
+                                            </tr>
+                                            <tr>
+                                                <td><button type="button" class="btn btn-warning btn-lg">Warning</button></td>
+                                                <td><code>btn btn-warning btn-lg</code></td>
+                                                <td>Indicates caution should be taken with this action</td>
+                                            </tr>
+                                            <tr>
+                                                <td><button type="button" class="btn btn-danger btn-lg">Danger</button></td>
+                                                <td><code>btn btn-danger btn-lg</code></td>
+                                                <td>Indicates a dangerous or potentially negative action</td>
+                                            </tr>
+                                            <tr>
+                                                <td><button type="button" class="btn btn-inverse btn-lg">Inverse</button></td>
+                                                <td><code>btn btn-inverse btn-lg</code></td>
+                                                <td>Alternate dark gray button, not tied to a semantic action or use</td>
+                                            </tr>
+                                            <tr>
+                                                <td><button type="button" class="btn btn-link btn-lg">Link</button></td>
+                                                <td><code>btn btn-link btn-sm</code></td>
+                                                <td>Deemphasize a button by making it look like a link while maintaining button behavior</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div><!-- End .panel-body -->
+                            </div><!-- End .widget -->
+
+                        </div><!-- End .col-lg-6  --> 
+                    </div><!-- End .row-fluid  -->
+
+                    <div class="row">
+                        <div class="col-lg-6">
+                            
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <div class="icon"><i class="icon20 i-cube"></i></div> 
+                                    <h4>Disabled buttons</h4>
+                                    <a href="#" class="minimize"></a>
+                                </div><!-- End .panel-heading -->
+                            
+                                <div class="panel-body">
+                                    <table class="table table-bordered table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>Button</th>
+                                                <th>class=""</th>
+                                                <th>Description</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><button type="button" class="btn disabled">Default</button></td>
+                                                <td><code>btn disabled</code></td>
+                                                <td>Standard gray button with gradient</td>
+                                            </tr>
+                                            <tr>
+                                                <td><button type="button" class="btn btn-primary disabled">Primary</button></td>
+                                                <td><code>btn btn-primary disabled</code></td>
+                                                <td>Provides extra visual weight and identifies the primary action in a set of buttons</td>
+                                            </tr>
+                                            <tr>
+                                                <td><button type="button" class="btn btn-info disabled">Info</button></td>
+                                                <td><code>btn btn-info disabled</code></td>
+                                                <td>Used as an alternative to the default styles</td>
+                                            </tr>
+                                            <tr>
+                                                <td><button type="button" class="btn btn-success disabled">Success</button></td>
+                                                <td><code>btn btn-success disabled</code></td>
+                                                <td>Indicates a successful or positive action</td>
+                                            </tr>
+                                            <tr>
+                                                <td><button type="button" class="btn btn-warning disabled">Warning</button></td>
+                                                <td><code>btn btn-warning disabled</code></td>
+                                                <td>Indicates caution should be taken with this action</td>
+                                            </tr>
+                                            <tr>
+                                                <td><button type="button" class="btn btn-danger disabled">Danger</button></td>
+                                                <td><code>btn btn-danger disabled</code></td>
+                                                <td>Indicates a dangerous or potentially negative action</td>
+                                            </tr>
+                                            <tr>
+                                                <td><button type="button" class="btn btn-inverse disabled">Inverse</button></td>
+                                                <td><code>btn btn-inverse disabled</code></td>
+                                                <td>Alternate dark gray button, not tied to a semantic action or use</td>
+                                            </tr>
+                                            <tr>
+                                                <td><button type="button" class="btn btn-link disabled">Link</button></td>
+                                                <td><code>btn btn-link disabled</code></td>
+                                                <td>Deemphasize a button by making it look like a link while maintaining button behavior</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div><!-- End .panel-body -->
+                            </div><!-- End .widget -->
+
+                        </div><!-- End .col-lg-6  --> 
+                        <div class="col-lg-6">
+                            <div class="panel panel-default">
+                                   <div class="panel-heading">
+                                        <div class="icon"><i class="icon20 i-cube"></i></div>
+                                        <h4>Action links</h4>
+                                        <a href="#" class="minimize"></a>
+                                   </div><!-- End .panel-heading -->
+                               
+                                   <div class="panel-body">
+                                        
+                                        <table class="table table-bordered table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th>Action link</th>
+                                                    <th>Class</th>
+                                                    <th>Description</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><a class="act" href="#">Default</a></td>
+                                                    <td><code>.act</code></td>
+                                                    <td>Standard gray text</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a class="act act-primary" href="#">Primary</a></td>
+                                                    <td><code>.act-primary</code></td>
+                                                    <td>Provides extra visual weight</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a class="act act-info" href="#">Info</a></td>
+                                                    <td><code>.act-info</code></td>
+                                                    <td>Used as an alternate to the default styles</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a class="act act-success" href="#">Success</a></td>
+                                                    <td><code>.act-success</code></td>
+                                                    <td>Indicates a successful or positive action</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a class="act act-warning" href="#">Warning</a></td>
+                                                    <td><code>.act-warning</code></td>
+                                                    <td>Indicates caution should be taken with this action</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a class="act act-danger" href="#">Danger</a></td>
+                                                    <td><code>.act-danger</code></td>
+                                                    <td>Indicates a dangerous or potentially negative action</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a class="act disabled" href="#">Disabled</a></td>
+                                                    <td><code>.disabled</code></td>
+                                                    <td>Indicates a dangerous or potentially negative action</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <div class="gap20"></div>
+                                        <div class="page-header">
+                                            <h4>Block level buttons</h4>
+                                        </div>
+                                        <p>Create block level buttons—those that span the full width of a parent— by adding <code>.btn-block</code>.</p>
+                                        <button type="button" class="btn btn-lg btn-block btn-primary">Block level button</button>
+                                        <button type="button" class="btn btn-lg btn-block btn-danger">Block level button</button>
+                                       
+                                   </div><!-- End .panel-body -->
+                               </div><!-- End .widget -->   
+                        </div><!-- End .col-lg-6  --> 
+                    </div><!-- End .row-fluid  -->
+
+                    <div class="row">
+                        <div class="col-lg-6">
+                            
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <div class="icon"><i class="icon20 i-cube"></i></div> 
+                                    <h4>With icons</h4>
+                                    <a href="#" class="minimize"></a>
+                                </div><!-- End .panel-heading -->
+                            
+                                <div class="panel-body">
+                                    <table class="table table-bordered table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>Button</th>
+                                                <th>class=""</th>
+                                                <th>Description</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><button type="button" class="btn"><i class="icon16 i-home-2"></i> Default</button></td>
+                                                <td><code>btn</code></td>
+                                                <td>Standard gray button with gradient</td>
+                                            </tr>
+                                            <tr>
+                                                <td><button type="button" class="btn btn-primary"><i class="icon16 i-thumbs-up-2"></i>Primary</button></td>
+                                                <td><code>btn btn-primary</code></td>
+                                                <td>Provides extra visual weight and identifies the primary action in a set of buttons</td>
+                                            </tr>
+                                            <tr>
+                                                <td><button type="button" class="btn btn-info"><i class="icon16 i-info"></i> Info</button></td>
+                                                <td><code>btn btn-info</code></td>
+                                                <td>Used as an alternative to the default styles</td>
+                                            </tr>
+                                            <tr>
+                                                <td><button type="button" class="btn btn-success"><i class="icon16 i-checkmark-3 "></i>Success</button></td>
+                                                <td><code>btn btn-success</code></td>
+                                                <td>Indicates a successful or positive action</td>
+                                            </tr>
+                                            <tr>
+                                                <td><button type="button" class="btn btn-warning"><i class="icon16 i-notification"></i>Warning</button></td>
+                                                <td><code>btn btn-warning</code></td>
+                                                <td>Indicates caution should be taken with this action</td>
+                                            </tr>
+                                            <tr>
+                                                <td><button type="button" class="btn btn-danger"><i class="icon16 i-close-4"></i>Danger</button></td>
+                                                <td><code>btn btn-danger</code></td>
+                                                <td>Indicates a dangerous or potentially negative action</td>
+                                            </tr>
+                                            <tr>
+                                                <td><button type="button" class="btn btn-inverse"><i class="icon16 i-loop-5"></i>Inverse</button></td>
+                                                <td><code>btn btn-inverse</code></td>
+                                                <td>Alternate dark gray button, not tied to a semantic action or use</td>
+                                            </tr>
+                                            <tr>
+                                                <td><button type="button" class="btn btn-link"><i class="icon16 i-link"></i>Link</button></td>
+                                                <td><code>btn btn-link</code></td>
+                                                <td>Deemphasize a button by making it look like a link while maintaining button behavior</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div><!-- End .panel-body -->
+                            </div><!-- End .widget -->
+
+                        </div><!-- End .col-lg-6  --> 
+                        <div class="col-lg-6">
+                            
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <div class="icon"><i class="icon20 i-cube"></i></div> 
+                                    <h4>Other styles</h4>
+                                    <a href="#" class="minimize"></a>
+                                </div><!-- End .panel-heading -->
+                            
+                                <div class="panel-body">
+
+                                    <div class="page-header">
+                                        <h4>Button groups and toolbars</h4>
+                                    </div>
+                                    <div class="btn-group">
+                                        <button class="btn">Left</button>
+                                        <button class="btn">Middle</button>
+                                        <button class="btn">Right</button>
+                                    </div>
+                                    <div class="gap15"></div>
+                                    <div class="btn-toolbar">
+                                        <div class="btn-group">
+                                            <button class="btn">Left</button>
+                                            <button class="btn">Middle</button>
+                                            <button class="btn">Right</button>
+                                        </div>
+                                        <div class="btn-group">
+                                            <button class="btn">1</button>
+                                            <button class="btn">2</button>
+                                            <button class="btn">3</button>
+                                        </div>
+                                    </div>
+                                    <div class="gap20"></div>
+
+                                    <div class="page-header">
+                                        <h4>Button dropdowns</h4>
+                                    </div>
+                                    <div class="btn-toolbar" style="margin: 0;">
+                                        <div class="btn-group">
+                                            <button class="btn dropdown-toggle" data-toggle="dropdown">Action <span class="caret"></span></button>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="#">Action</a></li>
+                                                <li><a href="#">Another action</a></li>
+                                                <li><a href="#">Something else here</a></li>
+                                                <li class="divider"></li>
+                                                <li><a href="#">Separated link</a></li>
+                                            </ul>
+                                        </div><!-- /btn-group -->
+                                        <div class="btn-group">
+                                            <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Action <span class="caret"></span></button>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="#">Action</a></li>
+                                                <li><a href="#">Another action</a></li>
+                                                <li><a href="#">Something else here</a></li>
+                                                <li class="divider"></li>
+                                                <li><a href="#">Separated link</a></li>
+                                            </ul>
+                                        </div><!-- /btn-group -->
+                                        <div class="btn-group">
+                                            <button class="btn btn-danger dropdown-toggle" data-toggle="dropdown">Danger <span class="caret"></span></button>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="#">Action</a></li>
+                                                <li><a href="#">Another action</a></li>
+                                                <li><a href="#">Something else here</a></li>
+                                                <li class="divider"></li>
+                                                <li><a href="#">Separated link</a></li>
+                                            </ul>
+                                        </div><!-- /btn-group -->
+                                        <div class="btn-group">
+                                            <button class="btn btn-warning dropdown-toggle" data-toggle="dropdown">Warning <span class="caret"></span></button>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="#">Action</a></li>
+                                                <li><a href="#">Another action</a></li>
+                                                <li><a href="#">Something else here</a></li>
+                                                <li class="divider"></li>
+                                                <li><a href="#">Separated link</a></li>
+                                            </ul>
+                                        </div><!-- /btn-group -->
+                                        <div class="btn-group">
+                                            <button class="btn btn-success dropdown-toggle" data-toggle="dropdown">Success <span class="caret"></span></button>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="#">Action</a></li>
+                                                <li><a href="#">Another action</a></li>
+                                                <li><a href="#">Something else here</a></li>
+                                                <li class="divider"></li>
+                                                <li><a href="#">Separated link</a></li>
+                                            </ul>
+                                        </div><!-- /btn-group -->
+                                        <div class="btn-group">
+                                            <button class="btn btn-info dropdown-toggle" data-toggle="dropdown">Info <span class="caret"></span></button>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="#">Action</a></li>
+                                                <li><a href="#">Another action</a></li>
+                                                <li><a href="#">Something else here</a></li>
+                                                <li class="divider"></li>
+                                                <li><a href="#">Separated link</a></li>
+                                            </ul>
+                                        </div><!-- /btn-group -->
+                                        <div class="btn-group">
+                                            <button class="btn btn-inverse dropdown-toggle" data-toggle="dropdown">Inverse <span class="caret"></span></button>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="#">Action</a></li>
+                                                <li><a href="#">Another action</a></li>
+                                                <li><a href="#">Something else here</a></li>
+                                                <li class="divider"></li>
+                                                <li><a href="#">Separated link</a></li>
+                                            </ul>
+                                        </div><!-- /btn-group -->
+                                    </div>
+                                    <div class="gap20"></div>
+                                    <div class="page-header">
+                                        <h4>Split buttons</h4>
+                                    </div>
+                                    <div class="btn-toolbar" style="margin: 0;">
+                                        <div class="btn-group">
+                                            <button class="btn">Action</button>
+                                            <button class="btn dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="#">Action</a></li>
+                                                <li><a href="#">Another action</a></li>
+                                                <li><a href="#">Something else here</a></li>
+                                                <li class="divider"></li>
+                                                <li><a href="#">Separated link</a></li>
+                                            </ul>
+                                        </div><!-- /btn-group -->
+                                        <div class="btn-group">
+                                            <button class="btn btn-primary">Action</button>
+                                            <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="#">Action</a></li>
+                                                <li><a href="#">Another action</a></li>
+                                                <li><a href="#">Something else here</a></li>
+                                                <li class="divider"></li>
+                                                <li><a href="#">Separated link</a></li>
+                                            </ul>
+                                        </div><!-- /btn-group -->
+                                        <div class="btn-group">
+                                            <button class="btn btn-danger">Danger</button>
+                                            <button class="btn btn-danger dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="#">Action</a></li>
+                                                <li><a href="#">Another action</a></li>
+                                                <li><a href="#">Something else here</a></li>
+                                                <li class="divider"></li>
+                                                <li><a href="#">Separated link</a></li>
+                                            </ul>
+                                        </div><!-- /btn-group -->
+                                        <div class="btn-group">
+                                            <button class="btn btn-warning">Warning</button>
+                                            <button class="btn btn-warning dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="#">Action</a></li>
+                                                <li><a href="#">Another action</a></li>
+                                                <li><a href="#">Something else here</a></li>
+                                                <li class="divider"></li>
+                                                <li><a href="#">Separated link</a></li>
+                                            </ul>
+                                        </div><!-- /btn-group -->
+                                        <div class="btn-group">
+                                            <button class="btn btn-success">Success</button>
+                                            <button class="btn btn-success dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="#">Action</a></li>
+                                                <li><a href="#">Another action</a></li>
+                                                <li><a href="#">Something else here</a></li>
+                                                <li class="divider"></li>
+                                                <li><a href="#">Separated link</a></li>
+                                            </ul>
+                                        </div><!-- /btn-group -->
+                                        <div class="btn-group">
+                                            <button class="btn btn-info">Info</button>
+                                            <button class="btn btn-info dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="#">Action</a></li>
+                                                <li><a href="#">Another action</a></li>
+                                                <li><a href="#">Something else here</a></li>
+                                                <li class="divider"></li>
+                                                <li><a href="#">Separated link</a></li>
+                                            </ul>
+                                        </div><!-- /btn-group -->
+                                        <div class="btn-group">
+                                            <button class="btn btn-inverse">Inverse</button>
+                                            <button class="btn btn-inverse dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="#">Action</a></li>
+                                                <li><a href="#">Another action</a></li>
+                                                <li><a href="#">Something else here</a></li>
+                                                <li class="divider"></li>
+                                                <li><a href="#">Separated link</a></li>
+                                            </ul>
+                                        </div><!-- /btn-group -->
+                                    </div>
+                                    <div class="gap20"></div>
+
+                                     <div class="page-header">
+                                        <h4>Dropup menu</h4>
+                                    </div>
+                                    
+                                    <div class="btn-toolbar" style="margin: 0;">
+                                        <div class="btn-group dropup">
+                                            <button class="btn">Dropup</button>
+                                            <button class="btn dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="#">Action</a></li>
+                                                <li><a href="#">Another action</a></li>
+                                                <li><a href="#">Something else here</a></li>
+                                                <li class="divider"></li>
+                                                <li><a href="#">Separated link</a></li>
+                                            </ul>
+                                        </div><!-- /btn-group -->
+                                        <div class="btn-group dropup">
+                                            <button class="btn primary">Right dropup</button>
+                                            <button class="btn primary dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
+                                            <ul class="dropdown-menu pull-right">
+                                                <li><a href="#">Action</a></li>
+                                                <li><a href="#">Another action</a></li>
+                                                <li><a href="#">Something else here</a></li>
+                                                <li class="divider"></li>
+                                                <li><a href="#">Separated link</a></li>
+                                            </ul>
+                                        </div><!-- /btn-group -->
+                                    </div>
+
+                                    
+                                </div><!-- End .panel-body -->
+
+                            </div><!-- End .widget -->
+
+                        </div><!-- End .col-lg-6  --> 
+
+                    </div><!-- End .row-fluid  -->
+
+                </div> <!-- End .container-fluid  -->
+            </div> <!-- End .wrapper  -->
+        </section>
+    </div><!-- End .main  -->
+  </body>
+</html>

@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Genyx admin v1.0</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="SuggeElson" />
+    <meta name="description" content="Genyx admin template - new premium responsive admin template. This template is designed to help you build the site administration without losing valuable time.Template contains all the important functions which must have one backend system.Build on great twitter boostrap framework" />
+    <meta name="keywords" content="admin, admin template, admin theme, responsive, responsive admin, responsive admin template, responsive theme, themeforest, 960 grid system, grid, grid theme, liquid, jquery, administration, administration template, administration theme, mobile, touch , responsive layout, boostrap, twitter boostrap" />
+    <meta name="application-name" content="Genyx admin template" />
+    
+    <!-- Headings -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,800,700' rel='stylesheet' type='text/css'>
+    <!-- Text -->
+    <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css' />
+
+     <!--[if lt IE 9]>
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400" rel="stylesheet" type="text/css" />
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:700" rel="stylesheet" type="text/css" />
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:800" rel="stylesheet" type="text/css" />
+    <link href="http://fonts.googleapis.com/css?family=Droid+Sans:400" rel="stylesheet" type="text/css" />
+    <link href="http://fonts.googleapis.com/css?family=Droid+Sans:700" rel="stylesheet" type="text/css" />
+    <![endif]-->
+
+    <!-- Core stylesheets do not remove -->
+    <link href="css/bootstrap/bootstrap.css" rel="stylesheet" />
+    <link href="css/bootstrap/bootstrap-theme.css" rel="stylesheet" />
+    <link href="css/icons.css" rel="stylesheet" />
+
+    <!-- Plugins stylesheets -->
+    <link href="js/plugins/forms/uniform/uniform.default.css" rel="stylesheet" /> 
+
+    <!-- app stylesheets -->
+    <link href="css/app.css" rel="stylesheet" /> 
+
+    <!-- Custom stylesheets ( Put your own changes here ) -->
+    <link href="css/custom.css" rel="stylesheet" /> 
+
+    <!--[if IE 8]><link href="css/ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
+
+    <!-- Force IE9 to render in normal mode -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
+                    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+                                   <link rel="shortcut icon" href="images/ico/favicon.png">
+
+     <!-- Le javascript
+    ================================================== -->
+    <!-- Important plugins put in all pages -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="js/bootstrap/bootstrap.js"></script>  
+    <script src="js/conditionizr.min.js"></script>  
+    <script src="js/plugins/core/nicescroll/jquery.nicescroll.min.js"></script>
+    <script src="js/plugins/core/jrespond/jRespond.min.js"></script>
+    <script src="js/jquery.genyxAdmin.js"></script>
+
+    <!-- Misc plugins -->
+    <script src="js/plugins/misc/codeview/prettify.js"></script>
+
+    <!-- Form plugins -->
+    <script src="js/plugins/forms/uniform/jquery.uniform.min.js"></script>
+
+    <!-- Init plugins -->
+    <script src="js/app.js"></script><!-- Core js functions -->
+
+  </head>
+  <body>
+    <header id="header">
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <a class="navbar-brand" href="dashboard.html"><img src="images/logo.png" alt="Genyx admin" class="img-responsive"></a>
+            <button type="button" class="navbar-toggle btn-danger" data-toggle="collapse" data-target="#navbar-to-collapse">
+                <span class="sr-only">Toggle right menu</span>
+                <i class="icon16 i-arrow-8"></i>
+            </button>          
+            <div class="collapse navbar-collapse" id="navbar-to-collapse">  
+                <form id="top-search" class="navbar-form navbar-left" role="search">
+                    <div class="input-group">
+                        <input type="text" name="tsearch" id="tsearch" placeholder="Search here ..." class="search-query form-control">
+                        <span class="input-group-btn">
+                            <button type="submit" class="btn"><i class="icon16 i-search-2 gap-right0"></i></button>
+                        </span>
+                    </div>
+                </form>  
+                <ul class="nav navbar-nav pull-right">
+                    <li class="divider-vertical"></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="icon24 i-bell-2"></i>
+                            <span class="notification red">6</span>
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li role="presentation"><a href="#" class=""><i class="icon16 i-calendar-2"></i> Admin Jenny add event</a></li>
+                            <li role="presentation"><a href="#" class=""><i class="icon16 i-file-zip"></i> User Dexter attach file</a></li>
+                            <li role="presentation"><a href="#" class=""><i class="icon16 i-stack-picture"></i> User Dexter attach 3 pictures</a></li>
+                            <li role="presentation"><a href="#" class=""><i class="icon16 i-cart-add"></i> New orders <span class="notification green">2</span></a></li>
+                            <li role="presentation"><a href="#" class=""><i class="icon16 i-bubbles-2"></i> New comments <span class="notification red">5</span></a></li>
+                            <li role="presentation"><a href="#" class=""><i class="icon16 i-pie-5"></i> Daily stats is generated</a></li>
+                        </ul>
+                    </li>
+                    <li class="divider-vertical"></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="icon24 i-envelop-2"></i>
+                            <span class="notification red">3</span>
+                        </a>
+                        <ul class="dropdown-menu messages" role="menu">
+                            <li class="head" role="presentation">
+                                <h4>Inbox</h4>
+                                <span class="count">3 messages</span>
+                                <span class="new-msg"><a href="#" class="tipB" title="Write message"><i class="icon16 i-pencil-5"></i></a></span>
+                            </li>
+                            <li role="presentation">
+                                <a href="#" class="clearfix">
+                                    <span class="avatar"><img src="images/avatars/peter.jpg" alt="avatar"></span>
+                                    <span class="msg">Call me i need to talk with you</span>
+                                    <button class="btn close"><i class="icon12 i-close-2"></i></button>
+                                </a>
+                            </li>
+                            <li role="presentation">
+                                <a href="#" class="clearfix">
+                                    <span class="avatar"><img src="images/avatars/milen.jpg" alt="avatar"></span>
+                                    <span class="msg">Problem with registration</span>
+                                    <button class="btn close"><i class="icon12 i-close-2"></i></button>
+                                </a>
+                            </li>
+                            <li role="presentation">
+                                <a href="#" class="clearfix">
+                                    <span class="avatar"><img src="images/avatars/anonime.jpg" alt="avatar"></span>
+                                    <span class="msg">I have question about ...</span>
+                                    <button class="btn close"><i class="icon12 i-close-2"></i></button>
+                                </a>
+                            </li>
+                            <li class="foot" role="presentation"><a href="email.html">View all messages</a></li>
+                        </ul>
+                    </li>
+                    <li class="divider-vertical"></li>
+                    <li class="dropdown user">
+                         <a href="#" class="dropdown-toggle avatar" data-toggle="dropdown">
+                            <img src="images/avatars/sugge.jpg" alt="sugge">
+                            <span class="more"><i class="icon16 i-arrow-down-2"></i></span>
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li role="presentation"><a href="#" class=""><i class="icon16 i-cogs"></i> Settings</a></li>
+                            <li role="presentation"><a href="profile.html" class=""><i class="icon16 i-user"></i> Profile</a></li>
+                            <li role="presentation"><a href="index.html" class=""><i class="icon16 i-exit"></i> Logout</a></li>
+                        </ul>
+                    </li>
+                    <li class="divider-vertical"></li>
+                </ul>
+            </div><!--/.nav-collapse -->
+        </nav>
+    </header> <!-- End #header  -->
+    <div class="main">
+        <aside id="sidebar">
+            <div class="side-options">
+                <ul>
+                    <li><a href="#" id="collapse-nav" class="act act-primary tip" title="Collapse navigation"><i class="icon16 i-arrow-left-7"></i></a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-wrapper">
+                <nav id="mainnav">
+                    <ul class="nav nav-list">
+                        <li>
+                            <a href="dashboard.html">
+                                <span class="icon"><i class="icon20 i-screen"></i></span>
+                                <span class="txt">Dashboard</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="charts.html">
+                                <span class="icon"><i class="icon20 i-stats-up"></i></span>
+                                <span class="txt">Charts</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="icon"><i class="icon20 i-menu-6"></i></span>
+                                <span class="txt">Forms</span>
+                            </a>
+                            <ul class="sub">
+                                <li>
+                                    <a href="form-elements.html">
+                                        <span class="icon"><i class="icon20 i-stack-list"></i></span>
+                                        <span class="txt">Form elements</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="form-validation.html">
+                                        <span class="icon"><i class="icon20 i-stack-checkmark"></i></span>
+                                        <span class="txt">Form validation</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="form-wizard.html">
+                                        <span class="icon"><i class="icon20 i-stack-star"></i></span>
+                                        <span class="txt">Form wizard</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="icon"><i class="icon20 i-table-2"></i></span>
+                                <span class="txt">Tables</span>
+                            </a>
+                            <ul class="sub">
+                                <li>
+                                    <a href="tables.html">
+                                        <span class="icon"><i class="icon20 i-table"></i></span>
+                                        <span class="txt">Static tables</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="data-tables.html">
+                                        <span class="icon"><i class="icon20 i-table"></i></span>
+                                        <span class="txt">Data tables</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="grid.html">
+                                <span class="icon"><i class="icon20 i-grid-5"></i></span>
+                                <span class="txt">Grid</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="typo.html">
+                                <span class="icon"><i class="icon20 i-font"></i></span>
+                                <span class="txt">Typography</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="calendar.html">
+                                <span class="icon"><i class="icon20 i-calendar"></i></span>
+                                <span class="txt">Calendar</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="icon"><i class="icon20 i-cogs"></i></span>
+                                <span class="txt">Ui Elements</span>
+                            </a>
+                            <ul class="sub">
+                                <li>
+                                    <a href="icons.html">
+                                        <span class="icon"><i class="icon20 i-IcoMoon"></i></span>
+                                        <span class="txt">Icons</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="buttons.html">
+                                        <span class="icon"><i class="icon20 i-point-up"></i></span>
+                                        <span class="txt">Buttons</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="ui-elements.html">
+                                        <span class="icon"><i class="icon20 i-puzzle"></i></span>
+                                        <span class="txt">UI Elements</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="gallery.html">
+                                <span class="icon"><i class="icon20 i-images"></i></span>
+                                <span class="txt">Gallery</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="maps.html">
+                                <span class="icon"><i class="icon20 i-location-4"></i></span>
+                                <span class="txt">Maps</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="file-manager.html">
+                                <span class="icon"><i class="icon20 i-cloud-upload"></i></span>
+                                <span class="txt">File manager</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="widgets.html">
+                                <span class="icon"><i class="icon20 i-cube-3"></i></span>
+                                <span class="txt">Widgets</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="icon"><i class="icon20 i-file-8"></i></span>
+                                <span class="txt">Pages</span>
+                            </a>
+                            <ul class="sub">
+                                <li>
+                                    <a href="#">
+                                        <span class="icon"><i class="icon20 i-warning"></i></span>
+                                        <span class="txt">Error Pages</span>
+                                    </a>
+                                    <ul class="sub">
+                                        <li>
+                                            <a href="403.html">
+                                                <span class="icon"><i class="icon20 i-notification"></i></span>
+                                                <span class="txt">Error 403</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="404.html">
+                                                <span class="icon"><i class="icon20 i-notification"></i></span>
+                                                <span class="txt">Error 404</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="405.html">
+                                                <span class="icon"><i class="icon20 i-notification"></i></span>
+                                                <span class="txt">Error 405</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="500.html">
+                                                <span class="icon"><i class="icon20 i-notification"></i></span>
+                                                <span class="txt">Error 500</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="503.html">
+                                                <span class="icon"><i class="icon20 i-notification"></i></span>
+                                                <span class="txt">Error 503</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="offline.html">
+                                                <span class="icon"><i class="icon20 i-notification"></i></span>
+                                                <span class="txt">Offline page</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="invoice.html">
+                                        <span class="icon"><i class="icon20 i-credit"></i></span>
+                                        <span class="txt">Invoice page</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="profile.html">
+                                        <span class="icon"><i class="icon20 i-user"></i></span>
+                                        <span class="txt">Profile page</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="search.html">
+                                        <span class="icon"><i class="icon20 i-search-2"></i></span>
+                                        <span class="txt">Search page</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="email.html">
+                                        <span class="icon"><i class="icon20 i-envelop-2"></i></span>
+                                        <span class="txt">Email page</span>
+                                    </a>
+                                </li>                                
+                                <li>
+                                    <a href="faq.html">
+                                        <span class="icon"><i class="icon20 i-question"></i></span>
+                                        <span class="txt">FAQ page</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="blank.html">
+                                        <span class="icon"><i class="icon20 i-file-7"></i></span>
+                                        <span class="txt">Blank page</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav> <!-- End #mainnav -->
+            </div> <!-- End .sidebar-wrapper  -->
+        </aside><!-- End #sidebar  -->
+
+        <section id="content">
+            <div class="wrapper">
+                <div class="crumb">
+                    <ul class="breadcrumb">
+                      <li><a href="#"><i class="icon16 i-home-4"></i>Home</a></li>
+                      <li><a href="#">Library</a></li>
+                      <li class="active">Data</li>
+                    </ul>
+                </div>
+                
+                <div class="container-fluid">
+                    <div id="heading" class="page-header">
+                        <h1><i class="icon20 i-type"></i> Typography</h1>
+                    </div>
+
+                    <div class="row">
+                        
+                        <div class="col-lg-6">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <div class="icon"><i class="icon20 i-text-height"></i></div> 
+                                    <h4>Headings</h4>
+                                    <a href="#" class="minimize"></a>
+                                </div><!-- End .panel-heading -->
+                            
+                                <div class="panel-body">
+                                    
+                                    <h1>This is an H1 heading</h1>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                    tempor incididunt ut labore et dolore magna aliqua.</p>
+
+                                    <h2>This is an H2 heading</h2>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                    tempor incididunt ut labore et dolore magna aliqua.</p>
+
+                                    <h3>This is an H3 heading</h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                    tempor incididunt ut labore et dolore magna aliqua.</p>
+
+                                    <h4>This is an H4 heading</h4>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                    tempor incididunt ut labore et dolore magna aliqua.</p>
+
+                                    <h5>This is an H5 heading</h5>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                    tempor incididunt ut labore et dolore magna aliqua.</p>
+
+                                    <h6>This is an H6 heading</h6>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                    tempor incididunt ut labore et dolore magna aliqua.</p>
+
+                                </div><!-- End .panel-body -->
+                            </div><!-- End .widget -->
+                        </div><!-- End .col-lg-6 -->
+
+                        <div class="col-lg-6">
+                            <div class="panel" style="margin-bottom:20px;">
+                                <div class="panel-heading">
+                                    <div class="icon"><i class="icon20 i-quotes-left"></i></div> 
+                                    <h4>Blockquote</h4>
+                                    <a href="#" class="minimize"></a>
+                                </div><!-- End .panel-heading -->
+                            
+                                <div class="panel-body">
+                                   <blockquote>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis.</p>
+                                        <small>Someone famous</small>
+                                    </blockquote>
+                                </div><!-- End .panel-body -->
+                            </div><!-- End .widget -->
+
+                            <div class="panel" style="margin-bottom:20px;">
+                                <div class="panel-heading">
+                                    <div class="icon"><i class="icon20 i-pencil"></i></div> 
+                                    <h4>Text styling</h4>
+                                    <a href="#" class="minimize"></a>
+                                </div><!-- End .panel-heading -->
+                            
+                                <div class="panel-body">
+                                    <p>Lorem ipsum <strong>dolor sit amet</strong>, consectetur <em>adipisicing elit</em>, sed do eiusmod <small> tempor incididunt</small>ut labore et dolore magna aliqua. <span class="red">Ut enim ad minim veniam</span>,
+                                    quis <span class="orange">nostrud exercitation</span> ullamco laboris nisi ut aliquip ex ea commodo <abbr title="attribute example">attribute</abbr>
+                                    consequat.<span class="green">Duis aute irure</span> dolor in reprehenderit in voluptate velit esse
+                                    cillum dolore eu fugiat nulla pariatur. <span class="dark">Excepteur sint</span> occaecat cupidatat non
+                                    proident, <span class="blue">sunt in culpa</span> qui officia deserunt mollit anim id est laborum.</p>
+                                </div><!-- End .panel-body -->
+                            </div><!-- End .widget -->
+
+                            <div class="panel" style="margin-bottom:20px;">
+                                <div class="panel-heading">
+                                    <div class="icon"><i class="icon20 i-tag"></i></div> 
+                                    <h4>Labels and badges</h4>
+                                    <a href="#" class="minimize"></a>
+                                </div><!-- End .panel-heading -->
+                            
+                                <div class="panel-body">
+                                    <ul class="list-unstyled">
+                                        <li>
+                                            <span class="label">Default</span>
+                                            <span class="label label-success">Success</span>
+                                            <span class="label label-warning">Warning</span>
+                                            <span class="label label-important">Important</span>
+                                            <span class="label label-info">Info</span>
+                                            <span class="label label-inverse">Inverse</span>
+                                        </li>
+                                        <li>
+                                           <span class="badge">Default</span>
+                                           <span class="badge badge-success">Success</span>
+                                           <span class="badge badge-warning">Warning</span>
+                                           <span class="badge badge-important">Important</span>
+                                           <span class="badge badge-info">Info</span>
+                                           <span class="badge badge-inverse">Inverse</span>
+                                        </li>
+                                    </ul>
+                                </div><!-- End .panel-body -->
+                            </div><!-- End .widget -->
+
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <div class="icon"><i class="icon20 i-code"></i></div> 
+                                    <h4>Code view</h4>
+                                    <a href="#" class="minimize"></a>
+                                </div><!-- End .panel-heading -->
+                            
+                                <div class="panel-body">
+                                    <pre class="pre-scrollable prettyprint linenums">
+    $(window).resize(function() {
+        alert('I love to code');    
+    });                              </pre>
+                                </div><!-- End .panel-body -->
+                            </div><!-- End .widget -->
+                            
+                        </div><!-- End .col-lg-6  --> 
+
+                    </div><!-- End .row-fluid  -->
+
+                    <div class="row">
+                        
+                        <div class="col-lg-12">
+
+                            <div class="page-header">
+                                <h4>Static alert messages</h4>
+                            </div>
+
+                            <div class="alert">
+                                <button class="close" data-dismiss="alert">×</button>
+                                <strong><i class="icon24 i-warning"></i> Warning!</strong> Best check yo self, you're not looking too good.
+                            </div>
+
+                            <div class="alert alert-error">
+                                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                                <strong><i class="icon24 i-close-4"></i> Oh snap!</strong> Change a few things up and try submitting again.
+                            </div>
+
+                            <div class="alert alert-success">
+                                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                                <strong><i class="icon24 i-checkmark-circle"></i> Well done!</strong> You successfully read this important alert message.
+                            </div>
+
+                            <div class="alert alert-info">
+                                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                                <strong><i class="icon24 i-info"></i> Heads up!</strong> This alert needs your attention, but it's not super important.
+                            </div>
+
+                            <div class="alert alert-block alert-error fade in">
+                                <button type="button" class="close" data-dismiss="alert">×</button>
+                                <h4 class="alert-heading">Oh snap! You got an error!</h4>
+                                <p>Change this and that and try again. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum.</p>
+                                <p>
+                                    <a class="btn btn-danger" href="#">Take this action</a> <a class="btn btn-primary" href="#">Or do this</a>
+                                </p>
+                            </div>
+                            
+                        </div><!-- End .col-lg-12  --> 
+
+                    </div><!-- End .row-fluid  -->
+
+                    <div class="row">                   
+
+                        <div class="col-lg-3">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <div class="icon"><i class="icon20 i-list"></i></div> 
+                                    <h4>Unordered list</h4>
+                                    <a href="#" class="minimize"></a>
+                                </div><!-- End .panel-heading -->
+                            
+                                <div class="panel-body">
+                                    <p><code>&lt;ul&gt;</code></p>
+                                    <ul>
+                                        <li>Lorem ipsum dolor sit amet</li>
+                                        <li>Consectetur adipiscing elit</li>
+                                        <li>Integer molestie lorem at massa</li>
+                                        <li>Facilisis in pretium nisl aliquet</li>
+                                        <li>Nulla volutpat aliquam velit
+                                          <ul>
+                                            <li>Phasellus iaculis neque</li>
+                                            <li>Purus sodales ultricies</li>
+                                            <li>Vestibulum laoreet porttitor</li>
+                                            <li>Ac tristique libero volutpat at</li>
+                                          </ul>
+                                        </li>
+                                        <li>Faucibus porta lacus fringilla vel</li>
+                                        <li>Aenean sit amet erat nunc</li>
+                                        <li>Eget porttitor lorem</li>
+                                    </ul>
+                                </div><!-- End .panel-body -->
+                            </div><!-- End .widget -->
+                            
+                        </div><!-- End .col-lg-3  -->
+
+                        <div class="col-lg-3">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <div class="icon"><i class="icon20 i-list"></i></div> 
+                                    <h4>list-unstyled list</h4>
+                                    <a href="#" class="minimize"></a>
+                                </div><!-- End .panel-heading -->
+                            
+                                <div class="panel-body">
+                                    <p><code>&lt;ul class="list-unstyled"&gt;</code></p>
+                                    <ul class="list-unstyled">
+                                        <li>Lorem ipsum dolor sit amet</li>
+                                        <li>Consectetur adipiscing elit</li>
+                                        <li>Integer molestie lorem at massa</li>
+                                        <li>Facilisis in pretium nisl aliquet</li>
+                                        <li>Nulla volutpat aliquam velit
+                                          <ul>
+                                            <li>Phasellus iaculis neque</li>
+                                            <li>Purus sodales ultricies</li>
+                                            <li>Vestibulum laoreet porttitor sem</li>
+                                            <li>Ac tristique libero volutpat at</li>
+                                          </ul>
+                                        </li>
+                                        <li>Faucibus porta lacus fringilla vel</li>
+                                        <li>Aenean sit amet erat nunc</li>
+                                        <li>Eget porttitor lorem</li>
+                                    </ul>
+                                </div><!-- End .panel-body -->
+                            </div><!-- End .widget -->
+                            
+                        </div><!-- End .col-lg-3  --> 
+
+                        <div class="col-lg-3">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <div class="icon"><i class="icon20 i-list"></i></div> 
+                                    <h4>Ordered list</h4>
+                                    <a href="#" class="minimize"></a>
+                                </div><!-- End .panel-heading -->
+                            
+                                <div class="panel-body">
+                                    <p><code>&lt;ol&gt;</code></p>
+                                    <ol>
+                                        <li>Lorem ipsum dolor sit amet</li>
+                                        <li>Consectetur adipiscing elit</li>
+                                        <li>Integer molestie lorem at massa</li>
+                                        <li>Facilisis in pretium nisl aliquet</li>
+                                        <li>Nulla volutpat aliquam velit</li>
+                                        <li>Faucibus porta lacus fringilla vel</li>
+                                        <li>Aenean sit amet erat nunc</li>
+                                        <li>Eget porttitor lorem</li>
+                                        <li>Facilisis in pretium nisl aliquet</li>
+                                        <li>Nulla volutpat aliquam velit</li>
+                                    </ol>
+                                </div><!-- End .panel-body -->
+                            </div><!-- End .widget -->
+                            
+                        </div><!-- End .col-lg-3  -->  
+
+                        <div class="col-lg-3">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <div class="icon"><i class="icon20 i-list"></i></div> 
+                                    <h4>With custom icons</h4>
+                                    <a href="#" class="minimize"></a>
+                                </div><!-- End .panel-heading -->
+                            
+                                <div class="panel-body">
+                                    <ul class="list-unstyled">
+                                        <li><i class="icon12 i-checkmark-3 red"></i> Lorem ipsum dolor sit amet</li>
+                                        <li><i class="icon12 i-checkmark-3 blue"></i> Consectetur adipiscing elit</li>
+                                        <li><i class="icon12 i-checkmark-3 green"></i> Integer molestie lorem at massa</li>
+                                        <li><i class="icon12 i-checkmark-3 yellow"></i> Facilisis in pretium nisl aliquet</li>
+                                        <li><i class="icon12 i-checkmark-3 orange"></i> Nulla volutpat aliquam velit</li>
+                                        <li><i class="icon12 i-checkmark-3 dark"></i> Faucibus porta lacus fringilla vel</li>
+                                        <li><i class="icon12 i-radio-checked red"></i> Aenean sit amet erat nunc</li>
+                                        <li><i class="icon12 i-radio-checked blue"></i> Eget porttitor lorem</li>
+                                        <li><i class="icon12 i-radio-checked green"></i> Facilisis in pretium nisl aliquet</li>
+                                        <li><i class="icon12 i-radio-checked yellow"></i> Nulla volutpat aliquam velit</li>
+                                        <li><i class="icon12 i-radio-checked orange"></i> Nulla volutpat aliquam velit</li>
+                                        <li><i class="icon12 i-radio-checked dark"></i> Nulla volutpat aliquam velit</li>
+                                    </ul>
+                                </div><!-- End .panel-body -->
+                            </div><!-- End .widget -->
+                            
+                        </div><!-- End .col-lg-3  --> 
+
+                    </div><!-- End .row-fluid  -->
+
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <div class="icon"><i class="icon20 i-list"></i></div> 
+                                    <h4>Description</h4>
+                                    <a href="#" class="minimize"></a>
+                                </div><!-- End .panel-heading -->
+                            
+                                <div class="panel-body">
+                                    <p><code>&lt;dl&gt;</code></p>
+                                    <dl>
+                                        <dt>Description lists</dt>
+                                        <dd>A description list is perfect for defining terms.</dd>
+                                        <dt>Euismod</dt>
+                                        <dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
+                                        <dd>Donec id elit non mi porta gravida at eget metus.</dd>
+                                        <dt>Malesuada porta</dt>
+                                        <dd>Etiam porta sem malesuada magna mollis euismod.</dd>
+                                    </dl>
+                                </div><!-- End .panel-body -->
+                            </div><!-- End .widget -->
+                            
+                        </div><!-- End .col-lg-4  --> 
+
+                        <div class="col-lg-8">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <div class="icon"><i class="icon20 i-list"></i></div> 
+                                    <h4>Horizontal description</h4>
+                                    <a href="#" class="minimize"></a>
+                                </div><!-- End .panel-heading -->
+                            
+                                <div class="panel-body">
+                                    <p><code>&lt;dl class="dl-horizontal"&gt;</code></p>
+                                    <dl class="dl-horizontal">
+                                        <dt>Description lists</dt>
+                                        <dd>A description list is perfect for defining terms.</dd>
+                                        <dt>Euismod</dt>
+                                        <dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
+                                        <dd>Donec id elit non mi porta gravida at eget metus.</dd>
+                                        <dt>Malesuada porta</dt>
+                                        <dd>Etiam porta sem malesuada magna mollis euismod.</dd>
+                                        <dt>Felis euismod semper eget lacinia</dt>
+                                        <dd>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</dd>
+                                    </dl>
+                                </div><!-- End .panel-body -->
+                            </div><!-- End .widget -->
+                            
+                        </div><!-- End .col-lg-8  -->
+
+                    </div><!-- End .row-fluid  -->
+
+                </div> <!-- End .container-fluid  -->
+            </div> <!-- End .wrapper  -->
+        </section>
+    </div><!-- End .main  -->
+  </body>
+</html>
