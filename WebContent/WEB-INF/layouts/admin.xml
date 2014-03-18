@@ -40,5 +40,4 @@
         <put-attribute name="title" value="Fitness Force - Error"></put-attribute>
 		<put-attribute name="content" value="/WEB-INF/tiles/admin/error.jsp"></put-attribute>
     </definition>
-    
 </tiles-definitions>
