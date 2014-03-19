@@ -1,18 +1,18 @@
 $(document).ready(function() {
 
 	//------------- jGrowl notification -------------//
-    setTimeout(function() {
-    	$.jGrowl("<i class='icon16 i-checkmark-3'></i> Login is successfull", {
-    		group: 'success',
-    		position: 'center',
-    		sticky: false,
-    		closeTemplate: '<i class="icon16 i-close-2"></i>',
-    		animateOpen: {
-		        width: 'show',
-		        height: 'show'
-		    }
-    	});
-    }, 250);
+//    setTimeout(function() {
+//    	$.jGrowl("<i class='icon16 i-checkmark-3'></i> Login is successfull", {
+//    		group: 'success',
+//    		position: 'center',
+//    		sticky: false,
+//    		closeTemplate: '<i class="icon16 i-close-2"></i>',
+//    		animateOpen: {
+//		        width: 'show',
+//		        height: 'show'
+//		    }
+//    	});
+//    }, 250);
  	
  	//define chart clolors ( you maybe add more colors if you want or flot will add it automatic )
  	var chartColours = ['#62aeef', '#d8605f', '#72c380', '#6f7a8a', '#f7cb38', '#5a8022', '#2c7282'];
@@ -322,36 +322,36 @@ $(document).ready(function() {
 	$('.spark>.negative').sparkline('html', { type:'bar', barColor:'#db4a37'});
 
 	//------------- Gauge -------------//
-	var g = new JustGage({
-	    id: "gauge", 
-	    value: getRandomInt(0, 100), 
-	    min: 0,
-	    max: 100,
-	    title: "server usage",
-	    gaugeColor: '#6f7a8a',
-	    labelFontColor: '#555',
-	    titleFontColor: '#555',
-	    valueFontColor: '#555',
-	    showMinMax: false
-	 });
+//	var g = new JustGage({
+//	    id: "gauge", 
+//	    value: getRandomInt(0, 100), 
+//	    min: 0,
+//	    max: 100,
+//	    title: "server usage",
+//	    gaugeColor: '#6f7a8a',
+//	    labelFontColor: '#555',
+//	    titleFontColor: '#555',
+//	    valueFontColor: '#555',
+//	    showMinMax: false
+//	 });
 
-	var g1 = new JustGage({
-	    id: "gauge1", 
-	    value: getRandomInt(100, 500), 
-	    min: 100,
-	    max: 500,
-	    title: "Visitors now",
-	    gaugeColor: '#6f7a8a',
-	    labelFontColor: '#555',
-	    titleFontColor: '#555',
-	    valueFontColor: '#555',
-	    showMinMax: false
-	 });
-
-	setInterval(function() {
-      g.refresh(getRandomInt(0, 100));
-      g1.refresh(getRandomInt(100, 500));
-    }, 2500);
+//	var g1 = new JustGage({
+//	    id: "gauge1", 
+//	    value: getRandomInt(100, 500), 
+//	    min: 100,
+//	    max: 500,
+//	    title: "Visitors now",
+//	    gaugeColor: '#6f7a8a',
+//	    labelFontColor: '#555',
+//	    titleFontColor: '#555',
+//	    valueFontColor: '#555',
+//	    showMinMax: false
+//	 });
+//
+//	setInterval(function() {
+//      g.refresh(getRandomInt(0, 100));
+//      g1.refresh(getRandomInt(100, 500));
+//    }, 2500);
 
 });
 

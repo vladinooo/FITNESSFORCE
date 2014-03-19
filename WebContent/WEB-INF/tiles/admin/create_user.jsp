@@ -45,12 +45,6 @@
 				src="${pageContext.request.contextPath}/static/bootstrap/genyx/images/logodark.png"
 				alt="Genyx admin" class="img-responsive"></a>
 
-			<div id="log">
-				<div class="page-header">
-					<h3 class="center">Please login</h3>
-				</div>
-			</div>
-
 			<div id="reg">
 				<div class="page-header">
 					<h3 class="center">Create account</h3>

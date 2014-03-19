@@ -34,6 +34,8 @@
 	    <!-- Plugins stylesheets -->
 	    <link href="${pageContext.request.contextPath}/static/bootstrap/genyx/js/plugins/forms/uniform/uniform.default.css" rel="stylesheet" /> 
     	<link href="${pageContext.request.contextPath}/static/bootstrap/genyx/js/plugins/forms/select2/select2.css" rel="stylesheet" />
+    	<link href="${pageContext.request.contextPath}/static/bootstrap/genyx/js/plugins/misc/fullcalendar/fullcalendar.css" rel="stylesheet" /> 
+    	<link href="${pageContext.request.contextPath}/static/bootstrap/genyx/js/plugins/ui/jgrowl/jquery.jgrowl.css" rel="stylesheet" /> 
 	 
 	    <!-- app stylesheets -->
 	    <link href="${pageContext.request.contextPath}/static/bootstrap/genyx/css/app.css" rel="stylesheet" /> 
@@ -72,24 +74,45 @@
 	    ================================================== -->
 	    <!-- Important plugins put in all pages -->
 	    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-	    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/jquery-ui.min.js"></script>
+	    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
 	    <script src="${pageContext.request.contextPath}/static/bootstrap/genyx/js/bootstrap/bootstrap.js"></script>  
 	    <script src="${pageContext.request.contextPath}/static/bootstrap/genyx/js/conditionizr.min.js"></script>  
 	    <script src="${pageContext.request.contextPath}/static/bootstrap/genyx/js/plugins/core/nicescroll/jquery.nicescroll.min.js"></script>
 	    <script src="${pageContext.request.contextPath}/static/bootstrap/genyx/js/plugins/core/jrespond/jRespond.min.js"></script>
 	    <script src="${pageContext.request.contextPath}/static/bootstrap/genyx/js/jquery.genyxAdmin.js"></script>
 	    
+
+	    <!-- Charts plugins -->
+	    <script src="${pageContext.request.contextPath}/static/bootstrap/genyx/js/plugins/charts/flot/jquery.flot.js"></script>
+	    <script src="${pageContext.request.contextPath}/static/bootstrap/genyx/js/plugins/charts/flot/jquery.flot.pie.js"></script>
+	    <script src="${pageContext.request.contextPath}/static/bootstrap/genyx/js/plugins/charts/flot/jquery.flot.resize.js"></script>
+	    <script src="${pageContext.request.contextPath}/static/bootstrap/genyx/js/plugins/charts/flot/jquery.flot.tooltip.min.js"></script>
+	    <script src="${pageContext.request.contextPath}/static/bootstrap/genyx/js/plugins/charts/flot/jquery.flot.orderBars.js"></script>
+	    <script src="${pageContext.request.contextPath}/static/bootstrap/genyx/js/plugins/charts/flot/jquery.flot.time.min.js"></script>
+	    <script src="${pageContext.request.contextPath}/static/bootstrap/genyx/js/plugins/charts/sparklines/jquery.sparkline.min.js"></script>
+	    <script src="${pageContext.request.contextPath}/static/bootstrap/genyx/js/plugins/charts/flot/date.js"></script> <!-- Only for generating random data delete in production site-->
+	    <script src="${pageContext.request.contextPath}/static/bootstrap/genyx/js/plugins/charts/pie-chart/jquery.easy-pie-chart.js"></script>
+	    <script src="${pageContext.request.contextPath}/static/bootstrap/genyx/js/plugins/charts/gauge/justgage.1.0.1.min.js"></script>
+	    <script src="${pageContext.request.contextPath}/static/bootstrap/genyx/js/plugins/charts/gauge/raphael.2.1.0.min.js"></script>
+	    
 	 
 	    <!-- Form plugins -->
 	    <script src="${pageContext.request.contextPath}/static/bootstrap/genyx/js/plugins/forms/uniform/jquery.uniform.min.js"></script>
     	<script src="${pageContext.request.contextPath}/static/bootstrap/genyx/js/plugins/forms/validation/jquery.validate.js"></script>
     	<script src="${pageContext.request.contextPath}/static/bootstrap/genyx/js/plugins/forms/select2/select2.js"></script> 
+    	
+    	<!-- Misc plugins -->
+	    <script src="${pageContext.request.contextPath}/static/bootstrap/genyx/js/plugins/misc/fullcalendar/fullcalendar.min.js"></script>
+	
+	    <!-- UI plugins -->
+	    <script src="${pageContext.request.contextPath}/static/bootstrap/genyx/js/plugins/ui/jgrowl/jquery.jgrowl.min.js"></script>
 	 
 	    <!-- Init plugins -->
 	    <script src="${pageContext.request.contextPath}/static/bootstrap/genyx/js/app.js"></script><!-- Core js functions -->
 	    <script src="${pageContext.request.contextPath}/static/bootstrap/genyx/js/pages/domready.js"></script><!-- Init plugins only for page -->
 	    <script src="${pageContext.request.contextPath}/static/bootstrap/genyx/js/pages/form-validation.js"></script><!-- Init plugins only for page -->
 	    <script src="${pageContext.request.contextPath}/static/bootstrap/genyx/js/pages/login.js"></script><!-- Init plugins only for page -->
+	    <script src="${pageContext.request.contextPath}/static/bootstrap/genyx/js/pages/dashboard.js"></script><!-- Init plugins only for page -->
 	    
 	    <!-- Custom CSS -->
 	    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/main.css">
@@ -98,17 +121,13 @@
 	    
 	    <body>
 		
-			<div>
-				<tiles:insertAttribute name="header"></tiles:insertAttribute>
-			</div>
+			<!-- <div><tiles:insertAttribute name="header"></tiles:insertAttribute></div> -->
 		
 			<div>
 				<tiles:insertAttribute name="content"></tiles:insertAttribute>
 			</div>
 		
-			<div>
-				<tiles:insertAttribute name="footer"></tiles:insertAttribute>
-			</div>
+			<!-- <div><tiles:insertAttribute name="footer"></tiles:insertAttribute></div> -->
 		
 		</body>
 		</html>

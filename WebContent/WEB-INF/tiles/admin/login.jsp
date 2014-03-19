@@ -73,12 +73,6 @@
 						id="register"><strong>Create one now</strong></a>
 				</p>
 			</div>
-			<div id="reg">
-				<div class="page-header">
-					<h3 class="center">Register account</h3>
-				</div>
-
-			</div>
 		</div>
 		<div id="bar" data-active="log">
 			<div class="btn-group btn-group-vertical">
