@@ -2,7 +2,7 @@ $(document).ready(function() {
  	//------------- Form validation -------------//
  	$('#select1').select2({placeholder: "Select"});
 
- 	$("#validate").validate({
+ 	$("#create-user-form, #admin-create-user-form").validate({
  		ignore: null,
     	ignore: 'input[type="hidden"]',
  		rules: {

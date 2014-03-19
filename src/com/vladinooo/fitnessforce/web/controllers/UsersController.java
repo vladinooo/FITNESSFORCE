@@ -1,7 +1,5 @@
 package com.vladinooo.fitnessforce.web.controllers;
 
-import java.util.Date;
-
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -55,9 +53,6 @@ public class UsersController {
 			return "create_user";
 		}
 
-		user.setDateRegistered(new Date().toString());
-		user.setRolename("ROLE_ADMIN");
-
 		User duplicateUser = usersService.getUser(user.getUsername());
 		if (duplicateUser != null) {
 			model.addAttribute("duplicateUser", duplicateUser);
@@ -65,8 +60,37 @@ public class UsersController {
 		}
 
 		usersService.createUser(user);
-
 		return "user_created";
+	}
+	
+	@RequestMapping("/users")
+	public String showUsers(Model model) {
+		model.addAttribute("users", usersService.getUsers());
+		return "users";
+	}
+	
+	@RequestMapping("/admin_create_user")
+	public String showAdminCreateUser(Model model) {
+		model.addAttribute("user", new User());
+		return "admin_create_user";
+	}
+	
+	@RequestMapping(value = "/do_admin_create_user", method = RequestMethod.POST)
+	public String doAdminCreateUser(@Valid User user, BindingResult result, Model model) {
+		
+		if (result.hasErrors()) {
+			return "admin_create_user";
+		}
+
+		User duplicateUser = usersService.getUser(user.getUsername());
+		if (duplicateUser != null) {
+			model.addAttribute("duplicateUser", duplicateUser);
+			return "admin_create_user";
+		}
+
+		usersService.createUser(user);
+		model.addAttribute("users", usersService.getUsers());
+		return "users";
 	}
 
 	@ExceptionHandler(Exception.class)
