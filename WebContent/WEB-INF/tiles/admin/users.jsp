@@ -25,6 +25,7 @@
                             <th>Email</th>
                             <th>Registered</th>
                             <th>Status</th>
+                            <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -35,6 +36,13 @@
 								<td class="center"><c:out value="${user.email}"/></td>
 								<td class="center"><c:out value="${user.dateRegistered}"/></td>
 								<td class="center"><c:out value="${user.enabled == true ? 'Active' : 'Terminated'}"/></td>
+								<td class="center ">
+									<div class="btn-group">
+                                        <a href="#" class="btn btn-success tip" title="" data-original-title="View user"><i class="icon16 i-eye-3"></i></a>
+                                        <a href="#" class="btn btn-info tip" title="" data-original-title="Edit user"><i class="icon16 i-pencil"></i></a>
+                                        <a href="#" class="btn btn-danger tip" title="" data-original-title="Remove user"><i class="icon16 i-remove-4"></i></a>
+                                    </div>
+								</td>
 							</tr>
 						</c:forEach>
                     </tbody>
@@ -45,6 +53,7 @@
                             <th>Email</th>
                             <th>Registered</th>
                             <th>Status</th>
+                            <th>Actions</th>
                         </tr>
                     </tfoot>
                 </table>
