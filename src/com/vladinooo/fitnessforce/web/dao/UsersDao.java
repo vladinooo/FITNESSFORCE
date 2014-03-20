@@ -65,6 +65,37 @@ public class UsersDao {
 						params) == 1;
 	}
 
+	public User getUser(int userId) {
+
+		MapSqlParameterSource params = new MapSqlParameterSource();
+		params.addValue("userId", userId);
+
+		try {
+			
+			return jdbc.queryForObject(
+					"select * from users where user_id = :userId", params,
+					new RowMapper<User>() {
+	
+						public User mapRow(ResultSet rs, int rowNum)
+								throws SQLException {
+							User user = new User();
+	
+							user.setUserId(rs.getInt("user_id"));
+							user.setUsername(rs.getString("username"));
+							user.setPassword(rs.getString("password"));
+							user.setEmail(rs.getString("email"));
+							user.setDateRegistered(rs.getString("date_registered"));
+							user.setEnabled(rs.getBoolean("enabled"));
+	
+							return user;
+						}
+	
+					});
+		} catch (EmptyResultDataAccessException ex) {
+			return null;
+		}
+	}
+	
 
 	public User getUser(String username) {
 

@@ -32,6 +32,10 @@ public class UsersService {
 		usersDao.createUser(user);
 	}
 
+	public User getUser(int userId) {
+		return usersDao.getUser(userId);
+	}
+	
 	public User getUser(String username) {
 		return usersDao.getUser(username);
 	}

@@ -23,12 +23,17 @@
     
     <definition name="admin_create_user" extends="fitnessForce.admin">
         <put-attribute name="title" value="Fitness Force - Create User"></put-attribute>
-		<put-attribute name="content" value="/WEB-INF/tiles/admin/admin_create_user.jsp"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/tiles/admin/create_user.jsp"></put-attribute>
     </definition>
     
-    <definition name="do_admin_user_created" extends="fitnessForce.admin">
+    <definition name="do_admin_create_user" extends="fitnessForce.admin">
         <put-attribute name="title" value="Fitness Force - Users"></put-attribute>
 		<put-attribute name="content" value="/WEB-INF/tiles/admin/users.jsp"></put-attribute>
+    </definition>
+    
+    <definition name="admin_edit_user" extends="fitnessForce.admin">
+        <put-attribute name="title" value="Fitness Force - Edit user"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/tiles/admin/edit_user.jsp"></put-attribute>
     </definition>
     
     <definition name="error" extends="fitnessForce.admin">

@@ -46,7 +46,11 @@
 								<td class="center ">
 									<div class="btn-group">
                                         <a href="#" class="btn btn-success tip" title="" data-original-title="View user"><i class="icon16 i-eye-3"></i></a>
-                                        <a href="#" class="btn btn-info tip" title="" data-original-title="Edit user"><i class="icon16 i-pencil"></i></a>
+                                        <a href="
+                                        	<c:url value='/admin_edit_user'>
+											   <c:param name='userid' value='${user.userId}'/>
+											</c:url>"
+											class="btn btn-info tip" title="" data-original-title="Edit user"><i class="icon16 i-pencil"></i></a>
                                         <a href="#" class="btn btn-danger tip" title="" data-original-title="Remove user"><i class="icon16 i-remove-4"></i></a>
                                     </div>
 								</td>

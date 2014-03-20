@@ -12,6 +12,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.vladinooo.fitnessforce.web.dao.User;
 import com.vladinooo.fitnessforce.web.service.UsersService;
@@ -67,18 +68,16 @@ public class UsersController {
 		return "user_created";
 	}
 	
-	@RequestMapping("/user_edit_user")
-	public String showUserEditUser(Model model) {
+	@RequestMapping("/edit_user")
+	public String showEditUser(Model model) {
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 	    String username = auth.getName();
 		User currentUser = usersService.getUser(username);
 		model.addAttribute("currentUser", currentUser);
-		return "user_edit_user";
+		return "edit_user";
 	}
+
 	
-	
-	
-	//admin
 	@RequestMapping("/users")
 	public String showUsers(Model model) {
 		model.addAttribute("users", usersService.getUsers());
@@ -109,6 +108,31 @@ public class UsersController {
 		return "users";
 	}
 
+	@RequestMapping("/admin_edit_user")
+	public String showAdminEditUser(@RequestParam("userid") String userId, Model model) {
+		User selectedUser = usersService.getUser(Integer.parseInt(userId));
+		model.addAttribute("selectedUser", selectedUser);
+		model.addAttribute("user", new User());
+		return "admin_edit_user";
+	}
+	
+	@RequestMapping(value = "/do_admin_edit_user", method = RequestMethod.POST)
+	public String doAdminEditUser(@Valid User user, BindingResult result, Model model) {
+		
+		if (result.hasErrors()) {
+			return "admin_edit_user";
+		}
+
+		User duplicateUser = usersService.getUser(user.getUsername());
+		if (duplicateUser != null) {
+			model.addAttribute("duplicateUser", duplicateUser);
+			return "admin_edit_user";
+		}
+
+		usersService.createUser(user);
+		return "admin_edit_user";
+	}
+	
 	@ExceptionHandler(Exception.class)
 	public String handleExceptions(Exception ex) {
 		ex.printStackTrace();

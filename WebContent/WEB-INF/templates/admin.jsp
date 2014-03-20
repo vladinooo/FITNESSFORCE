@@ -257,32 +257,35 @@
 		                            <span class="txt">Online Shop</span>
 		                        </a>
 		                    </li>
-		                    <li>
-		                        <a href="#users">
-		                            <span class="icon"><i class="icon20 i-users"></i></span>
-		                            <span class="txt">Users</span>
-		                        </a>
-		                        <ul class="sub">
-		                            <li>
-		                                <a href="<c:url value='admin_create_user'/>">
-		                                    <span class="icon"><i class="icon20 i-user-plus"></i></span>
-		                                    <span class="txt">Create user</span>
-		                                </a>
-		                            </li>
-		                            <li>
-		                                <a href="<c:url value='users'/>">
-		                                    <span class="icon"><i class="icon20 i-users"></i></span>
-		                                    <span class="txt">Manage users</span>
-		                                </a>
-		                            </li>
-		                        </ul>
-		                    </li>
-		                    <li>
-		                        <a href="#">
-		                            <span class="icon"><i class="icon20 i-cogs"></i></span>
-		                            <span class="txt">Settings</span>
-		                        </a>
-		                    </li> 
+		                    
+		                    <sec:authorize access="hasRole('ROLE_ADMIN')">
+								<li>
+			                        <a href="#users">
+			                            <span class="icon"><i class="icon20 i-users"></i></span>
+			                            <span class="txt">Users</span>
+			                        </a>
+			                        <ul class="sub">
+			                            <li>
+			                                <a href="<c:url value='admin_create_user'/>">
+			                                    <span class="icon"><i class="icon20 i-user-plus"></i></span>
+			                                    <span class="txt">Create user</span>
+			                                </a>
+			                            </li>
+			                            <li>
+			                                <a href="<c:url value='users'/>">
+			                                    <span class="icon"><i class="icon20 i-users"></i></span>
+			                                    <span class="txt">Manage users</span>
+			                                </a>
+			                            </li>
+			                        </ul>
+			                    </li>
+			                    <li>
+			                        <a href="#">
+			                            <span class="icon"><i class="icon20 i-cogs"></i></span>
+			                            <span class="txt">Settings</span>
+			                        </a>
+			                    </li> 
+							</sec:authorize>
 		                </ul>
 		            </nav> <!-- End #mainnav -->
 		

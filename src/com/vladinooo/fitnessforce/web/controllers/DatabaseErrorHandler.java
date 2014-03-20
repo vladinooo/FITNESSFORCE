@@ -1,3 +1,4 @@
+package com.vladinooo.fitnessforce.web.controllers;
 // Disabled due to weird bug caused by @ControllerAdvice
 
 //package com.vladinooo.fitnessforce.web.controllers;
