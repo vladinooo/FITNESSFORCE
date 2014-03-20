@@ -24,6 +24,7 @@
                             <th>Password</th>
                             <th>Email</th>
                             <th>Registered</th>
+                            <th>Role</th>
                             <th>Status</th>
                             <th>Actions</th>
                         </tr>
@@ -35,6 +36,12 @@
 								<td class="center"><c:out value="${user.password}"/></td>
 								<td class="center"><c:out value="${user.email}"/></td>
 								<td class="center"><c:out value="${user.dateRegistered}"/></td>
+								<td class="center">
+								    <c:choose>
+								        <c:when test="${user.rolename == 'ROLE_ADMIN'}">Administrator</c:when>
+								        <c:when test="${user.rolename == 'ROLE_USER'}">User</c:when>
+								    </c:choose>
+								</td>
 								<td class="center"><c:out value="${user.enabled == true ? 'Active' : 'Terminated'}"/></td>
 								<td class="center ">
 									<div class="btn-group">
@@ -52,6 +59,7 @@
                             <th>Password</th>
                             <th>Email</th>
                             <th>Registered</th>
+                            <th>Role</th>
                             <th>Status</th>
                             <th>Actions</th>
                         </tr>

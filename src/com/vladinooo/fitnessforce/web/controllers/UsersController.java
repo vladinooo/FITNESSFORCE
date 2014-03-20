@@ -3,6 +3,8 @@ package com.vladinooo.fitnessforce.web.controllers;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
@@ -24,6 +26,8 @@ public class UsersController {
 		this.usersService = usersService;
 	}
 
+	
+	//user
 	@RequestMapping("/")
 	public String showHome() {
 
@@ -63,6 +67,18 @@ public class UsersController {
 		return "user_created";
 	}
 	
+	@RequestMapping("/user_edit_user")
+	public String showUserEditUser(Model model) {
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+	    String username = auth.getName();
+		User currentUser = usersService.getUser(username);
+		model.addAttribute("currentUser", currentUser);
+		return "user_edit_user";
+	}
+	
+	
+	
+	//admin
 	@RequestMapping("/users")
 	public String showUsers(Model model) {
 		model.addAttribute("users", usersService.getUsers());

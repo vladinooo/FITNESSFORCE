@@ -270,7 +270,7 @@
 		                                </a>
 		                            </li>
 		                            <li>
-		                                <a href="<c:url value='/users'/>">
+		                                <a href="<c:url value='users'/>">
 		                                    <span class="icon"><i class="icon20 i-users"></i></span>
 		                                    <span class="txt">Manage users</span>
 		                                </a>
