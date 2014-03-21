@@ -24,12 +24,12 @@ public class UsersService {
 		return usersDao.getUsers();
 	}
 
-	public void createUser(User user) {
+	public boolean createUser(User user) {
 		Date dateRegistered = new Date();
 		SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 		user.setDateRegistered(dateFormat.format(dateRegistered));
 		user.setRolename("ROLE_ADMIN");
-		usersDao.createUser(user);
+		return usersDao.createUser(user);
 	}
 
 	public User getUser(int userId) {
@@ -38,5 +38,11 @@ public class UsersService {
 	
 	public User getUser(String username) {
 		return usersDao.getUser(username);
+	}
+
+	public boolean editUser(User user) {
+		user.setRolename("ROLE_ADMIN");
+		user.setEnabled(true);
+		return usersDao.editUser(user);
 	}
 }

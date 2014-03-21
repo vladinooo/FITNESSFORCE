@@ -40,40 +40,54 @@ public class UsersController {
 		return "login";
 	}  
 	
+	
 	@RequestMapping(value="/logout", method = RequestMethod.GET)  
 	public String logout(ModelMap model) {  
 		return "login";  
 	}  
 
+	
 	@RequestMapping("/create_user")
 	public String showCreateUser(Model model) {
 		model.addAttribute("user", new User());
 		return "create_user";
 	}
 
+	
 	@RequestMapping(value = "/do_create_user", method = RequestMethod.POST)
 	public String doCreateUser(@Valid User user, BindingResult result, Model model) {
-		
 		if (result.hasErrors()) {
 			return "create_user";
 		}
-
 		User duplicateUser = usersService.getUser(user.getUsername());
 		if (duplicateUser != null) {
 			model.addAttribute("duplicateUser", duplicateUser);
 			return "create_user";
 		}
-
-		usersService.createUser(user);
+		if (!usersService.createUser(user)) {
+			return "error";
+		}
 		return "user_created";
 	}
 	
+	
 	@RequestMapping("/edit_user")
-	public String showEditUser(Model model) {
-		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-	    String username = auth.getName();
-		User currentUser = usersService.getUser(username);
-		model.addAttribute("currentUser", currentUser);
+	public String showEditUser(@RequestParam("userid") String userId, Model model) {
+		User selectedUser = usersService.getUser(Integer.parseInt(userId));
+		model.addAttribute("selectedUser", selectedUser);
+		model.addAttribute("user", new User());
+		return "edit_user";
+	}
+		
+	
+	@RequestMapping(value = "/do_edit_user", method = RequestMethod.POST)
+	public String doEditUser(@Valid User user, BindingResult result, Model model) {
+		if (result.hasErrors()) {
+			return "edit_user";
+		}
+		if (!usersService.editUser(user)) {
+			return "error";
+		}
 		return "edit_user";
 	}
 
@@ -84,30 +98,32 @@ public class UsersController {
 		return "users";
 	}
 	
+	
 	@RequestMapping("/admin_create_user")
 	public String showAdminCreateUser(Model model) {
 		model.addAttribute("user", new User());
 		return "admin_create_user";
 	}
 	
+	
 	@RequestMapping(value = "/do_admin_create_user", method = RequestMethod.POST)
 	public String doAdminCreateUser(@Valid User user, BindingResult result, Model model) {
-		
 		if (result.hasErrors()) {
 			return "admin_create_user";
 		}
-
 		User duplicateUser = usersService.getUser(user.getUsername());
 		if (duplicateUser != null) {
 			model.addAttribute("duplicateUser", duplicateUser);
 			return "admin_create_user";
 		}
-
-		usersService.createUser(user);
+		if (!usersService.createUser(user)) {
+			return "error";
+		}
 		model.addAttribute("users", usersService.getUsers());
 		return "users";
 	}
 
+	
 	@RequestMapping("/admin_edit_user")
 	public String showAdminEditUser(@RequestParam("userid") String userId, Model model) {
 		User selectedUser = usersService.getUser(Integer.parseInt(userId));
@@ -116,22 +132,18 @@ public class UsersController {
 		return "admin_edit_user";
 	}
 	
+	
 	@RequestMapping(value = "/do_admin_edit_user", method = RequestMethod.POST)
 	public String doAdminEditUser(@Valid User user, BindingResult result, Model model) {
-		
 		if (result.hasErrors()) {
 			return "admin_edit_user";
 		}
-
-		User duplicateUser = usersService.getUser(user.getUsername());
-		if (duplicateUser != null) {
-			model.addAttribute("duplicateUser", duplicateUser);
-			return "admin_edit_user";
+		if (!usersService.editUser(user)) {
+			return "error";
 		}
-
-		usersService.createUser(user);
 		return "admin_edit_user";
 	}
+	
 	
 	@ExceptionHandler(Exception.class)
 	public String handleExceptions(Exception ex) {

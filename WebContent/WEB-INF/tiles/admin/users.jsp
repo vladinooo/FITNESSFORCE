@@ -50,7 +50,7 @@
                                         	<c:url value='/admin_edit_user'>
 											   <c:param name='userid' value='${user.userId}'/>
 											</c:url>"
-											class="btn btn-info tip" title="" data-original-title="Edit user"><i class="icon16 i-pencil"></i></a>
+											class="btn btn-info tip" title="" data-original-title="Edit user" onclick="highlightSelectedTab()"><i class="icon16 i-pencil"></i></a>
                                         <a href="#" class="btn btn-danger tip" title="" data-original-title="Remove user"><i class="icon16 i-remove-4"></i></a>
                                     </div>
 								</td>
@@ -75,3 +75,5 @@
     </div><!-- End .col-lg-12  -->                     
                         
 </div><!-- End .row-fluid  -->
+
+

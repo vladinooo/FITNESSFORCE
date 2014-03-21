@@ -22,7 +22,7 @@
     </definition>
     
     <definition name="admin_create_user" extends="fitnessForce.admin">
-        <put-attribute name="title" value="Fitness Force - Create User"></put-attribute>
+        <put-attribute name="title" value="Fitness Force - Create user"></put-attribute>
 		<put-attribute name="content" value="/WEB-INF/tiles/admin/create_user.jsp"></put-attribute>
     </definition>
     

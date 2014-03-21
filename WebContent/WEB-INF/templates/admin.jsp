@@ -118,6 +118,9 @@
 	    
 	    <!-- Custom CSS -->
 	    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/main.css">
+	    
+	    <!-- Custom JS -->
+	    <script src="${pageContext.request.contextPath}/static/js/style.js"></script>
 	 
 	    </head>
 	    
@@ -259,7 +262,7 @@
 		                    </li>
 		                    
 		                    <sec:authorize access="hasRole('ROLE_ADMIN')">
-								<li>
+								<li id="usersTab">
 			                        <a href="#users">
 			                            <span class="icon"><i class="icon20 i-users"></i></span>
 			                            <span class="txt">Users</span>
@@ -310,7 +313,5 @@
 				</div> <!-- End .wrapper  -->
 			</section>
 		</div><!-- End .main  -->
-		
-	</body>
+</body>
 </html>
-

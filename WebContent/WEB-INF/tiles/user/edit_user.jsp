@@ -4,7 +4,7 @@
 
 <div id="heading" class="page-header">
 	<h1>
-		<i class="icon20 i-users"></i> Users
+		<i class="icon20 i-users"></i> Profile
 	</h1>
 </div>
 
@@ -15,15 +15,15 @@
 				<div class="icon">
 					<i class="icon20 i-user-plus"></i>
 				</div>
-				<h4>Edit user</h4>
+				<h4>Edit profile</h4>
 				<a href="#" class="minimize"></a>
 			</div>
 			<!-- End .panel-heading -->
 
 			<div class="panel-body">
 
-				<form:form class="form-horizontal" id="admin-edit-user-form"
-					action="${pageContext.request.contextPath}/do_admin_edit_user"
+				<form:form class="form-horizontal" id="edit-user-form"
+					action="${pageContext.request.contextPath}/do_edit_user"
 					commandName="user" method="POST" role="form">
 
 					<form:input type="text" hidden="hidden" name="userId" path="userId"
