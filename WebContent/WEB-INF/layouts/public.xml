@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+       
+<tiles-definitions>
+    <definition name="fitnessForce.public" template="/WEB-INF/templates/public.jsp">
+        <put-attribute name="title" value="Fitness Force"></put-attribute>
+        <put-attribute name="header" value="/WEB-INF/tiles/public/header.jsp"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/tiles/public/content.jsp"></put-attribute>
+		<put-attribute name="footer" value="/WEB-INF/tiles/public/footer.jsp"></put-attribute>
+    </definition>
+    
+    <definition name="home" extends="fitnessForce.public">
+        <put-attribute name="title" value="Fitness Force - Home"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/tiles/public/home.jsp"></put-attribute>
+    </definition>
+    
+    <definition name="login" extends="fitnessForce.public">
+        <put-attribute name="title" value="Fitness Force - Login"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/tiles/public/login.jsp"></put-attribute>
+    </definition>
+    
+    <definition name="create_user" extends="fitnessForce.public">
+        <put-attribute name="title" value="Fitness Force - Create user"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/tiles/public/create_user.jsp"></put-attribute>
+    </definition>
+    
+    <definition name="user_created" extends="fitnessForce.public">
+        <put-attribute name="title" value="Fitness Force - User created"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/tiles/public/user_created.jsp"></put-attribute>
+    </definition>
+        
+    <definition name="error" extends="fitnessForce.public">
+        <put-attribute name="title" value="Fitness Force - Error"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/tiles/public/error.jsp"></put-attribute>
+    </definition>
+</tiles-definitions>

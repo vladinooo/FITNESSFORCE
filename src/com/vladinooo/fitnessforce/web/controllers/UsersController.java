@@ -29,9 +29,8 @@ public class UsersController {
 
 	
 	//user
-	@RequestMapping("/")
+	@RequestMapping(value="/", method = RequestMethod.GET)
 	public String showHome() {
-
 		return "home";
 	}
 	
@@ -47,7 +46,7 @@ public class UsersController {
 	}  
 
 	
-	@RequestMapping("/create_user")
+	@RequestMapping(value="/create_user", method = RequestMethod.GET)
 	public String showCreateUser(Model model) {
 		model.addAttribute("user", new User());
 		return "create_user";
@@ -71,7 +70,7 @@ public class UsersController {
 	}
 	
 	
-	@RequestMapping("/edit_user")
+	@RequestMapping(value="/edit_user", method = RequestMethod.GET)
 	public String showEditUser(@RequestParam("userid") String userId, Model model) {
 		User selectedUser = usersService.getUser(Integer.parseInt(userId));
 		model.addAttribute("selectedUser", selectedUser);
@@ -92,14 +91,14 @@ public class UsersController {
 	}
 
 	
-	@RequestMapping("/users")
+	@RequestMapping(value="/users", method = RequestMethod.GET)
 	public String showUsers(Model model) {
 		model.addAttribute("users", usersService.getUsers());
 		return "users";
 	}
 	
 	
-	@RequestMapping("/admin_create_user")
+	@RequestMapping(value="/admin_create_user", method = RequestMethod.GET)
 	public String showAdminCreateUser(Model model) {
 		model.addAttribute("user", new User());
 		return "admin_create_user";
@@ -124,7 +123,7 @@ public class UsersController {
 	}
 
 	
-	@RequestMapping("/admin_edit_user")
+	@RequestMapping(value="/admin_edit_user", method = RequestMethod.GET)
 	public String showAdminEditUser(@RequestParam("userid") String userId, Model model) {
 		User selectedUser = usersService.getUser(Integer.parseInt(userId));
 		model.addAttribute("selectedUser", selectedUser);
@@ -141,6 +140,7 @@ public class UsersController {
 		if (!usersService.editUser(user)) {
 			return "error";
 		}
+		model.addAttribute("selectedUser", user);
 		return "admin_edit_user";
 	}
 	

@@ -225,7 +225,7 @@
 		                        </a>
 		                    </li>
 		                    <li>
-		                        <a href="#">
+		                        <a href="<c:url value='edit_user' />">
 		                            <span class="icon"><i class="icon20 i-user"></i></span>
 		                            <span class="txt">Profile</span>
 		                        </a>
