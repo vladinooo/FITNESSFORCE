@@ -225,7 +225,9 @@
 		                        </a>
 		                    </li>
 		                    <li>
-		                        <a href="<c:url value='edit_user' />">
+		                        <a href="<c:url value='/edit_user'>
+											<c:param name='userid' value='${currentUser.userId}'/>
+										 </c:url>">
 		                            <span class="icon"><i class="icon20 i-user"></i></span>
 		                            <span class="txt">Profile</span>
 		                        </a>

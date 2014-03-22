@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -18,14 +19,7 @@ import com.vladinooo.fitnessforce.web.dao.User;
 import com.vladinooo.fitnessforce.web.service.UsersService;
 
 @Controller
-public class UsersController {
-
-	private UsersService usersService;
-
-	@Autowired
-	public void setUsersService(UsersService usersService) {
-		this.usersService = usersService;
-	}
+public class UsersController extends RootController {
 
 	
 	//user
@@ -58,12 +52,12 @@ public class UsersController {
 		if (result.hasErrors()) {
 			return "create_user";
 		}
-		User duplicateUser = usersService.getUser(user.getUsername());
+		User duplicateUser = getUserService().getUser(user.getUsername());
 		if (duplicateUser != null) {
 			model.addAttribute("duplicateUser", duplicateUser);
 			return "create_user";
 		}
-		if (!usersService.createUser(user)) {
+		if (!getUserService().createUser(user)) {
 			return "error";
 		}
 		return "user_created";
@@ -72,7 +66,7 @@ public class UsersController {
 	
 	@RequestMapping(value="/edit_user", method = RequestMethod.GET)
 	public String showEditUser(@RequestParam("userid") String userId, Model model) {
-		User selectedUser = usersService.getUser(Integer.parseInt(userId));
+		User selectedUser = getUserService().getUser(Integer.parseInt(userId));
 		model.addAttribute("selectedUser", selectedUser);
 		model.addAttribute("user", new User());
 		return "edit_user";
@@ -84,7 +78,7 @@ public class UsersController {
 		if (result.hasErrors()) {
 			return "edit_user";
 		}
-		if (!usersService.editUser(user)) {
+		if (!getUserService().editUser(user)) {
 			return "error";
 		}
 		return "edit_user";
@@ -93,7 +87,7 @@ public class UsersController {
 	
 	@RequestMapping(value="/users", method = RequestMethod.GET)
 	public String showUsers(Model model) {
-		model.addAttribute("users", usersService.getUsers());
+		model.addAttribute("users", getUserService().getUsers());
 		return "users";
 	}
 	
@@ -110,22 +104,22 @@ public class UsersController {
 		if (result.hasErrors()) {
 			return "admin_create_user";
 		}
-		User duplicateUser = usersService.getUser(user.getUsername());
+		User duplicateUser = getUserService().getUser(user.getUsername());
 		if (duplicateUser != null) {
 			model.addAttribute("duplicateUser", duplicateUser);
 			return "admin_create_user";
 		}
-		if (!usersService.createUser(user)) {
+		if (!getUserService().createUser(user)) {
 			return "error";
 		}
-		model.addAttribute("users", usersService.getUsers());
+		model.addAttribute("users", getUserService().getUsers());
 		return "users";
 	}
 
 	
 	@RequestMapping(value="/admin_edit_user", method = RequestMethod.GET)
 	public String showAdminEditUser(@RequestParam("userid") String userId, Model model) {
-		User selectedUser = usersService.getUser(Integer.parseInt(userId));
+		User selectedUser = getUserService().getUser(Integer.parseInt(userId));
 		model.addAttribute("selectedUser", selectedUser);
 		model.addAttribute("user", new User());
 		return "admin_edit_user";
@@ -137,7 +131,7 @@ public class UsersController {
 		if (result.hasErrors()) {
 			return "admin_edit_user";
 		}
-		if (!usersService.editUser(user)) {
+		if (!getUserService().editUser(user)) {
 			return "error";
 		}
 		model.addAttribute("selectedUser", user);

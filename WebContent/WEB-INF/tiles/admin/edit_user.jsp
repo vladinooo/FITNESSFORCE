@@ -33,7 +33,7 @@
 						<label class="col-lg-2 control-label" for="required">Username</label>
 						<div class="col-lg-10">
 							<form:input class="form-control-disabled" type="text"
-								disabled="disabled" name="username" id="user" path="username"
+								readonly="true" name="username" id="user" path="username"
 								value="${selectedUser.username}" />
 						</div>
 					</div>
