@@ -139,6 +139,18 @@ public class UsersController extends RootController {
 	}
 	
 	
+	@RequestMapping(value="/delete_user", method = RequestMethod.GET)
+	public String showDeleteUser(@RequestParam("userid") String userId, Model model) {
+		if (getCurrentUser().getUserId() != Integer.parseInt(userId)) {
+			User selectedUser = getUserService().getUser(Integer.parseInt(userId));
+			if (!getUserService().deleteUser(selectedUser)) {
+				return "error";
+			}
+		}
+		model.addAttribute("users", getUserService().getUsers());
+		return "users";
+	}
+	
 	@ExceptionHandler(Exception.class)
 	public String handleExceptions(Exception ex) {
 		ex.printStackTrace();

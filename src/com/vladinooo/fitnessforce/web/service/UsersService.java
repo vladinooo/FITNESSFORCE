@@ -45,4 +45,8 @@ public class UsersService {
 		user.setEnabled(true);
 		return usersDao.editUser(user);
 	}
+
+	public boolean deleteUser(User user) {
+		return usersDao.deleteUser(user);
+	}
 }

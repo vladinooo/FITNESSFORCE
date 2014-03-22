@@ -172,5 +172,14 @@ public class UsersDao {
 				"update user_roles set rolename = :rolename where user_id = :userId",
 						params) == 1;
 	}
+	
+
+	@Transactional
+	public boolean deleteUser(User user) {
+		MapSqlParameterSource params = new MapSqlParameterSource();
+		params.addValue("userId", user.getUserId());
+		jdbc.update("delete from user_roles where user_id = :userId", params);
+		return jdbc.update("delete from users where user_id = :userId", params) == 1;
+	}
 
 }

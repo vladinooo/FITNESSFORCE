@@ -51,8 +51,16 @@
 											   <c:param name='userid' value='${user.userId}'/>
 											</c:url>"
 											class="btn btn-info tip" title="" data-original-title="Edit user" onclick="highlightSelectedTab()"><i class="icon16 i-pencil"></i></a>
-                                        <a href="#" class="btn btn-danger tip" title="" data-original-title="Remove user"><i class="icon16 i-remove-4"></i></a>
-                                    </div>
+                                        <a href="
+                                        	<c:url value='/delete_user'>
+											   <c:param name='userid' value='${user.userId}'/>
+											</c:url>"
+											class="btn btn-danger tip" title="" data-original-title="Delete user" id="openModalDialog"><i class="icon16 i-remove-4"></i></a>
+
+										<div id="modal" title="Are you sure?" class="dialog">
+											<p>Deleting user will delete all user's information including profile, credit account and bookings. Are you sure?</p>
+										</div>
+									</div>
 								</td>
 							</tr>
 						</c:forEach>

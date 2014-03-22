@@ -28,6 +28,7 @@
 	    <link href="${pageContext.request.contextPath}/static/bootstrap/genyx/css/bootstrap/bootstrap.css" rel="stylesheet" />
 	    <link href="${pageContext.request.contextPath}/static/bootstrap/genyx/css/bootstrap/bootstrap-theme.css" rel="stylesheet" />
 	    <link href="${pageContext.request.contextPath}/static/bootstrap/genyx/css/icons.css" rel="stylesheet" />
+	    <link href="${pageContext.request.contextPath}/static/bootstrap/genyx/css/genyx-theme/jquery.ui.genyx.css" rel="stylesheet" />
 	  
     
 	    <!-- Plugins stylesheets -->
@@ -35,7 +36,8 @@
     	<link href="${pageContext.request.contextPath}/static/bootstrap/genyx/js/plugins/forms/select2/select2.css" rel="stylesheet" />
     	<link href="${pageContext.request.contextPath}/static/bootstrap/genyx/js/plugins/misc/fullcalendar/fullcalendar.css" rel="stylesheet" /> 
     	<link href="${pageContext.request.contextPath}/static/bootstrap/genyx/js/plugins/ui/jgrowl/jquery.jgrowl.css" rel="stylesheet" /> 
-    	<link href="${pageContext.request.contextPath}/static/bootstrap/genyx/js/plugins/tables/datatables/jquery.dataTables.css" rel="stylesheet" /> 
+    	<link href="${pageContext.request.contextPath}/static/bootstrap/genyx/js/plugins/tables/datatables/jquery.dataTables.css" rel="stylesheet" />
+    	<link href="${pageContext.request.contextPath}/static/bootstrap/genyx/js/plugins/ui/range-slider/rangeslider.css" rel="stylesheet" />  
 	 
 	    <!-- app stylesheets -->
 	    <link href="${pageContext.request.contextPath}/static/bootstrap/genyx/css/app.css" rel="stylesheet" /> 
@@ -106,6 +108,8 @@
 	    <script src="${pageContext.request.contextPath}/static/bootstrap/genyx/js/plugins/misc/fullcalendar/fullcalendar.min.js"></script>
 	
 	    <!-- UI plugins -->
+	    <script src="${pageContext.request.contextPath}/static/bootstrap/genyx/js/plugins/ui/range-slider/rangeslider-ruler.js"></script>
+    	<script src="${pageContext.request.contextPath}/static/bootstrap/genyx/js/plugins/ui/animated-progress-bar/jquery.progressbar.js"></script>
 	    <script src="${pageContext.request.contextPath}/static/bootstrap/genyx/js/plugins/ui/jgrowl/jquery.jgrowl.min.js"></script>
 	 
 	    <!-- Init plugins -->
@@ -115,6 +119,7 @@
 	    <script src="${pageContext.request.contextPath}/static/bootstrap/genyx/js/pages/login.js"></script><!-- Init plugins only for page -->
 	    <script src="${pageContext.request.contextPath}/static/bootstrap/genyx/js/pages/dashboard.js"></script><!-- Init plugins only for page -->
 	    <script src="${pageContext.request.contextPath}/static/bootstrap/genyx/js/pages/data-tables.js"></script><!-- Init plugins only for page -->
+	    <script src="${pageContext.request.contextPath}/static/bootstrap/genyx/js/pages/ui-elements.js"></script><!-- Init plugins only for page -->
 	    
 	    <!-- Custom CSS -->
 	    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/main.css">
