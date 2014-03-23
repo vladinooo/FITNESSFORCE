@@ -1,4 +1,7 @@
 $(document).ready(function() {
+	if (window.location.href.indexOf("edit_user") > -1) {
+		highlightProfileTab();
+	}
 	if (window.location.href.indexOf("admin_edit_user") > -1) {
 		expandUsersTab();
 	}
@@ -6,6 +9,10 @@ $(document).ready(function() {
 		expandUsersTab();
 	}
 });
+
+function highlightProfileTab() {
+	$("#profileTab").addClass("current");
+}
 
 function expandUsersTab() {
 	$("#usersTab").addClass("current");

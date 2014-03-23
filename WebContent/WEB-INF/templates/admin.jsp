@@ -229,7 +229,7 @@
 		                            <span class="txt">Dashboard</span>
 		                        </a>
 		                    </li>
-		                    <li>
+		                    <li id="profileTab">
 		                        <a href="<c:url value='/edit_user'>
 											<c:param name='userid' value='${currentUser.userId}'/>
 										 </c:url>">
@@ -249,11 +249,26 @@
 		                            <span class="txt">Bookings</span>
 		                        </a>
 		                    </li>
-		                    <li>
+		                    
+		                    <li id="pagesTab">
 		                        <a href="#">
 		                            <span class="icon"><i class="icon20 i-stack-list"></i></span>
-		                            <span class="txt">Posts</span>
+		                            <span class="txt">Pages</span>
 		                        </a>
+		                        <ul class="sub">
+		                            <li>
+		                                <a href="<c:url value='admin_create_user'/>">
+		                                    <span class="icon"><i class="icon20 i-user-plus"></i></span>
+		                                    <span class="txt">Create page</span>
+		                                </a>
+		                            </li>
+		                            <li>
+		                                <a href="<c:url value='users'/>">
+		                                    <span class="icon"><i class="icon20 i-users"></i></span>
+		                                    <span class="txt">Create post</span>
+		                                </a>
+		                            </li>
+		                        </ul>
 		                    </li>
 		                    <li>
 		                        <a href="#">
@@ -270,7 +285,7 @@
 		                    
 		                    <sec:authorize access="hasRole('ROLE_ADMIN')">
 								<li id="usersTab">
-			                        <a href="#users">
+			                        <a href="#">
 			                            <span class="icon"><i class="icon20 i-users"></i></span>
 			                            <span class="txt">Users</span>
 			                        </a>

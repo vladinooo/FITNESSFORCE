@@ -59,7 +59,7 @@
 												<c:param name='userid' value='${user.userId}'/>
 											</c:url>
 										</span>
-										<div title="Delete user" class="dialog">
+										<div title="DELETE USER" class="dialog">
 											<p>This action will delete all user's data. Are you sure?</p>
 										</div>
 									</div>
