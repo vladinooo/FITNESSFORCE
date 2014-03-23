@@ -37,9 +37,13 @@
     	<link href="${pageContext.request.contextPath}/static/bootstrap/genyx/js/plugins/misc/fullcalendar/fullcalendar.css" rel="stylesheet" /> 
     	<link href="${pageContext.request.contextPath}/static/bootstrap/genyx/js/plugins/ui/jgrowl/jquery.jgrowl.css" rel="stylesheet" /> 
     	<link href="${pageContext.request.contextPath}/static/bootstrap/genyx/js/plugins/tables/datatables/jquery.dataTables.css" rel="stylesheet" />
-    	<link href="${pageContext.request.contextPath}/static/bootstrap/genyx/js/plugins/ui/range-slider/rangeslider.css" rel="stylesheet" />  
-	 
-	    <!-- app stylesheets -->
+	    <link href="${pageContext.request.contextPath}/static/bootstrap/genyx/js/plugins/ui/range-slider/rangeslider.css" rel="stylesheet" /> 
+	    <link href="${pageContext.request.contextPath}/static/bootstrap/genyx/js/plugins/forms/switch/bootstrapSwitch.css" rel="stylesheet" /> 
+	    <link href="${pageContext.request.contextPath}/static/bootstrap/genyx/js/plugins/forms/spectrum/spectrum.css" rel="stylesheet" /> 
+	    <link href="${pageContext.request.contextPath}/static/bootstrap/genyx/js/plugins/forms/datepicker/datepicker.css" rel="stylesheet" /> 
+	    <link href="${pageContext.request.contextPath}/static/bootstrap/genyx/js/plugins/forms/multiselect/ui.multiselect.css" rel="stylesheet" /> 
+		 
+		    <!-- app stylesheets -->
 	    <link href="${pageContext.request.contextPath}/static/bootstrap/genyx/css/app.css" rel="stylesheet" /> 
 	 
 	    <!-- Custom stylesheets ( Put your own changes here ) -->
@@ -103,6 +107,16 @@
     	<script src="${pageContext.request.contextPath}/static/bootstrap/genyx/js/plugins/forms/validation/jquery.validate.js"></script>
     	<script src="${pageContext.request.contextPath}/static/bootstrap/genyx/js/plugins/forms/select2/select2.js"></script> 
     	<script src="${pageContext.request.contextPath}/static/bootstrap/genyx/js/plugins/tables/datatables/jquery.dataTables.min.js"></script>
+    	<script src="${pageContext.request.contextPath}/static/bootstrap/genyx/js/jquery.mousewheel.js"></script>
+	    <script src="${pageContext.request.contextPath}/static/bootstrap/genyx/js/plugins/forms/autosize/jquery.autosize-min.js"></script>
+	    <script src="${pageContext.request.contextPath}/static/bootstrap/genyx/js/plugins/forms/inputlimit/jquery.inputlimiter.1.3.min.js"></script>
+	    <script src="${pageContext.request.contextPath}/static/bootstrap/genyx/js/plugins/forms/mask/jquery.mask.min.js"></script>
+	    <script src="${pageContext.request.contextPath}/static/bootstrap/genyx/js/plugins/forms/switch/bootstrapSwitch.js"></script>
+	    <script src="${pageContext.request.contextPath}/static/bootstrap/genyx/js/plugins/forms/globalize/globalize.js"></script>
+	    <script src="${pageContext.request.contextPath}/static/bootstrap/genyx/js/plugins/forms/spectrum/spectrum.js"></script><!--  Color picker -->
+	    <script src="${pageContext.request.contextPath}/static/bootstrap/genyx/js/plugins/forms/datepicker/bootstrap-datepicker.js"></script> 
+	    <script src="${pageContext.request.contextPath}/static/bootstrap/genyx/js/plugins/forms/multiselect/ui.multiselect.js"></script>
+	    <script src="${pageContext.request.contextPath}/static/bootstrap/genyx/js/plugins/forms/tinymce/tinymce.min.js"></script>
     	
     	<!-- Misc plugins -->
 	    <script src="${pageContext.request.contextPath}/static/bootstrap/genyx/js/plugins/misc/fullcalendar/fullcalendar.min.js"></script>
@@ -120,6 +134,8 @@
 	    <script src="${pageContext.request.contextPath}/static/bootstrap/genyx/js/pages/dashboard.js"></script><!-- Init plugins only for page -->
 	    <script src="${pageContext.request.contextPath}/static/bootstrap/genyx/js/pages/data-tables.js"></script><!-- Init plugins only for page -->
 	    <script src="${pageContext.request.contextPath}/static/bootstrap/genyx/js/pages/ui-elements.js"></script><!-- Init plugins only for page -->
+	    <script src="${pageContext.request.contextPath}/static/bootstrap/genyx/js/pages/form-elements.js"></script><!-- Init plugins only for page -->
+	    
 	    
 	    <!-- Custom CSS -->
 	    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/main.css">
@@ -249,27 +265,28 @@
 		                            <span class="txt">Bookings</span>
 		                        </a>
 		                    </li>
-		                    
-		                    <li id="pagesTab">
-		                        <a href="#">
-		                            <span class="icon"><i class="icon20 i-stack-list"></i></span>
-		                            <span class="txt">Pages</span>
-		                        </a>
-		                        <ul class="sub">
-		                            <li>
-		                                <a href="<c:url value='admin_create_user'/>">
-		                                    <span class="icon"><i class="icon20 i-user-plus"></i></span>
-		                                    <span class="txt">Create page</span>
-		                                </a>
-		                            </li>
-		                            <li>
-		                                <a href="<c:url value='users'/>">
-		                                    <span class="icon"><i class="icon20 i-users"></i></span>
-		                                    <span class="txt">Create post</span>
-		                                </a>
-		                            </li>
-		                        </ul>
-		                    </li>
+		                    <sec:authorize access="hasRole('ROLE_ADMIN')">
+								<li id="articlesTab">
+			                        <a href="#">
+			                            <span class="icon"><i class="icon20 i-stack-list"></i></span>
+			                            <span class="txt">Articles</span>
+			                        </a>
+			                        <ul class="sub">
+			                            <li>
+			                                <a href="<c:url value='create_article'/>">
+			                                    <span class="icon"><i class="icon20 i-stack-plus"></i></span>
+			                                    <span class="txt">Add new</span>
+			                                </a>
+			                            </li>
+			                            <li>
+			                                <a href="<c:url value='articles'/>">
+			                                    <span class="icon"><i class="icon20 i-stack-list"></i></span>
+			                                    <span class="txt">All articles</span>
+			                                </a>
+			                            </li>
+			                        </ul>
+			                    </li>
+							</sec:authorize>
 		                    <li>
 		                        <a href="#">
 		                            <span class="icon"><i class="icon20 i-cloud-upload"></i></span>
@@ -282,7 +299,6 @@
 		                            <span class="txt">Online Shop</span>
 		                        </a>
 		                    </li>
-		                    
 		                    <sec:authorize access="hasRole('ROLE_ADMIN')">
 								<li id="usersTab">
 			                        <a href="#">
@@ -293,13 +309,13 @@
 			                            <li>
 			                                <a href="<c:url value='admin_create_user'/>">
 			                                    <span class="icon"><i class="icon20 i-user-plus"></i></span>
-			                                    <span class="txt">Create user</span>
+			                                    <span class="txt">Add new</span>
 			                                </a>
 			                            </li>
 			                            <li>
 			                                <a href="<c:url value='users'/>">
 			                                    <span class="icon"><i class="icon20 i-users"></i></span>
-			                                    <span class="txt">Manage users</span>
+			                                    <span class="txt">All users</span>
 			                                </a>
 			                            </li>
 			                        </ul>

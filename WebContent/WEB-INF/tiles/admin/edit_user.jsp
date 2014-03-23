@@ -13,7 +13,7 @@
 		<div class="panel panel-default">
 			<div class="panel-heading">
 				<div class="icon">
-					<i class="icon20 i-user-plus"></i>
+					<i class="icon20 i-pencil"></i>
 				</div>
 				<h4>Edit profile</h4>
 				<a href="#" class="minimize"></a>
@@ -44,7 +44,7 @@
 						<div class="col-lg-10">
 							<form:input id="password" class="form-control" type="password"
 								name="password" path="password" value="${selectedUser.password}" />
-							<form:errors path="password" cssClass="loginValidationError"></form:errors>
+							<form:errors path="password" cssClass="fieldValidationError"></form:errors>
 						</div>
 					</div>
 					<!-- End .control-group  -->
@@ -67,7 +67,7 @@
 							<form:input class="required email form-control" type="text"
 								name="email" id="email-field" path="email"
 								value="${selectedUser.email}" />
-							<form:errors path="email" cssClass="loginValidationError"></form:errors>
+							<form:errors path="email" cssClass="fieldValidationError"></form:errors>
 						</div>
 					</div>
 					<!-- End .control-group  -->

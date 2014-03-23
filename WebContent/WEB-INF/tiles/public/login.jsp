@@ -35,7 +35,7 @@
 					method="POST">
 
 					<c:if test="${'fail' eq param.auth}">
-						<p class="loginValidationError">Invalid Username or Password!</p>
+						<p class="fieldValidationError">Invalid Username or Password!</p>
 					</c:if>
 
 					<div class="row">

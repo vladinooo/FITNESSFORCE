@@ -24,9 +24,9 @@
 							</div>
 							<form:input class="form-control" type="text" name="username"
 								id="user" placeholder="Username" path="username" minlength="5"/>
-							<form:errors path="username" cssClass="loginValidationError"></form:errors>
+							<form:errors path="username" cssClass="fieldValidationError"></form:errors>
 							<c:if test="${duplicateUser != null}">
-								<p class="loginValidationError">Username already exists!</p>
+								<p class="fieldValidationError">Username already exists!</p>
 							</c:if>
 						</div>
 						<!-- End .control-group  -->
@@ -36,7 +36,7 @@
 							</div>
 							<form:input class="form-control" type="password" name="password"
 								id="password" placeholder="Password" path="password" />
-							<form:errors path="password" cssClass="loginValidationError"></form:errors>
+							<form:errors path="password" cssClass="fieldValidationError"></form:errors>
 						</div>
 						<!-- End .control-group  -->
 						<div class="form-group relative">
@@ -53,7 +53,7 @@
 							</div>
 							<form:input class="form-control" type="text" name="email"
 								id="email-field" placeholder="Your email" path="email" />
-							<form:errors path="email" cssClass="loginValidationError"></form:errors>
+							<form:errors path="email" cssClass="fieldValidationError"></form:errors>
 						</div>
 						<!-- End .control-group  -->
 						<div class="form-group">

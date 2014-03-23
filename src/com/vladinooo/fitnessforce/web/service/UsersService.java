@@ -13,13 +13,10 @@ import com.vladinooo.fitnessforce.web.dao.UsersDao;
 @Service("usersService")
 public class UsersService {
 
+	@Autowired
 	private UsersDao usersDao;
 
-	@Autowired
-	public void setUsersDao(UsersDao usersDao) {
-		this.usersDao = usersDao;
-	}
-
+	
 	public List<User> getUsers() {
 		return usersDao.getUsers();
 	}

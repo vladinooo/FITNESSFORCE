@@ -19,8 +19,19 @@ import com.vladinooo.fitnessforce.web.dao.User;
 import com.vladinooo.fitnessforce.web.service.UsersService;
 
 @Controller
-public class UsersController extends RootController {
+public class UsersController {
+	
+	@Autowired
+	private UsersService usersService;
 
+	
+	@ModelAttribute("currentUser")
+	public User getCurrentUser() {
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+	    String username = auth.getName();
+	    User currentUser = usersService.getUser(username);
+	    return currentUser;
+	}
 	
 	//user
 	@RequestMapping(value="/", method = RequestMethod.GET)
@@ -52,12 +63,12 @@ public class UsersController extends RootController {
 		if (result.hasErrors()) {
 			return "create_user";
 		}
-		User duplicateUser = getUserService().getUser(user.getUsername());
+		User duplicateUser = usersService.getUser(user.getUsername());
 		if (duplicateUser != null) {
 			model.addAttribute("duplicateUser", duplicateUser);
 			return "create_user";
 		}
-		if (!getUserService().createUser(user)) {
+		if (!usersService.createUser(user)) {
 			return "error";
 		}
 		return "user_created";
@@ -66,7 +77,7 @@ public class UsersController extends RootController {
 	
 	@RequestMapping(value="/edit_user", method = RequestMethod.GET)
 	public String showEditUser(@RequestParam("userid") String userId, Model model) {
-		User selectedUser = getUserService().getUser(Integer.parseInt(userId));
+		User selectedUser = usersService.getUser(Integer.parseInt(userId));
 		model.addAttribute("selectedUser", selectedUser);
 		model.addAttribute("user", new User());
 		return "edit_user";
@@ -78,7 +89,7 @@ public class UsersController extends RootController {
 		if (result.hasErrors()) {
 			return "edit_user";
 		}
-		if (!getUserService().editUser(user)) {
+		if (!usersService.editUser(user)) {
 			return "error";
 		}
 		return "edit_user";
@@ -87,7 +98,7 @@ public class UsersController extends RootController {
 	
 	@RequestMapping(value="/users", method = RequestMethod.GET)
 	public String showUsers(Model model) {
-		model.addAttribute("users", getUserService().getUsers());
+		model.addAttribute("users", usersService.getUsers());
 		return "users";
 	}
 	
@@ -104,22 +115,22 @@ public class UsersController extends RootController {
 		if (result.hasErrors()) {
 			return "admin_create_user";
 		}
-		User duplicateUser = getUserService().getUser(user.getUsername());
+		User duplicateUser = usersService.getUser(user.getUsername());
 		if (duplicateUser != null) {
 			model.addAttribute("duplicateUser", duplicateUser);
 			return "admin_create_user";
 		}
-		if (!getUserService().createUser(user)) {
+		if (!usersService.createUser(user)) {
 			return "error";
 		}
-		model.addAttribute("users", getUserService().getUsers());
+		model.addAttribute("users", usersService.getUsers());
 		return "users";
 	}
 
 	
 	@RequestMapping(value="/admin_edit_user", method = RequestMethod.GET)
 	public String showAdminEditUser(@RequestParam("userid") String userId, Model model) {
-		User selectedUser = getUserService().getUser(Integer.parseInt(userId));
+		User selectedUser = usersService.getUser(Integer.parseInt(userId));
 		model.addAttribute("selectedUser", selectedUser);
 		model.addAttribute("user", new User());
 		return "admin_edit_user";
@@ -131,7 +142,7 @@ public class UsersController extends RootController {
 		if (result.hasErrors()) {
 			return "admin_edit_user";
 		}
-		if (!getUserService().editUser(user)) {
+		if (!usersService.editUser(user)) {
 			return "error";
 		}
 		model.addAttribute("selectedUser", user);
@@ -142,12 +153,12 @@ public class UsersController extends RootController {
 	@RequestMapping(value="/delete_user", method = RequestMethod.GET)
 	public String showDeleteUser(@RequestParam("userid") String userId, Model model) {
 		if (getCurrentUser().getUserId() != Integer.parseInt(userId)) {
-			User selectedUser = getUserService().getUser(Integer.parseInt(userId));
-			if (!getUserService().deleteUser(selectedUser)) {
+			User selectedUser = usersService.getUser(Integer.parseInt(userId));
+			if (!usersService.deleteUser(selectedUser)) {
 				return "error";
 			}
 		}
-		model.addAttribute("users", getUserService().getUsers());
+		model.addAttribute("users", usersService.getUsers());
 		return "users";
 	}
 	

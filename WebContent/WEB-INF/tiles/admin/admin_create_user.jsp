@@ -14,7 +14,7 @@
         <div class="panel panel-default">
             <div class="panel-heading">
                 <div class="icon"><i class="icon20 i-user-plus"></i></div> 
-                <h4>Create user</h4>
+                <h4>Add new</h4>
                 <a href="#" class="minimize"></a>
             </div><!-- End .panel-heading -->
         
@@ -29,9 +29,9 @@
                         <div class="col-lg-10">
                             <form:input class="required form-control" type="text" name="username"
 								id="user" path="username" minlength="4"/>
-							<form:errors path="username" cssClass="loginValidationError"></form:errors>
+							<form:errors path="username" cssClass="fieldValidationError"></form:errors>
 							<c:if test="${duplicateUser != null}">
-								<p class="loginValidationError">Username already exists!</p>
+								<p class="fieldValidationError">Username already exists!</p>
 							</c:if>
 						</div>
                     </div><!-- End .control-group  -->
@@ -41,7 +41,7 @@
                         <div class="col-lg-10">
                             <form:input id="password" class="form-control" type="password" name="password"
 								path="password" />
-							<form:errors path="password" cssClass="loginValidationError"></form:errors>
+							<form:errors path="password" cssClass="fieldValidationError"></form:errors>
                         </div>
                     </div><!-- End .control-group  -->
                     
@@ -57,15 +57,17 @@
                         <div class="col-lg-10">
                             <form:input class="required email form-control" type="text" name="email"
 								id="email-field"  path="email" />
-							<form:errors path="email" cssClass="loginValidationError"></form:errors>
+							<form:errors path="email" cssClass="fieldValidationError"></form:errors>
                         </div>
                     </div><!-- End .control-group  -->
                     
                     <div class="form-group">
                         <div class="col-lg-offset-2">
                             <div class="pad-left15">
-                                 <button type="submit" class="btn btn-primary">Create user</button>
-                                <button type="button" class="btn">Cancel</button>
+                                <button type="submit" class="btn btn-primary">Save</button>
+                                <a href='users'>
+									<button type="button" class="btn">Cancel</button>
+								</a>
                             </div>
                         </div>
                     </div><!-- End .form-group  -->

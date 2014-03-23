@@ -46,6 +46,23 @@
 		<put-attribute name="content" value="/WEB-INF/tiles/admin/admin_edit_user.jsp"></put-attribute>
     </definition>
     
+    <definition name="articles" extends="fitnessForce.admin">
+        <put-attribute name="title" value="Fitness Force - Articles"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/tiles/admin/articles.jsp"></put-attribute>
+    </definition>
+    
+    <definition name="create_article" extends="fitnessForce.admin">
+        <put-attribute name="title" value="Fitness Force - Create user"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/tiles/admin/create_article.jsp"></put-attribute>
+    </definition>
+    
+    <definition name="do_create_article" extends="fitnessForce.admin">
+        <put-attribute name="title" value="Fitness Force - Users"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/tiles/admin/articles.jsp"></put-attribute>
+    </definition>
+    
+    
+    
     <definition name="error" extends="fitnessForce.admin">
         <put-attribute name="title" value="Fitness Force - Error"></put-attribute>
 		<put-attribute name="content" value="/WEB-INF/tiles/admin/error.jsp"></put-attribute>

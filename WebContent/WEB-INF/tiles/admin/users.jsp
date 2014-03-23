@@ -11,11 +11,21 @@
         <div class="panel panel-default">
             <div class="panel-heading">
                 <div class="icon"><i class="icon20 i-users"></i></div> 
-                <h4>Manage users</h4>
+                <h4>All users</h4>
                 <a href="#" class="minimize"></a>
             </div><!-- End .panel-heading -->
         
             <div class="panel-body">
+
+				<div class="row">
+					<div class="col-lg-6">
+						<div id="dataTable_length" class="dataTables_length">
+							<a href="admin_create_user">
+								<button type="submit" class="btn btn-primary">Add new</button>
+							</a>
+						</div>
+					</div>
+				</div>
                 
                 <table cellpadding="0" cellspacing="0" border="0" class="table table-bordered table-hover" id="dataTable">
                     <thead>
@@ -50,7 +60,7 @@
                                         	<c:url value='/admin_edit_user'>
 											   <c:param name='userid' value='${user.userId}'/>
 											</c:url>"
-											class="btn btn-info tip" title="" data-original-title="Edit user" onclick="highlightSelectedTab()"><i class="icon16 i-pencil"></i></a>
+											class="btn btn-info tip" title="" data-original-title="Edit user"><i class="icon16 i-pencil"></i></a>
                                         <a href="#"
 											class="btn btn-danger tip openModalDialog" title="" data-original-title="Delete user"><i class="icon16 i-remove-4"></i></a>
 										
