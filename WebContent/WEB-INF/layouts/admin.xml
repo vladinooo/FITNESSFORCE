@@ -61,6 +61,16 @@
 		<put-attribute name="content" value="/WEB-INF/tiles/admin/articles.jsp"></put-attribute>
     </definition>
     
+    <definition name="edit_article" extends="fitnessForce.admin">
+        <put-attribute name="title" value="Fitness Force - Edit article"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/tiles/admin/edit_article.jsp"></put-attribute>
+    </definition>
+    
+    <definition name="do_edit_article" extends="fitnessForce.admin">
+        <put-attribute name="title" value="Fitness Force - Edit article"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/tiles/admin/edit_article.jsp"></put-attribute>
+    </definition>
+    
     
     
     <definition name="error" extends="fitnessForce.admin">

@@ -165,7 +165,8 @@ public class UsersDao {
 				+ "phone = :phone,"
 				+ "gender = :gender,"
 				+ "bio = :bio,"
-				+ "enabled = :enabled",
+				+ "enabled = :enabled"
+				+ " where user_id = :userId",
 				params);
 
 		return jdbc.update(

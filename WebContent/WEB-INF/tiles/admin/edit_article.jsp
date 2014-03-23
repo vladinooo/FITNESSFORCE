@@ -4,7 +4,7 @@
 
 <div id="heading" class="page-header">
 	<h1>
-		<i class="icon20 i-users"></i> Profile
+		<i class="icon20 i-stack-list"></i> Articles
 	</h1>
 </div>
 
@@ -22,61 +22,40 @@
 
 			<div class="panel-body">
 
-				<form:form class="form-horizontal" id="edit-user-form"
-					action="${pageContext.request.contextPath}/do_edit_user"
-					commandName="user" method="POST" role="form">
+				<form:form class="form-horizontal" id="edit-article-form"
+					action="${pageContext.request.contextPath}/do_edit_article"
+					commandName="article" method="POST" role="form">
 
-					<form:input type="text" hidden="hidden" name="userId" path="userId"
-						value="${selectedUser.userId}" />
+					<form:input type="text" hidden="hidden" name="articleId" path="articleId"
+						value="${selectedArticle.articleId}" />
+						
+					<form:input type="text" hidden="hidden" name="slug" path="slug"
+						value="${selectedArticle.slug}" />
+					
+					<div class="form-group">
+                        <label class="col-lg-2 control-label" for="required">Title</label>
+                        <div class="col-lg-10">
+                            <form:input class="form-control" type="text" name="title"
+								path="title" value="${selectedArticle.title}"/>
+							<form:errors path="title" cssClass="fieldValidationError"></form:errors>
+                        </div>
+                    </div><!-- End .control-group  -->
 
 					<div class="form-group">
-						<label class="col-lg-2 control-label" for="required">Username</label>
-						<div class="col-lg-10">
-							<form:input class="form-control-disabled" type="text"
-								readonly="true" name="username" id="user" path="username"
-								value="${selectedUser.username}" />
+						<label class="col-lg-2 control-label" for="elastic">Content</label>
+						<textarea id="articleTextareaOutput" hidden="true">
+							<c:out value="${selectedArticle.content}" />
+						</textarea>
+						<div id="articleTextareaInput" class="col-lg-10">
+							<form:textarea id='text-editor' name='text-editor' class='form-control' rows='10' path='content'/>
 						</div>
 					</div>
-					<!-- End .control-group  -->
-
-					<div class="form-group">
-						<label class="col-lg-2 control-label" for="required">Password</label>
-						<div class="col-lg-10">
-							<form:input id="password" class="form-control" type="password"
-								name="password" path="password" value="${selectedUser.password}" />
-							<form:errors path="password" cssClass="fieldValidationError"></form:errors>
-						</div>
-					</div>
-					<!-- End .control-group  -->
-
-					<div class="form-group">
-						<label class="col-lg-2 control-label" for="range">Re-type
-							password</label>
-						<div class="col-lg-10">
-							<input id="confirm_password" name="confirm_password"
-								type="password" class="form-control"
-								value="${selectedUser.password}" />
-						</div>
-					</div>
-					<!-- End .control-group  -->
-
-					<div class="form-group">
-						<label class="col-lg-2 control-label" for="required">Required
-							email</label>
-						<div class="col-lg-10">
-							<form:input class="required email form-control" type="text"
-								name="email" id="email-field" path="email"
-								value="${selectedUser.email}" />
-							<form:errors path="email" cssClass="fieldValidationError"></form:errors>
-						</div>
-					</div>
-					<!-- End .control-group  -->
 
 					<div class="form-group">
 						<div class="col-lg-offset-2">
 							<div class="pad-left15">
-								<button type="submit" class="btn btn-primary">Save</button>
-								<a href='users'>
+								<button type="submit" class="btn btn-primary" onclick="convertToJstlTextarea()">Save</button>
+								<a href='articles'>
 									<button type="button" class="btn">Cancel</button>
 								</a>
 							</div>

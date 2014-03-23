@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 
 import com.vladinooo.fitnessforce.web.dao.Article;
 import com.vladinooo.fitnessforce.web.dao.ArticlesDao;
+import com.vladinooo.fitnessforce.web.dao.User;
 
 @Service("articlesService")
 public class ArticlesService {
@@ -32,9 +33,9 @@ public class ArticlesService {
 	
 	public boolean createArticle(Article article) {
 		article.setSlug(toSlug(article.getTitle()));
-		Date dateCreated = new Date();
+		Date date = new Date();
 		SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-		article.setDateCreated(dateFormat.format(dateCreated));
+		article.setDate(dateFormat.format(date));
 		article.setEnabled(true);
 		return articlesDao.createArticle(article);
 	}
@@ -43,4 +44,19 @@ public class ArticlesService {
 		return articlesDao.getArticles();
 	}
 
+	public Article getArticle(int articleId) {
+		return articlesDao.getArticle(articleId);
+	}
+
+	public boolean editArticle(Article article) {
+		Date date = new Date();
+		SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+		article.setDate(dateFormat.format(date));
+		article.setEnabled(true);
+		return articlesDao.editArticle(article);
+	}
+	
+	public boolean deleteArticle(Article article) {
+		return articlesDao.deleteArticle(article);
+	}
 }

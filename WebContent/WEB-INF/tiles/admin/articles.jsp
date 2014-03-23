@@ -40,7 +40,7 @@
 						<c:forEach var="article" items="${articles}">
 							<tr>
 								<td class="center"><c:out value="${article.title}"/></td>
-								<td class="center"><c:out value="${article.dateCreated}"/></td>
+								<td class="center"><c:out value="${article.date}"/></td>
 								<td class="center"><c:out value="${article.enabled == true ? 'Published' : 'Draft'}"/></td>
 								<td class="center ">
 									<div class="btn-group">

@@ -1,6 +1,5 @@
 package com.vladinooo.fitnessforce.web.dao;
 
-import java.util.Date;
 
 public class Article {
 
@@ -8,7 +7,7 @@ public class Article {
 	private String slug;
 	private String title;
 	private String content;
-	private String dateCreated;
+	private String date;
 	private int orderId;
 	private boolean enabled;
 
@@ -44,12 +43,12 @@ public class Article {
 		this.content = content;
 	}
 
-	public String getDateCreated() {
-		return dateCreated;
+	public String getDate() {
+		return date;
 	}
 
-	public void setDateCreated(String dateCreated) {
-		this.dateCreated = dateCreated;
+	public void setDate(String date) {
+		this.date = date;
 	}
 
 	public int getOrderId() {
