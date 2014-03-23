@@ -117,41 +117,77 @@ $(document).ready(function() {
 	initPieChart();
 
 	//--------------- Dialogs ------------------//
-	$('#openDialog').click(function(){
-		$('#dialog').dialog('open');
-		return false;
+//	$('#openDialog').click(function(){
+//		$('#dialog').dialog('open');
+//		return false;
+//	});
+//	
+	
+//	// JQuery Dialog			
+//	$('#dialog').dialog({
+//		autoOpen: false,
+//		dialogClass: 'dialog',
+//		buttons: {
+//			"Close": function() { 
+//				$(this).dialog("close"); 
+//			}
+//		}
+//	});
+	
+	// create unique ids
+	$(".openModalDialog").each(function(i){
+		$(this).attr("id", "openModal" + i);
+	});
+	
+	// create unique ids
+	$(".dialog").each(function(i){
+		$(this).attr("id", "modal" + i);
+	});
+	
+	// create unique ids
+	$(".deleteUserUrlPlaceholder").each(function(i){
+		$(this).attr("id", "deleteUserUrl" + i);
 	});
 
-	$('#openModalDialog').click(function(){
-		$('#modal').dialog('open');
-		return false;
+	
+	$(".openModalDialog").each(function(i){
+		var openModalId = $(this).attr("id");
+		$("#" + openModalId).click(function(){
+			$('#modal' + i).dialog('open');
+			return false;
+		});
+		
+		// JQuery UI Modal Dialog	
+		$('#modal' + i).dialog({
+			autoOpen: false,
+			modal: true,
+			dialogClass: 'dialog',
+			buttons: [
+			          {
+			              text: "Delete",
+			              "class": "btn btn-danger",
+			              click: function() {
+			            	  var url = $("#deleteUserUrl" + i).text();
+			            	  window.location = url;
+			            	  $(this).dialog("close");
+			              }
+			          },
+			          {
+			        	  text: "Cancel",
+			              click: function() {
+			            	  $(this).dialog("close");
+			              }
+			          }
+			      ]
+		});
+		
 	});
-
-	// JQuery Dialog			
-	$('#dialog').dialog({
-		autoOpen: false,
-		dialogClass: 'dialog',
-		buttons: {
-			"Close": function() { 
-				$(this).dialog("close"); 
-			}
-		}
-	});
-
-	// JQuery UI Modal Dialog			
-	$('#modal').dialog({
-		autoOpen: false,
-		modal: true,
-		dialogClass: 'dialog',
-		buttons: {
-			"Close": function() { 
-				$(this).dialog("close"); 
-			}
-		}
-	});
+	
 
 	$("div.dialog button").addClass("btn");
 
+	
+	
 	//Boostrap modal
 	$('#myModal').modal({ show: false});
 

@@ -5685,6 +5685,8 @@ body.modal-open,
 .modal-body {
   position: relative;
   padding: 20px;
+  font-size: 14px;
+  color: red;
 }
 
 .modal-footer {
