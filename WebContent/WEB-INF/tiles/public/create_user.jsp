@@ -2,77 +2,59 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
 
-<div class="container-fluid">
-	<div id="login">
-		<div class="login-wrapper" data-active="reg">
-			<a class="navbar-brand" href="dashboard.html"><img
-				src="${pageContext.request.contextPath}/static/bootstrap/genyx/images/logodark.png"
-				alt="Genyx admin" class="img-responsive"></a>
 
-			<div id="reg">
-				<div class="page-header">
-					<h3 class="center">Create account</h3>
-				</div>
-				<form:form class="form-horizontal" id="create-user-form"
-					action="${pageContext.request.contextPath}/do_create_user"
-					commandName="user" method="POST" role="form">
+<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+	<div class="sign-form">
+		<h3 class="first-child">Create New Account</h3>
+		<hr>
 
-					<div class="row">
-						<div class="form-group relative">
-							<div class="icon">
-								<i class="icon20 i-user"></i>
-							</div>
-							<form:input class="form-control" type="text" name="username"
-								id="user" placeholder="Username" path="username" minlength="5"/>
-							<form:errors path="username" cssClass="fieldValidationError"></form:errors>
-							<c:if test="${duplicateUser != null}">
-								<p class="fieldValidationError">Username already exists!</p>
-							</c:if>
-						</div>
-						<!-- End .control-group  -->
-						<div class="form-group relative">
-							<div class="icon">
-								<i class="icon20 i-key"></i>
-							</div>
-							<form:input class="form-control" type="password" name="password"
-								id="password" placeholder="Password" path="password" />
-							<form:errors path="password" cssClass="fieldValidationError"></form:errors>
-						</div>
-						<!-- End .control-group  -->
-						<div class="form-group relative">
-							<div class="icon">
-								<i class="icon20 i-key"></i>
-							</div>
-							<input class="form-control" type="password" id="confirm_password"
-								name="confirm_password" placeholder="Re-type password">
-						</div>
-						<!-- End .control-group  -->
-						<div class="form-group relative">
-							<div class="icon">
-								<i class="icon20 i-envelop-2"></i>
-							</div>
-							<form:input class="form-control" type="text" name="email"
-								id="email-field" placeholder="Your email" path="email" />
-							<form:errors path="email" cssClass="fieldValidationError"></form:errors>
-						</div>
-						<!-- End .control-group  -->
-						<div class="form-group">
-							<button type="submit" id="createUserBtn" class="btn btn-lg btn-block btn-danger">Create
-								my account</button>
-						</div>
-					</div>
-					<!-- End .row-fluid  -->
-				</form:form>
+		<form:form class="form-horizontal" id="create-user-form"
+			action="${pageContext.request.contextPath}/do_create_user"
+			commandName="user" method="POST" role="form">
+
+			<div class="form-group">
+				<form:input class="form-control" type="text" name="email" id="email"
+					placeholder="Your email" path="email" data-toggle="popover"
+					data-placement="left" data-trigger="focus"
+					data-content="Enter a valid email here."
+					data-original-title="Email" />
+				<form:errors path="email" cssClass="fieldValidationError"></form:errors>
 			</div>
-		</div>
-		<div id="bar" data-active="reg">
-			<div class="btn-group btn-group-vertical">
-				<a id="log" href="<c:url value="/login"/>" class="btn tipR"
-					title="Login"><i class="icon16 i-key"></i></a> <a id="reg"
-					href="<c:url value="/create_user"/>" class="btn tipR"
-					title="Register account"><i class="icon16 i-user-plus"></i></a>
+
+			<div class="form-group">
+				<form:input class="form-control" type="text" name="username"
+					id="username" placeholder="Username" path="username"
+					data-toggle="popover" data-placement="left" data-trigger="focus"
+					data-content="Enter your full name here."
+					data-original-title="Username" minlength="5"/>
+				<form:errors path="username" cssClass="fieldValidationError"></form:errors>
+				<c:if test="${duplicateUser != null}">
+					<p class="fieldValidationError">Username already exists!</p>
+				</c:if>
+
 			</div>
-		</div>
-		<div class="clearfix"></div>
+
+			<div class="form-group">
+				<form:input class="form-control margin-bottom-xs" type="password"
+					name="password" id="password" placeholder="Password"
+					path="password" data-toggle="popover" data-placement="left"
+					data-trigger="focus" data-content="Between 5 - 10 characters"
+					data-original-title="Password" />
+				<form:errors path="password" cssClass="fieldValidationError"></form:errors>
+			</div>
+
+			<div class="form-group">
+				<input class="form-control" type="password" id="confirm_password"
+					name="confirm_password" placeholder="Re-type password"
+					data-toggle="popover" data-placement="left" data-trigger="focus"
+					data-content="Between 5 - 10 characters"
+					data-original-title="Re-type password">
+			</div>
+
+			<div class="form-group">
+				<button type="submit" id="createUserBtn" class="btn btn-color">Create
+					account</button>
+			</div>
+		</form:form>
 	</div>
 </div>

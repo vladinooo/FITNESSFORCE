@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <!--<meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="img/favicon.png">
+
+    <title>Mosaic - Sign Up Alternative</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/color-styles.css" rel="stylesheet">
+    <link href="css/ui-elements.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
+    
+    <!-- Resources -->
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Oswald:400,700,300' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,500,400italic,500italic,700italic' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body class="body-green">
+
+    <div class="alt-p">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+            <!-- Logo -->
+            <div class="logo">
+              <h1 class="text-center"><a href="index.html"><i class="fa fa-th-large"></i> The Mosaic</a></h1>
+            </div> <!-- / .logo -->
+            <div class="sign-form">
+              <h3 class="first-child text-center">Create New Account</h3>
+              <hr>
+              <form role="form">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="name" placeholder="Your name" data-toggle="popover" data-placement="left" data-trigger="focus" data-content="Enter your full name here." data-original-title="Name">
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" id="username" placeholder="Username" data-toggle="popover" data-placement="left" data-trigger="focus" data-content="Enter your nickname here." data-original-title="Username">
+                </div>
+                <div class="form-group">
+                  <input type="email" class="form-control" id="email" placeholder="Enter email" data-toggle="popover" data-placement="left" data-trigger="focus" data-content="Enter a valid email here." data-original-title="Email">
+                </div>
+                <div class="form-group">
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <input type="password" class="form-control margin-bottom-xs" id="password" placeholder="Password" data-toggle="popover" data-placement="left" data-trigger="focus" data-content="Three symbols minimum." data-original-title="Password">
+                    </div>
+                    <div class="col-sm-6">
+                      <input type="password" class="form-control" id="repeat-password" placeholder="Repeat Password" data-toggle="popover" data-trigger="focus" data-content="Make sure you still remember it." data-original-title="Repeat Password">
+                    </div>
+                  </div>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox"> I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
+                  </label>
+                </div>
+                <button type="submit" class="btn btn-color">Create Account</button>
+              </form>
+            </div>
+          </div>
+        </div> <!-- / .row -->
+      </div> <!-- / .container -->
+    </div>
+
+    <!-- Style Toggle -->
+    <div class="style-toggle text-left hidden-xs">
+      <i class="fa fa-gears style-toggle-btn"></i>
+      <div class="style-toggle-header text-center">
+        Navbar Type
+      </div>
+      <!-- Navbar Type -->
+      <div class="style-toggle-body text-left">
+        <fieldset disabled>
+        <div class="radio">
+          <label>
+            <input type="radio" name="navbar" id="opt-navbar-dark" value="opt-navbar-dark" checked>
+            Navbar Dark (default)
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <input type="radio" name="navbar" id="opt-navbar-white" value="opt-navbar-white">
+            Navbar White
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <input type="radio" name="navbar" id="opt-navbar-mixed" value="opt-navbar-mixed">
+            Navbar Mixed
+          </label>
+        </div>
+        </fieldset>
+      </div>
+      <!-- Color Styles-->
+      <div class="style-toggle-header text-center">
+        Color Styles
+      </div>
+      <div class="style-toggle-body text-center">
+        <ul class="colors list-inline">
+          <li class="green"></li>
+          <li class="blue"></li>
+          <li class="orange"></li>
+          <li class="red"></li>
+        </ul>
+      </div>
+      <!-- Footer Type -->
+      <div class="style-toggle-header text-center">
+        Footer Type
+      </div>
+      <div class="style-toggle-body text-left">
+        <fieldset disabled>
+        <div class="radio">
+          <label>
+            <input type="radio" name="footer" id="opt-footer-dark" value="opt-footer-dark" checked>
+            Footer Dark (default)
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <input type="radio" name="footer" id="opt-footer-white" value="opt-footer-white">
+            Footer White
+          </label>
+        </div>
+        </fieldset>
+        <hr>
+        <a href="theme-faq.html"><i class="fa fa-question-circle"></i> Using color schemes on a production site.</a>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/custom.js"></script>
+
+</body></html>

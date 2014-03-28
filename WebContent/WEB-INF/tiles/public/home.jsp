@@ -2,7 +2,3 @@
     pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-
-<p><a href="${pageContext.request.contextPath}/create_user">Create User</a></p>
-<p><a href="${pageContext.request.contextPath}/login">Login</a></p>
-

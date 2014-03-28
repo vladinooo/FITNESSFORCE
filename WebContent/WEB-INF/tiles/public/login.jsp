@@ -19,69 +19,50 @@
 	}
 </script>
 
+<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+	<div class="sign-form">
+		<h3 class="first-child">Log In To Your Account</h3>
+		<hr>
+		<form role="form" id="login-form"
+			action="${pageContext.request.contextPath}/j_spring_security_check"
+			method="POST">
 
-<div class="container-fluid">
-	<div id="login">
-		<div class="login-wrapper" data-active="log">
-			<a class="navbar-brand" href="dashboard.html"><img
-				src="${pageContext.request.contextPath}/static/bootstrap/genyx/images/logodark.png"
-				alt="Genyx admin" class="img-responsive"></a>
-			<div id="log">
-				<div class="page-header">
-					<h3 class="center">Please login</h3>
-				</div>
-				<form role="form" id="login-form" class="form-horizontal"
-					action="${pageContext.request.contextPath}/j_spring_security_check"
-					method="POST">
+			<c:if test="${'fail' eq param.auth}">
+				<p class="fieldValidationError">Invalid Username or Password!</p>
+			</c:if>
 
-					<c:if test="${'fail' eq param.auth}">
-						<p class="fieldValidationError">Invalid Username or Password!</p>
-					</c:if>
-
-					<div class="row">
-						<div class="form-group relative">
-							<div class="icon">
-								<i class="icon20 i-user"></i>
-							</div>
-							<input class="form-control" type="text" name="j_username"
-								id="user" placeholder="Username" value="">
-
-						</div>
-						<!-- End .control-group  -->
-						<div class="form-group relative">
-							<div class="icon">
-								<i class="icon20 i-key"></i>
-							</div>
-							<input class="form-control" type="password" name="j_password"
-								id="password" placeholder="Password" value="">
-
-						</div>
-						<!-- End .control-group  -->
-						<div class="form-group relative">
-							<label class="control-label" class="checkbox pull-left">
-								<input type="checkbox" value="1" name="remember">
-								Remember me ?
-							</label>
-							<button id="loginBtn" type="submit"
-								class="btn btn-primary pull-right col-lg-5">Login</button>
-						</div>
-					</div>
-					<!-- End .row-fluid  -->
-				</form>
-				<p class="center">
-					Don't have an account? <a href="<c:url value="/create_user"/>"
-						id="register"><strong>Create one now</strong></a>
-				</p>
+			<div class="input-group">
+				<span class="input-group-addon"><i class="fa fa-user"></i></span> <input
+					class="form-control" type="text" name="j_username" id="user"
+					placeholder="Username" value="">
 			</div>
-		</div>
-		<div id="bar" data-active="log">
-			<div class="btn-group btn-group-vertical">
-				<a id="log" href="<c:url value="/login"/>" class="btn tipR"
-					title="Login"><i class="icon16 i-key"></i></a> <a id="reg"
-					href="<c:url value="/create_user"/>" class="btn tipR"
-					title="Register account"><i class="icon16 i-user-plus"></i></a>
+
+			<br>
+
+			<div class="input-group">
+				<span class="input-group-addon"><i class="fa fa-lock"></i></span> <input
+					class="form-control" type="password" name="j_password"
+					id="password" placeholder="Password" value="">
 			</div>
-		</div>
-		<div class="clearfix"></div>
+
+			<div class="checkbox">
+				<label> <input type="checkbox"> Remember me
+				</label>
+			</div>
+
+			<button type="submit" class="btn btn-color">Submit</button>
+
+
+			<hr>
+		</form>
+
+		<p>
+			Don't have an account? <a href="<c:url value="/create_user"/>">Create
+				one now</a>
+		</p>
 	</div>
 </div>
+
+
+
+

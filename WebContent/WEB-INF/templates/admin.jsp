@@ -43,7 +43,7 @@
 	    <link href="${pageContext.request.contextPath}/static/bootstrap/genyx/js/plugins/forms/datepicker/datepicker.css" rel="stylesheet" /> 
 	    <link href="${pageContext.request.contextPath}/static/bootstrap/genyx/js/plugins/forms/multiselect/ui.multiselect.css" rel="stylesheet" /> 
 		 
-		    <!-- app stylesheets -->
+		<!-- app stylesheets -->
 	    <link href="${pageContext.request.contextPath}/static/bootstrap/genyx/css/app.css" rel="stylesheet" /> 
 	 
 	    <!-- Custom stylesheets ( Put your own changes here ) -->
