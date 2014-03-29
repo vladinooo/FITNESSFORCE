@@ -4,16 +4,18 @@
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 
 
+
 <!DOCTYPE html>
-	<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	    <meta charset="utf-8">
 	    <!--<meta http-equiv="X-UA-Compatible" content="IE=edge">-->
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	    <meta name="description" content="">
-	    <meta name="author" content="">
-	    <link rel="shortcut icon" href="${pageContext.request.contextPath}/static/bootstrap/mosaic/img/favicon.png">
-	
-	    <title><tiles:insertAttribute name="title"></tiles:insertAttribute></title>
+
+	    <link rel="shortcut icon" href="${pageContext.request.contextPath}/static/bootstrap/mosaic/img/favicon.png?v=2">
+		
+		<title><tiles:insertAttribute name="title"></tiles:insertAttribute></title>
 	
 	    <!-- Bootstrap core CSS -->
 	    <link href="${pageContext.request.contextPath}/static/bootstrap/mosaic/css/bootstrap.css" rel="stylesheet">
@@ -25,6 +27,9 @@
 	    <link href="${pageContext.request.contextPath}/static/bootstrap/mosaic/css/color-styles.css" rel="stylesheet">
 	    <link href="${pageContext.request.contextPath}/static/bootstrap/mosaic/css/ui-elements.css" rel="stylesheet">
 	    <link href="${pageContext.request.contextPath}/static/bootstrap/mosaic/css/custom.css" rel="stylesheet">
+	    
+	    <!-- Custom CSS -->
+	    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/main.css">
 	    
 	    <!-- Resources -->
 	    <link href="${pageContext.request.contextPath}/static/bootstrap/mosaic/css/animate.css" rel="stylesheet">
@@ -39,42 +44,34 @@
 	    <![endif]-->
 	    
 	    
-	    <!-- Bootstrap core JavaScript
-	    ================================================== -->
-	    <!-- Placed at the end of the document so the pages load faster -->
-	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-	    <script src="${pageContext.request.contextPath}/static/bootstrap/mosaic/js/bootstrap.min.js"></script>
-	    <script src="${pageContext.request.contextPath}/static/bootstrap/mosaic/js/scrolltopcontrol.js"></script>
-	    <script src="${pageContext.request.contextPath}/static/bootstrap/mosaic/js/jquery.sticky.js"></script>
-	    <script src="${pageContext.request.contextPath}/static/bootstrap/mosaic/js/custom.js"></script>
 	    
 	    
-	    <!-- Form plugins -->
-	    <script src="${pageContext.request.contextPath}/static/bootstrap/genyx/js/plugins/forms/validation/jquery.validate.js"></script>
-	    <script src="${pageContext.request.contextPath}/static/bootstrap/genyx/js/plugins/forms/select2/select2.js"></script> 
-	     
-	    <!-- Init plugins -->
-	    <script src="${pageContext.request.contextPath}/static/bootstrap/mosaic/js/pages/login.js"></script><!-- Init plugins only for page -->
-	    <script src="${pageContext.request.contextPath}/static/bootstrap/mosaic/js/pages/form-validation.js"></script><!-- Init plugins only for page -->
 	    
-	    <!-- Custom CSS -->
-	    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/main.css">
 	    
-	    <!-- Custom JS -->
-	    <script src="${pageContext.request.contextPath}/static/js/style.js"></script>
 	    
-	  </head>
-	
-	  <body class="body-green">
-	
+	</head>
+
+	<body class="body-ff">
+
 	    <!-- Extra Bar -->
-	    <div class="mini-navbar mini-navbar-dark hidden-xs">
+	    <div class="mini-navbar mini-navbar-ff hidden-xs">
 	      <div class="container">
 	        <div class="col-sm-12">
-	          <a href="${pageContext.request.contextPath}/create_user" class="pull-right"><i class="fa fa-arrow-circle-down"></i> Create Account</a>
-	          <a href="${pageContext.request.contextPath}/login" class="pull-right"><i class="fa fa-sign-in"></i> Log In</a>
+	          
+	          <sec:authorize access="!isAuthenticated()">
+	         	<a href="${pageContext.request.contextPath}/create_user" class="pull-right"><i class="fa fa-arrow-circle-down"></i> Create Account</a>
+	         	<a href="${pageContext.request.contextPath}/login" class="pull-right"><i class="fa fa-sign-in"></i> Log In</a>
+			  </sec:authorize>
+			
+			  <sec:authorize access="isAuthenticated()">
+				<a href="${pageContext.request.contextPath}/dashboard" class="pull-right"><i class="fa fa-user"></i> My Account</a>
+	         	<a href="${pageContext.request.contextPath}/j_spring_security_logout" class="pull-right"><i class="fa fa-sign-out"></i> Log Out</a>
+			  </sec:authorize>
+	          
+	          
 	          <a href="#" class="pull-right" id="nav-search"><i class="fa fa-search"></i> Search</a>
 	          <a href="#" class="pull-right hidden" id="nav-search-close"><i class="fa fa-times"></i></a>
+	          
 	          <!-- Search Form -->
 	          <form class="pull-right hidden" role="search" id="nav-search-form">
 	            <div class="input-group">
@@ -88,7 +85,7 @@
 	      </div>
 	    </div>
 	
-	    <div class="navbar navbar-dark navbar-static-top" role="navigation">
+	    <div class="navbar navbar-ff navbar-static-top" role="navigation">
 	      <div class="container">
 	
 	        <!-- Navbar Header -->
@@ -99,14 +96,14 @@
 	            <span class="icon-bar"></span>
 	            <span class="icon-bar"></span>
 	          </button>
-	          <a class="navbar-brand" href="index.html"><i class="fa fa-th-large"></i> The Mosaic <span class="hidden-sm">Business Template</span></a>
+	          <div class="ff-logo"><a href="index.html"></a></div>
 	        </div> <!-- / Navbar Header -->
 	
 	        <!-- Navbar Links -->
 	        <div class="navbar-collapse collapse">
 	          <ul class="nav navbar-nav navbar-right">
-	            <li><a href="index.html" class="bg-hover-color">Home</a></li>
-	            <li class="dropdown active">
+	            <li class="active"><a href="index.html" class="bg-hover-color">Home</a></li>
+	            <li class="dropdown">
 	              <a href="#" class="dropdown-toggle bg-hover-color" data-toggle="dropdown">Pages <b class="caret"></b></a>
 	              <ul class="dropdown-menu">
 	                <li><a href="about-us.html" class="bg-hover-color">About Us</a></li>
@@ -177,35 +174,12 @@
 	    <!-- Wrapper -->
 	    <div class="wrapper">
 	
-	      <!-- Topic Header -->
-	      <div class="topic">
-	        <div class="container">
-	          <div class="row">
-	            <div class="col-sm-4">
-	              <h3 class="primary-font">Sign In</h3>
-	            </div>
-	            <div class="col-sm-8">
-	              <ol class="breadcrumb pull-right hidden-xs">
-	                <li><a href="index.html">Home</a></li>
-	                <li class="active">Sign In</li>
-	              </ol>
-	            </div>
-	          </div>
-	        </div>
-	      </div>
-	
-	      <div class="container">
-	        <div class="row">
-	        
-				<tiles:insertAttribute name="content"></tiles:insertAttribute>
+			<tiles:insertAttribute name="content"></tiles:insertAttribute>
 	          
-	        </div> <!-- / .row -->
-	      </div> <!-- / .container -->
-	
 	    </div> <!-- / .wrapper -->
 	
 	    <!-- Footer -->
-	    <footer class="footer-dark">
+	    <footer class="footer-ff">
 	      <div class="container">
 	        <div class="row">
 	          <!-- Contact Us -->
@@ -272,67 +246,26 @@
 	        </div>
 	      </div>
 	    </footer>
-	
-	    <!-- Style Toggle -->
-	    <div class="style-toggle text-left hidden-xs">
-	      <i class="fa fa-gears style-toggle-btn"></i>
-	      <div class="style-toggle-header text-center">
-	        Navbar Type
-	      </div>
-	      <!-- Navbar Type -->
-	      <div class="style-toggle-body text-left">
-	        <div class="radio">
-	          <label>
-	            <input type="radio" name="navbar" id="opt-navbar-dark" value="opt-navbar-dark" checked>
-	            Navbar Dark (default)
-	          </label>
-	        </div>
-	        <div class="radio">
-	          <label>
-	            <input type="radio" name="navbar" id="opt-navbar-white" value="opt-navbar-white">
-	            Navbar White
-	          </label>
-	        </div>
-	        <div class="radio">
-	          <label>
-	            <input type="radio" name="navbar" id="opt-navbar-mixed" value="opt-navbar-mixed">
-	            Navbar Mixed
-	          </label>
-	        </div>
-	      </div>
-	      <!-- Color Styles-->
-	      <div class="style-toggle-header text-center">
-	        Color Styles
-	      </div>
-	      <div class="style-toggle-body text-center">
-	        <ul class="colors list-inline">
-	          <li class="green"></li>
-	          <li class="blue"></li>
-	          <li class="orange"></li>
-	          <li class="red"></li>
-	        </ul>
-	      </div>
-	      <!-- Footer Type -->
-	      <div class="style-toggle-header text-center">
-	        Footer Type
-	      </div>
-	      <div class="style-toggle-body text-left">
-	        <div class="radio">
-	          <label>
-	            <input type="radio" name="footer" id="opt-footer-dark" value="opt-footer-dark" checked>
-	            Footer Dark (default)
-	          </label>
-	        </div>
-	        <div class="radio">
-	          <label>
-	            <input type="radio" name="footer" id="opt-footer-white" value="opt-footer-white">
-	            Footer White
-	          </label>
-	        </div>
-	        <hr>
-	        <a href="theme-faq.html"><i class="fa fa-question-circle"></i> Using color schemes on a production site.</a>
-	      </div>
-	    </div>
-	
+	    
+	    <!-- Bootstrap core JavaScript
+	    ================================================== -->
+	    <!-- Placed at the end of the document so the pages load faster -->
+	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	    <script src="${pageContext.request.contextPath}/static/bootstrap/mosaic/js/bootstrap.min.js"></script>
+	    <script src="${pageContext.request.contextPath}/static/bootstrap/mosaic/js/scrolltopcontrol.js"></script>
+	    <script src="${pageContext.request.contextPath}/static/bootstrap/mosaic/js/jquery.sticky.js"></script>
+	    <script src="${pageContext.request.contextPath}/static/bootstrap/mosaic/js/custom.js"></script>
+	    
+	    <!-- Form plugins -->
+	    <script src="${pageContext.request.contextPath}/static/bootstrap/genyx/js/plugins/forms/validation/jquery.validate.js"></script>
+	    <script src="${pageContext.request.contextPath}/static/bootstrap/genyx/js/plugins/forms/select2/select2.js"></script> 
+	     
+	    <!-- Init plugins -->
+	    <script src="${pageContext.request.contextPath}/static/bootstrap/mosaic/js/pages/login.js"></script><!-- Init plugins only for page -->
+	    <script src="${pageContext.request.contextPath}/static/bootstrap/mosaic/js/pages/form-validation.js"></script><!-- Init plugins only for page -->
+	    
+	    <!-- Custom JS -->
+	    <script src="${pageContext.request.contextPath}/static/js/style.js"></script>
+
 	</body>
 </html>

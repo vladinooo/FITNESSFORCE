@@ -46,6 +46,11 @@ Last change:	27/02/2014
 .body-red .text-color {
 	color: #E35E54;
 }
+.body-ff a,
+.body-ff .text-color {
+	color: #c39c8a;
+}
+
 
 
 /* ===== Border Colors ===== */
@@ -62,6 +67,9 @@ Last change:	27/02/2014
 .body-red .border-color {
 	border-color: #E35E54;
 }
+.body-ff .border-color {
+	border-color: #c39c8a;
+}
 
 /* ===== Background Colors ===== */
 
@@ -77,6 +85,11 @@ Last change:	27/02/2014
 .body-red .bg-color {
 	background-color: #E35E54;
 }
+.body-ff .bg-color {
+	background-color: #c39c8a;
+}
+
+
 .body-green .bg-hover-color:hover,
 .body-green .open > .bg-hover-color {
 	background-color: #94BA65 !important;
@@ -93,6 +106,12 @@ Last change:	27/02/2014
 .body-red .open > .bg-hover-color {
 	background-color: #E35E54 !important;
 }
+.body-ff .bg-hover-color:hover,
+.body-ff .open > .bg-hover-color {
+	background-color: #c39c8a !important;
+}
+
+
 .body-green .dropdown-menu > .active > a,
 .body-green .dropdown-menu > .active > a:hover,
 .body-green .dropdown-menu > .active > a:focus {
@@ -113,6 +132,12 @@ Last change:	27/02/2014
 .body-red .dropdown-menu > .active > a:focus {
 	background-color: #E35E54;
 }
+.body-ff .dropdown-menu > .active > a,
+.body-ff .dropdown-menu > .active > a:hover,
+.body-ff .dropdown-menu > .active > a:focus {
+	background-color: #c39c8a;
+}
+
 
 /* ===== Buttons Colors ===== */
 
@@ -182,7 +207,7 @@ Last change:	27/02/2014
 	border-color: #9E511A;
 }
 
-/* Button Orange */
+/* Button Red */
 
 .body-red .btn-color,
 .btn-red {
@@ -197,6 +222,23 @@ Last change:	27/02/2014
 .btn-red:active {
 	background-color: #E0493E;
 	border-color: #DD382C;
+}
+
+/* Button Fitness Force */
+
+.body-ff .btn-color,
+.btn-ff {
+	background-color: #c39c8a;
+	border-color: #a88575;
+}
+.body-ff .btn-color:hover,
+.body-ff .btn-color:focus,
+.body-ff .btn-color:active,
+.btn-ff:hover,
+.btn-ff:focus,
+.btn-ff:active {
+	background-color: #a88575;
+	border-color: #a88575;
 }
 
 /* ===== Page Not Found ===== */

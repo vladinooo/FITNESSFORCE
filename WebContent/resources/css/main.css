@@ -83,3 +83,9 @@ input[type="text"].form-control-disabled:focus {
 	padding: 20px;
 	color: #da4f49;
 }
+
+div.ff-logo {
+	background: url(../images/ff-logo.jpg) no-repeat;
+	width: 197px;
+	height: 75px;
+}
