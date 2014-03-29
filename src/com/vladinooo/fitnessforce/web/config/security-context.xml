@@ -21,6 +21,8 @@
 	<security:http use-expressions="true">
 		<security:intercept-url pattern="/" access="permitAll" />
 		<security:intercept-url pattern="/static/**" access="permitAll" />
+		
+		<!-- Users -->
 		<security:intercept-url pattern="/login" access="permitAll" />
 		<security:intercept-url pattern="/create_user" access="permitAll" />
 		<security:intercept-url pattern="/do_create_user" access="permitAll" />
@@ -36,7 +38,7 @@
 		<security:intercept-url pattern="/delete_user*" access="hasRole('ROLE_ADMIN')" />
 		
 		<!-- Rules -->
-		<security:intercept-url pattern="/rules" access="isAuthenticated()" />
+		<security:intercept-url pattern="/rules" access="permitAll" />
 		
 		<!-- Timetable -->
 		<security:intercept-url pattern="/timetable" access="isAuthenticated()" />

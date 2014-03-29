@@ -18,18 +18,32 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.vladinooo.fitnessforce.web.dao.Article;
 import com.vladinooo.fitnessforce.web.dao.User;
 import com.vladinooo.fitnessforce.web.service.ArticlesService;
+import com.vladinooo.fitnessforce.web.service.UsersService;
 
 @Controller
 public class ArticlesController {
 	
 	@Autowired
 	private ArticlesService articlesService;
+	
+	
+	@Autowired
+	private UsersService usersService;
 
 	
 	@ModelAttribute("articles")
 	public List<Article> getArticles() {
 		List<Article> articles = articlesService.getArticles();
 	    return articles;
+	}
+	
+	
+	@ModelAttribute("currentUser")
+	public User getCurrentUser() {
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+	    String username = auth.getName();
+	    User currentUser = usersService.getUser(username);
+	    return currentUser;
 	}
 	
 	

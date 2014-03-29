@@ -28,8 +28,8 @@ $(document).ready(function() {
 	
 	
 	//-------- Home page --------------//
-	if ($(".ff-home").length) {
-		$("div.wrapper div.topic").hide();
+	if ($(".ff-topic").length) {
+		$("div.wrapper div.topic").show();
 	}
 	
 	
@@ -58,11 +58,11 @@ $(document).ready(function() {
 		}
 	});
 	
-	var uri = window.location.href.substr(window.location.href.lastIndexOf("/news") + 1);
+	var uri = window.location.href.substr(window.location.href.indexOf("/view_article?articleid=") + 1);
 	$("ul.navbar-nav  li a").each(function() {
 		var hrefUri = $($(this).attr("href").split("/")).get(-1);
 		if (hrefUri == uri) {
-			$(this).parent().addClass("active").siblings().removeAttr("active");
+			$(this).parent().parent().parent().addClass("active").siblings().removeAttr("active");
 		}
 	});
 	

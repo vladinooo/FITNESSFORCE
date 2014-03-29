@@ -1,0 +1,3 @@
+<script>
+	$(".topic").show();
+</script>

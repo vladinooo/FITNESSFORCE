@@ -3,6 +3,10 @@
 
 
 <script>
+	$(".topic").show();
+</script>
+
+<script>
 	$(document).ready(function() {
 		$('[name="j_username"]').focus();
 	});

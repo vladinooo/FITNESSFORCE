@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!-- Jumbotron -->
-<div class="main-slideshow ff-home">
+<div class="main-slideshow">
   <div id="main-slideshow" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
       <!-- Slide No 1 -->

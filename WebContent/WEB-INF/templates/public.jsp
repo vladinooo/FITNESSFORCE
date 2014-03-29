@@ -17,6 +17,9 @@
 		
 		<title><tiles:insertAttribute name="title"></tiles:insertAttribute></title>
 	
+		<!-- jquery -->
+	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	    
 	    <!-- Bootstrap core CSS -->
 	    <link href="${pageContext.request.contextPath}/static/bootstrap/mosaic/css/bootstrap.css" rel="stylesheet">
 	    
@@ -130,7 +133,7 @@
 	    <div class="wrapper">
 	    
 		    <!-- Topic Header -->
-			<div class="topic">
+			<div class="topic" style="display: none">
 			  <div class="container">
 			    <div class="row">
 			      <div class="col-sm-4">
@@ -215,8 +218,6 @@
 	    
 	    <!-- Bootstrap core JavaScript
 	    ================================================== -->
-	    <!-- Placed at the end of the document so the pages load faster -->
-	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	    <script src="${pageContext.request.contextPath}/static/bootstrap/mosaic/js/bootstrap.min.js"></script>
 	    <script src="${pageContext.request.contextPath}/static/bootstrap/mosaic/js/scrolltopcontrol.js"></script>
 	    <script src="${pageContext.request.contextPath}/static/bootstrap/mosaic/js/jquery.sticky.js"></script>

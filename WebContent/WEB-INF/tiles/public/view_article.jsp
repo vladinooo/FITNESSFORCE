@@ -2,6 +2,10 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
 
+<script>
+	$(".topic").show();
+</script>
+
 <!-- Main Content -->
 <div class="container">
   <div class="row">

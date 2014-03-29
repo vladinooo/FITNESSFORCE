@@ -1,6 +1,11 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
+
+<script>
+	$(".topic").show();
+</script>
+
 <script>
 	$(document).ready(function() {
 		$('[name="j_username"]').focus();
