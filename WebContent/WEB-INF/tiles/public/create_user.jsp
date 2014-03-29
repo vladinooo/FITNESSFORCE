@@ -2,22 +2,24 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
 
-<!-- Topic Header -->
-<div class="topic">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-4">
-        <h3 class="primary-font">Sign Up</h3>
-      </div>
-      <div class="col-sm-8">
-        <ol class="breadcrumb pull-right hidden-xs">
-          <li><a href="index.html">Home</a></li>
-          <li class="active">Sign Up</li>
-        </ol>
-      </div>
-    </div>
-  </div>
-</div>
+<script>
+	$(document).ready(function() {
+		$('[name="j_username"]').focus();
+	});
+
+	// submit form on pressing Enter key
+	document.onkeypress = stopRKey;
+	function stopRKey(evt) {
+		var evt = (evt) ? evt : ((event) ? event : null);
+		var node = (evt.target) ? evt.target
+				: ((evt.srcElement) ? evt.srcElement : null);
+		if (evt.keyCode == 13) {
+			//submit form
+			document.forms[0].submit();
+		}
+	}
+</script>
+
 
 <div class="container">
 	<div class="row">

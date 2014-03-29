@@ -41,13 +41,7 @@
 	    <!--[if lt IE 9]>
 	      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 	      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-	    <![endif]-->
-	    
-	    
-	    
-	    
-	    
-	    
+	    <![endif]-->	   
 	    
 	</head>
 
@@ -59,13 +53,13 @@
 	        <div class="col-sm-12">
 	          
 	          <sec:authorize access="!isAuthenticated()">
-	         	<a href="${pageContext.request.contextPath}/create_user" class="pull-right"><i class="fa fa-arrow-circle-down"></i> Create Account</a>
-	         	<a href="${pageContext.request.contextPath}/login" class="pull-right"><i class="fa fa-sign-in"></i> Log In</a>
+	         	<a href="<c:url value='/create_user'/>" class="pull-right"><i class="fa fa-arrow-circle-down"></i> Create Account</a>
+	         	<a href="<c:url value='/login'/>" class="pull-right"><i class="fa fa-sign-in"></i> Log In</a>
 			  </sec:authorize>
 			
 			  <sec:authorize access="isAuthenticated()">
-				<a href="${pageContext.request.contextPath}/dashboard" class="pull-right"><i class="fa fa-user"></i> My Account</a>
-	         	<a href="${pageContext.request.contextPath}/j_spring_security_logout" class="pull-right"><i class="fa fa-sign-out"></i> Log Out</a>
+				<a href="<c:url value='/dashboard'/>" class="pull-right"><i class="fa fa-user"></i> My Account</a>
+	         	<a href="<c:url value='/j_spring_security_logout'/>" class="pull-right"><i class="fa fa-sign-out"></i> Log Out</a>
 			  </sec:authorize>
 	          
 	          
@@ -96,67 +90,28 @@
 	            <span class="icon-bar"></span>
 	            <span class="icon-bar"></span>
 	          </button>
-	          <div class="ff-logo"><a href="index.html"></a></div>
+	          <a href="<c:url value='/'/>" class="navbar-brand"><span class="ff-logo"></span></a>
 	        </div> <!-- / Navbar Header -->
 	
 	        <!-- Navbar Links -->
 	        <div class="navbar-collapse collapse">
 	          <ul class="nav navbar-nav navbar-right">
-	            <li class="active"><a href="index.html" class="bg-hover-color">Home</a></li>
+	          
+	            <li><a href="<c:url value='/'/>" class="bg-hover-color">Home</a></li>
+	            <li><a href="<c:url value='/rules'/>" class="bg-hover-color">Rules</a></li>
+	            <li><a href="<c:url value='/timetable'/>" class="bg-hover-color">Timetable</a></li>
 	            <li class="dropdown">
-	              <a href="#" class="dropdown-toggle bg-hover-color" data-toggle="dropdown">Pages <b class="caret"></b></a>
+	              <a href="#" class="dropdown-toggle bg-hover-color" data-toggle="dropdown">News <b class="caret"></b></a>
 	              <ul class="dropdown-menu">
-	                <li><a href="about-us.html" class="bg-hover-color">About Us</a></li>
-	                <li><a href="coming-soon.html" class="bg-hover-color">Coming Soon</a></li>
-	                <li><a href="contact-us.html" class="bg-hover-color">Contact Us</a></li>
-	                <li><a href="dummy.html" class="bg-hover-color">Dummy Page</a></li>
-	                <li><a href="help-center.html" class="bg-hover-color">Help Center</a></li>
-	                <li><a href="help-answer.html" class="bg-hover-color">Help Item</a></li>
-	                <li><a href="pricing-table.html" class="bg-hover-color">Pricing Table</a></li>
-	                <li><a href="responsive-video.html" class="bg-hover-color">Responsive Video</a></li>
-	                <li><a href="services.html" class="bg-hover-color">Services</a></li>
-	                <li><a href="sign-in.html" class="bg-hover-color">Sign In</a></li>
-	                <li><a href="sign-in-alt.html" class="bg-hover-color">Sign In Option</a></li>
-	                <li><a href="sign-up.html" class="bg-hover-color">Sign Up</a></li>
-	                <li><a href="sign-up-alt.html" class="bg-hover-color">Sign Up Option</a></li>
-	                <li><a href="404-error.html" class="bg-hover-color">404 Error Page</a></li>
+	              	<c:forEach var="article" items="${articles}">
+	              		<li><a href="<c:url value='/view_article'>
+										<c:param name='articleid' value='${article.articleId}'/>
+								 	 </c:url>" class="bg-hover-color"><c:out value="${article.title}"/></a></li>
+					</c:forEach>
 	              </ul>
 	            </li>
-	            <li class="dropdown">
-	              <a href="#" class="dropdown-toggle bg-hover-color" data-toggle="dropdown">Portfolio <b class="caret"></b></a>
-	              <ul class="dropdown-menu">
-	                <li><a href="portfolio.html" class="bg-hover-color">Portfolio</a></li>
-	                <li><a href="portfolio-isotope.html" class="bg-hover-color">Portfolio Isotope</a></li>
-	                <li><a href="portfolio-item.html" class="bg-hover-color">Portfolio Item</a></li>
-	              </ul>
-	            </li>
-	            <li class="dropdown">
-	              <a href="#" class="dropdown-toggle bg-hover-color" data-toggle="dropdown">Blog <b class="caret"></b></a>
-	              <ul class="dropdown-menu">
-	                <li><a href="blog.html" class="bg-hover-color">Blog</a></li>
-	                <li><a href="blog-post.html" class="bg-hover-color">Blog Post</a></li>
-	              </ul>
-	            </li>
-	            <li class="dropdown">
-	              <a href="#" class="dropdown-toggle bg-hover-color" data-toggle="dropdown">Shop <b class="caret"></b></a>
-	              <ul class="dropdown-menu">
-	                <li><a href="shop.html" class="bg-hover-color">Shop Index</a></li>
-	                <li><a href="shop-products.html" class="bg-hover-color">Shop Products</a></li>
-	                <li><a href="shop-item.html" class="bg-hover-color">Shop Item</a></li>
-	                <li><a href="shop-cart.html" class="bg-hover-color">Shopping Cart</a></li>
-	                <li><a href="user-profile.html" class="bg-hover-color">User Profile</a></li>
-	              </ul>
-	            </li>
-	            <li class="dropdown">
-	              <a href="#" class="dropdown-toggle bg-hover-color" data-toggle="dropdown">UI Elements <b class="caret"></b></a>
-	              <ul class="dropdown-menu">
-	                <li><a href="ui-elements.html#buttons" class="bg-hover-color">Buttons</a></li>
-	                <li><a href="ui-elements.html#panels" class="bg-hover-color">Panels</a></li>
-	                <li><a href="ui-elements.html#info-boards" class="bg-hover-color">Info Boards</a></li>
-	                <li><a href="ui-elements.html#navs" class="bg-hover-color">Navs</a></li>
-	                <li><a href="ui-elements.html#headlines" class="bg-hover-color">Headlines</a></li>
-	              </ul>
-	            </li>
+	            <li><a href="<c:url value='/shop'/>" class="bg-hover-color">Shop</a></li>
+ 
 	          </ul>
 	
 	          <!-- Search Form (xs) -->
@@ -173,6 +128,17 @@
 	
 	    <!-- Wrapper -->
 	    <div class="wrapper">
+	    
+		    <!-- Topic Header -->
+			<div class="topic">
+			  <div class="container">
+			    <div class="row">
+			      <div class="col-sm-4">
+			        <h3 class="primary-font"><tiles:insertAttribute name="topic"></tiles:insertAttribute></h3>
+			      </div>
+			    </div>
+			  </div>
+			</div>
 	
 			<tiles:insertAttribute name="content"></tiles:insertAttribute>
 	          

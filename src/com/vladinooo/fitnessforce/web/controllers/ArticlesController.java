@@ -1,11 +1,16 @@
 package com.vladinooo.fitnessforce.web.controllers;
 
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -21,9 +26,24 @@ public class ArticlesController {
 	private ArticlesService articlesService;
 
 	
+	@ModelAttribute("articles")
+	public List<Article> getArticles() {
+		List<Article> articles = articlesService.getArticles();
+	    return articles;
+	}
+	
+	
+	@RequestMapping(value="/view_article", method = RequestMethod.GET)
+	public String showViewArticle(@RequestParam("articleid") String articleId, Model model) {
+		Article selectedArticle = articlesService.getArticle(Integer.parseInt(articleId));
+		model.addAttribute("selectedArticle", selectedArticle);
+		model.addAttribute("article", new Article());
+		return "view_article";
+	}
+	
+	
 	@RequestMapping(value="/articles", method = RequestMethod.GET)
-	public String showArticles(Model model) {
-		model.addAttribute("articles", articlesService.getArticles());
+	public String showArticles() {
 		return "articles";
 	}
 

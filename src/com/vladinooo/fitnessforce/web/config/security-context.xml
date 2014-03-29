@@ -35,12 +35,23 @@
 		<security:intercept-url pattern="/do_admin_edit_user" access="hasRole('ROLE_ADMIN')" />
 		<security:intercept-url pattern="/delete_user*" access="hasRole('ROLE_ADMIN')" />
 		
+		<!-- Rules -->
+		<security:intercept-url pattern="/rules" access="isAuthenticated()" />
+		
+		<!-- Timetable -->
+		<security:intercept-url pattern="/timetable" access="isAuthenticated()" />
+		
+		<!-- Articles -->
+		<security:intercept-url pattern="/view_article*" access="isAuthenticated()" />
 		<security:intercept-url pattern="/articles" access="hasRole('ROLE_ADMIN')" />
 		<security:intercept-url pattern="/create_article" access="hasRole('ROLE_ADMIN')" />
 		<security:intercept-url pattern="/do_create_article" access="hasRole('ROLE_ADMIN')" />
 		<security:intercept-url pattern="/edit_article*" access="hasRole('ROLE_ADMIN')" />
 		<security:intercept-url pattern="/do_edit_article" access="hasRole('ROLE_ADMIN')" />
 		<security:intercept-url pattern="/delete_article*" access="hasRole('ROLE_ADMIN')" />
+		
+		<!-- Shop -->
+		<security:intercept-url pattern="/shop" access="isAuthenticated()" />
 		
 		<security:intercept-url pattern="/**" access="denyAll" />
 		<security:form-login login-page="/login" default-target-url="/" authentication-failure-url="/login?auth=fail" />  

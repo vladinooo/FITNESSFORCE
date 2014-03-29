@@ -1,5 +1,7 @@
 package com.vladinooo.fitnessforce.web.controllers;
 
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +17,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.vladinooo.fitnessforce.web.dao.Article;
 import com.vladinooo.fitnessforce.web.dao.User;
+import com.vladinooo.fitnessforce.web.service.ArticlesService;
 import com.vladinooo.fitnessforce.web.service.UsersService;
 
 @Controller
@@ -23,6 +27,9 @@ public class UsersController {
 	
 	@Autowired
 	private UsersService usersService;
+	
+	@Autowired
+	private ArticlesService articlesService;
 
 	
 	@ModelAttribute("currentUser")
@@ -32,6 +39,14 @@ public class UsersController {
 	    User currentUser = usersService.getUser(username);
 	    return currentUser;
 	}
+	
+	
+	@ModelAttribute("articles")
+	public List<Article> getArticles() {
+		List<Article> articles = articlesService.getArticles();
+	    return articles;
+	}
+	
 	
 	//user
 	@RequestMapping(value="/", method = RequestMethod.GET)

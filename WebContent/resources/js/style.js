@@ -1,6 +1,8 @@
 
-//-------- Admin navigation tab --------------//
+
 $(document).ready(function() {
+	
+	//-------- Admin navigation tab --------------//
 	if (window.location.href.indexOf("do_admin_create_user") > -1) {
 		expandUsersTab();
 	}
@@ -23,8 +25,62 @@ $(document).ready(function() {
 		expandAriclesTab();
 	}
 	populateArticleTextarea();
+	
+	
+	//-------- Home page --------------//
+	if ($(".ff-home").length) {
+		$("div.wrapper div.topic").hide();
+	}
+	
+	
+	//-------- Active nav buttons --------------//
+	var uri = window.location.href.substr(window.location.href.lastIndexOf("/") + 1);
+	$("ul.navbar-nav  li a").each(function() {
+		var hrefUri = $($(this).attr("href").split("/")).get(-1);
+		if (hrefUri == uri) {
+			$(this).parent().addClass("active").siblings().removeAttr("active");
+		}
+	});
+	
+	var uri = window.location.href.substr(window.location.href.lastIndexOf("/rules") + 1);
+	$("ul.navbar-nav  li a").each(function() {
+		var hrefUri = $($(this).attr("href").split("/")).get(-1);
+		if (hrefUri == uri) {
+			$(this).parent().addClass("active").siblings().removeAttr("active");
+		}
+	});
+	
+	var uri = window.location.href.substr(window.location.href.lastIndexOf("/timetable") + 1);
+	$("ul.navbar-nav  li a").each(function() {
+		var hrefUri = $($(this).attr("href").split("/")).get(-1);
+		if (hrefUri == uri) {
+			$(this).parent().addClass("active").siblings().removeAttr("active");
+		}
+	});
+	
+	var uri = window.location.href.substr(window.location.href.lastIndexOf("/news") + 1);
+	$("ul.navbar-nav  li a").each(function() {
+		var hrefUri = $($(this).attr("href").split("/")).get(-1);
+		if (hrefUri == uri) {
+			$(this).parent().addClass("active").siblings().removeAttr("active");
+		}
+	});
+	
+	var uri = window.location.href.substr(window.location.href.lastIndexOf("/shop") + 1);
+	$("ul.navbar-nav  li a").each(function() {
+		var hrefUri = $($(this).attr("href").split("/")).get(-1);
+		if (hrefUri == uri) {
+			$(this).parent().addClass("active").siblings().removeAttr("active");
+		}
+	});
+
 
 });
+
+
+$(function() {
+	// code here
+	});
 
 function highlightProfileTab() {
 	$("#profileTab").addClass("current");
