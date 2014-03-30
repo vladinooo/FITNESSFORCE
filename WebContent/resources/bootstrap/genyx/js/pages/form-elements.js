@@ -91,6 +91,17 @@ $(document).ready(function() {
   	});
  
    $("#spinner-time").timespinner();
+   
+   //------------- Time picker ---------------//
+   $('#sessionStartTp').timepicker({
+   	'timeFormat': 'H:i',
+   	'step': 15
+   });
+   
+   $('#sessionEndTp').timepicker({
+	   	'timeFormat': 'H:i',
+	   	'step': 15
+	   });
 
    //------------- Color picker -------------//
    $("#color-picker").spectrum({
@@ -110,8 +121,14 @@ $(document).ready(function() {
     });
 
     //------------- Datepicker -------------//
-    $('#datepicker').datepicker({
-
+    var today = new Date();
+    $('#sessionStartDp').datepicker({
+    	autoclose: true,
+    	startDate: new Date(today.getFullYear(), today.getMonth(), today.getDate())
+    });
+    $('#sessionEndDp').datepicker({
+    	autoclose: true,
+    	startDate: new Date(today.getFullYear(), today.getMonth(), today.getDate())
     });
     $('#datepicker-inline').datepicker({
     	todayBtn: true,

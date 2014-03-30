@@ -23,7 +23,7 @@
              
                     <div class="form-group">
                         <label class="col-lg-2 control-label" for="required">Title</label>
-                        <div class="col-lg-10">
+                        <div class="col-lg-3">
                             <form:input class="form-control" type="text" name="title"
 								path="title" />
 							<form:errors path="title" cssClass="fieldValidationError"></form:errors>
@@ -32,7 +32,7 @@
 					
 					<div class="form-group">
 						<label class="col-lg-2 control-label" for="elastic">Description</label>
-						<div class="col-lg-10">
+						<div class="col-lg-6">
 							<form:textarea name="description" class="form-control" path="description" rows="2" />
 							<form:errors path="description" cssClass="fieldValidationError"></form:errors>
 						</div>
@@ -40,27 +40,39 @@
 					
 					<div class="form-group">
                         <label class="col-lg-2 control-label" for="datepicker">Session start</label>
-                        <div class="col-lg-4">
-                            <div id="datepicker" class="input-group date" data-date="12-02-2012" data-date-format="dd-mm-yyyy">
-                                <input size="16" class="form-control" type="text" value="12-02-2012">
+                        <div class="col-lg-3">
+                            <div id="sessionStartDp" class="input-group date" data-date-format="dd-mm-yyyy">
+                                <input size="16" class="form-control" type="text">
                                 <span class="input-group-addon"><i class="icon16 i-calendar-4"></i></span>
                             </div>
                         </div>
+                        <div class="col-lg-3">
+                        	<div class="input-group">
+                                <input class="form-control" type="text" id="sessionStartTp" />
+                                <span class="input-group-addon"><i class="icon16 i-clock"></i></span>
+                            </div>
+                       	</div>
                     </div>
                     
-                    <div class="form-group">
+                 	<div class="form-group">
                         <label class="col-lg-2 control-label" for="datepicker">Session end</label>
-                        <div class="col-lg-4">
-                            <div id="datepicker" class="input-group date" data-date="12-02-2012" data-date-format="dd-mm-yyyy">
-                                <input size="16" class="form-control" type="text" value="12-02-2012">
+                        <div class="col-lg-3">
+                            <div id="sessionEndDp" class="input-group date" data-date-format="dd-mm-yyyy">
+                                <input size="16" class="form-control" type="text">
                                 <span class="input-group-addon"><i class="icon16 i-calendar-4"></i></span>
                             </div>
                         </div>
+                        <div class="col-lg-3">
+                        	<div class="input-group">
+                                <input class="form-control" type="text" id="sessionEndTp" />
+                                <span class="input-group-addon"><i class="icon16 i-clock"></i></span>
+                            </div>
+                       	</div>
                     </div>
                     
                     <div class="form-group">
                         <label class="col-lg-2 control-label" for="required">Price</label>
-                        <div class="col-lg-10">
+                        <div class="col-lg-3">
                             <form:input class="form-control" type="text" name="price"
 								path="title" />
 							<form:errors path="price" cssClass="fieldValidationError"></form:errors>
