@@ -71,7 +71,30 @@
 		<put-attribute name="content" value="/WEB-INF/tiles/admin/edit_article.jsp"></put-attribute>
     </definition>
     
+    <definition name="sessions" extends="fitnessForce.admin">
+        <put-attribute name="title" value="Fitness Force - Sessions"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/tiles/admin/sessions.jsp"></put-attribute>
+    </definition>
     
+    <definition name="create_session" extends="fitnessForce.admin">
+        <put-attribute name="title" value="Fitness Force - Create session"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/tiles/admin/create_session.jsp"></put-attribute>
+    </definition>
+    
+    <definition name="do_create_session" extends="fitnessForce.admin">
+        <put-attribute name="title" value="Fitness Force - Sessions"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/tiles/admin/sessions.jsp"></put-attribute>
+    </definition>
+    
+    <definition name="edit_session" extends="fitnessForce.admin">
+        <put-attribute name="title" value="Fitness Force - Edit session"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/tiles/admin/edit_session.jsp"></put-attribute>
+    </definition>
+    
+    <definition name="do_edit_session" extends="fitnessForce.admin">
+        <put-attribute name="title" value="Fitness Force - Edit session"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/tiles/admin/edit_session.jsp"></put-attribute>
+    </definition>
     
     <definition name="error" extends="fitnessForce.admin">
         <put-attribute name="title" value="Fitness Force - Error"></put-attribute>

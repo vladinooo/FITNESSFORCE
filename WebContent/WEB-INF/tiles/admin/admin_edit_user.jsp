@@ -76,7 +76,7 @@
 						<div class="col-lg-offset-2">
 							<div class="pad-left15">
 								<button type="submit" class="btn btn-primary">Save</button>
-								<a href='users'>
+								<a href="<c:url value='users'/>">
 									<button type="button" class="btn">Cancel</button>
 								</a>
 							</div>

@@ -78,9 +78,6 @@ $(document).ready(function() {
 });
 
 
-$(function() {
-	// code here
-	});
 
 function highlightProfileTab() {
 	$("#profileTab").addClass("current");

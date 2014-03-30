@@ -1,9 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
-<script type="text/javascript">
-	$(document).ready(passwordValidation);
-</script>
 
 <div id="heading" class="page-header">
     <h1><i class="icon20 i-stack-list"></i> Articles</h1>

@@ -253,7 +253,7 @@
 			                            <li>
 			                                <a href="<c:url value='admin_timetable'/>">
 			                                    <span class="icon"><i class="icon20 i-calendar"></i></span>
-			                                    <span class="txt">Manage</span>
+			                                    <span class="txt">View timetable</span>
 			                                </a>
 			                            </li>
 			                        </ul>

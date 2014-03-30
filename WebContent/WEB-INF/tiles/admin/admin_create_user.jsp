@@ -1,9 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
-<script type="text/javascript">
-	$(document).ready(passwordValidation);
-</script>
 
 <div id="heading" class="page-header">
     <h1><i class="icon20 i-users"></i> Users</h1>
@@ -65,7 +62,7 @@
                         <div class="col-lg-offset-2">
                             <div class="pad-left15">
                                 <button type="submit" class="btn btn-primary">Save</button>
-                                <a href='users'>
+                                <a href="<c:url value='users'/>">
 									<button type="button" class="btn">Cancel</button>
 								</a>
                             </div>
