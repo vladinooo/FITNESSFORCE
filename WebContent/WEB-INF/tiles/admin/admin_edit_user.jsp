@@ -31,7 +31,7 @@
 
 					<div class="form-group">
 						<label class="col-lg-2 control-label" for="required">Username</label>
-						<div class="col-lg-10">
+						<div class="col-lg-4">
 							<form:input class="form-control-disabled" type="text"
 								readonly="true" name="username" id="user" path="username"
 								value="${selectedUser.username}" />
@@ -41,7 +41,7 @@
 
 					<div class="form-group">
 						<label class="col-lg-2 control-label" for="required">Password</label>
-						<div class="col-lg-10">
+						<div class="col-lg-4">
 							<form:input id="password" class="form-control" type="password"
 								name="password" path="password" value="${selectedUser.password}" />
 							<form:errors path="password" cssClass="fieldValidationError"></form:errors>
@@ -52,7 +52,7 @@
 					<div class="form-group">
 						<label class="col-lg-2 control-label" for="range">Re-type
 							password</label>
-						<div class="col-lg-10">
+						<div class="col-lg-4">
 							<input id="confirm_password" name="confirm_password"
 								type="password" class="form-control"
 								value="${selectedUser.password}" />
@@ -63,7 +63,7 @@
 					<div class="form-group">
 						<label class="col-lg-2 control-label" for="required">Required
 							email</label>
-						<div class="col-lg-10">
+						<div class="col-lg-4">
 							<form:input class="required email form-control" type="text"
 								name="email" id="email-field" path="email"
 								value="${selectedUser.email}" />

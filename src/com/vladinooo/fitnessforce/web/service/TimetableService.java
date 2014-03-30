@@ -1,13 +1,10 @@
 package com.vladinooo.fitnessforce.web.service;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.vladinooo.fitnessforce.web.dao.Article;
 import com.vladinooo.fitnessforce.web.dao.Session;
 import com.vladinooo.fitnessforce.web.dao.TimetableDao;
 

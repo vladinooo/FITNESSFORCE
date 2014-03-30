@@ -23,7 +23,7 @@
              
                     <div class="form-group">
                         <label class="col-lg-2 control-label" for="required">Title</label>
-                        <div class="col-lg-10">
+                        <div class="col-lg-4">
                             <form:input class="form-control" type="text" name="title"
 								path="title" />
 							<form:errors path="title" cssClass="fieldValidationError"></form:errors>
@@ -32,7 +32,7 @@
 					
 					<div class="form-group">
 						<label class="col-lg-2 control-label" for="elastic">Content</label>
-						<div class="col-lg-10">
+						<div class="col-lg-8">
 							<form:textarea id="text-editor" name="text-editor" class="form-control" path="content" rows="10" />
 							<form:errors path="content" cssClass="fieldValidationError"></form:errors>
 						</div>

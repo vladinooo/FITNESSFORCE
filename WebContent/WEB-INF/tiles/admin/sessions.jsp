@@ -42,8 +42,9 @@
 						<c:forEach var="session" items="${sessions}">
 							<tr>
 								<td class="center"><c:out value="${session.title}"/></td>
-								<td class="center"><c:out value="${session.startDatetime}"/></td>
-								<td class="center"><c:out value="${session.endDatetime}"/></td>
+								<td class="center"><c:out value="${session.startDate}"/> | <c:out value="${session.startTime}"/></td>
+								<td class="center"><c:out value="${session.endDate}"/> | <c:out value="${session.endTime}"/></td>
+								<td class="center"><c:out value="${session.price}"/></td>
 								<td class="center"><c:out value="${session.enabled == true ? 'Active' : 'Inactive'}"/></td>
 								<td class="center ">
 									<div class="btn-group">

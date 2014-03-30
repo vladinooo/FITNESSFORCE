@@ -23,7 +23,7 @@
              
                     <div class="form-group">
                         <label class="col-lg-2 control-label" for="required">Username</label>
-                        <div class="col-lg-10">
+                        <div class="col-lg-4">
                             <form:input class="required form-control" type="text" name="username"
 								id="user" path="username" minlength="4"/>
 							<form:errors path="username" cssClass="fieldValidationError"></form:errors>
@@ -35,7 +35,7 @@
                     
                     <div class="form-group">
                         <label class="col-lg-2 control-label" for="required">Password</label>
-                        <div class="col-lg-10">
+                        <div class="col-lg-4">
                             <form:input id="password" class="form-control" type="password" name="password"
 								path="password" />
 							<form:errors path="password" cssClass="fieldValidationError"></form:errors>
@@ -44,14 +44,14 @@
                     
                     <div class="form-group">
                         <label class="col-lg-2 control-label" for="range">Re-type password</label>
-                        <div class="col-lg-10">
+                        <div class="col-lg-4">
 							<input id="confirm_password" name="confirm_password" type="password" class="form-control" />
                         </div>
                     </div><!-- End .control-group  -->
                     
                     <div class="form-group">
                         <label class="col-lg-2 control-label" for="required">Required email</label>
-                        <div class="col-lg-10">
+                        <div class="col-lg-4">
                             <form:input class="required email form-control" type="text" name="email"
 								id="email-field"  path="email" />
 							<form:errors path="email" cssClass="fieldValidationError"></form:errors>

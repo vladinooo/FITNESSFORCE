@@ -31,22 +31,67 @@
 					
 					<div class="form-group">
                         <label class="col-lg-2 control-label" for="required">Title</label>
-                        <div class="col-lg-10">
+                        <div class="col-lg-4">
                             <form:input class="form-control" type="text" name="title"
 								path="title" value="${selectedSession.title}"/>
 							<form:errors path="title" cssClass="fieldValidationError"></form:errors>
                         </div>
                     </div><!-- End .control-group  -->
-
+					
 					<div class="form-group">
-						<label class="col-lg-2 control-label" for="elastic">Description</label>
+						<label class="col-lg-2 control-label" for="description">Description</label>
 						<textarea id="articleTextareaOutput" hidden="true">
 							<c:out value="${selectedSession.description}" />
 						</textarea>
-						<div id="articleTextareaInput" class="col-lg-10">
+						<div id="articleTextareaInput" class="col-lg-8">
 							<form:textarea id='text-editor' name='text-editor' class='form-control' rows='10' path='description'/>
 						</div>
 					</div>
+					
+					<div class="form-group">
+                        <label class="col-lg-2 control-label" for="datepicker">Session start</label>
+                        <div class="col-lg-2">
+                            <div id="sessionStartDp" class="input-group date" data-date-format="dd-mm-yyyy">
+                                <form:input size="16" class="form-control" type="text" readonly="true" path="startDate"
+                                value="${selectedSession.startDate}"/>
+                                <span class="input-group-addon"><i class="icon16 i-calendar-4"></i></span>
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                        	<div class="input-group">
+                                <form:input class="form-control" type="text" id="sessionStartTp"  path="startTime"
+                                value="${selectedSession.startTime}"/>
+                                <span class="input-group-addon"><i class="icon16 i-clock"></i></span>
+                            </div>
+                       	</div>
+                    </div>
+                    
+                 	<div class="form-group">
+                        <label class="col-lg-2 control-label" for="datepicker">Session end</label>
+                        <div class="col-lg-2">
+                            <div id="sessionEndDp" class="input-group date" data-date-format="dd-mm-yyyy">
+                                <form:input size="16" class="form-control" type="text" readonly="true" path="endDate"
+                                value="${selectedSession.endDate}"/>
+                                <span class="input-group-addon"><i class="icon16 i-calendar-4"></i></span>
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                        	<div class="input-group">
+                                <form:input class="form-control" type="text" id="sessionEndTp" path="endTime"
+                                value="${selectedSession.endTime}"/>
+                                <span class="input-group-addon"><i class="icon16 i-clock"></i></span>
+                            </div>
+                       	</div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="col-lg-2 control-label" for="required">Price</label>
+                        <div class="col-lg-2">
+                            <form:input class="form-control" type="text" name="price" path="price"
+                            value="${selectedSession.price}"/>
+							<form:errors path="price" cssClass="fieldValidationError"></form:errors>
+                        </div>
+                    </div><!-- End .control-group  -->
 
 					<div class="form-group">
 						<div class="col-lg-offset-2">

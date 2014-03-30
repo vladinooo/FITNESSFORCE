@@ -24,6 +24,15 @@ $(document).ready(function() {
 	if (window.location.href.indexOf("delete_article") > -1) {
 		expandAriclesTab();
 	}
+	if (window.location.href.indexOf("do_create_session") > -1) {
+		expandTimetableTab();
+	}
+	if (window.location.href.indexOf("edit_session") > -1) {
+		expandTimetableTab();
+	}
+	if (window.location.href.indexOf("delete_session") > -1) {
+		expandTimetableTab();
+	}
 	populateArticleTextarea();
 	
 	
@@ -31,7 +40,6 @@ $(document).ready(function() {
 	if ($(".ff-topic").length) {
 		$("div.wrapper div.topic").show();
 	}
-	
 	
 	//-------- Active nav buttons --------------//
 	var uri = window.location.href.substr(window.location.href.lastIndexOf("/") + 1);
@@ -74,7 +82,6 @@ $(document).ready(function() {
 		}
 	});
 
-
 });
 
 
@@ -93,6 +100,12 @@ function expandAriclesTab() {
 	$("#articlesTab").addClass("current");
 	$("#articlesTab ul").addClass("sub expand show");
 	$("#articlesTab ul li:nth-child(2)").addClass("current");
+}
+
+function expandTimetableTab() {
+	$("#timetableTab").addClass("current");
+	$("#timetableTab ul").addClass("sub expand show");
+	$("#timetableTab ul li:nth-child(2)").addClass("current");
 }
 
 

@@ -222,13 +222,13 @@
 		                        </a>
 		                        <ul class="sub">
 		                            <li>
-		                                <a href="<c:url value='bookings_schedule'/>">
+		                                <a href="#">
 		                                    <span class="icon"><i class="icon20 i-clock"></i></span>
 		                                    <span class="txt">Schedule</span>
 		                                </a>
 		                            </li>
 		                            <li>
-		                                <a href="<c:url value='bookings_history'/>">
+		                                <a href="#">
 		                                    <span class="icon"><i class="icon20 i-history"></i></span>
 		                                    <span class="txt">History</span>
 		                                </a>

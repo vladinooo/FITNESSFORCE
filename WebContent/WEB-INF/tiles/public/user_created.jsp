@@ -1,15 +1,17 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>User Created</title>
-</head>
-<body>
-User Created
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
-<p><a href="${pageContext.request.contextPath}/">Home</a></p>
 
-</body>
-</html>
+<div class="container">
+	<div class="row">
+		<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+			<div class="sign-form">
+				<h3 class="first-child" style="text-align: center">User Created Successfully</h3>
+				<hr>
+				<p style="text-align: center">
+					<a href="<c:url value="/login"/>">Please log in</a>
+				</p>
+			</div>
+		</div>
+	</div> <!-- / .row -->
+</div> <!-- / .container -->

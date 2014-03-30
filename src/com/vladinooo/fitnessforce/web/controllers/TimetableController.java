@@ -5,6 +5,8 @@ import java.util.List;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -19,16 +21,28 @@ import com.vladinooo.fitnessforce.web.dao.Session;
 import com.vladinooo.fitnessforce.web.dao.User;
 import com.vladinooo.fitnessforce.web.service.ArticlesService;
 import com.vladinooo.fitnessforce.web.service.TimetableService;
+import com.vladinooo.fitnessforce.web.service.UsersService;
 
 @Controller
 public class TimetableController {
 	
 	@Autowired
 	private TimetableService timetableService;
-	
-	
+		
 	@Autowired
 	private ArticlesService articlesService;
+	
+	@Autowired
+	private UsersService usersService;
+	
+	
+	@ModelAttribute("currentUser")
+	public User getCurrentUser() {
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+	    String username = auth.getName();
+	    User currentUser = usersService.getUser(username);
+	    return currentUser;
+	}
 	
 	
 	@ModelAttribute("articles")
@@ -41,6 +55,13 @@ public class TimetableController {
 	@RequestMapping(value="/timetable", method = RequestMethod.GET)
 	public String showTimetable() {
 		return "timetable";
+	}
+	
+	
+	@RequestMapping(value="/sessions", method = RequestMethod.GET)
+	public String showSessions(Model model) {
+		model.addAttribute("sessions", timetableService.getSessions());
+		return "sessions";
 	}
 	
 	
@@ -59,7 +80,8 @@ public class TimetableController {
 		if (!timetableService.createSession(session)) {
 			return "error";
 		}
-		return "create_session";
+		model.addAttribute("sessions", timetableService.getSessions());
+		return "sessions";
 	}
 	
 	
@@ -82,13 +104,24 @@ public class TimetableController {
 		}
 		return "edit_session";
 	}
+		
 	
-	
-	@RequestMapping(value="/sessions", method = RequestMethod.GET)
-	public String showSessions(Model model) {
+	@RequestMapping(value="/delete_session", method = RequestMethod.GET)
+	public String showDeleteSession(@RequestParam("sessionid") String sessionId, Model model) {
+		Session selectedSession = timetableService.getSession(Integer.parseInt(sessionId));
+		if (!timetableService.deleteSession(selectedSession)) {
+			return "error";
+		}
 		model.addAttribute("sessions", timetableService.getSessions());
 		return "sessions";
 	}
+	
+	
+	@RequestMapping(value="/admin_timetable", method = RequestMethod.GET)
+	public String showAdminTimetable() {
+		return "admin_timetable";
+	}
+	
 	
 	@ExceptionHandler(Exception.class)
 	public String handleExceptions(Exception ex) {

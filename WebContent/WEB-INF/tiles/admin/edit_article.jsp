@@ -34,7 +34,7 @@
 					
 					<div class="form-group">
                         <label class="col-lg-2 control-label" for="required">Title</label>
-                        <div class="col-lg-10">
+                        <div class="col-lg-4">
                             <form:input class="form-control" type="text" name="title"
 								path="title" value="${selectedArticle.title}"/>
 							<form:errors path="title" cssClass="fieldValidationError"></form:errors>
@@ -46,7 +46,7 @@
 						<textarea id="articleTextareaOutput" hidden="true">
 							<c:out value="${selectedArticle.content}" />
 						</textarea>
-						<div id="articleTextareaInput" class="col-lg-10">
+						<div id="articleTextareaInput" class="col-lg-8">
 							<form:textarea id='text-editor' name='text-editor' class='form-control' rows='10' path='content'/>
 						</div>
 					</div>

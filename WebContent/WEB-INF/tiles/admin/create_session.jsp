@@ -23,7 +23,7 @@
              
                     <div class="form-group">
                         <label class="col-lg-2 control-label" for="required">Title</label>
-                        <div class="col-lg-3">
+                        <div class="col-lg-4">
                             <form:input class="form-control" type="text" name="title"
 								path="title" />
 							<form:errors path="title" cssClass="fieldValidationError"></form:errors>
@@ -31,24 +31,24 @@
                     </div><!-- End .control-group  -->
 					
 					<div class="form-group">
-						<label class="col-lg-2 control-label" for="elastic">Description</label>
-						<div class="col-lg-6">
-							<form:textarea name="description" class="form-control" path="description" rows="2" />
+						<label class="col-lg-2 control-label" for="elastic">Content</label>
+						<div class="col-lg-8">
+							<form:textarea id="text-editor" name="text-editor" class="form-control" path="description" rows="10" />
 							<form:errors path="description" cssClass="fieldValidationError"></form:errors>
 						</div>
 					</div>
 					
 					<div class="form-group">
                         <label class="col-lg-2 control-label" for="datepicker">Session start</label>
-                        <div class="col-lg-3">
+                        <div class="col-lg-2">
                             <div id="sessionStartDp" class="input-group date" data-date-format="dd-mm-yyyy">
-                                <input size="16" class="form-control" type="text">
+                                <form:input size="16" class="form-control" type="text" readonly="true" path="startDate"/>
                                 <span class="input-group-addon"><i class="icon16 i-calendar-4"></i></span>
                             </div>
                         </div>
-                        <div class="col-lg-3">
+                        <div class="col-lg-2">
                         	<div class="input-group">
-                                <input class="form-control" type="text" id="sessionStartTp" />
+                                <form:input class="form-control" type="text" id="sessionStartTp"  path="startTime"/>
                                 <span class="input-group-addon"><i class="icon16 i-clock"></i></span>
                             </div>
                        	</div>
@@ -56,15 +56,15 @@
                     
                  	<div class="form-group">
                         <label class="col-lg-2 control-label" for="datepicker">Session end</label>
-                        <div class="col-lg-3">
+                        <div class="col-lg-2">
                             <div id="sessionEndDp" class="input-group date" data-date-format="dd-mm-yyyy">
-                                <input size="16" class="form-control" type="text">
+                                <form:input size="16" class="form-control" type="text" readonly="true" path="endDate"/>
                                 <span class="input-group-addon"><i class="icon16 i-calendar-4"></i></span>
                             </div>
                         </div>
-                        <div class="col-lg-3">
+                        <div class="col-lg-2">
                         	<div class="input-group">
-                                <input class="form-control" type="text" id="sessionEndTp" />
+                                <form:input class="form-control" type="text" id="sessionEndTp" path="endTime"/>
                                 <span class="input-group-addon"><i class="icon16 i-clock"></i></span>
                             </div>
                        	</div>
@@ -72,9 +72,8 @@
                     
                     <div class="form-group">
                         <label class="col-lg-2 control-label" for="required">Price</label>
-                        <div class="col-lg-3">
-                            <form:input class="form-control" type="text" name="price"
-								path="title" />
+                        <div class="col-lg-2">
+                            <form:input class="form-control" type="text" name="price" path="price" />
 							<form:errors path="price" cssClass="fieldValidationError"></form:errors>
                         </div>
                     </div><!-- End .control-group  -->
