@@ -65,7 +65,7 @@ public class TimetableController {
 	
 	@RequestMapping(value="/edit_session", method = RequestMethod.GET)
 	public String showEditSession(@RequestParam("sessionid") String sessionId, Model model) {
-		User selectedSession = timetableService.getSession(Integer.parseInt(sessionId));
+		Session selectedSession = timetableService.getSession(Integer.parseInt(sessionId));
 		model.addAttribute("selectedSession", selectedSession);
 		model.addAttribute("session", new Session());
 		return "edit_session";

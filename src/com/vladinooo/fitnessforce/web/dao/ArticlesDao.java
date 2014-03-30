@@ -35,7 +35,7 @@ public class ArticlesDao {
 				article.setSlug(rs.getString("slug"));
 				article.setTitle(rs.getString("title"));
 				article.setContent(rs.getString("content"));
-				article.setDate(rs.getString("date"));
+				article.setDatetime(rs.getString("datetime"));
 				article.setOrderId(rs.getInt("order_id"));
 				article.setEnabled(rs.getBoolean("enabled"));
 				return article;
@@ -52,7 +52,7 @@ public class ArticlesDao {
 		params.addValue("slug", article.getSlug());
 		params.addValue("title", article.getTitle());
 		params.addValue("content", article.getContent());
-		params.addValue("date", article.getDate());
+		params.addValue("datetime", article.getDatetime());
 		params.addValue("enabled", article.isEnabled());
 
 		return jdbc.update(
@@ -60,12 +60,12 @@ public class ArticlesDao {
 				+ "slug,"
 				+ "title,"
 				+ "content,"
-				+ "date,"
+				+ "datetime,"
 				+ "enabled) values ("
 				+ ":slug,"
 				+ ":title,"
 				+ ":content,"
-				+ ":date,"
+				+ ":datetime,"
 				+ ":enabled)",
 				params) == 1;
 	}
@@ -90,7 +90,7 @@ public class ArticlesDao {
 							article.setSlug(rs.getString("slug"));
 							article.setTitle(rs.getString("title"));
 							article.setContent(rs.getString("content"));
-							article.setDate(rs.getString("date"));
+							article.setDatetime(rs.getString("datetime"));
 							article.setOrderId(rs.getInt("order_id"));
 							article.setEnabled(rs.getBoolean("enabled"));
 							return article;
@@ -110,7 +110,7 @@ public class ArticlesDao {
 		params.addValue("slug", article.getSlug());
 		params.addValue("title", article.getTitle());
 		params.addValue("content", article.getContent());
-		params.addValue("date", article.getDate());
+		params.addValue("datetime", article.getDatetime());
 		params.addValue("enabled", article.isEnabled());
 
 		return jdbc.update(
@@ -118,7 +118,7 @@ public class ArticlesDao {
 				+ "slug = :slug,"
 				+ "title = :title,"
 				+ "content = :content,"
-				+ "date = :date,"
+				+ "datetime = :datetime,"
 				+ "enabled = :enabled"
 				+ " where article_id = :articleId",
 				params) == 1;

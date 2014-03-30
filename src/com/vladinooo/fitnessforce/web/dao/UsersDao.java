@@ -38,8 +38,8 @@ public class UsersDao {
 								user.setUsername(rs.getString("u.username"));
 								user.setPassword(rs.getString("u.password"));
 								user.setEmail(rs.getString("u.email"));
-								user.setDateRegistered(rs
-										.getString("u.date_registered"));
+								user.setDatetimeRegistered(rs
+										.getString("u.datetime_registered"));
 								user.setEnabled(rs.getBoolean("u.enabled"));
 								user.setRolename(rs.getString("r.rolename"));
 								return user;
@@ -56,11 +56,11 @@ public class UsersDao {
 		params.addValue("username", user.getUsername());
 		params.addValue("password", user.getPassword());
 		params.addValue("email", user.getEmail());
-		params.addValue("dateRegistered", user.getDateRegistered());
+		params.addValue("datetimeRegistered", user.getDatetimeRegistered());
 		params.addValue("rolename", user.getRolename());
 
 		jdbc.update(
-				"insert into users (username, password, email, date_registered) values (:username, :password, :email, :dateRegistered)",
+				"insert into users (username, password, email, datetime_registered) values (:username, :password, :email, :datetimeRegistered)",
 				params);
 
 		return jdbc
@@ -87,8 +87,8 @@ public class UsersDao {
 							user.setUsername(rs.getString("username"));
 							user.setPassword(rs.getString("password"));
 							user.setEmail(rs.getString("email"));
-							user.setDateRegistered(rs
-									.getString("date_registered"));
+							user.setDatetimeRegistered(rs
+									.getString("datetime_registered"));
 							user.setEnabled(rs.getBoolean("enabled"));
 
 							return user;
@@ -119,8 +119,8 @@ public class UsersDao {
 							user.setUsername(rs.getString("username"));
 							user.setPassword(rs.getString("password"));
 							user.setEmail(rs.getString("email"));
-							user.setDateRegistered(rs
-									.getString("date_registered"));
+							user.setDatetimeRegistered(rs
+									.getString("datetime_registered"));
 							user.setEnabled(rs.getBoolean("enabled"));
 
 							return user;

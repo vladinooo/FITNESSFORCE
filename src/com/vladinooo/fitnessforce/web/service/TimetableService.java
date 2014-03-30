@@ -19,31 +19,29 @@ public class TimetableService {
 	
 	
 	public boolean createSession(Session session) {
-		Date date = new Date();
-		SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-		session.setStartDatetime(dateFormat.format(date));
-		article.setEnabled(true);
-		return articlesDao.createArticle(article);
+		session.setEnabled(true);
+		return timetableDao.createSession(session);
 	}
 
-	public List<Article> getArticles() {
-		return articlesDao.getArticles();
+	
+	public List<Session> getSessions() {
+		return timetableDao.getSessions();
 	}
 
-	public Article getArticle(int articleId) {
-		return articlesDao.getArticle(articleId);
+	
+	public Session getSession(int sessionId) {
+		return timetableDao.getSession(sessionId);
 	}
 
-	public boolean editArticle(Article article) {
-		Date date = new Date();
-		SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-		article.setDate(dateFormat.format(date));
-		article.setEnabled(true);
-		return articlesDao.editArticle(article);
+	
+	public boolean editSession(Session session) {
+		session.setEnabled(true);
+		return timetableDao.editSession(session);
 	}
 	
-	public boolean deleteArticle(Article article) {
-		return articlesDao.deleteArticle(article);
+	
+	public boolean deleteSession(Session session) {
+		return timetableDao.deleteSession(session);
 	}
 	
 }

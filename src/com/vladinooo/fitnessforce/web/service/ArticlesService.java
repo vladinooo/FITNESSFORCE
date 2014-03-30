@@ -33,9 +33,9 @@ public class ArticlesService {
 	
 	public boolean createArticle(Article article) {
 		article.setSlug(toSlug(article.getTitle()));
-		Date date = new Date();
+		Date datetime = new Date();
 		SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-		article.setDate(dateFormat.format(date));
+		article.setDatetime(dateFormat.format(datetime));
 		article.setEnabled(true);
 		return articlesDao.createArticle(article);
 	}
@@ -49,9 +49,9 @@ public class ArticlesService {
 	}
 
 	public boolean editArticle(Article article) {
-		Date date = new Date();
+		Date datetime = new Date();
 		SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-		article.setDate(dateFormat.format(date));
+		article.setDatetime(dateFormat.format(datetime));
 		article.setEnabled(true);
 		return articlesDao.editArticle(article);
 	}

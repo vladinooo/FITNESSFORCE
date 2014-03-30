@@ -7,7 +7,7 @@ public class Article {
 	private String slug;
 	private String title;
 	private String content;
-	private String date;
+	private String datetime;
 	private int orderId;
 	private boolean enabled;
 
@@ -43,12 +43,12 @@ public class Article {
 		this.content = content;
 	}
 
-	public String getDate() {
-		return date;
+	public String getDatetime() {
+		return datetime;
 	}
 
-	public void setDate(String date) {
-		this.date = date;
+	public void setDatetime(String datetime) {
+		this.datetime = datetime;
 	}
 
 	public int getOrderId() {

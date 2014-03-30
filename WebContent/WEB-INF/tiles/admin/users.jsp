@@ -45,7 +45,7 @@
 								<td class="center"><c:out value="${user.username}"/></td>
 								<td class="center"><c:out value="${user.password}"/></td>
 								<td class="center"><c:out value="${user.email}"/></td>
-								<td class="center"><c:out value="${user.dateRegistered}"/></td>
+								<td class="center"><c:out value="${user.datetimeRegistered}"/></td>
 								<td class="center">
 								    <c:choose>
 								        <c:when test="${user.rolename == 'ROLE_ADMIN'}">Administrator</c:when>

@@ -12,7 +12,6 @@ import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Component;
-import org.springframework.transaction.annotation.Transactional;
 
 @Component("timetableDao")
 public class TimetableDao {
@@ -133,12 +132,10 @@ public class TimetableDao {
 	}
 	
 
-	@Transactional
-	public boolean deleteUser(User user) {
+	public boolean deleteSession(Session session) {
 		MapSqlParameterSource params = new MapSqlParameterSource();
-		params.addValue("userId", user.getUserId());
-		jdbc.update("delete from user_roles where user_id = :userId", params);
-		return jdbc.update("delete from users where user_id = :userId", params) == 1;
+		params.addValue("sessionId", session.getSessionId());
+		return jdbc.update("delete from sessions where session_id = :sessionId", params) == 1;
 	}
 
 }

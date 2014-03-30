@@ -22,9 +22,9 @@ public class UsersService {
 	}
 
 	public boolean createUser(User user) {
-		Date dateRegistered = new Date();
+		Date datetimeRegistered = new Date();
 		SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-		user.setDateRegistered(dateFormat.format(dateRegistered));
+		user.setDatetimeRegistered(dateFormat.format(datetimeRegistered));
 		user.setRolename("ROLE_ADMIN");
 		return usersDao.createUser(user);
 	}

@@ -211,6 +211,26 @@
 		                            <span class="txt">My Account</span>
 		                        </a>
 		                    </li>
+		                    <li id="bookingsTab">
+		                        <a href="#">
+		                            <span class="icon"><i class="icon20 i-calendar-2"></i></span>
+		                            <span class="txt">Bookings</span>
+		                        </a>
+		                        <ul class="sub">
+		                            <li>
+		                                <a href="<c:url value='bookings_schedule'/>">
+		                                    <span class="icon"><i class="icon20 i-clock"></i></span>
+		                                    <span class="txt">Schedule</span>
+		                                </a>
+		                            </li>
+		                            <li>
+		                                <a href="<c:url value='bookings_history'/>">
+		                                    <span class="icon"><i class="icon20 i-history"></i></span>
+		                                    <span class="txt">History</span>
+		                                </a>
+		                            </li>
+		                        </ul>
+		                    </li>
 		                    <sec:authorize access="hasRole('ROLE_ADMIN')">
 			                    <li id="timetableTab">
 			                        <a href="#">
@@ -233,7 +253,7 @@
 			                            <li>
 			                                <a href="<c:url value='admin_timetable'/>">
 			                                    <span class="icon"><i class="icon20 i-calendar"></i></span>
-			                                    <span class="txt">Manage timetable</span>
+			                                    <span class="txt">Manage</span>
 			                                </a>
 			                            </li>
 			                        </ul>

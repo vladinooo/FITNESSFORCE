@@ -21,7 +21,7 @@ public class User {
 	private int phone;
 	private String gender;
 	private String bio;
-	private String dateRegistered;
+	private String datetimeRegistered;
 	private boolean enabled;
 	private String rolename;
 
@@ -105,12 +105,12 @@ public class User {
 		this.bio = bio;
 	}
 
-	public String getDateRegistered() {
-		return dateRegistered;
+	public String getDatetimeRegistered() {
+		return datetimeRegistered;
 	}
 
-	public void setDateRegistered(String dateRegistered) {
-		this.dateRegistered = dateRegistered;
+	public void setDatetimeRegistered(String datetimeRegistered) {
+		this.datetimeRegistered = datetimeRegistered;
 	}
 
 	public boolean isEnabled() {
