@@ -18,13 +18,16 @@
 		<title><tiles:insertAttribute name="title"></tiles:insertAttribute></title>
 	
 		<!-- jquery -->
-	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
 	    
 	    <!-- Bootstrap core CSS -->
 	    <link href="${pageContext.request.contextPath}/static/bootstrap/mosaic/css/bootstrap.css" rel="stylesheet">
 	    
 	    <!-- Plugins stylesheets -->
     	<link href="${pageContext.request.contextPath}/static/bootstrap/genyx/js/plugins/forms/select2/select2.css" rel="stylesheet" />
+    	<link href="${pageContext.request.contextPath}/static/plugins/fullcalendar/fullcalendar/fullcalendar.css" rel="stylesheet" />
+    	<link href="${pageContext.request.contextPath}/static/plugins/fullcalendar/fullcalendar/fullcalendar.print.css" rel="stylesheet" />
     		
 	    <!-- Custom styles for this template -->
 	    <link href="${pageContext.request.contextPath}/static/bootstrap/mosaic/css/color-styles.css" rel="stylesheet">
@@ -226,6 +229,9 @@
 	    <!-- Form plugins -->
 	    <script src="${pageContext.request.contextPath}/static/bootstrap/genyx/js/plugins/forms/validation/jquery.validate.js"></script>
 	    <script src="${pageContext.request.contextPath}/static/bootstrap/genyx/js/plugins/forms/select2/select2.js"></script> 
+	    
+		<!-- FullCalendar plugin -->
+		<script type="text/javascript" src="${pageContext.request.contextPath}/static/plugins/fullcalendar/fullcalendar/fullcalendar.js"></script>
 	     
 	    <!-- Init plugins -->
 	    <script src="${pageContext.request.contextPath}/static/bootstrap/mosaic/js/pages/login.js"></script><!-- Init plugins only for page -->

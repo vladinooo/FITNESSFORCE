@@ -79,7 +79,7 @@
 	    <!-- Le javascript
 	    ================================================== -->
 	    <!-- Important plugins put in all pages -->
-	    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 	    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
 	    <script src="${pageContext.request.contextPath}/static/bootstrap/genyx/js/bootstrap/bootstrap.js"></script>  
 	    <script src="${pageContext.request.contextPath}/static/bootstrap/genyx/js/conditionizr.min.js"></script>  
@@ -211,13 +211,33 @@
 		                            <span class="txt">My Account</span>
 		                        </a>
 		                    </li>
-		                    <li>
-		                        <a href="#">
-		                            <span class="icon"><i class="icon20 i-calendar"></i></span>
-		                            <span class="txt">Bookings</span>
-		                        </a>
-		                    </li>
 		                    <sec:authorize access="hasRole('ROLE_ADMIN')">
+			                    <li id="timetableTab">
+			                        <a href="#">
+			                            <span class="icon"><i class="icon20 i-calendar"></i></span>
+			                            <span class="txt">Timetable</span>
+			                        </a>
+			                        <ul class="sub">
+			                            <li>
+			                                <a href="<c:url value='create_session'/>">
+			                                    <span class="icon"><i class="icon20 i-man"></i></span>
+			                                    <span class="txt">Add session</span>
+			                                </a>
+			                            </li>
+			                            <li>
+			                                <a href="<c:url value='sessions'/>">
+			                                    <span class="icon"><i class="icon20 i-people"></i></span>
+			                                    <span class="txt">All sessions</span>
+			                                </a>
+			                            </li>
+			                            <li>
+			                                <a href="<c:url value='admin_timetable'/>">
+			                                    <span class="icon"><i class="icon20 i-calendar"></i></span>
+			                                    <span class="txt">Manage timetable</span>
+			                                </a>
+			                            </li>
+			                        </ul>
+			                    </li>
 								<li id="articlesTab">
 			                        <a href="#">
 			                            <span class="icon"><i class="icon20 i-stack-list"></i></span>
