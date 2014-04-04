@@ -2498,7 +2498,7 @@ border-color: #c9c9c9;
 
 /* ------------------Full calendar external event style--------------------*/
 .external-event {
-	margin: 10px 0;
+	/*margin: 10px 0;
 	padding: 4px 6px;
 	background: #72c380;
 	color: #fff;
@@ -2511,7 +2511,7 @@ border-color: #c9c9c9;
 	-moz-box-shadow: 0 1px 0px rgba(255, 255, 255, 1);
 	-webkit-box-shadow: 0 1px 0px rgba(255, 255, 255, 1);
 	box-shadow: 0 1px 0px rgba(255, 255, 255, 1);
-	cursor: move;
+	cursor: move;*/
 }
 
 /* ------------------Input limiter --------------------*/

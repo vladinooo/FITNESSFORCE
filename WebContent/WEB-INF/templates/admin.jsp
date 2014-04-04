@@ -34,7 +34,6 @@
 	    <!-- Plugins stylesheets -->
 	    <link href="${pageContext.request.contextPath}/static/bootstrap/genyx/js/plugins/forms/uniform/uniform.default.css" rel="stylesheet" /> 
     	<link href="${pageContext.request.contextPath}/static/bootstrap/genyx/js/plugins/forms/select2/select2.css" rel="stylesheet" />
-    	<link href="${pageContext.request.contextPath}/static/bootstrap/genyx/js/plugins/misc/fullcalendar/fullcalendar.css" rel="stylesheet" /> 
     	<link href="${pageContext.request.contextPath}/static/bootstrap/genyx/js/plugins/ui/jgrowl/jquery.jgrowl.css" rel="stylesheet" /> 
     	<link href="${pageContext.request.contextPath}/static/bootstrap/genyx/js/plugins/tables/datatables/jquery.dataTables.css" rel="stylesheet" />
 	    <link href="${pageContext.request.contextPath}/static/bootstrap/genyx/js/plugins/ui/range-slider/rangeslider.css" rel="stylesheet" /> 
@@ -42,7 +41,8 @@
 	    <link href="${pageContext.request.contextPath}/static/bootstrap/genyx/js/plugins/forms/spectrum/spectrum.css" rel="stylesheet" /> 
 	    <link href="${pageContext.request.contextPath}/static/bootstrap/genyx/js/plugins/forms/datepicker/datepicker.css" rel="stylesheet" /> 
 	    <link href="${pageContext.request.contextPath}/static/bootstrap/genyx/js/plugins/forms/multiselect/ui.multiselect.css" rel="stylesheet" /> 
-	    <link href="${pageContext.request.contextPath}/static/plugins/jquery-timepicker/jquery.timepicker.css" rel="stylesheet" /> 
+	    <link href="${pageContext.request.contextPath}/static/plugins/jquery-timepicker/jquery.timepicker.css" rel="stylesheet" />
+	    <link href="${pageContext.request.contextPath}/static/plugins/fullcalendar/fullcalendar/fullcalendar.css" rel="stylesheet" />
 
 
 		<!-- app stylesheets -->
@@ -121,9 +121,9 @@
 	    <script src="${pageContext.request.contextPath}/static/bootstrap/genyx/js/plugins/forms/tinymce/tinymce.min.js"></script>
 	    <script src="${pageContext.request.contextPath}/static/plugins/jquery-timepicker/jquery.timepicker.min.js"></script>
 
-    	
-    	<!-- Misc plugins -->
-	    <script src="${pageContext.request.contextPath}/static/bootstrap/genyx/js/plugins/misc/fullcalendar/fullcalendar.min.js"></script>
+	    
+	    <!-- FullCalendar plugin -->
+		<script type="text/javascript" src="${pageContext.request.contextPath}/static/plugins/fullcalendar/fullcalendar/fullcalendar.js"></script>
 	
 	    <!-- UI plugins -->
 	    <script src="${pageContext.request.contextPath}/static/bootstrap/genyx/js/plugins/ui/range-slider/rangeslider-ruler.js"></script>
@@ -236,52 +236,32 @@
 		                        </ul>
 		                    </li>
 		                    <sec:authorize access="hasRole('ROLE_ADMIN')">
-			                    <li id="timetableTab">
-			                        <a href="#">
-			                            <span class="icon"><i class="icon20 i-calendar"></i></span>
-			                            <span class="txt">Timetable</span>
-			                        </a>
-			                        <ul class="sub">
-			                            <li>
-			                                <a href="<c:url value='create_session'/>">
-			                                    <span class="icon"><i class="icon20 i-man"></i></span>
-			                                    <span class="txt">Add session</span>
-			                                </a>
-			                            </li>
-			                            <li>
-			                                <a href="<c:url value='sessions'/>">
-			                                    <span class="icon"><i class="icon20 i-people"></i></span>
-			                                    <span class="txt">All sessions</span>
-			                                </a>
-			                            </li>
-			                            <li>
-			                                <a href="<c:url value='admin_timetable'/>">
-			                                    <span class="icon"><i class="icon20 i-calendar"></i></span>
-			                                    <span class="txt">View timetable</span>
-			                                </a>
-			                            </li>
-			                        </ul>
-			                    </li>
-								<li id="articlesTab">
-			                        <a href="#">
-			                            <span class="icon"><i class="icon20 i-stack-list"></i></span>
-			                            <span class="txt">Articles</span>
-			                        </a>
-			                        <ul class="sub">
-			                            <li>
-			                                <a href="<c:url value='create_article'/>">
-			                                    <span class="icon"><i class="icon20 i-stack-plus"></i></span>
-			                                    <span class="txt">Add new</span>
-			                                </a>
-			                            </li>
-			                            <li>
-			                                <a href="<c:url value='articles'/>">
-			                                    <span class="icon"><i class="icon20 i-stack-list"></i></span>
-			                                    <span class="txt">All articles</span>
-			                                </a>
-			                            </li>
-			                        </ul>
-			                    </li>
+		                    <li>
+		                        <a href="<c:url value='admin_timetable'/>">
+		                            <span class="icon"><i class="icon20 icon20 i-calendar"></i></span>
+		                            <span class="txt">Timetable</span>
+		                        </a>
+		                    </li> 
+							<li id="articlesTab">
+		                        <a href="#">
+		                            <span class="icon"><i class="icon20 i-stack-list"></i></span>
+		                            <span class="txt">Articles</span>
+		                        </a>
+		                        <ul class="sub">
+		                            <li>
+		                                <a href="<c:url value='create_article'/>">
+		                                    <span class="icon"><i class="icon20 i-stack-plus"></i></span>
+		                                    <span class="txt">Add new</span>
+		                                </a>
+		                            </li>
+		                            <li>
+		                                <a href="<c:url value='articles'/>">
+		                                    <span class="icon"><i class="icon20 i-stack-list"></i></span>
+		                                    <span class="txt">All articles</span>
+		                                </a>
+		                            </li>
+		                        </ul>
+		                    </li>
 							</sec:authorize>
 		                    <li>
 		                        <a href="#">
