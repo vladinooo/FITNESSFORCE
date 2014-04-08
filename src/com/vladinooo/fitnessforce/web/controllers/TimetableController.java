@@ -67,7 +67,7 @@ public class TimetableController {
 	@ResponseBody
 	@RequestMapping(value="/get_sessions", method=RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
 	public Map<String, Object> getSessions() {
-		List<Session> sessions = timetableService.getSessions();
+		List<Object> sessions = timetableService.getSessions();
 		Map<String, Object> result = new HashMap<String, Object>();
 		result.put("sessions", sessions);
 		return result;

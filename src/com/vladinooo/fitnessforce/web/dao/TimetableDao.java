@@ -37,8 +37,8 @@ public class TimetableDao {
 								session.setId(rs.getInt("id"));
 								session.setTitle(rs.getString("title"));
 								session.setAllDay(rs.getBoolean("allDay"));
-								session.setStart(rs.getTimestamp("start"));
-								session.setEnd(new Date ((long)rs.getObject("end")));
+								session.setStart(rs.getTimestamp("start").getTime());
+								session.setEnd(rs.getTimestamp("end").getTime());
 								
 								return session;
 							}
@@ -53,8 +53,8 @@ public class TimetableDao {
 
 		params.addValue("title", session.getTitle());
 		params.addValue("allDay", session.isAllDay());
-		params.addValue("start", session.getStart());
-		params.addValue("end", session.getEnd());
+		params.addValue("start", new Date(session.getStart()));
+		params.addValue("end", new Date(session.getEnd()));
 
 		return jdbc.update(
 				"insert into sessions ("
