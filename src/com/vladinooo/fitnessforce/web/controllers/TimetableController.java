@@ -1,5 +1,6 @@
 package com.vladinooo.fitnessforce.web.controllers;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -61,21 +62,22 @@ public class TimetableController {
 	public String showTimetable() {
 		return "timetable";
 	}
+		
 	
-	
-	@RequestMapping(value="/sessions", method = RequestMethod.GET)
-	public String showSessions(Model model) {
-		model.addAttribute("sessions", timetableService.getSessions());
-		return "sessions";
+	@ResponseBody
+	@RequestMapping(value="/get_sessions", method=RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+	public Map<String, Object> getSessions() {
+		List<Session> sessions = timetableService.getSessions();
+		List<Session> sessionsForFullCal = new ArrayList<Session>();
+		
+		for (Session session : sessions) {
+			
+		}
+		Map<String, Object> result = new HashMap<String, Object>();
+		result.put("sessions", sessions);
+		return result;
 	}
-	
-	
-//	@RequestMapping(value="/create_session", method = RequestMethod.GET)
-//	public String showCreateSession(Model model) {
-//		model.addAttribute("session", new Session());
-//		return "create_session";
-//	}
-	
+		
 	
 	@ResponseBody
 	@RequestMapping(value="/create_session", method=RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
@@ -84,32 +86,10 @@ public class TimetableController {
 		if (!timetableService.createSession(sessionData)) {
 			return "error";
 		}
-		model.addAttribute("sessions", timetableService.getSessions());
 		return "admin_timetable";
-			
-//		Map<String, Object> result = new HashMap<String, Object>();
-//		result.put("title", sessionData.get("title"));
-//		result.put("startDateTime", sessionData.get("startDateTime"));
-//		return result;
 	}
 
-	
 
-	
-	
-//	@RequestMapping(value = "/do_create_session", method = RequestMethod.POST)
-//	public String doCreateSession(@Valid Session session, BindingResult result, Model model) {
-//		if (result.hasErrors()) {
-//			return "create_session";
-//		}
-//		if (!timetableService.createSession(session)) {
-//			return "error";
-//		}
-//		model.addAttribute("sessions", timetableService.getSessions());
-//		return "sessions";
-//	}
-	
-	
 	@RequestMapping(value="/edit_session", method = RequestMethod.GET)
 	public String showEditSession(@RequestParam("sessionid") String sessionId, Model model) {
 		Session selectedSession = timetableService.getSession(Integer.parseInt(sessionId));
@@ -144,6 +124,7 @@ public class TimetableController {
 	
 	@RequestMapping(value="/admin_timetable", method = RequestMethod.GET)
 	public String showAdminTimetable() {
+		getSessions();
 		return "admin_timetable";
 	}
 	

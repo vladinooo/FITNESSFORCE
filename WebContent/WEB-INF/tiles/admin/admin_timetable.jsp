@@ -41,6 +41,7 @@ $(document).ready(function() {
 			right: 'month,agendaWeek,agendaDay'
 		},
 		editable: true,
+		defaultEventMinutes: 30,
 		startEditable: true,
 		durationEditable: true,
 		droppable: true, // this allows things to be dropped onto the calendar !!!
@@ -59,8 +60,7 @@ $(document).ready(function() {
 			// render the event on the calendar
 			// the last `true` argument determines if the event "sticks" (http://arshaw.com/fullcalendar/docs/event_rendering/renderEvent/)
 			$('#admin_timetable').fullCalendar('renderEvent', copiedEventObject, true);
-			
-			
+
 			$.ajax({
 				type: 'POST',
 				url: '<c:url value="/create_session" />',
@@ -90,7 +90,15 @@ $(document).ready(function() {
 	            revertFunc();
 	        }
 
-	    }
+	    },
+	    events: { // Render the events in the calendar
+            url: '<c:url value="/get_messages" />', // Get the URL of the json feed
+            type: 'POST', // Send post data
+            error: function() {
+                alert('There was an error while fetching events.'); // Error alert
+            }
+        }
+	    
 	});
 	
 	

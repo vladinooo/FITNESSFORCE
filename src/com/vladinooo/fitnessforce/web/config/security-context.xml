@@ -43,7 +43,7 @@
 		<!-- Timetable -->
 		<security:intercept-url pattern="/timetable" access="isAuthenticated()" />
 		<security:intercept-url pattern="/admin_timetable" access="hasRole('ROLE_ADMIN')" />
-		<security:intercept-url pattern="/sessions" access="hasRole('ROLE_ADMIN')" />
+		<security:intercept-url pattern="/get_sessions" access="hasRole('ROLE_ADMIN')" />
 		<security:intercept-url pattern="/create_session*" access="hasRole('ROLE_ADMIN')" />
 		<security:intercept-url pattern="/do_create_session" access="hasRole('ROLE_ADMIN')" />
 		<security:intercept-url pattern="/edit_session*" access="hasRole('ROLE_ADMIN')" />

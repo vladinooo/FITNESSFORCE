@@ -70,12 +70,7 @@
         <put-attribute name="title" value="Fitness Force - Edit article"></put-attribute>
 		<put-attribute name="content" value="/WEB-INF/tiles/admin/edit_article.jsp"></put-attribute>
     </definition>
-    
-    <definition name="sessions" extends="fitnessForce.admin">
-        <put-attribute name="title" value="Fitness Force - Sessions"></put-attribute>
-		<put-attribute name="content" value="/WEB-INF/tiles/admin/sessions.jsp"></put-attribute>
-    </definition>
-    
+        
     <definition name="create_session" extends="fitnessForce.admin">
         <put-attribute name="title" value="Fitness Force - Create session"></put-attribute>
 		<put-attribute name="content" value="/WEB-INF/tiles/admin/create_session.jsp"></put-attribute>
