@@ -1,10 +1,13 @@
 package com.vladinooo.fitnessforce.web.controllers;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
@@ -12,11 +15,14 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.vladinooo.fitnessforce.web.dao.Article;
+import com.vladinooo.fitnessforce.web.dao.Person;
 import com.vladinooo.fitnessforce.web.dao.Session;
 import com.vladinooo.fitnessforce.web.dao.User;
 import com.vladinooo.fitnessforce.web.service.ArticlesService;
@@ -65,24 +71,47 @@ public class TimetableController {
 	}
 	
 	
-	@RequestMapping(value="/create_session", method = RequestMethod.GET)
-	public String showCreateSession(Model model) {
-		model.addAttribute("session", new Session());
-		return "create_session";
+//	@RequestMapping(value="/create_session", method = RequestMethod.GET)
+//	public String showCreateSession(Model model) {
+//		model.addAttribute("session", new Session());
+//		return "create_session";
+//	}
+	
+	
+	@ResponseBody
+	@RequestMapping(value="/create_session", method=RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+	public Map<String, Object> createSession(@RequestBody Map<String, Object> session) {
+		
+		Map<String, Object> result = new HashMap<String, Object>();
+		result.put("", value)
+		return person;
 	}
 
 	
-	@RequestMapping(value = "/do_create_session", method = RequestMethod.POST)
-	public String doCreateSession(@Valid Session session, BindingResult result, Model model) {
-		if (result.hasErrors()) {
-			return "create_session";
-		}
-		if (!timetableService.createSession(session)) {
-			return "error";
-		}
-		model.addAttribute("sessions", timetableService.getSessions());
-		return "sessions";
+//	@RequestMapping(value = "/addPerson", method = RequestMethod.POST, headers = { "Content-type=application/json" })
+//	public String addPerson(@RequestBody Person person) {
+//		//logger.debug(person.toString());
+//		return "person";
+//	}
+	
+	@RequestMapping(value = "/addPerson" , method = RequestMethod.POST)
+	public String save(@RequestBody Person jsonString) {
+
+	   return "hello";
 	}
+	
+	
+//	@RequestMapping(value = "/do_create_session", method = RequestMethod.POST)
+//	public String doCreateSession(@Valid Session session, BindingResult result, Model model) {
+//		if (result.hasErrors()) {
+//			return "create_session";
+//		}
+//		if (!timetableService.createSession(session)) {
+//			return "error";
+//		}
+//		model.addAttribute("sessions", timetableService.getSessions());
+//		return "sessions";
+//	}
 	
 	
 	@RequestMapping(value="/edit_session", method = RequestMethod.GET)

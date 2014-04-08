@@ -66,7 +66,51 @@ $(document).ready(function() {
 				$(this).remove();
 			}
 			
-		}
+		},
+		eventDrop: function(event,dayDelta,minuteDelta,allDay,revertFunc) {
+			
+			
+			 $.ajax({
+			    	url: "addPerson",
+			    	data: JSON.stringify({ name: "Gerry", age: 20, city: "Sydney" }),
+			    	type: "POST",
+
+			    	beforeSend: function(xhr) {
+			    		xhr.setRequestHeader("Accept", "application/json");
+			    		xhr.setRequestHeader("Content-Type", "application/json");
+			    	},
+			    	success: function(person) {
+			    		alert(person.name); 		
+			    	}
+			    });
+			
+			 
+	        alert(
+	            event.title + " was moved " +
+	            dayDelta + " days and " +
+	            minuteDelta + " minutes."
+	        );
+
+	   
+
+	        if (!confirm("Are you sure about this change?")) {
+	            revertFunc();
+	        }
+
+	    },
+	    eventResize: function(event,dayDelta,minuteDelta,revertFunc) {
+
+	        alert(
+	            "The end date of " + event.title + "has been moved " +
+	            dayDelta + " days and " +
+	            minuteDelta + " minutes."
+	        );
+
+	        if (!confirm("is this okay?")) {
+	            revertFunc();
+	        }
+
+	    }
 	});
 	
 	
