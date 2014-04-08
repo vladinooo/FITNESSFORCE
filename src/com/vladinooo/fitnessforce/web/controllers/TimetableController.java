@@ -22,7 +22,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.vladinooo.fitnessforce.web.dao.Article;
-import com.vladinooo.fitnessforce.web.dao.Person;
 import com.vladinooo.fitnessforce.web.dao.Session;
 import com.vladinooo.fitnessforce.web.dao.User;
 import com.vladinooo.fitnessforce.web.service.ArticlesService;
@@ -80,25 +79,22 @@ public class TimetableController {
 	
 	@ResponseBody
 	@RequestMapping(value="/create_session", method=RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
-	public Map<String, Object> createSession(@RequestBody Map<String, Object> session) {
+	public String createSession(@RequestBody Map<String, Object> sessionData, Model model) {
 		
-		Map<String, Object> result = new HashMap<String, Object>();
-		result.put("", value)
-		return person;
+		if (!timetableService.createSession(sessionData)) {
+			return "error";
+		}
+		model.addAttribute("sessions", timetableService.getSessions());
+		return "admin_timetable";
+			
+//		Map<String, Object> result = new HashMap<String, Object>();
+//		result.put("title", sessionData.get("title"));
+//		result.put("startDateTime", sessionData.get("startDateTime"));
+//		return result;
 	}
 
 	
-//	@RequestMapping(value = "/addPerson", method = RequestMethod.POST, headers = { "Content-type=application/json" })
-//	public String addPerson(@RequestBody Person person) {
-//		//logger.debug(person.toString());
-//		return "person";
-//	}
-	
-	@RequestMapping(value = "/addPerson" , method = RequestMethod.POST)
-	public String save(@RequestBody Person jsonString) {
 
-	   return "hello";
-	}
 	
 	
 //	@RequestMapping(value = "/do_create_session", method = RequestMethod.POST)

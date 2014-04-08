@@ -60,43 +60,23 @@ $(document).ready(function() {
 			// the last `true` argument determines if the event "sticks" (http://arshaw.com/fullcalendar/docs/event_rendering/renderEvent/)
 			$('#admin_timetable').fullCalendar('renderEvent', copiedEventObject, true);
 			
-			// is the "remove after drop" checkbox checked?
-			if ($('#drop-remove').is(':checked')) {
-				// if so, remove the element from the "Draggable Events" list
-				$(this).remove();
-			}
+			
+			$.ajax({
+				type: 'POST',
+				url: '<c:url value="/create_session" />',
+				data: JSON.stringify({"title": "Session", "startDateTime": date.getTime()}),
+				success: function(result) {
+					alert(result.title + " : " + result.startDateTime);
+				},
+				contentType: "application/json",
+				dataType: "json"
+			});
 			
 		},
 		eventDrop: function(event,dayDelta,minuteDelta,allDay,revertFunc) {
-			
-			
-			 $.ajax({
-			    	url: "addPerson",
-			    	data: JSON.stringify({ name: "Gerry", age: 20, city: "Sydney" }),
-			    	type: "POST",
+							
 
-			    	beforeSend: function(xhr) {
-			    		xhr.setRequestHeader("Accept", "application/json");
-			    		xhr.setRequestHeader("Content-Type", "application/json");
-			    	},
-			    	success: function(person) {
-			    		alert(person.name); 		
-			    	}
-			    });
-			
-			 
-	        alert(
-	            event.title + " was moved " +
-	            dayDelta + " days and " +
-	            minuteDelta + " minutes."
-	        );
-
-	   
-
-	        if (!confirm("Are you sure about this change?")) {
-	            revertFunc();
-	        }
-
+					
 	    },
 	    eventResize: function(event,dayDelta,minuteDelta,revertFunc) {
 

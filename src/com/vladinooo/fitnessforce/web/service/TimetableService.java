@@ -1,6 +1,8 @@
 package com.vladinooo.fitnessforce.web.service;
 
+import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,7 +17,15 @@ public class TimetableService {
 	private TimetableDao timetableDao;
 	
 	
-	public boolean createSession(Session session) {
+	public boolean createSession(Map<String, Object> sessionData) {
+		Long timestamp = (Long)sessionData.get("startDateTime");
+		Date startDateTime = new Date(timestamp);
+		Date endDateTime = new Date(timestamp + 3600000); // current dateTime + 1h
+		
+		Session session = new Session();
+		session.setTitle((String)sessionData.get("title"));
+		session.setStartDateTime(startDateTime);
+		session.setEndDateTime(endDateTime);
 		session.setEnabled(true);
 		return timetableDao.createSession(session);
 	}

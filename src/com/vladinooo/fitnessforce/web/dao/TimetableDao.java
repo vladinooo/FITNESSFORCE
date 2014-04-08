@@ -36,10 +36,8 @@ public class TimetableDao {
 								session.setSessionId(rs.getInt("session_id"));
 								session.setTitle(rs.getString("title"));
 								session.setDescription(rs.getString("description"));
-								session.setStartDate(rs.getString("start_date"));
-								session.setStartTime(rs.getString("start_time"));
-								session.setEndDate(rs.getString("end_date"));
-								session.setEndTime(rs.getString("end_time"));
+								session.setStartDateTime(rs.getDate("start_datetime"));
+								session.setEndDateTime(rs.getDate("end_datetime"));
 								session.setPrice(rs.getInt("price"));
 								session.setEnabled(rs.getBoolean("enabled"));
 								
@@ -56,27 +54,21 @@ public class TimetableDao {
 
 		params.addValue("title", session.getTitle());
 		params.addValue("description", session.getDescription());
-		params.addValue("startDate", session.getStartDate());
-		params.addValue("startTime", session.getStartTime());
-		params.addValue("endDate", session.getEndDate());
-		params.addValue("endTime", session.getEndTime());
+		params.addValue("startDateTime", session.getStartDateTime());
+		params.addValue("endDateTime", session.getEndDateTime());
 		params.addValue("price", session.getPrice());
 
 		return jdbc.update(
 				"insert into sessions ("
 				+ "title,"
 				+ "description,"
-				+ "start_date,"
-				+ "start_time,"
-				+ "end_date,"
-				+ "end_time,"
+				+ "start_datetime,"
+				+ "end_datetime,"
 				+ "price) values ("
 				+ ":title,"
 				+ ":description,"
-				+ ":startDate,"
-				+ ":startTime,"
-				+ ":endDate,"
-				+ ":endTime,"
+				+ ":startDateTime,"
+				+ ":endDateTime,"
 				+ ":price)",
 				params) == 1;
 	}
@@ -100,10 +92,8 @@ public class TimetableDao {
 							session.setSessionId(rs.getInt("session_id"));
 							session.setTitle(rs.getString("title"));
 							session.setDescription(rs.getString("description"));
-							session.setStartDate(rs.getString("start_date"));
-							session.setStartTime(rs.getString("start_time"));
-							session.setEndDate(rs.getString("end_date"));
-							session.setEndTime(rs.getString("end_time"));
+							session.setStartDateTime(rs.getDate("start_datetime"));
+							session.setEndDateTime(rs.getDate("end_datetime"));
 							session.setPrice(rs.getInt("price"));
 							session.setEnabled(rs.getBoolean("enabled"));
 
@@ -123,10 +113,8 @@ public class TimetableDao {
 		params.addValue("sessionId", session.getSessionId());
 		params.addValue("title", session.getTitle());
 		params.addValue("description", session.getDescription());
-		params.addValue("startDate", session.getStartDate());
-		params.addValue("startTime", session.getStartTime());
-		params.addValue("endDate", session.getEndDate());
-		params.addValue("endTime", session.getEndTime());
+		params.addValue("startDateTime", session.getStartDateTime());
+		params.addValue("endDateTime", session.getEndDateTime());
 		params.addValue("price", session.getPrice());
 		params.addValue("enabled", session.isEnabled());
 
@@ -134,10 +122,8 @@ public class TimetableDao {
 				"update sessions set "
 				+ "title = :title,"
 				+ "description = :description,"
-				+ "start_date = :startDate,"
-				+ "start_time = :startTime,"
-				+ "end_date = :endDate,"
-				+ "end_time = :endTime,"
+				+ "start_datetime = :startDateTime,"
+				+ "end_datetime = :endDateTime,"
 				+ "price = :price,"
 				+ "enabled = :enabled"
 				+ " where session_id = :sessionId",

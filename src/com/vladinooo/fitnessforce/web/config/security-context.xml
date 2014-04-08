@@ -41,7 +41,6 @@
 		<security:intercept-url pattern="/rules" access="permitAll" />
 		
 		<!-- Timetable -->
-		<security:intercept-url pattern="/addPerson" access="isAuthenticated()" />
 		<security:intercept-url pattern="/timetable" access="isAuthenticated()" />
 		<security:intercept-url pattern="/admin_timetable" access="hasRole('ROLE_ADMIN')" />
 		<security:intercept-url pattern="/sessions" access="hasRole('ROLE_ADMIN')" />
