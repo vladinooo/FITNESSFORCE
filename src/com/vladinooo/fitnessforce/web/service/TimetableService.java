@@ -24,9 +24,9 @@ public class TimetableService {
 		
 		Session session = new Session();
 		session.setTitle((String)sessionData.get("title"));
-		session.setStartDateTime(startDateTime);
-		session.setEndDateTime(endDateTime);
-		session.setEnabled(true);
+		session.setAllDay(true);
+		session.setStart(startDateTime);
+		session.setEnd(endDateTime);
 		return timetableDao.createSession(session);
 	}
 
@@ -41,14 +41,14 @@ public class TimetableService {
 	}
 
 	
-	public boolean editSession(Session session) {
-		session.setEnabled(true);
-		return timetableDao.editSession(session);
-	}
-	
-	
-	public boolean deleteSession(Session session) {
-		return timetableDao.deleteSession(session);
-	}
+//	public boolean editSession(Session session) {
+//		session.setEnabled(true);
+//		return timetableDao.editSession(session);
+//	}
+//	
+//	
+//	public boolean deleteSession(Session session) {
+//		return timetableDao.deleteSession(session);
+//	}
 	
 }

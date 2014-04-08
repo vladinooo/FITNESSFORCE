@@ -4,20 +4,18 @@ import java.util.Date;
 
 public class Session {
 
-	private int sessionId;
+	private int id;
 	private String title;
-	private String description;
-	private Date startDateTime;
-	private Date endDateTime;
-	private int price;
-	private boolean enabled;
+	private boolean allDay;
+	private long start;
+	private long end;
 
-	public int getSessionId() {
-		return sessionId;
+	public int getId() {
+		return id;
 	}
 
-	public void setSessionId(int sessionId) {
-		this.sessionId = sessionId;
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public String getTitle() {
@@ -28,44 +26,28 @@ public class Session {
 		this.title = title;
 	}
 
-	public String getDescription() {
-		return description;
+	public boolean isAllDay() {
+		return allDay;
 	}
 
-	public void setDescription(String description) {
-		this.description = description;
+	public void setAllDay(boolean allDay) {
+		this.allDay = allDay;
 	}
 
-	public Date getStartDateTime() {
-		return startDateTime;
+	public long getStart() {
+		return start;
 	}
 
-	public void setStartDateTime(Date startDateTime) {
-		this.startDateTime = startDateTime;
+	public void setStart(long start) {
+		this.start = start;
 	}
 
-	public Date getEndDateTime() {
-		return endDateTime;
+	public long getEnd() {
+		return end;
 	}
 
-	public void setEndDateTime(Date endDateTime) {
-		this.endDateTime = endDateTime;
-	}
-
-	public int getPrice() {
-		return price;
-	}
-
-	public void setPrice(int price) {
-		this.price = price;
-	}
-
-	public boolean isEnabled() {
-		return enabled;
-	}
-
-	public void setEnabled(boolean enabled) {
-		this.enabled = enabled;
+	public void setEnd(long end) {
+		this.end = end;
 	}
 
 }
