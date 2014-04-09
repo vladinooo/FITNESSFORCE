@@ -26,26 +26,18 @@ public class TimetableService {
 		Session session = new Session();
 		session.setTitle((String)sessionData.get("title"));
 		session.setAllDay(true);
-		session.setStart(startDateTime);
-		session.setEnd(endDateTime);
+		session.setStart(new Date(startDateTime));
+		session.setEnd(new Date(endDateTime));
 		return timetableDao.createSession(session);
 	}
 
 	
-	public List<Object> getSessions() {
-		List<Session> sessions = timetableDao.getSessions();
-		List<Object> resultSessions = new ArrayList<Object>();
+	public List<Session> getSessions() {
+		List<Session> sessions =  timetableDao.getSessions();
 		for (Session session : sessions) {
-			Map<String, Object> sessionObj = new HashMap<String, Object>();
-			sessionObj.put("id", session.getId());
-			sessionObj.put("title", session.getTitle());
-			sessionObj.put("allDay", session.isAllDay());
-			sessionObj.put("start", new Date(session.getStart()));
-			sessionObj.put("end", new Date(session.getEnd()));
-			resultSessions.add(sessionObj);
-			System.out.println(new Date(session.getStart()));
+			System.out.println(session.getStart());
 		}
-		return resultSessions;
+		return sessions;
 	}
 
 	

@@ -1,6 +1,7 @@
 package com.vladinooo.fitnessforce.web.controllers;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -65,12 +66,13 @@ public class TimetableController {
 		
 	
 	@ResponseBody
-	@RequestMapping(value="/get_sessions", method=RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-	public Map<String, Object> getSessions() {
-		List<Object> sessions = timetableService.getSessions();
-		Map<String, Object> result = new HashMap<String, Object>();
-		result.put("sessions", sessions);
-		return result;
+	@RequestMapping(value="/get_sessions", produces = MediaType.APPLICATION_JSON_VALUE)
+	public List<Session> getSessions() {
+		List<Session> sessions = timetableService.getSessions();
+		for (Session session : sessions) {
+			System.out.println(session.getStart());
+		}
+		return sessions;
 	}
 		
 	

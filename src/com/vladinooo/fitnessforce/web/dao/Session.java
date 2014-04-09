@@ -1,13 +1,14 @@
 package com.vladinooo.fitnessforce.web.dao;
 
+import java.util.Date;
 
 public class Session {
 
 	private int id;
 	private String title;
 	private boolean allDay;
-	private long start;
-	private long end;
+	private Date start;
+	private Date end;
 
 	public int getId() {
 		return id;
@@ -33,19 +34,19 @@ public class Session {
 		this.allDay = allDay;
 	}
 
-	public long getStart() {
+	public Date getStart() {
 		return start;
 	}
 
-	public void setStart(long start) {
+	public void setStart(Date start) {
 		this.start = start;
 	}
 
-	public long getEnd() {
+	public Date getEnd() {
 		return end;
 	}
 
-	public void setEnd(long end) {
+	public void setEnd(Date end) {
 		this.end = end;
 	}
 

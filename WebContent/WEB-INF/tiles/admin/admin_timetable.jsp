@@ -91,13 +91,15 @@ $(document).ready(function() {
 	        }
 
 	    },
-	    events: { // Render the events in the calendar
-            url: '<c:url value="/get_messages" />', // Get the URL of the json feed
-            type: 'POST', // Send post data
-            error: function() {
-                alert('There was an error while fetching events.'); // Error alert
-            }
-        }
+	    events: {
+	        url: '<c:url value="/get_sessions" />',
+	        type: 'POST',
+	        error: function() {
+	            alert('there was an error while fetching events!');
+	        },
+	        color: 'yellow',   // a non-ajax option
+	        textColor: 'black' // a non-ajax option
+	    }
 	    
 	});
 	
