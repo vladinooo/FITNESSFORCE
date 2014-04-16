@@ -2,6 +2,9 @@ package com.vladinooo.fitnessforce.web.dao;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Timestamp;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -33,15 +36,11 @@ public class TimetableDao {
 							public Session mapRow(ResultSet rs, int rowNum)
 									throws SQLException {
 								Session session = new Session();
-
 								session.setId(rs.getInt("id"));
 								session.setTitle(rs.getString("title"));
 								session.setAllDay(rs.getBoolean("allDay"));
-								session.setStart(new Date(rs.getTimestamp("start").getTime()));
-								session.setEnd(new Date(rs.getTimestamp("end").getTime()));
-								
-								System.out.println(session.getStart());
-								
+								session.setStart(new SimpleDateFormat("dd-MM-yyyy HH:mm").format(new Date(rs.getTimestamp("start").getTime())));
+								session.setEnd(new SimpleDateFormat("dd-MM-yyyy HH:mm").format(new Date(rs.getTimestamp("end").getTime())));								
 								return session;
 							}
 
@@ -53,10 +52,23 @@ public class TimetableDao {
 
 		MapSqlParameterSource params = new MapSqlParameterSource();
 
+		SimpleDateFormat formatter = new SimpleDateFormat("dd-mm-yyyy HH:mm");
+		String startString = session.getStart();
+		String endString = session.getEnd();
+		Date start = new Date();
+		Date end = new Date();
+		
+		try {
+			start = formatter.parse(startString);
+			end = formatter.parse(endString);
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		
 		params.addValue("title", session.getTitle());
 		params.addValue("allDay", session.isAllDay());
-		params.addValue("start", session.getStart());
-		params.addValue("end", session.getEnd());
+		params.addValue("start", new Timestamp(start.getTime()));
+		params.addValue("end", new Timestamp(end.getTime()));
 
 		return jdbc.update(
 				"insert into sessions ("

@@ -1,5 +1,6 @@
 package com.vladinooo.fitnessforce.web.service;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -26,17 +27,14 @@ public class TimetableService {
 		Session session = new Session();
 		session.setTitle((String)sessionData.get("title"));
 		session.setAllDay(true);
-		session.setStart(new Date(startDateTime));
-		session.setEnd(new Date(endDateTime));
+		session.setStart(new SimpleDateFormat("dd-MM-yyyy HH:mm").format(startDateTime));
+		session.setEnd(new SimpleDateFormat("dd-MM-yyyy HH:mm").format(endDateTime));
 		return timetableDao.createSession(session);
 	}
 
 	
 	public List<Session> getSessions() {
 		List<Session> sessions =  timetableDao.getSessions();
-		for (Session session : sessions) {
-			System.out.println(session.getStart());
-		}
 		return sessions;
 	}
 
