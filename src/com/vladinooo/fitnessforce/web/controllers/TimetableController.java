@@ -69,9 +69,14 @@ public class TimetableController {
 	@RequestMapping(value="/get_sessions", produces = MediaType.APPLICATION_JSON_VALUE)
 	public List<Session> getSessions() {
 		List<Session> sessions = timetableService.getSessions();
-		for (Session session : sessions) {
-			System.out.println(session.getStart());
-		}
+//		List<Session> sessions = new ArrayList<Session>();
+//		Session session = new Session();
+//		session.setId(11);
+//		session.setTitle("session #1");
+//		session.setAllDay(false);
+//		session.setStart("2014/04/16");
+//		session.setEnd("2014/04/16");
+//		sessions.add(session);
 		return sessions;
 	}
 		

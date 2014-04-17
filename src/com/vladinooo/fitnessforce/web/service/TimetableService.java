@@ -26,9 +26,9 @@ public class TimetableService {
 		
 		Session session = new Session();
 		session.setTitle((String)sessionData.get("title"));
-		session.setAllDay(true);
-		session.setStart(new SimpleDateFormat("dd-MM-yyyy HH:mm").format(startDateTime));
-		session.setEnd(new SimpleDateFormat("dd-MM-yyyy HH:mm").format(endDateTime));
+		session.setAllDay(false);
+		session.setStart(new SimpleDateFormat("yyyy/MM/dd HH:mm").format(startDateTime));
+		session.setEnd(new SimpleDateFormat("yyyy/MM/dd HH:mm").format(endDateTime));
 		return timetableDao.createSession(session);
 	}
 

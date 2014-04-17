@@ -39,8 +39,8 @@ public class TimetableDao {
 								session.setId(rs.getInt("id"));
 								session.setTitle(rs.getString("title"));
 								session.setAllDay(rs.getBoolean("allDay"));
-								session.setStart(new SimpleDateFormat("dd-MM-yyyy HH:mm").format(new Date(rs.getTimestamp("start").getTime())));
-								session.setEnd(new SimpleDateFormat("dd-MM-yyyy HH:mm").format(new Date(rs.getTimestamp("end").getTime())));								
+								session.setStart(new SimpleDateFormat("yyyy/MM/dd HH:mm").format(new Date(rs.getTimestamp("start").getTime())));
+								session.setEnd(new SimpleDateFormat("yyyy/MM/dd HH:mm").format(new Date(rs.getTimestamp("end").getTime())));								
 								return session;
 							}
 
@@ -52,7 +52,7 @@ public class TimetableDao {
 
 		MapSqlParameterSource params = new MapSqlParameterSource();
 
-		SimpleDateFormat formatter = new SimpleDateFormat("dd-mm-yyyy HH:mm");
+		SimpleDateFormat formatter = new SimpleDateFormat("yyyy/MM/dd HH:mm");
 		String startString = session.getStart();
 		String endString = session.getEnd();
 		Date start = new Date();

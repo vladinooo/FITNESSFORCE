@@ -94,17 +94,6 @@ $(document).ready(function() {
 	    events: {
 	        url: '<c:url value="/get_sessions" />',
 	        type: 'POST',
-	        data: {
-	            start: Math.round(obj.start / 1000),
-	            end: Math.round(obj.end / 1000),
-	            sid: obj.sid,
-	            uid: obj.uid,
-	            aid: obj.aid,
-	            csrf_test_name: csrf
-	        },
-	        success: function() {
-	        	alert("heyy");
-	        },
 	        error: function() {
 	            alert('there was an error while fetching events!');
 	        },
