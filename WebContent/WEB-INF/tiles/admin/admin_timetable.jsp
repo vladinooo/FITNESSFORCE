@@ -40,12 +40,14 @@ $(document).ready(function() {
 			center: 'title',
 			right: 'month,agendaWeek,agendaDay'
 		},
+		allDayDefault: false,
+		defaultView: 'agendaWeek',
 		editable: true,
 		defaultEventMinutes: 30,
 		startEditable: true,
 		durationEditable: true,
 		droppable: true, // this allows things to be dropped onto the calendar !!!
-		drop: function(date, allDay) { // this function is called when something is dropped
+		drop: function(date, allDay, ui) { // this function is called when something is dropped
 		
 			// retrieve the dropped element's stored Event Object
 			var originalEventObject = $(this).data('eventObject');
@@ -55,24 +57,59 @@ $(document).ready(function() {
 			
 			// assign it the date that was reported
 			copiedEventObject.start = date;
+			copiedEventObject.end = new Date(date.getTime() + 3600000);
 			copiedEventObject.allDay = allDay;
 			
 			// render the event on the calendar
 			// the last `true` argument determines if the event "sticks" (http://arshaw.com/fullcalendar/docs/event_rendering/renderEvent/)
 			$('#admin_timetable').fullCalendar('renderEvent', copiedEventObject, true);
 
-			$.ajax({
-				type: 'POST',
-				url: '<c:url value="/create_session" />',
-				data: JSON.stringify({"title": "Session", "startDateTime": date.getTime()}),
-				success: function(result) {
-					alert(result.title + " : " + result.startDateTime);
-				},
-				contentType: "application/json",
-				dataType: "json"
-			});
-			
+           	// JQuery UI Modal Dialog	
+           	$('#createSessionModal').dialog({
+           		autoOpen: true,
+           		modal: true,
+           		dialogClass: 'dialog',
+           		buttons: [
+           		          {
+           		              text: "Save",
+           		              "class": "btn btn-primary",
+           		              click: function() {
+           		            	  	$.ajax({
+           		 			    		url : '<c:url value="/create_session" />',
+	           		 			    	contentType: 'application/json; charset=utf-8',
+	           		 			    	type: 'POST',
+	           		 			    	dataType: 'json',
+	           		 			    	data: JSON.stringify({"title": "Session", "start": date.getTime(), "end": new Date(date.getTime() + 3600000).getTime()}),
+	           		 			    	async : false,
+	           		 			    	complete: function (xhr, status) {
+	           		 			    		if (status === 'error' || !xhr.responseText) {
+	           		 			            	console.log("Failed to create session: " + status);
+	           		 			        	}
+	           		 			    	}
+	           		 				});
+           		            		$(this).dialog("close");
+           		              }
+           		          },
+           		          {
+           		        	  text: "Cancel",
+           		              click: function() {
+           		            	  var clientEvents = $('#admin_timetable').fullCalendar('clientEvents');
+           		            	  var lastEvent = clientEvents[clientEvents.length-1];
+           		            	  $('#admin_timetable').fullCalendar('removeEvents', lastEvent._id);
+           		            	  $(this).dialog("close");
+           		              }
+           		          }
+           		      ]
+           	});
+        
+            $("div.dialog button").addClass("btn");
+	            
+						
 		},
+		eventClick: function(calEvent, jsEvent, view) {
+			
+
+	    },
 		eventDrop: function(event,dayDelta,minuteDelta,allDay,revertFunc) {
 							
 
@@ -96,13 +133,53 @@ $(document).ready(function() {
 	        type: 'POST',
 	        error: function() {
 	            alert('there was an error while fetching events!');
-	        },
-	        color: 'yellow',   // a non-ajax option
-	        textColor: 'black' // a non-ajax option
-	    }
+	        }
+	    },
+	    timeFormat: 'H:mm{ - h:mm }',
+	    eventRender: function(event, element) { 
+            element.find('.fc-event-inner').addClass('sessionModalDialog'); 
+            element.find('.fc-event-inner').css('text-align', 'center'); 
+            element.find('.fc-event-time').append("<br/>"); 
+            
+            
+            $(".sessionModalDialog").each(function(i){
+            	$(this).click(function(){
+            		$('#sessionModal').dialog('open');
+            		return false;
+            	});
+            	
+            	// JQuery UI Modal Dialog	
+            	$('#sessionModal').dialog({
+            		autoOpen: false,
+            		modal: true,
+            		dialogClass: 'dialog',
+            		buttons: [
+            		          {
+            		              text: "Delete",
+            		              "class": "btn btn-danger",
+            		              click: function() {
+            		            	  var url = $("#deleteUserUrl" + i).text();
+            		            	  window.location = url;
+            		            	  $(this).dialog("close");
+            		              }
+            		          },
+            		          {
+            		        	  text: "Cancel",
+            		              click: function() {
+            		            	  $(this).dialog("close");
+            		              }
+            		          }
+            		      ]
+            	});
+            	
+            });
+
+
+            $("div.dialog button").addClass("btn");
+            
+        } 
 	    
 	});
-	
 	
 });
 
@@ -147,8 +224,28 @@ $(document).ready(function() {
                        </div><!-- End .panel-body -->
                    </div><!-- End .widget -->
 				</div>
+			</div><!-- End .panel-body -->
+			
+			<div title="Create Session" id="createSessionModal" class="modalDialog">
+				<div class="panel-body">
+	                <form class="form-horizontal" id="create-session-form" role="form">
+	             
+	                    <div class="form-group">
+	                        <label class="col-lg-2 control-label" for="required">Title</label>
+	                        <div class="col-lg-4">
+	                            <input class="form-control" type="text" name="title" />
+	                        </div>
+	                    </div><!-- End .control-group  -->
+              
+	                </form>
+	            </div><!-- End .panel-body -->  
+			</div><!-- End modal -->  
+			
+			<div title="EDIT SESSION" id="sessionModal" class="modalDialog">
+			
+				 <p>sdfsfd</p>
+			    
 			</div>
-			<!-- End .panel-body -->
 		</div>
 		<!-- End .widget -->
 	</div>

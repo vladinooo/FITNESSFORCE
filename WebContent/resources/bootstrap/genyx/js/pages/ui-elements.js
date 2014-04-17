@@ -134,59 +134,6 @@ $(document).ready(function() {
 //		}
 //	});
 	
-	// create unique ids
-	$(".openModalDialog").each(function(i){
-		$(this).attr("id", "openModal" + i);
-	});
-	
-	// create unique ids
-	$(".dialog").each(function(i){
-		$(this).attr("id", "modal" + i);
-	});
-	
-	// create unique ids
-	$(".deleteUserUrlPlaceholder").each(function(i){
-		$(this).attr("id", "deleteUserUrl" + i);
-	});
-
-	
-	$(".openModalDialog").each(function(i){
-		var openModalId = $(this).attr("id");
-		$("#" + openModalId).click(function(){
-			$('#modal' + i).dialog('open');
-			return false;
-		});
-		
-		// JQuery UI Modal Dialog	
-		$('#modal' + i).dialog({
-			autoOpen: false,
-			modal: true,
-			dialogClass: 'dialog',
-			buttons: [
-			          {
-			              text: "Delete",
-			              "class": "btn btn-danger",
-			              click: function() {
-			            	  var url = $("#deleteUserUrl" + i).text();
-			            	  window.location = url;
-			            	  $(this).dialog("close");
-			              }
-			          },
-			          {
-			        	  text: "Cancel",
-			              click: function() {
-			            	  $(this).dialog("close");
-			              }
-			          }
-			      ]
-		});
-		
-	});
-	
-
-	$("div.dialog button").addClass("btn");
-
-	
 	
 	//Boostrap modal
 	$('#myModal').modal({ show: false});

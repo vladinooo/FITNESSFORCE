@@ -32,7 +32,6 @@
 	width: 90%;
 	overflow: hidden;
 	text-overflow: ellipsis;
-	color: #da4f49;
 }
 .ui-dialog .ui-dialog-titlebar-close {
 	position: absolute;

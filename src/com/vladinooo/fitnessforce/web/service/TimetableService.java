@@ -1,9 +1,6 @@
 package com.vladinooo.fitnessforce.web.service;
 
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -21,8 +18,8 @@ public class TimetableService {
 	
 	
 	public boolean createSession(Map<String, Object> sessionData) {
-		Long startDateTime = (Long)sessionData.get("startDateTime");
-		Long endDateTime = startDateTime + 3600000; // current dateTime + 1h
+		Long startDateTime = (Long)sessionData.get("start");
+		Long endDateTime = (Long)sessionData.get("end");
 		
 		Session session = new Session();
 		session.setTitle((String)sessionData.get("title"));
