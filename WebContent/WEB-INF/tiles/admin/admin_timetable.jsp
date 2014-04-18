@@ -98,67 +98,19 @@ $(document).ready(function() {
 			// the last `true` argument determines if the event "sticks" (http://arshaw.com/fullcalendar/docs/event_rendering/renderEvent/)
 			$('#admin_timetable').fullCalendar('renderEvent', copiedEventObject, true);
 
-			
-			$("#createSessionModal").dialog({
-				width: 500, // overcomes width:'auto' and maxWidth bug
-			    maxWidth: 600,
-			    height: 'auto',
-			    modal: true,
-			    fluid: true, //new option
-			    resizable: false,
-			      autoOpen: true,
-			      dialogClass: 'dialog'
-			    });
-			
-			$("div.dialog button").addClass("btn");
-			$("#create-session-form input[name=title]").attr('maxlength','25');
-			$("#create-session-form textarea[name=description]").attr('maxlength','100');
-			$("#create-session-form input[name=price]").attr('maxlength','6');
-			
-			$("#colorPicker").spectrum({
-				showPaletteOnly: true,
-			    showPalette:true,
-			    color: '#548DD4',
-			    palette: [
-			        ['#3F3F3F', '#938953', '#548DD4', '#95B3D7',
-			        '#D99694', '#C3D69B', '#B2A2C7', '#92CDDC', '#FAC08F']
-			    ]
-			});
-			      
-
-			$("#create-session-form").validate({
-		 		rules: {
-		 			title: {required: true, minlength: 5},
-					price: {number: true}
-		 		},
-		        submitHandler: function(form) {
-		            $.ajax({
-	 			    		url : '<c:url value="/create_session" />',
-		 			    	contentType: 'application/json; charset=utf-8',
-		 			    	type: 'POST',
-		 			    	dataType: 'json',
-		 			    	data: JSON.stringify({"title": "Session", "start": date.getTime(), "end": new Date(date.getTime() + 3600000).getTime()}),
-		 			    	async : false,
-		 			    	complete: function (xhr, status) {
-		 			    		if (status === 'error' || !xhr.responseText) {
-		 			            	console.log("Failed to create session: " + status);
-		 			        	}
-		 			    	}
-		 				});
-		            $("#createSessionModal").dialog("close");
-		            return false;
-		        }
-		    });
-			
-			
-			$('#cancelSessionBtn').click(function(e) {
-				var clientEvents = $('#admin_timetable').fullCalendar('clientEvents');
-           	  	var lastEvent = clientEvents[clientEvents.length-1];
-           	  	$('#admin_timetable').fullCalendar('removeEvents', lastEvent._id);
-           	 	e.preventDefault();
-           	  	$("#createSessionModal").dialog("close");
-			});
-						
+            $.ajax({
+			    	url : '<c:url value="/create_session" />',
+ 			    	contentType: 'application/json; charset=utf-8',
+ 			    	type: 'POST',
+ 			    	dataType: 'json',
+ 			    	data: JSON.stringify({"title": "Session", "start": date.getTime(), "end": new Date(date.getTime() + 3600000).getTime()}),
+ 			    	async : false,
+ 			    	complete: function (xhr, status) {
+ 			    		if (status === 'error' || !xhr.responseText) {
+ 			            	console.log("Failed to create session: " + status);
+ 			        	}
+ 			    	}
+ 			});		
 		},
 		eventClick: function(calEvent, jsEvent, view) {
 			
@@ -196,38 +148,70 @@ $(document).ready(function() {
             element.find('.fc-event-time').append("<br/>"); 
             
             
-            $(".sessionModalDialog").each(function(i){
-            	$(this).click(function(){
-            		$('#sessionModal').dialog('open');
-            		return false;
+            $(".sessionModalDialog").each(function(i) {
+            	$(this).click(function() {
+            		$("#editSessionModal").dialog('open');
+            			return false;
             	});
             	
-            	// JQuery UI Modal Dialog	
-            	$('#sessionModal').dialog({
-            		autoOpen: false,
-            		modal: true,
-            		dialogClass: 'dialog',
-            		buttons: [
-            		          {
-            		              text: "Delete",
-            		              "class": "btn btn-danger",
-            		              click: function() {
-            		            	  var url = $("#deleteUserUrl" + i).text();
-            		            	  window.location = url;
-            		            	  $(this).dialog("close");
-            		              }
-            		          },
-            		          {
-            		        	  text: "Cancel",
-            		              click: function() {
-            		            	  $(this).dialog("close");
-            		              }
-            		          }
-            		      ]
-            	});
+            	$("#editSessionModal").dialog({
+    				width: 500, // overcomes width:'auto' and maxWidth bug
+    			    maxWidth: 600,
+    			    height: 'auto',
+    			    modal: true,
+    			    fluid: true, //new option
+    			    resizable: false,
+    			    autoOpen: false,
+    			    dialogClass: 'dialog'
+    			});
+    			
+    			$("div.dialog button").addClass("btn");
+    			$("#edit-session-form input[name=title]").attr('maxlength','25');
+    			$("#edit-session-form textarea[name=description]").attr('maxlength','100');
+    			$("#edit-session-form input[name=price]").attr('maxlength','6');
+    			
+    			$("#colorPicker").spectrum({
+    				showPaletteOnly: true,
+    			    showPalette:true,
+    			    color: '#548DD4',
+    			    palette: [
+    			        ['#3F3F3F', '#938953', '#548DD4', '#95B3D7',
+    			        '#D99694', '#C3D69B', '#B2A2C7', '#92CDDC', '#FAC08F']
+    			    ]
+    			});
+    			      
+
+    			$("#edit-session-form").validate({
+    		 		rules: {
+    		 			title: {required: true, minlength: 5},
+    					price: {number: true}
+    		 		},
+    		        submitHandler: function(form) {
+    		            $.ajax({
+    	 			    		url : '<c:url value="/create_session" />',
+    		 			    	contentType: 'application/json; charset=utf-8',
+    		 			    	type: 'POST',
+    		 			    	dataType: 'json',
+    		 			    	data: JSON.stringify({"title": "Session", "start": date.getTime(), "end": new Date(date.getTime() + 3600000).getTime()}),
+    		 			    	async : false,
+    		 			    	complete: function (xhr, status) {
+    		 			    		if (status === 'error' || !xhr.responseText) {
+    		 			            	console.log("Failed to create session: " + status);
+    		 			        	}
+    		 			    	}
+    		 				});
+    		            $("#editSessionModal").dialog("close");
+    		            return false;
+    		        }
+    		    });
+    			
+    			
+    			$('#cancelSessionBtn').click(function(e) {
+               	 	e.preventDefault();
+               	  	$("#editSessionModal").dialog("close");
+    			});
             	
             });
-
 
             $("div.dialog button").addClass("btn");
             
@@ -281,10 +265,10 @@ $(document).ready(function() {
 			</div><!-- End .panel-body -->
 			
 			
-			<div title="Create Session" id="createSessionModal" class="modalDialog">
+			<div title="Edit Session" id="editSessionModal" class="modalDialog">
 				<div class="panel-body">
 	
-	                <form class="form-horizontal" id="create-session-form">
+	                <form class="form-horizontal" id="edit-session-form">
 	             
 	                    <div class="form-group">
 	                        <label class="col-lg-3 control-label" for="required">Title</label>
@@ -331,12 +315,7 @@ $(document).ready(function() {
             
             </div>
             
-			
-			<div title="EDIT SESSION" id="sessionModal" class="modalDialog">
-			
-				 <p>sdfsfd</p>
-			    
-			</div>
+		
 		</div>
 		<!-- End .widget -->
 	</div>
@@ -378,5 +357,13 @@ $(document).ready(function() {
 	           		            	  $(this).dialog("close");
 	           		              }
 	           		          }
-	           		      ] --%>
+	           		      ] 
+	           		      
+	           		      
+	           		      
+	           		          				var clientEvents = $('#admin_timetable').fullCalendar('clientEvents');
+               	  	var lastEvent = clientEvents[clientEvents.length-1];
+               	  	$('#admin_timetable').fullCalendar('removeEvents', lastEvent._id);
+	           		      
+	           		      --%>
 
