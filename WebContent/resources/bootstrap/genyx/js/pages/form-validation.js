@@ -78,4 +78,6 @@ $(document).ready(function() {
 			textarea: "Write some info for you",
  		}
  	});
+ 	
+ 	
 });

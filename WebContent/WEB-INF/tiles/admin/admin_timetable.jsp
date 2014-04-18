@@ -1,10 +1,44 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
-
+ 
 <script>
 
 $(document).ready(function() {
+	
+	// on window resize run function
+	$(window).resize(function () {
+	    fluidDialog();
+	});
+
+	// catch dialog if opened within a viewport smaller than the dialog width
+	$(document).on("dialogopen", ".ui-dialog", function (event, ui) {
+	    fluidDialog();
+	});
+
+	function fluidDialog() {
+	    var $visible = $(".ui-dialog:visible");
+	    // each open dialog
+	    $visible.each(function () {
+	        var $this = $(this);
+	        var dialog = $this.find(".ui-dialog-content").data("ui-dialog");
+	        // if fluid option == true
+	        if (dialog.options.fluid) {
+	            var wWidth = $(window).width();
+	            // check window width against dialog width
+	            if (wWidth < (parseInt(dialog.options.maxWidth) + 50))  {
+	                // keep dialog from filling entire screen
+	                $this.css("max-width", "90%");
+	            } else {
+	                // fix maxWidth bug
+	                $this.css("max-width", dialog.options.maxWidth + "px");
+	            }
+	            //reposition dialog
+	            dialog.option("position", dialog.options.position);
+	        }
+	    });
+
+	}
 	
 	
 	/* initialize the external events
@@ -64,46 +98,66 @@ $(document).ready(function() {
 			// the last `true` argument determines if the event "sticks" (http://arshaw.com/fullcalendar/docs/event_rendering/renderEvent/)
 			$('#admin_timetable').fullCalendar('renderEvent', copiedEventObject, true);
 
-           	// JQuery UI Modal Dialog	
-           	$('#createSessionModal').dialog({
-           		autoOpen: true,
-           		modal: true,
-           		dialogClass: 'dialog',
-           		buttons: [
-           		          {
-           		              text: "Save",
-           		              "class": "btn btn-primary",
-           		              click: function() {
-           		            	  	$.ajax({
-           		 			    		url : '<c:url value="/create_session" />',
-	           		 			    	contentType: 'application/json; charset=utf-8',
-	           		 			    	type: 'POST',
-	           		 			    	dataType: 'json',
-	           		 			    	data: JSON.stringify({"title": "Session", "start": date.getTime(), "end": new Date(date.getTime() + 3600000).getTime()}),
-	           		 			    	async : false,
-	           		 			    	complete: function (xhr, status) {
-	           		 			    		if (status === 'error' || !xhr.responseText) {
-	           		 			            	console.log("Failed to create session: " + status);
-	           		 			        	}
-	           		 			    	}
-	           		 				});
-           		            		$(this).dialog("close");
-           		              }
-           		          },
-           		          {
-           		        	  text: "Cancel",
-           		              click: function() {
-           		            	  var clientEvents = $('#admin_timetable').fullCalendar('clientEvents');
-           		            	  var lastEvent = clientEvents[clientEvents.length-1];
-           		            	  $('#admin_timetable').fullCalendar('removeEvents', lastEvent._id);
-           		            	  $(this).dialog("close");
-           		              }
-           		          }
-           		      ]
-           	});
-        
-            $("div.dialog button").addClass("btn");
-	            
+			
+			$("#createSessionModal").dialog({
+				width: 500, // overcomes width:'auto' and maxWidth bug
+			    maxWidth: 600,
+			    height: 'auto',
+			    modal: true,
+			    fluid: true, //new option
+			    resizable: false,
+			      autoOpen: true,
+			      dialogClass: 'dialog'
+			    });
+			
+			$("div.dialog button").addClass("btn");
+			$("#create-session-form input[name=title]").attr('maxlength','25');
+			$("#create-session-form textarea[name=description]").attr('maxlength','100');
+			$("#create-session-form input[name=price]").attr('maxlength','6');
+			
+			$("#colorPicker").spectrum({
+				showPaletteOnly: true,
+			    showPalette:true,
+			    color: '#548DD4',
+			    palette: [
+			        ['#3F3F3F', '#938953', '#548DD4', '#95B3D7',
+			        '#D99694', '#C3D69B', '#B2A2C7', '#92CDDC', '#FAC08F']
+			    ]
+			});
+			      
+
+			$("#create-session-form").validate({
+		 		rules: {
+		 			title: {required: true, minlength: 5},
+					price: {number: true}
+		 		},
+		        submitHandler: function(form) {
+		            $.ajax({
+	 			    		url : '<c:url value="/create_session" />',
+		 			    	contentType: 'application/json; charset=utf-8',
+		 			    	type: 'POST',
+		 			    	dataType: 'json',
+		 			    	data: JSON.stringify({"title": "Session", "start": date.getTime(), "end": new Date(date.getTime() + 3600000).getTime()}),
+		 			    	async : false,
+		 			    	complete: function (xhr, status) {
+		 			    		if (status === 'error' || !xhr.responseText) {
+		 			            	console.log("Failed to create session: " + status);
+		 			        	}
+		 			    	}
+		 				});
+		            $("#createSessionModal").dialog("close");
+		            return false;
+		        }
+		    });
+			
+			
+			$('#cancelSessionBtn').click(function(e) {
+				var clientEvents = $('#admin_timetable').fullCalendar('clientEvents');
+           	  	var lastEvent = clientEvents[clientEvents.length-1];
+           	  	$('#admin_timetable').fullCalendar('removeEvents', lastEvent._id);
+           	 	e.preventDefault();
+           	  	$("#createSessionModal").dialog("close");
+			});
 						
 		},
 		eventClick: function(calEvent, jsEvent, view) {
@@ -226,20 +280,57 @@ $(document).ready(function() {
 				</div>
 			</div><!-- End .panel-body -->
 			
+			
 			<div title="Create Session" id="createSessionModal" class="modalDialog">
 				<div class="panel-body">
-	                <form class="form-horizontal" id="create-session-form" role="form">
+	
+	                <form class="form-horizontal" id="create-session-form">
 	             
 	                    <div class="form-group">
-	                        <label class="col-lg-2 control-label" for="required">Title</label>
-	                        <div class="col-lg-4">
+	                        <label class="col-lg-3 control-label" for="required">Title</label>
+	                        <div class="col-lg-8">
 	                            <input class="form-control" type="text" name="title" />
 	                        </div>
 	                    </div><!-- End .control-group  -->
-              
+	                    
+	                    <div class="form-group">
+						<label class="col-lg-3 control-label" for="elastic">Description</label>
+							<div class="col-lg-8">
+								<textarea name="description" class="form-control" rows="2"></textarea>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="col-lg-3 control-label" for="required">Price</label>
+							<div class="col-lg-8">
+								<input class="form-control" type="text" name="price" />
+							</div>
+						</div><!-- End .control-group  -->
+						
+						<div class="form-group">
+							<label class="col-lg-3 control-label" for="required">Color</label>
+							<div class="col-lg-8">
+								<input id="colorPicker" class="form-control" type="text" name="color" />
+							</div>
+						</div><!-- End .control-group  -->
+
+						<br /><br />
+						
+						<div class="form-group">
+						<div class="col-lg-offset-3">
+							<div class="pad-left15">
+								<button type="submit" class="btn btn-primary">Save</button>
+								<button id="cancelSessionBtn" class="btn">Cancel</button>
+							</div>
+						</div>
+					</div><!-- End .form-group  -->
+
+	                    
 	                </form>
 	            </div><!-- End .panel-body -->  
-			</div><!-- End modal -->  
+            
+            </div>
+            
 			
 			<div title="EDIT SESSION" id="sessionModal" class="modalDialog">
 			
@@ -252,4 +343,40 @@ $(document).ready(function() {
 	<!-- End .col-lg-12  -->
 </div>
 <!-- End .row-fluid  -->
+
+
+<%-- buttons: [
+	           		          {
+	           		              text: "Save",
+	           		              "class": "btn btn-primary",
+	           		              click: function() {
+		          			          
+		          			        	$.ajax({
+	           		 			    		url : '<c:url value="/create_session" />',
+		           		 			    	contentType: 'application/json; charset=utf-8',
+		           		 			    	type: 'POST',
+		           		 			    	dataType: 'json',
+		           		 			    	data: JSON.stringify({"title": "Session", "start": date.getTime(), "end": new Date(date.getTime() + 3600000).getTime()}),
+		           		 			    	async : false,
+		           		 			    	complete: function (xhr, status) {
+		           		 			    		if (status === 'error' || !xhr.responseText) {
+		           		 			            	console.log("Failed to create session: " + status);
+		           		 			        	}
+		           		 			    	}
+		           		 				});
+	           		            		$(this).dialog("close");
+	           		            	  	
+	           		              }
+	           		          },
+	           		          {
+	           		        	  text: "Cancel",
+	           		        	"class": "btn",
+	           		              click: function() {
+	           		            	  var clientEvents = $('#admin_timetable').fullCalendar('clientEvents');
+	           		            	  var lastEvent = clientEvents[clientEvents.length-1];
+	           		            	  $('#admin_timetable').fullCalendar('removeEvents', lastEvent._id);
+	           		            	  $(this).dialog("close");
+	           		              }
+	           		          }
+	           		      ] --%>
 

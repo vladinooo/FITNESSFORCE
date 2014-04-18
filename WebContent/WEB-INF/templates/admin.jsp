@@ -43,6 +43,7 @@
 	    <link href="${pageContext.request.contextPath}/static/bootstrap/genyx/js/plugins/forms/multiselect/ui.multiselect.css" rel="stylesheet" /> 
 	    <link href="${pageContext.request.contextPath}/static/plugins/jquery-timepicker/jquery.timepicker.css" rel="stylesheet" />
 	    <link href="${pageContext.request.contextPath}/static/plugins/fullcalendar/fullcalendar/fullcalendar.css" rel="stylesheet" />
+	    <link href="${pageContext.request.contextPath}/static/plugins/jquery-color-picker/jquery.colorpicker.css" rel="stylesheet" />
 
 
 		<!-- app stylesheets -->
@@ -120,6 +121,7 @@
 	    <script src="${pageContext.request.contextPath}/static/bootstrap/genyx/js/plugins/forms/multiselect/ui.multiselect.js"></script>
 	    <script src="${pageContext.request.contextPath}/static/bootstrap/genyx/js/plugins/forms/tinymce/tinymce.min.js"></script>
 	    <script src="${pageContext.request.contextPath}/static/plugins/jquery-timepicker/jquery.timepicker.min.js"></script>
+	    <script src="${pageContext.request.contextPath}/static/plugins/jquery-color-picker/jquery.colorpicker.js"></script>
 
 	    
 	    <!-- FullCalendar plugin -->
