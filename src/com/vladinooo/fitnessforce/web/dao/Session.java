@@ -1,10 +1,12 @@
 package com.vladinooo.fitnessforce.web.dao;
 
-
 public class Session {
 
 	private int id;
 	private String title;
+	private String description;
+	private String price;
+	private String color;
 	private boolean allDay;
 	private String start;
 	private String end;
@@ -23,6 +25,30 @@ public class Session {
 
 	public void setTitle(String title) {
 		this.title = title;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public String getPrice() {
+		return price;
+	}
+
+	public void setPrice(String price) {
+		this.price = price;
+	}
+
+	public String getColor() {
+		return color;
+	}
+
+	public void setColor(String color) {
+		this.color = color;
 	}
 
 	public boolean isAllDay() {
@@ -47,6 +73,14 @@ public class Session {
 
 	public void setEnd(String end) {
 		this.end = end;
+	}
+
+	@Override
+	public String toString() {
+		return "Session [id=" + id + ", title=" + title + ", description="
+				+ description + ", price=" + price + ", color=" + color
+				+ ", allDay=" + allDay + ", start=" + start + ", end=" + end
+				+ "]";
 	}
 
 }

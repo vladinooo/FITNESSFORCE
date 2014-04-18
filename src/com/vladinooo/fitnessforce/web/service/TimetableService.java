@@ -23,6 +23,7 @@ public class TimetableService {
 		
 		Session session = new Session();
 		session.setTitle((String)sessionData.get("title"));
+		session.setColor((String)sessionData.get("color"));
 		session.setAllDay(false);
 		session.setStart(new SimpleDateFormat("yyyy/MM/dd HH:mm").format(startDateTime));
 		session.setEnd(new SimpleDateFormat("yyyy/MM/dd HH:mm").format(endDateTime));
@@ -41,14 +42,21 @@ public class TimetableService {
 	}
 
 	
-//	public boolean editSession(Session session) {
-//		session.setEnabled(true);
-//		return timetableDao.editSession(session);
-//	}
-//	
-//	
-//	public boolean deleteSession(Session session) {
-//		return timetableDao.deleteSession(session);
-//	}
+	public boolean editSession(Map<String, Object> sessionData) {
+		Session session = new Session();
+		session.setId((Integer)sessionData.get("id"));
+		session.setTitle((String)sessionData.get("title"));
+		session.setDescription((String)sessionData.get("description"));
+		session.setPrice((String)sessionData.get("price"));
+		session.setColor((String)sessionData.get("color"));
+		return timetableDao.editSession(session);
+	}
+	
+	
+	public boolean deleteSession(Map<String, Object> sessionData) {
+		Session session = new Session();
+		session.setId((Integer)sessionData.get("id"));
+		return timetableDao.deleteSession(session);
+	}
 	
 }

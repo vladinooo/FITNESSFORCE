@@ -103,7 +103,7 @@ $(document).ready(function() {
  			    	contentType: 'application/json; charset=utf-8',
  			    	type: 'POST',
  			    	dataType: 'json',
- 			    	data: JSON.stringify({"title": "Session", "start": date.getTime(), "end": new Date(date.getTime() + 3600000).getTime()}),
+ 			    	data: JSON.stringify({"title": "Session", color: "#3a87ad", "start": date.getTime(), "end": new Date(date.getTime() + 3600000).getTime()}),
  			    	async : false,
  			    	complete: function (xhr, status) {
  			    		if (status === 'error' || !xhr.responseText) {
@@ -112,15 +112,6 @@ $(document).ready(function() {
  			    	}
  			});		
 		},
-		eventClick: function(calEvent, jsEvent, view) {
-			
-
-	    },
-		eventDrop: function(event,dayDelta,minuteDelta,allDay,revertFunc) {
-							
-
-					
-	    },
 	    eventResize: function(event,dayDelta,minuteDelta,revertFunc) {
 
 	        alert(
@@ -143,79 +134,78 @@ $(document).ready(function() {
 	    },
 	    timeFormat: 'H:mm{ - h:mm }',
 	    eventRender: function(event, element) { 
-            element.find('.fc-event-inner').addClass('sessionModalDialog'); 
+	    	element.css('background-color', "'" + event.color + "'");
             element.find('.fc-event-inner').css('text-align', 'center'); 
+            element.find('.fc-event-time').css('font-weight', 'bold');
             element.find('.fc-event-time').append("<br/>"); 
-            
-            
-            $(".sessionModalDialog").each(function(i) {
-            	$(this).click(function() {
-            		$("#editSessionModal").dialog('open');
-            			return false;
-            	});
-            	
-            	$("#editSessionModal").dialog({
-    				width: 500, // overcomes width:'auto' and maxWidth bug
-    			    maxWidth: 600,
-    			    height: 'auto',
-    			    modal: true,
-    			    fluid: true, //new option
-    			    resizable: false,
-    			    autoOpen: false,
-    			    dialogClass: 'dialog'
-    			});
-    			
-    			$("div.dialog button").addClass("btn");
-    			$("#edit-session-form input[name=title]").attr('maxlength','25');
-    			$("#edit-session-form textarea[name=description]").attr('maxlength','100');
-    			$("#edit-session-form input[name=price]").attr('maxlength','6');
-    			
-    			$("#colorPicker").spectrum({
-    				showPaletteOnly: true,
-    			    showPalette:true,
-    			    color: '#548DD4',
-    			    palette: [
-    			        ['#3F3F3F', '#938953', '#548DD4', '#95B3D7',
-    			        '#D99694', '#C3D69B', '#B2A2C7', '#92CDDC', '#FAC08F']
-    			    ]
-    			});
-    			      
+        },
+        eventClick: function(calEvent, jsEvent, view) {
+        	$("#editSessionModal").removeClass("hidden");
+        	$("#editSessionModal").dialog({
+				width: 500, // overcomes width:'auto' and maxWidth bug
+			    maxWidth: 600,
+			    height: 'auto',
+			    modal: true,
+			    fluid: true, //new option
+			    resizable: false,
+			    autoOpen: false,
+			    dialogClass: 'dialog'
+			});
+			
+			$("div.dialog button").addClass("btn");
+			$("#edit-session-form input[name=title]").attr('maxlength','18');
+			$("#edit-session-form textarea[name=description]").attr('maxlength','100');
+			$("#edit-session-form input[name=price]").attr('maxlength','6');
 
-    			$("#edit-session-form").validate({
-    		 		rules: {
-    		 			title: {required: true, minlength: 5},
-    					price: {number: true}
-    		 		},
-    		        submitHandler: function(form) {
-    		            $.ajax({
-    	 			    		url : '<c:url value="/create_session" />',
-    		 			    	contentType: 'application/json; charset=utf-8',
-    		 			    	type: 'POST',
-    		 			    	dataType: 'json',
-    		 			    	data: JSON.stringify({"title": "Session", "start": date.getTime(), "end": new Date(date.getTime() + 3600000).getTime()}),
-    		 			    	async : false,
-    		 			    	complete: function (xhr, status) {
-    		 			    		if (status === 'error' || !xhr.responseText) {
-    		 			            	console.log("Failed to create session: " + status);
-    		 			        	}
-    		 			    	}
-    		 				});
-    		            $("#editSessionModal").dialog("close");
-    		            return false;
-    		        }
-    		    });
-    			
-    			
-    			$('#cancelSessionBtn').click(function(e) {
-               	 	e.preventDefault();
-               	  	$("#editSessionModal").dialog("close");
-    			});
-            	
-            });
+			$("#edit-session-form input[name=title]").val(calEvent.title);
+			$("#edit-session-form textarea[name=description]").val(calEvent.description);
+			$("#edit-session-form input[name=price]").val(calEvent.price);
+			
+			$("#colorPicker").spectrum({
+				showPaletteOnly: true,
+			    showPalette:true,
+			    palette: [
+			        ['#3F3F3F', '#938953', '#3a87ad', '#95B3D7',
+			        '#D99694', '#C3D69B', '#B2A2C7', '#92CDDC', '#FAC08F']
+			    ]
+			}).spectrum("set", calEvent.color);  
+			
+			$("#edit-session-form").validate({
+		 		rules: {
+		 			title: {required: true, minlength: 5, maxlength: 18},
+					price: {number: true}
+		 		},
+		 		messages: {
+		 			title: "Please enter a title between 5-18 characters."
+		 		},
+		        submitHandler: function(form) {
+		        	var color = $("#colorPicker").spectrum('get').toHexString();
+		            $.ajax({
+	 			    		url : '<c:url value="/edit_session" />',
+		 			    	contentType: 'application/json; charset=utf-8',
+		 			    	type: 'POST',
+		 			    	dataType: 'json',
+		 			    	data: JSON.stringify({"id": calEvent.id, "title": form.title.value, "description": form.description.value, "price": form.price.value, "color": color}),
+		 			    	async : false,
+		 			    	complete: function (xhr, status) {
+		 			    		$('#admin_timetable').fullCalendar( 'refetchEvents' );
+		 			    		if (status === 'error' || !xhr.responseText) {
+		 			            	console.log("Failed to edit session: " + status);
+		 			        	}
+		 			    	}
+		 				});
+		            $("#editSessionModal").dialog("close");
+		            return false;
+		        }
+		    });
 
-            $("div.dialog button").addClass("btn");
-            
-        } 
+			$('#cancelSessionBtn').click(function(e) {
+           	 	e.preventDefault();
+           	  	$("#editSessionModal").dialog("close");
+			});
+			
+			$("#editSessionModal").dialog('open');
+        }
 	    
 	});
 	
@@ -265,7 +255,7 @@ $(document).ready(function() {
 			</div><!-- End .panel-body -->
 			
 			
-			<div title="Edit Session" id="editSessionModal" class="modalDialog">
+			<div title="Edit Session" id="editSessionModal" class="modalDialog hidden">
 				<div class="panel-body">
 	
 	                <form class="form-horizontal" id="edit-session-form">
@@ -301,12 +291,15 @@ $(document).ready(function() {
 						<br /><br />
 						
 						<div class="form-group">
-						<div class="col-lg-offset-3">
-							<div class="pad-left15">
-								<button type="submit" class="btn btn-primary">Save</button>
-								<button id="cancelSessionBtn" class="btn">Cancel</button>
+							<label class="col-lg-3 control-label" for="required"></label>
+							<div class="col-lg-8">
+								<button id="deleteSessionBtn" class="btn-danger">Delete</button>
+								<div class="pull-right">
+									<button type="submit" class="btn btn-primary">Save</button>
+									<button id="cancelSessionBtn" class="btn-default">Cancel</button>
+								</div>
 							</div>
-						</div>
+					
 					</div><!-- End .form-group  -->
 
 	                    

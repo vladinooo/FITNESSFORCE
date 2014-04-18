@@ -38,6 +38,9 @@ public class TimetableDao {
 								Session session = new Session();
 								session.setId(rs.getInt("id"));
 								session.setTitle(rs.getString("title"));
+								session.setDescription(rs.getString("description"));
+								session.setPrice(rs.getString("price"));
+								session.setColor(rs.getString("color"));
 								session.setAllDay(rs.getBoolean("allDay"));
 								session.setStart(new SimpleDateFormat("yyyy/MM/dd HH:mm").format(new Date(rs.getTimestamp("start").getTime())));
 								session.setEnd(new SimpleDateFormat("yyyy/MM/dd HH:mm").format(new Date(rs.getTimestamp("end").getTime())));								
@@ -66,6 +69,9 @@ public class TimetableDao {
 		}
 		
 		params.addValue("title", session.getTitle());
+		params.addValue("description", "");
+		params.addValue("price", "");
+		params.addValue("color", session.getColor());
 		params.addValue("allDay", session.isAllDay());
 		params.addValue("start", new Timestamp(start.getTime()));
 		params.addValue("end", new Timestamp(end.getTime()));
@@ -73,10 +79,16 @@ public class TimetableDao {
 		return jdbc.update(
 				"insert into sessions ("
 				+ "title,"
+				+ "description,"
+				+ "price,"
+				+ "color,"
 				+ "allDay,"
 				+ "start,"
 				+ "end) values ("
 				+ ":title,"
+				+ ":description,"
+				+ ":price,"
+				+ ":color,"
 				+ ":allDay,"
 				+ ":start,"
 				+ ":end)",
@@ -119,33 +131,28 @@ public class TimetableDao {
 	
 	public boolean editSession(Session session) {
 		MapSqlParameterSource params = new MapSqlParameterSource();
-//
-//		params.addValue("sessionId", session.getSessionId());
-//		params.addValue("title", session.getTitle());
-//		params.addValue("description", session.getDescription());
-//		params.addValue("startDateTime", session.getStartDateTime());
-//		params.addValue("endDateTime", session.getEndDateTime());
-//		params.addValue("price", session.getPrice());
-//		params.addValue("enabled", session.isEnabled());
 
+		params.addValue("id", session.getId());
+		params.addValue("title", session.getTitle());
+		params.addValue("description", session.getDescription());
+		params.addValue("price", session.getPrice());
+		params.addValue("color", session.getColor());
+		
 		return jdbc.update(
 				"update sessions set "
 				+ "title = :title,"
 				+ "description = :description,"
-				+ "start_datetime = :startDateTime,"
-				+ "end_datetime = :endDateTime,"
 				+ "price = :price,"
-				+ "enabled = :enabled"
-				+ " where session_id = :sessionId",
+				+ "color = :color"
+				+ " where id = :id",
 				params) == 1;
-
 	}
 	
 
-//	public boolean deleteSession(Session session) {
-//		MapSqlParameterSource params = new MapSqlParameterSource();
-//		params.addValue("sessionId", session.getSessionId());
-//		return jdbc.update("delete from sessions where session_id = :sessionId", params) == 1;
-//	}
+	public boolean deleteSession(Session session) {
+		MapSqlParameterSource params = new MapSqlParameterSource();
+		params.addValue("id", session.getId());
+		return jdbc.update("delete from sessions where id = :id", params) == 1;
+	}
 
 }

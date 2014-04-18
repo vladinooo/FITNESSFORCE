@@ -69,14 +69,6 @@ public class TimetableController {
 	@RequestMapping(value="/get_sessions", produces = MediaType.APPLICATION_JSON_VALUE)
 	public List<Session> getSessions() {
 		List<Session> sessions = timetableService.getSessions();
-//		List<Session> sessions = new ArrayList<Session>();
-//		Session session = new Session();
-//		session.setId(11);
-//		session.setTitle("session #1");
-//		session.setAllDay(false);
-//		session.setStart("2014/04/16");
-//		session.setEnd("2014/04/16");
-//		sessions.add(session);
 		return sessions;
 	}
 		
@@ -84,20 +76,30 @@ public class TimetableController {
 	@ResponseBody
 	@RequestMapping(value="/create_session", method=RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
 	public String createSession(@RequestBody Map<String, Object> sessionData, Model model) {
-		
 		if (!timetableService.createSession(sessionData)) {
 			return "error";
 		}
 		return "admin_timetable";
 	}
 
-
-	@RequestMapping(value="/edit_session", method = RequestMethod.GET)
-	public String showEditSession(@RequestParam("sessionid") String sessionId, Model model) {
-		Session selectedSession = timetableService.getSession(Integer.parseInt(sessionId));
-		model.addAttribute("selectedSession", selectedSession);
-		model.addAttribute("session", new Session());
-		return "edit_session";
+	
+	@ResponseBody
+	@RequestMapping(value="/edit_session", method=RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+	public String editSession(@RequestBody Map<String, Object> sessionData, Model model) {
+		if (!timetableService.editSession(sessionData)) {
+			return "error";
+		}
+		return "admin_timetable";
+	}
+	
+	
+	@ResponseBody
+	@RequestMapping(value="/delete_session", method=RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+	public String deleteSession(@RequestBody Map<String, Object> sessionData, Model model) {
+		if (!timetableService.deleteSession(sessionData)) {
+			return "error";
+		}
+		return "admin_timetable";
 	}
 		
 	
