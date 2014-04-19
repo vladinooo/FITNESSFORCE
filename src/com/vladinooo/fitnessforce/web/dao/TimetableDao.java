@@ -52,8 +52,14 @@ public class TimetableDao {
 
 
 	public boolean createSession(Session session) {
-
-		MapSqlParameterSource params = new MapSqlParameterSource();
+		
+		MapSqlParameterSource productParams = new MapSqlParameterSource();
+		productParams.addValue("type", "session");
+		
+		jdbc.update("insert into products (type) values (:type)", productParams);
+		
+		
+		MapSqlParameterSource sessionParams = new MapSqlParameterSource();
 
 		SimpleDateFormat formatter = new SimpleDateFormat("yyyy/MM/dd HH:mm");
 		String startString = session.getStart();
@@ -68,14 +74,14 @@ public class TimetableDao {
 			e.printStackTrace();
 		}
 		
-		params.addValue("title", session.getTitle());
-		params.addValue("description", "");
-		params.addValue("price", "");
-		params.addValue("color", session.getColor());
-		params.addValue("allDay", session.isAllDay());
-		params.addValue("start", new Timestamp(start.getTime()));
-		params.addValue("end", new Timestamp(end.getTime()));
-
+		sessionParams.addValue("title", session.getTitle());
+		sessionParams.addValue("description", "");
+		sessionParams.addValue("price", "");
+		sessionParams.addValue("color", session.getColor());
+		sessionParams.addValue("allDay", session.isAllDay());
+		sessionParams.addValue("start", new Timestamp(start.getTime()));
+		sessionParams.addValue("end", new Timestamp(end.getTime()));
+				
 		return jdbc.update(
 				"insert into sessions ("
 				+ "title,"
@@ -84,15 +90,17 @@ public class TimetableDao {
 				+ "color,"
 				+ "allDay,"
 				+ "start,"
-				+ "end) values ("
+				+ "end,"
+				+ "product_id) values ("
 				+ ":title,"
 				+ ":description,"
 				+ ":price,"
 				+ ":color,"
 				+ ":allDay,"
 				+ ":start,"
-				+ ":end)",
-				params) == 1;
+				+ ":end,"
+				+ "(select MAX(product_id) from products where type = 'session'))",
+				sessionParams) == 1;	
 	}
 
 	
@@ -170,8 +178,12 @@ public class TimetableDao {
 
 	public boolean deleteSession(Session session) {
 		MapSqlParameterSource params = new MapSqlParameterSource();
-		params.addValue("id", session.getId());
-		return jdbc.update("delete from sessions where id = :id", params) == 1;
+		params.addValue("sessionId", session.getId());
+		params.addValue("productType", "session");
+		private int productId = jdbc.update("select product_id from sessions where id = :sessionId) and type = :productType", params);
+		params.addValue("productId", );
+		jdbc.update("delete from sessions where id = :id", params);
+		return jdbc.update("delete from products where product_id = :productId", params) == 1;
 	}
 
 }

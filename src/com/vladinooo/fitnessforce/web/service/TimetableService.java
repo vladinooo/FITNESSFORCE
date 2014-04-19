@@ -7,6 +7,8 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.vladinooo.fitnessforce.web.dao.Category;
+import com.vladinooo.fitnessforce.web.dao.Product;
 import com.vladinooo.fitnessforce.web.dao.Session;
 import com.vladinooo.fitnessforce.web.dao.TimetableDao;
 

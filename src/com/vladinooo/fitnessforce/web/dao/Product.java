@@ -1,32 +1,24 @@
 package com.vladinooo.fitnessforce.web.dao;
 
-import java.io.Serializable;
+public class Product {
 
-public class Product implements Serializable {
+	private int productId;
+	private String type;
 
-	private static final long serialVersionUID = 1L;
-
-	private String name;
-	private double price;
-
-	public String getName() {
-		return name;
+	public int getProductId() {
+		return productId;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setProductId(int productId) {
+		this.productId = productId;
 	}
 
-	public double getPrice() {
-		return price;
+	public String getType() {
+		return type;
 	}
 
-	public void setPrice(double price) {
-		this.price = price;
-	}
-
-	public static long getSerialversionuid() {
-		return serialVersionUID;
+	public void setType(String type) {
+		this.type = type;
 	}
 
 }
