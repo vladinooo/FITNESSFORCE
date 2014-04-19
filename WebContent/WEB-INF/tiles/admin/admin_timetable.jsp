@@ -104,11 +104,11 @@ $(document).ready(function() {
  			    	type: 'POST',
  			    	dataType: 'json',
  			    	data: JSON.stringify({"title": "Session", color: "#3a87ad", "start": date.getTime(), "end": new Date(date.getTime() + 3600000).getTime()}),
- 			    	async : false,
  			    	complete: function (xhr, status) {
  			    		if (status === 'error' || !xhr.responseText) {
  			            	console.log("Failed to create session: " + status);
  			        	}
+ 			    		window.location.href = '<c:url value="/admin_timetable" />';
  			    	}
  			});		
 		},
@@ -186,12 +186,11 @@ $(document).ready(function() {
 		 			    	type: 'POST',
 		 			    	dataType: 'json',
 		 			    	data: JSON.stringify({"id": calEvent.id, "title": form.title.value, "description": form.description.value, "price": form.price.value, "color": color}),
-		 			    	async : false,
 		 			    	complete: function (xhr, status) {
-		 			    		$('#admin_timetable').fullCalendar( 'refetchEvents' );
 		 			    		if (status === 'error' || !xhr.responseText) {
 		 			            	console.log("Failed to edit session: " + status);
 		 			        	}
+		 			    		window.location.href = '<c:url value="/admin_timetable" />';
 		 			    	}
 		 				});
 		            $("#editSessionModal").dialog("close");
@@ -201,6 +200,23 @@ $(document).ready(function() {
 
 			$('#cancelSessionBtn').click(function(e) {
            	 	e.preventDefault();
+           	  	$("#editSessionModal").dialog("close");
+			});
+			
+			$('#deleteSessionBtn').click(function() {
+				$.ajax({
+			    		url : '<c:url value="/delete_session" />',
+	 			    	contentType: 'application/json; charset=utf-8',
+	 			    	type: 'POST',
+	 			    	dataType: 'json',
+	 			    	data: JSON.stringify({"id": calEvent.id}),
+	 			    	complete: function (xhr, status) {
+	 			    		if (status === 'error' || !xhr.responseText) {
+	 			            	console.log("Failed to edit session: " + status);
+	 			        	}
+	 			    		window.location.href = '<c:url value="/admin_timetable" />';
+	 			    	}
+	 				});
            	  	$("#editSessionModal").dialog("close");
 			});
 			
