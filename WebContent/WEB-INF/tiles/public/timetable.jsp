@@ -1,3 +1,6 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+
 <script>
 	$(".topic").show();
 </script>
@@ -16,31 +19,27 @@ $(document).ready(function() {
 			center: 'title',
 			right: 'month,agendaWeek,agendaDay'
 		},
-		editable: true,
-		droppable: true, // this allows things to be dropped onto the calendar !!!
-		drop: function(date, allDay) { // this function is called when something is dropped
+		allDayDefault: false,
+		defaultView: 'agendaWeek',
+		defaultEventMinutes: 60,
+		axisFormat: 'HH:mm',
+		minTime: 8,
+		maxTime: 23,
+	    events: {
+	        url: '<c:url value="/get_sessions" />',
+	        type: 'POST',
+	        error: function() {
+	            alert('there was an error while fetching events!');
+	        }
+	    },
+	    timeFormat: 'H:mm{ - H:mm }',
+	    eventRender: function(event, element) { 
+	    	element.css('background-color', "'" + event.color + "'");
+            element.find('.fc-event-inner').css({"text-align":"center", "-webkit-font-smoothing": "antialiased"}); 
+            element.find('.fc-event-time').css('font-weight', 'bold');
+            element.find('.fc-event-time').append("<br/>"); 
+        }
 		
-			// retrieve the dropped element's stored Event Object
-			var originalEventObject = $(this).data('eventObject');
-			
-			// we need to copy it, so that multiple events don't have a reference to the same object
-			var copiedEventObject = $.extend({}, originalEventObject);
-			
-			// assign it the date that was reported
-			copiedEventObject.start = date;
-			copiedEventObject.allDay = allDay;
-			
-			// render the event on the calendar
-			// the last `true` argument determines if the event "sticks" (http://arshaw.com/fullcalendar/docs/event_rendering/renderEvent/)
-			$('#calendar').fullCalendar('renderEvent', copiedEventObject, true);
-			
-			// is the "remove after drop" checkbox checked?
-			if ($('#drop-remove').is(':checked')) {
-				// if so, remove the element from the "Draggable Events" list
-				$(this).remove();
-			}
-			
-		}
 	});
 	
 	

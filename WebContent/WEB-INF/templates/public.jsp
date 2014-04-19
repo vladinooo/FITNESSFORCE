@@ -27,7 +27,6 @@
 	    <!-- Plugins stylesheets -->
     	<link href="${pageContext.request.contextPath}/static/bootstrap/genyx/js/plugins/forms/select2/select2.css" rel="stylesheet" />
     	<link href="${pageContext.request.contextPath}/static/plugins/fullcalendar/fullcalendar/fullcalendar.css" rel="stylesheet" />
-    	<link href="${pageContext.request.contextPath}/static/plugins/fullcalendar/fullcalendar/fullcalendar.print.css" rel="stylesheet" />
     		
 	    <!-- Custom styles for this template -->
 	    <link href="${pageContext.request.contextPath}/static/bootstrap/mosaic/css/color-styles.css" rel="stylesheet">
