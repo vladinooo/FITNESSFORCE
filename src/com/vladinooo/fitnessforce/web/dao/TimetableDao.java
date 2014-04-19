@@ -179,11 +179,12 @@ public class TimetableDao {
 	public boolean deleteSession(Session session) {
 		MapSqlParameterSource params = new MapSqlParameterSource();
 		params.addValue("sessionId", session.getId());
-		params.addValue("productType", "session");
-		private int productId = jdbc.update("select product_id from sessions where id = :sessionId) and type = :productType", params);
-		params.addValue("productId", );
-		jdbc.update("delete from sessions where id = :id", params);
-		return jdbc.update("delete from products where product_id = :productId", params) == 1;
+		
+		return jdbc.update("DELETE FROM products "
+				+ "USING products, sessions "
+				+ "WHERE products.product_id = sessions.product_id "
+				+ "AND sessions.id = :sessionId", params) == 1;
+
 	}
 
 }
