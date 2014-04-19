@@ -43,12 +43,18 @@ public class TimetableService {
 
 	
 	public boolean editSession(Map<String, Object> sessionData) {
+		Long startDateTime = (Long)sessionData.get("start");
+		Long endDateTime = (Long)sessionData.get("end");
+		
 		Session session = new Session();
 		session.setId((Integer)sessionData.get("id"));
 		session.setTitle((String)sessionData.get("title"));
 		session.setDescription((String)sessionData.get("description"));
 		session.setPrice((String)sessionData.get("price"));
 		session.setColor((String)sessionData.get("color"));
+		session.setAllDay(false);
+		session.setStart(new SimpleDateFormat("yyyy/MM/dd HH:mm").format(startDateTime));
+		session.setEnd(new SimpleDateFormat("yyyy/MM/dd HH:mm").format(endDateTime));
 		return timetableDao.editSession(session);
 	}
 	

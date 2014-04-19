@@ -77,7 +77,10 @@ $(document).ready(function() {
 		allDayDefault: false,
 		defaultView: 'agendaWeek',
 		editable: true,
-		defaultEventMinutes: 30,
+		defaultEventMinutes: 60,
+		axisFormat: 'HH:mm',
+		minTime: 8,
+		maxTime: 23,
 		startEditable: true,
 		durationEditable: true,
 		droppable: true, // this allows things to be dropped onto the calendar !!!
@@ -103,7 +106,11 @@ $(document).ready(function() {
  			    	contentType: 'application/json; charset=utf-8',
  			    	type: 'POST',
  			    	dataType: 'json',
- 			    	data: JSON.stringify({"title": "Session", color: "#3a87ad", "start": date.getTime(), "end": new Date(date.getTime() + 3600000).getTime()}),
+ 			    	data: JSON.stringify({
+ 			    		"title": "Session",
+ 			    		"color": "#3a87ad",
+ 			    		"start": date.getTime(),
+ 			    		"end": new Date(date.getTime() + 3600000).getTime()}),
  			    	complete: function (xhr, status) {
  			    		if (status === 'error' || !xhr.responseText) {
  			            	console.log("Failed to create session: " + status);
@@ -112,18 +119,49 @@ $(document).ready(function() {
  			    	}
  			});		
 		},
+		eventDrop: function(event,dayDelta,minuteDelta,allDay,revertFunc) {
+	    	$.ajax({
+	    		url : '<c:url value="/edit_session" />',
+		    	contentType: 'application/json; charset=utf-8',
+		    	type: 'POST',
+		    	dataType: 'json',
+		    	data: JSON.stringify({
+		    		"id": event.id,
+		    		"title": event.title,
+		    		"description": event.description,
+		    		"price": event.price,
+		    		"color": event.color,
+		    		"start": event.start.getTime(),
+		    		"end": event.end.getTime()}),
+		    	complete: function (xhr, status) {
+		    		if (status === 'error' || !xhr.responseText) {
+		            	console.log("Failed to edit session: " + status);
+		        	}
+		    		window.location.href = '<c:url value="/admin_timetable" />';
+		    	}
+			});
+	    },
 	    eventResize: function(event,dayDelta,minuteDelta,revertFunc) {
-
-	        alert(
-	            "The end date of " + event.title + "has been moved " +
-	            dayDelta + " days and " +
-	            minuteDelta + " minutes."
-	        );
-
-	        if (!confirm("is this okay?")) {
-	            revertFunc();
-	        }
-
+	    	$.ajax({
+		    		url : '<c:url value="/edit_session" />',
+			    	contentType: 'application/json; charset=utf-8',
+			    	type: 'POST',
+			    	dataType: 'json',
+			    	data: JSON.stringify({
+			    		"id": event.id,
+			    		"title": event.title,
+			    		"description": event.description,
+			    		"price": event.price,
+			    		"color": event.color,
+			    		"start": event.start.getTime(),
+			    		"end": event.end.getTime()}),
+			    	complete: function (xhr, status) {
+			    		if (status === 'error' || !xhr.responseText) {
+			            	console.log("Failed to edit session: " + status);
+			        	}
+			    		window.location.href = '<c:url value="/admin_timetable" />';
+			    	}
+				});
 	    },
 	    events: {
 	        url: '<c:url value="/get_sessions" />',
@@ -132,7 +170,7 @@ $(document).ready(function() {
 	            alert('there was an error while fetching events!');
 	        }
 	    },
-	    timeFormat: 'H:mm{ - h:mm }',
+	    timeFormat: 'H:mm{ - H:mm }',
 	    eventRender: function(event, element) { 
 	    	element.css('background-color', "'" + event.color + "'");
             element.find('.fc-event-inner').css('text-align', 'center'); 
@@ -165,8 +203,8 @@ $(document).ready(function() {
 				showPaletteOnly: true,
 			    showPalette:true,
 			    palette: [
-			        ['#3F3F3F', '#938953', '#3a87ad', '#95B3D7',
-			        '#D99694', '#C3D69B', '#B2A2C7', '#92CDDC', '#FAC08F']
+			        ['#262626', '#494429', '#17365D', '#366092', '#3a87ad',
+			        '#76923C', '#B2A2C7', '#5F497A', '#953734', '#E36C09']
 			    ]
 			}).spectrum("set", calEvent.color);  
 			
@@ -185,7 +223,14 @@ $(document).ready(function() {
 		 			    	contentType: 'application/json; charset=utf-8',
 		 			    	type: 'POST',
 		 			    	dataType: 'json',
-		 			    	data: JSON.stringify({"id": calEvent.id, "title": form.title.value, "description": form.description.value, "price": form.price.value, "color": color}),
+		 			    	data: JSON.stringify({
+		 			    		"id": calEvent.id,
+		 			    		"title": form.title.value,
+		 			    		"description": form.description.value,
+		 			    		"price": form.price.value,
+		 			    		"color": color,
+		 			    		"start": calEvent.start.getTime(),
+		 			    		"end": calEvent.end.getTime()}),
 		 			    	complete: function (xhr, status) {
 		 			    		if (status === 'error' || !xhr.responseText) {
 		 			            	console.log("Failed to edit session: " + status);

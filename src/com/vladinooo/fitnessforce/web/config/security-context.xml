@@ -46,7 +46,7 @@
 		<security:intercept-url pattern="/get_sessions" access="hasRole('ROLE_ADMIN')" />
 		<security:intercept-url pattern="/create_session" access="hasRole('ROLE_ADMIN')" />
 		<security:intercept-url pattern="/edit_session" access="hasRole('ROLE_ADMIN')" />
-		<security:intercept-url pattern="/delete_session*" access="hasRole('ROLE_ADMIN')" />
+		<security:intercept-url pattern="/delete_session" access="hasRole('ROLE_ADMIN')" />
 		
 		<!-- Articles -->
 		<security:intercept-url pattern="/view_article*" access="isAuthenticated()" />
