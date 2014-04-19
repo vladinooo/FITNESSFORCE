@@ -63,8 +63,10 @@
 			  </sec:authorize>
 			
 			  <sec:authorize access="isAuthenticated()">
-				<a href="<c:url value='/dashboard'/>" class="pull-right"><i class="fa fa-user"></i> My Account</a>
 	         	<a href="<c:url value='/j_spring_security_logout'/>" class="pull-right"><i class="fa fa-sign-out"></i> Log Out</a>
+	         	<a href="<c:url value='/dashboard'/>" class="pull-right"><i class="fa fa-credit-card"></i> Checkout</a>
+	         	<a href="<c:url value='/cart'/>" class="pull-right"><i class="fa fa-shopping-cart"></i> Cart (1)</a>
+	         	<a href="<c:url value='/dashboard'/>" class="pull-right"><i class="fa fa-user"></i> My Account</a>
 			  </sec:authorize>
 	          
 	          

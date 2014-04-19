@@ -48,6 +48,10 @@
 		<security:intercept-url pattern="/edit_session" access="hasRole('ROLE_ADMIN')" />
 		<security:intercept-url pattern="/delete_session" access="hasRole('ROLE_ADMIN')" />
 		
+		<!-- Cart -->
+		<security:intercept-url pattern="/cart" access="isAuthenticated()" />
+		<security:intercept-url pattern="/add_session" access="isAuthenticated()" />
+		
 		<!-- Articles -->
 		<security:intercept-url pattern="/view_article*" access="isAuthenticated()" />
 		<security:intercept-url pattern="/articles" access="hasRole('ROLE_ADMIN')" />
