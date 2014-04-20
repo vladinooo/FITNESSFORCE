@@ -1883,3 +1883,7 @@ body {
 .modal-open {
  overflow: auto; 
 }
+
+.modal-dialog-center {
+    margin-top: 7%;
+}

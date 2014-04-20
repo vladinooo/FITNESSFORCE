@@ -46,7 +46,7 @@
 	<bean id="flowHandlerMapping"
 		class="org.springframework.webflow.mvc.servlet.FlowHandlerMapping">
 		<property name="flowRegistry" ref="flowRegistry"></property>
-		<property name="order" value="0"></property>
+		<property name="order" value="-1"></property>
 	</bean>
 	
 	<webflow-config:flow-builder-services id="flowBuilderServices" view-factory-creator="mvcViewFactoryCreator" />
