@@ -55,13 +55,13 @@ public class CartController {
 	}
 	
 	
-	@RequestMapping(value ="/cart", method = RequestMethod.GET)
-	public String showCart(Model model) {
-		if (!model.containsAttribute("cart")) {
-			model.addAttribute("cart", new ArrayList<Map<String, Object>>());
-		}
-		return "cart";
-	}
+//	@RequestMapping(value ="/cart", method = RequestMethod.GET)
+//	public String showCart(Model model) {
+//		if (!model.containsAttribute("cart")) {
+//			model.addAttribute("cart", new ArrayList<Map<String, Object>>());
+//		}
+//		return "cart";
+//	}
 		
 	
 	@ResponseBody
