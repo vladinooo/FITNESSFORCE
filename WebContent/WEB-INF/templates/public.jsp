@@ -2,6 +2,7 @@
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%> 
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 
 
@@ -65,7 +66,7 @@
 			  <sec:authorize access="isAuthenticated()">
 	         	<a href="<c:url value='/j_spring_security_logout'/>" class="pull-right"><i class="fa fa-sign-out"></i> Log Out</a>
 	         	<a href="<c:url value='/dashboard'/>" class="pull-right"><i class="fa fa-credit-card"></i> Checkout</a>
-	         	<a href="<c:url value='/cart'/>" class="pull-right"><i class="fa fa-shopping-cart"></i> Cart (1)</a>
+	         	<a href="<c:url value='/cart'/>" class="pull-right"><i class="fa fa-shopping-cart"></i> Cart (<c:out value="${fn:length(cart)}"/>)</a>
 	         	<a href="<c:url value='/dashboard'/>" class="pull-right"><i class="fa fa-user"></i> My Account</a>
 			  </sec:authorize>
 	          

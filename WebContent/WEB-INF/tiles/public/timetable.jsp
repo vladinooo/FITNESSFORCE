@@ -34,26 +34,38 @@ $(document).ready(function() {
 	    },
 	    timeFormat: 'H:mm{ - H:mm }',
 	    eventRender: function(event, element) { 
+	    	element.find('.fc-event-inner').css( 'cursor', 'pointer' );
 	    	element.attr('data-toggle', 'modal');
-	    	element.attr('data-target', '#myModal');
+	    	element.attr('data-target', '#addSessionModal');
 	    	element.css('background-color', "'" + event.color + "'");
             element.find('.fc-event-inner').css({"text-align":"center", "-webkit-font-smoothing": "antialiased"}); 
             element.find('.fc-event-time').css('font-weight', 'bold');
             element.find('.fc-event-time').append("<br/>"); 
         },
-        eventClick: function(calEvent, jsEvent, view) {
-			$(".sessionTitle").html(calEvent.title);
-			$(".sessionDescription").html(calEvent.description);
-			$(".sessionDate").html($.fullCalendar.formatDate(calEvent.start, 'dd/MM/yyyy HH:mm') + " - " + $.fullCalendar.formatDate(calEvent.end, 'HH:mm'));
-			$(".sessionPrice").html(calEvent.price);
+        eventClick: function(calEvent, jsEvent, view) {			
+			$(".title").html(calEvent.title);
+			$(".description").html(calEvent.description);
+			$(".date").html($.fullCalendar.formatDate(calEvent.start, 'dd/MM/yyyy HH:mm') + " - " + $.fullCalendar.formatDate(calEvent.end, 'HH:mm'));
+			$(".price").html(calEvent.price);
 			
-			$('#cancelSessionBtn').click(function(e) {
-           	 	e.preventDefault();
-           	  	$("#addSessionModal").dialog("close");
+			$("#addSessionBtn").click(function() {
+				$.ajax({
+			    		url : '<c:url value="/add_session_to_cart" />',
+	 			    	contentType: 'application/json; charset=utf-8',
+	 			    	type: 'POST',
+	 			    	dataType: 'json',
+	 			    	data: JSON.stringify({"id": calEvent.id}),
+	 			    	complete: function (xhr, status) {
+	 			    		if (status === 'error' || !xhr.responseText) {
+	 			            	console.log("Failed add session to cart: " + status);
+	 			        	}
+	 			    		setTimeout(function(){
+	 			    			window.location.href = '<c:url value="/cart" />';
+	 			    		},1000);
+	 			    	}
+ 				});
 			});
 			
-			
-			$("#addSessionModal").dialog('open');
         }
 		
 	});
@@ -79,11 +91,9 @@ $(document).ready(function() {
 
 
 <!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="addSessionModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	<div class="modal-dialog modal-dialog-center">
-	
-	<form:form method="POST">
-	
+		
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -93,30 +103,29 @@ $(document).ready(function() {
 
 					<div class="panel panel-default">
 						<div class="panel-heading">
-							<h4><span class="sessionTitle"></span></h4>
+							<input type="hidden" name="title" />
+							<h4><span class="title"></span></h4>
 						</div>
 						<div class="panel-body">
-							<p><span class="sessionDescription"></span></p>
+							<input type="hidden" name="description" />
+							<p><span class="description"></span></p>
 							
 							<hr />
 
-							<span class="pull-left" style="font-size: medium;">Date: <span class="sessionDate "></span></span>
+							<input type="hidden" name="date" />
+							<span class="pull-left" style="font-size: medium;">Date: <span class="date"></span></span>
 							
-							<h4>
-								<span class="pull-right">Price: £<span class="sessionPrice"></span></span>
-							</h4>
+							<input type="hidden" name="price" />
+							<h4><span class="pull-right">Price: £<span class="price"></span></span></h4>
 						</div>
 					</div>
 
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-					<button type="button" class="btn btn-primary">Save changes</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+					<button type="button" class="btn btn-primary" id="addSessionBtn" data-dismiss="modal">Add</button>
 				</div>
 			</div>
-		
-		</form:form>
-		
 	</div>
 </div>
 

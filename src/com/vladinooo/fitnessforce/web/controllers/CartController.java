@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
@@ -15,6 +14,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
@@ -58,38 +58,26 @@ public class CartController {
 	@RequestMapping(value ="/cart", method = RequestMethod.GET)
 	public String showCart(Model model) {
 		if (!model.containsAttribute("cart")) {
-			model.addAttribute("cart", new ArrayList<Map<String, Object>>());
+			model.addAttribute("cart", new ArrayList<Object>());
 		}
 		return "cart";
 	}
-		
+			
 	
 	@ResponseBody
-	@RequestMapping(value="/add_session", method = RequestMethod.POST)
-	public String addSession(@RequestBody Map<String, Object> sessionData, @ModelAttribute("cart") List<Map<String, Object>> cart) {
-		cart.add(sessionData);
+	@RequestMapping(value="/add_session_to_cart", method=RequestMethod.POST)
+	public String addSessionToCart(@RequestBody Map<String, Object> sessionData, @ModelAttribute("cart") List<Object> cart) {
+		Session session = timetableService.getSession(sessionData);
+		cart.add(session);
 		return "cart";
 	}
 	
 	
-//	@ResponseBody
-//	@RequestMapping(value="/edit_session", method=RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
-//	public String editSession(@RequestBody Map<String, Object> sessionData, Model model) {
-//		if (!timetableService.editSession(sessionData)) {
-//			return "error";
-//		}
-//		return "admin_timetable";
-//	}
-//	
-//	
-//	@ResponseBody
-//	@RequestMapping(value="/delete_session", method=RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
-//	public String deleteSession(@RequestBody Map<String, Object> sessionData, Model model) {
-//		if (!timetableService.deleteSession(sessionData)) {
-//			return "error";
-//		}
-//		return "admin_timetable";
-//	}
+	@RequestMapping(value="/delete_cart_item", method = RequestMethod.GET)
+	public String deleteCartItem(@RequestParam("itemid") String itemId, @ModelAttribute("cart") List<Object> cart) {
+		cart.remove(Integer.parseInt(itemId));
+		return "cart";
+	}
 	
 	
 	@ExceptionHandler(Exception.class)

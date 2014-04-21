@@ -1,7 +1,11 @@
 package com.vladinooo.fitnessforce.web.dao;
 
-public class Session {
+import java.io.Serializable;
 
+public class Session implements Serializable {
+
+	private static final long serialVersionUID = 5464933984591937087L;
+	
 	private int id;
 	private String title;
 	private String description;
@@ -10,6 +14,7 @@ public class Session {
 	private boolean allDay;
 	private String start;
 	private String end;
+	
 
 	public int getId() {
 		return id;

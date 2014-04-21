@@ -1887,3 +1887,17 @@ body {
 .modal-dialog-center {
     margin-top: 7%;
 }
+
+/*----- Cart ---------*/
+table th.deleteItem {
+	width: 45px;
+}
+
+table th.itemIcon {
+	width: 80px;
+}
+
+table th.itemPrice, table td.itemPrice  {
+	width: 100px;
+	text-align: center;
+}

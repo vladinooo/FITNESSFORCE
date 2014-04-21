@@ -39,7 +39,8 @@ public class TimetableService {
 	}
 
 	
-	public Session getSession(int sessionId) {
+	public Session getSession(Map<String, Object> sessionData) {
+		int sessionId = (Integer)sessionData.get("id");
 		return timetableDao.getSession(sessionId);
 	}
 
