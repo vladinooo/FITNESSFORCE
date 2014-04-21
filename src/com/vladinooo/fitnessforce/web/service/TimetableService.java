@@ -55,7 +55,7 @@ public class TimetableService {
 		session.setId((Integer)sessionData.get("id"));
 		session.setTitle((String)sessionData.get("title"));
 		session.setDescription((String)sessionData.get("description"));
-		session.setPrice(Integer.parseInt((String)sessionData.get("price")));
+		session.setPrice((Integer)sessionData.get("price"));
 		session.setColor((String)sessionData.get("color"));
 		session.setAllDay(false);
 		session.setStart(new SimpleDateFormat("yyyy/MM/dd HH:mm").format(startDateTime));
