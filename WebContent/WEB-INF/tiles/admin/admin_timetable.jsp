@@ -107,7 +107,9 @@ $(document).ready(function() {
  			    	type: 'POST',
  			    	dataType: 'json',
  			    	data: JSON.stringify({
- 			    		"title": "Session",
+ 			    		"title": "Session name",
+ 			    		"description": "Session description...",
+ 			    		"price": 0,
  			    		"color": "#3a87ad",
  			    		"start": date.getTime(),
  			    		"end": new Date(date.getTime() + 3600000).getTime()}),

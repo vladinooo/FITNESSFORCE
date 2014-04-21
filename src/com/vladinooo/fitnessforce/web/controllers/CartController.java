@@ -1,5 +1,6 @@
 package com.vladinooo.fitnessforce.web.controllers;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -18,16 +19,16 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.vladinooo.fitnessforce.web.dao.Article;
-import com.vladinooo.fitnessforce.web.dao.Cart;
-import com.vladinooo.fitnessforce.web.dao.Session;
+import com.vladinooo.fitnessforce.web.dao.Test;
 import com.vladinooo.fitnessforce.web.dao.User;
 import com.vladinooo.fitnessforce.web.service.ArticlesService;
+import com.vladinooo.fitnessforce.web.service.CartItem;
 import com.vladinooo.fitnessforce.web.service.CartService;
 import com.vladinooo.fitnessforce.web.service.TimetableService;
 import com.vladinooo.fitnessforce.web.service.UsersService;
 
 @Controller
-@SessionAttributes({"cart"})
+@SessionAttributes({"cartItems","cartTotal"})
 public class CartController {
 	
 	
@@ -53,6 +54,23 @@ public class CartController {
 	}
 	
 	
+	@ModelAttribute("cartItems")
+	public Model getCartItems(Model model) {
+		if (!model.containsAttribute("cartItems")) {
+			model.addAttribute("cartItems", new ArrayList<CartItem>());
+		}
+	    return model;
+	}
+	
+	@ModelAttribute("cartTotal")
+	public Model getCartTotal(Model model) {
+		if (!model.containsAttribute("cartTotal")) {
+			model.addAttribute("cartTotal", new Test());
+		}
+	    return model;
+	}
+	
+	
 	@ModelAttribute("articles")
 	public List<Article> getArticles() {
 		List<Article> articles = articlesService.getArticles();
@@ -62,20 +80,20 @@ public class CartController {
 	
 	@RequestMapping(value ="/cart", method = RequestMethod.GET)
 	public String showCart(Model model) {
-		if (!model.containsAttribute("cart")) {
-			model.addAttribute("cart", new Cart());
-		}
 		return "cart";
 	}
 			
 	
-//	@ResponseBody
-//	@RequestMapping(value="/add_to_cart", method=RequestMethod.POST)
-//	public String addSessionToCart(@RequestBody Map<String, Object> sessionData, @ModelAttribute("cart") Cart cart) {
-//		Session session = timetableService.getSession(sessionData);
-//		cart.getItems().add(session);
-//		return "cart";
-//	}
+	@ResponseBody
+	@RequestMapping(value = "/add_to_cart", method = RequestMethod.POST)
+	public String addToCart(@RequestBody Map<String, Object> productData,
+			@ModelAttribute("cartItems") ArrayList<CartItem> cartItems,
+			@ModelAttribute("cartTotal") Test cartTotal) {
+		CartItem item = cartService.getProduct(productData);
+		cartItems.add(item);
+		cartTotal.setTotal(cartTotal.getTotal() + item.getTotalPrice());
+		return "cart";
+	}
 	
 	
 //	@RequestMapping(value="/add_to_cart", method = RequestMethod.GET)
@@ -94,9 +112,12 @@ public class CartController {
 //	}
 	
 	
-	@RequestMapping(value="/delete_cart_item", method = RequestMethod.GET)
-	public String deleteCartItem(@RequestParam("itemid") String itemId, @ModelAttribute("cart") List<Object> cart) {
-		cart.remove(Integer.parseInt(itemId));
+	@RequestMapping(value = "/delete_from_cart", method = RequestMethod.GET)
+	public String deleteCartItem(@RequestParam("itemid") String itemId, @RequestParam("itemprice") String itemPrice,
+			@ModelAttribute("cartItems") ArrayList<CartItem> cartItems,
+			@ModelAttribute("cartTotal") Test cartTotal) {
+		cartItems.remove(Integer.parseInt(itemId));
+		cartTotal.setTotal(cartTotal.getTotal() - Integer.parseInt(itemPrice));
 		return "cart";
 	}
 	

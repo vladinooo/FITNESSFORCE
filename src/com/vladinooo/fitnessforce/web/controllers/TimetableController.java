@@ -82,6 +82,7 @@ public class TimetableController {
 		if (!timetableService.editSession(sessionData)) {
 			return "error";
 		}
+		System.out.println("session update");
 		return "admin_timetable";
 	}
 	

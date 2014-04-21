@@ -50,18 +50,18 @@ $(document).ready(function() {
 			
 			$("#addSessionBtn").click(function() {
 				$.ajax({
-			    		url : '<c:url value="/add_session_to_cart" />',
+			    		url : '<c:url value="/add_to_cart" />',
 	 			    	contentType: 'application/json; charset=utf-8',
 	 			    	type: 'POST',
 	 			    	dataType: 'json',
-	 			    	data: JSON.stringify({"id": calEvent.id}),
+	 			    	data: JSON.stringify({"id": calEvent.id, "type":"session", "quantity": 1}),
 	 			    	complete: function (xhr, status) {
 	 			    		if (status === 'error' || !xhr.responseText) {
 	 			            	console.log("Failed add session to cart: " + status);
 	 			        	}
 	 			    		setTimeout(function(){
 	 			    			window.location.href = '<c:url value="/cart" />';
-	 			    		},1000);
+	 			    		},700);
 	 			    	}
  				});
 			});

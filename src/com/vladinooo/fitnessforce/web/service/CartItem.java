@@ -1,11 +1,18 @@
-package com.vladinooo.fitnessforce.web.dao;
+package com.vladinooo.fitnessforce.web.service;
 
-public class CartItem {
+import java.io.Serializable;
 
+import com.vladinooo.fitnessforce.web.dao.Product;
+
+public class CartItem implements Serializable {
+
+
+	private static final long serialVersionUID = 7236422082878488839L;
+	
 	private int quantity;
 	private int unitPrice;
 	private int totalPrice;
-	private Object item;
+	private Product product;
 
 	public int getQuantity() {
 		return quantity;
@@ -31,12 +38,12 @@ public class CartItem {
 		this.totalPrice = totalPrice;
 	}
 
-	public Object getItem() {
-		return item;
+	public Product getProduct() {
+		return product;
 	}
 
-	public void setItem(Object item) {
-		this.item = item;
+	public void setProduct(Product product) {
+		this.product = product;
 	}
 
 }

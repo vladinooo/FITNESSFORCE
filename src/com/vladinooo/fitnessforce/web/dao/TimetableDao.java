@@ -39,7 +39,7 @@ public class TimetableDao {
 								session.setId(rs.getInt("product_id"));
 								session.setTitle(rs.getString("title"));
 								session.setDescription(rs.getString("description"));
-								session.setPrice(rs.getString("price"));
+								session.setPrice(rs.getInt("price"));
 								session.setColor(rs.getString("color"));
 								session.setAllDay(rs.getBoolean("allDay"));
 								session.setStart(new SimpleDateFormat("yyyy/MM/dd HH:mm").format(new Date(rs.getTimestamp("start").getTime())));
@@ -56,8 +56,8 @@ public class TimetableDao {
 		MapSqlParameterSource productParams = new MapSqlParameterSource();
 		productParams.addValue("type", "session");
 		productParams.addValue("title", session.getTitle());
-		productParams.addValue("description", "");
-		productParams.addValue("price", "");
+		productParams.addValue("description", session.getDescription());
+		productParams.addValue("price", session.getPrice());
 		
 		jdbc.update("INSERT INTO products ("
 				+ "type,"
@@ -124,7 +124,7 @@ public class TimetableDao {
 							session.setId(rs.getInt("product_id"));
 							session.setTitle(rs.getString("title"));
 							session.setDescription(rs.getString("description"));
-							session.setPrice(rs.getString("price"));
+							session.setPrice(rs.getInt("price"));
 							session.setColor(rs.getString("color"));
 							session.setAllDay(rs.getBoolean("allDay"));
 							session.setStart(new SimpleDateFormat("yyyy/MM/dd HH:mm").format(new Date(rs.getTimestamp("start").getTime())));
@@ -168,7 +168,7 @@ public class TimetableDao {
 				"UPDATE products SET "
 				+ "title = :title,"
 				+ "description = :description,"
-				+ "price = :price,"
+				+ "price = :price"
 				+ " WHERE product_id = :productId",
 				params);
 		

@@ -50,8 +50,8 @@
 		
 		<!-- Cart -->
 		<security:intercept-url pattern="/cart" access="isAuthenticated()" />
-		<security:intercept-url pattern="/add_session_to_cart" access="isAuthenticated()" />
-		<security:intercept-url pattern="/delete_cart_item*" access="isAuthenticated()" />
+		<security:intercept-url pattern="/add_to_cart" access="isAuthenticated()" />
+		<security:intercept-url pattern="/delete_from_cart*" access="isAuthenticated()" />
 		
 		<!-- Articles -->
 		<security:intercept-url pattern="/view_article*" access="isAuthenticated()" />

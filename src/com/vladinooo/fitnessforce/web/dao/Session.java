@@ -1,11 +1,11 @@
 package com.vladinooo.fitnessforce.web.dao;
 
-import java.io.Serializable;
 
-public class Session extends Product implements Serializable {
+public class Session extends Product {
 
-	private static final long serialVersionUID = 5464933984591937087L;
 
+	private static final long serialVersionUID = 2583391823846245320L;
+	
 	private String color;
 	private boolean allDay;
 	private String start;

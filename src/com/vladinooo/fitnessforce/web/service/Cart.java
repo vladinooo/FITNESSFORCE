@@ -1,11 +1,11 @@
-package com.vladinooo.fitnessforce.web.dao;
+package com.vladinooo.fitnessforce.web.service;
 
 import java.util.ArrayList;
 
 public class Cart {
 
 	private int totalPrice;
-	private ArrayList<Object> items;
+	private ArrayList<CartItem> items;
 
 	public int getTotalPrice() {
 		return totalPrice;
@@ -15,11 +15,11 @@ public class Cart {
 		this.totalPrice = totalPrice;
 	}
 
-	public ArrayList<Object> getItems() {
+	public ArrayList<CartItem> getItems() {
 		return items;
 	}
 
-	public void setItems(ArrayList<Object> items) {
+	public void setItems(ArrayList<CartItem> items) {
 		this.items = items;
 	}
 
