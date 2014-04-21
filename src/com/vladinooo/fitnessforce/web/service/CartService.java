@@ -14,10 +14,10 @@ public class CartService {
 	private CartDao cartDao;
 
 
-	public void getCartItem(Map<String, Object> product) {
-		int id = (Integer)product.get("id");
-		cartDao.getCartItem(id);
-	}
-	
-	
+//	public void getCartItem(Map<String, Object> product) {
+//		int id = (Integer)product.get("id");
+//		cartDao.getCartItem(id);
+//	}
+//	
+//	
 }

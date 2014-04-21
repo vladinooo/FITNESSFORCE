@@ -86,12 +86,12 @@ public class CartController {
 //	}
 	
 	
-	@ResponseBody
-	@RequestMapping(value="/add_session_to_cart", method=RequestMethod.POST)
-	public String addSessionToCart(@RequestBody Map<String, Object> product, @ModelAttribute("cart") Cart cart) {
-		cartService.getCartItem(product);
-		return "cart";
-	}
+//	@ResponseBody
+//	@RequestMapping(value="/add_session_to_cart", method=RequestMethod.POST)
+//	public String addSessionToCart(@RequestBody Map<String, Object> product, @ModelAttribute("cart") Cart cart) {
+//		cartService.getCartItem(product);
+//		return "cart";
+//	}
 	
 	
 	@RequestMapping(value="/delete_cart_item", method = RequestMethod.GET)

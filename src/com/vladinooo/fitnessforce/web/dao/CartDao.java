@@ -21,26 +21,26 @@ public class CartDao {
 		this.jdbc = new NamedParameterJdbcTemplate(jdbc);
 	}
 
-	
-	public void getCartItem(int id) {
-
-		MapSqlParameterSource params = new MapSqlParameterSource();
-		params.addValue("id", id);
-		
-		Product product = jdbc.queryForObject( "select * from products where id = :id", params, new RowMapper<Product>() {
-							public Product mapRow(ResultSet rs, int rowNum) throws SQLException {
-							Product product = new Product();
-							product.setProductId(rs.getInt("product_id"));
-							product.setType(rs.getString("type"));
-							return product;
-						}
-
-		});
-		
-		System.out.println(product.getProductId() + " - " + product.getType());
-		
-		
-	}
+//	
+//	public void getCartItem(int id) {
+//
+//		MapSqlParameterSource params = new MapSqlParameterSource();
+//		params.addValue("id", id);
+//		
+//		Product product = jdbc.queryForObject( "select * from products where id = :id", params, new RowMapper<Product>() {
+//							public Product mapRow(ResultSet rs, int rowNum) throws SQLException {
+//							Product product = new Product();
+//							product.setProductId(rs.getInt("product_id"));
+//							product.setType(rs.getString("type"));
+//							return product;
+//						}
+//
+//		});
+//		
+//		System.out.println(product.getProductId() + " - " + product.getType());
+//		
+//		
+//	}
 
 	
 }

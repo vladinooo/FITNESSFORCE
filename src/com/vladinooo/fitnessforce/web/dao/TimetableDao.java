@@ -28,15 +28,15 @@ public class TimetableDao {
 	}
 
 	public List<Session> getSessions() {
-
+		
 		return jdbc
-				.query("select * from sessions",
+				.query("SELECT * FROM products INNER JOIN sessions ON products.product_id = sessions.product_id",
 						new RowMapper<Session>() {
 
 							public Session mapRow(ResultSet rs, int rowNum)
 									throws SQLException {
 								Session session = new Session();
-								session.setId(rs.getInt("id"));
+								session.setId(rs.getInt("product_id"));
 								session.setTitle(rs.getString("title"));
 								session.setDescription(rs.getString("description"));
 								session.setPrice(rs.getString("price"));
@@ -55,8 +55,19 @@ public class TimetableDao {
 		
 		MapSqlParameterSource productParams = new MapSqlParameterSource();
 		productParams.addValue("type", "session");
+		productParams.addValue("title", session.getTitle());
+		productParams.addValue("description", "");
+		productParams.addValue("price", "");
 		
-		jdbc.update("insert into products (type) values (:type)", productParams);
+		jdbc.update("INSERT INTO products ("
+				+ "type,"
+				+ "title,"
+				+ "description,"
+				+ "price) VALUES ("
+				+ ":type,"
+				+ ":title,"
+				+ ":description,"
+				+ "price)", productParams);
 		
 		
 		MapSqlParameterSource sessionParams = new MapSqlParameterSource();
@@ -74,52 +85,43 @@ public class TimetableDao {
 			e.printStackTrace();
 		}
 		
-		sessionParams.addValue("title", session.getTitle());
-		sessionParams.addValue("description", "");
-		sessionParams.addValue("price", "");
 		sessionParams.addValue("color", session.getColor());
 		sessionParams.addValue("allDay", session.isAllDay());
 		sessionParams.addValue("start", new Timestamp(start.getTime()));
 		sessionParams.addValue("end", new Timestamp(end.getTime()));
 				
 		return jdbc.update(
-				"insert into sessions ("
-				+ "title,"
-				+ "description,"
-				+ "price,"
+				"INSERT INTO sessions ("
 				+ "color,"
 				+ "allDay,"
 				+ "start,"
 				+ "end,"
-				+ "product_id) values ("
-				+ ":title,"
-				+ ":description,"
-				+ ":price,"
+				+ "product_id) VALUES ("
 				+ ":color,"
 				+ ":allDay,"
 				+ ":start,"
 				+ ":end,"
-				+ "(select MAX(product_id) from products where type = 'session'))",
+				+ "(SELECT MAX(product_id) FROM products WHERE type = 'session'))",
 				sessionParams) == 1;	
 	}
 
 	
-	public Session getSession(int id) {
+	public Session getSession(int productId) {
 
 		MapSqlParameterSource params = new MapSqlParameterSource();
-		params.addValue("id", id);
+		params.addValue("productId", productId);
 
 		try {
 
 			return jdbc.queryForObject(
-					"select * from sessions where id = :id", params,
+					"SELECT * FROM products INNER JOIN sessions ON products.product_id = sessions.product_id WHERE product_id = productId", params,
 					new RowMapper<Session>() {
 
 						public Session mapRow(ResultSet rs, int rowNum)
 								throws SQLException {
 							
 							Session session = new Session();
-							session.setId(rs.getInt("id"));
+							session.setId(rs.getInt("product_id"));
 							session.setTitle(rs.getString("title"));
 							session.setDescription(rs.getString("description"));
 							session.setPrice(rs.getString("price"));
@@ -138,7 +140,6 @@ public class TimetableDao {
 
 	
 	public boolean editSession(Session session) {
-		MapSqlParameterSource params = new MapSqlParameterSource();
 		
 		SimpleDateFormat formatter = new SimpleDateFormat("yyyy/MM/dd HH:mm");
 		String startString = session.getStart();
@@ -153,7 +154,8 @@ public class TimetableDao {
 			e.printStackTrace();
 		}
 
-		params.addValue("id", session.getId());
+		MapSqlParameterSource params = new MapSqlParameterSource();
+		params.addValue("productId", session.getId());
 		params.addValue("title", session.getTitle());
 		params.addValue("description", session.getDescription());
 		params.addValue("price", session.getPrice());
@@ -162,16 +164,21 @@ public class TimetableDao {
 		params.addValue("start", new Timestamp(start.getTime()));
 		params.addValue("end", new Timestamp(end.getTime()));
 		
-		return jdbc.update(
-				"update sessions set "
+		jdbc.update(
+				"UPDATE products SET "
 				+ "title = :title,"
 				+ "description = :description,"
 				+ "price = :price,"
+				+ " WHERE product_id = :productId",
+				params);
+		
+		return jdbc.update(
+				"UPDATE sessions SET "
 				+ "color = :color,"
 				+ "allDay = :allDay,"
 				+ "start = :start,"
 				+ "end = :end"
-				+ " where id = :id",
+				+ " WHERE session_id = :productId",
 				params) == 1;
 	}
 	
@@ -183,7 +190,7 @@ public class TimetableDao {
 		return jdbc.update("DELETE FROM products "
 				+ "USING products, sessions "
 				+ "WHERE products.product_id = sessions.product_id "
-				+ "AND sessions.id = :sessionId", params) == 1;
+				+ "AND sessions.session_id = :sessionId", params) == 1;
 
 	}
 
