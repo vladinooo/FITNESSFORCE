@@ -11,6 +11,7 @@
 		<config>src/com/vladinooo/fitnessforce/web/config/dao-context.xml</config>
 		<config>src/com/vladinooo/fitnessforce/web/config/service-context.xml</config>
 		<config>src/com/vladinooo/fitnessforce/web/config/security-context.xml</config>
+		<config>test/com/vladinooo/fitnessforce/web/test/config/datasource.xml</config>
 	</configs>
 	<configSets>
 	</configSets>

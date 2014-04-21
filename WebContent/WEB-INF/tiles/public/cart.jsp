@@ -13,7 +13,7 @@
 <div class="container shopping-cart">
 	<div class="row">
 		
-		<c:choose>
+		<%-- <c:choose>
 		    <c:when test="${empty cart}">
 		    	<div class="col-sm-12 text-center">
 					<h4>You have no items in your shopping cart.</h4>
@@ -69,7 +69,7 @@
 		            </ul>
 		    	</div> 
 		    </c:otherwise>
-		</c:choose>
+		</c:choose> --%>
 	</div>
 	<!-- / .row -->
 </div>
