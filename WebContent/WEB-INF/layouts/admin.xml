@@ -96,6 +96,11 @@
 		<put-attribute name="content" value="/WEB-INF/tiles/admin/admin_timetable.jsp"></put-attribute>
     </definition>
     
+    <definition name="filemanager" extends="fitnessForce.admin">
+        <put-attribute name="title" value="Fitness Force - File Manager"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/tiles/admin/filemanager.jsp"></put-attribute>
+    </definition>
+    
     <definition name="error" extends="fitnessForce.admin">
         <put-attribute name="title" value="Fitness Force - Error"></put-attribute>
 		<put-attribute name="content" value="/WEB-INF/tiles/admin/error.jsp"></put-attribute>

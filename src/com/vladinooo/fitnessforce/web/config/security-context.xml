@@ -62,6 +62,9 @@
 		<security:intercept-url pattern="/do_edit_article" access="hasRole('ROLE_ADMIN')" />
 		<security:intercept-url pattern="/delete_article*" access="hasRole('ROLE_ADMIN')" />
 		
+		<!-- File Manager -->
+		<security:intercept-url pattern="/filemanager" access="hasRole('ROLE_ADMIN')" />
+		
 		<!-- Shop -->
 		<security:intercept-url pattern="/shop" access="isAuthenticated()" />
 		

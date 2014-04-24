@@ -44,6 +44,8 @@
 	    <link href="${pageContext.request.contextPath}/static/plugins/jquery-timepicker/jquery.timepicker.css" rel="stylesheet" />
 	    <link href="${pageContext.request.contextPath}/static/plugins/fullcalendar/fullcalendar/fullcalendar.css" rel="stylesheet" />
 	    <link href="${pageContext.request.contextPath}/static/plugins/jquery-color-picker/jquery.colorpicker.css" rel="stylesheet" />
+	    <link href="${pageContext.request.contextPath}/static/bootstrap/genyx/js/plugins/upload/elfinder/elfinder.min.css" rel="stylesheet" /> 
+    	<link href="${pageContext.request.contextPath}/static/bootstrap/genyx/js/plugins/upload/plupload/jquery.plupload.queue/css/jquery.plupload.queue.css" rel="stylesheet" /> 
 
 
 		<!-- app stylesheets -->
@@ -122,6 +124,12 @@
 	    <script src="${pageContext.request.contextPath}/static/bootstrap/genyx/js/plugins/forms/tinymce/tinymce.min.js"></script>
 	    <script src="${pageContext.request.contextPath}/static/plugins/jquery-timepicker/jquery.timepicker.min.js"></script>
 	    <script src="${pageContext.request.contextPath}/static/plugins/jquery-color-picker/jquery.colorpicker.js"></script>
+	    
+	    
+	    <!-- Upload plugins -->
+	    <script src="${pageContext.request.contextPath}/static/bootstrap/genyx/js/plugins/upload/elfinder/elfinder.min.js"></script>
+	    <script src="${pageContext.request.contextPath}/static/bootstrap/genyx/js/plugins/upload/plupload/plupload.full.js"></script>
+	    <script src="${pageContext.request.contextPath}/static/bootstrap/genyx/js/plugins/upload/plupload/jquery.plupload.queue/jquery.plupload.queue.js"></script>
 
 	    
 	    <!-- FullCalendar plugin -->
@@ -141,6 +149,7 @@
 	    <script src="${pageContext.request.contextPath}/static/bootstrap/genyx/js/pages/data-tables.js"></script><!-- Init plugins only for page -->
 	    <script src="${pageContext.request.contextPath}/static/bootstrap/genyx/js/pages/ui-elements.js"></script><!-- Init plugins only for page -->
 	    <script src="${pageContext.request.contextPath}/static/bootstrap/genyx/js/pages/form-elements.js"></script><!-- Init plugins only for page -->
+	    <script src="${pageContext.request.contextPath}/static/bootstrap/genyx/js/pages/file-manager.js"></script><!-- Init plugins only for page -->
 	    
 	    
 	    <!-- Custom CSS -->
@@ -266,7 +275,7 @@
 		                    </li>
 							</sec:authorize>
 		                    <li>
-		                        <a href="#">
+		                        <a href="<c:url value='filemanager'/>">
 		                            <span class="icon"><i class="icon20 i-cloud-upload"></i></span>
 		                            <span class="txt">File Manager</span>
 		                        </a>
