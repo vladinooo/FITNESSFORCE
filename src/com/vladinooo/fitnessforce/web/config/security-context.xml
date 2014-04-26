@@ -54,6 +54,7 @@
 		<security:intercept-url pattern="/delete_from_cart*" access="isAuthenticated()" />
 		
 		<!-- Articles -->
+		<security:intercept-url pattern="/news" access="isAuthenticated()" />
 		<security:intercept-url pattern="/view_article*" access="isAuthenticated()" />
 		<security:intercept-url pattern="/articles" access="hasRole('ROLE_ADMIN')" />
 		<security:intercept-url pattern="/create_article" access="hasRole('ROLE_ADMIN')" />

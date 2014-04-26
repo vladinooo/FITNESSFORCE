@@ -30,8 +30,14 @@
 		<put-attribute name="content" value="/WEB-INF/tiles/public/timetable.jsp"></put-attribute>
     </definition>
     
-    <definition name="view_article" extends="fitnessForce.public">
+    <definition name="news" extends="fitnessForce.public">
         <put-attribute name="title" value="Fitness Force - News"></put-attribute>
+        <put-attribute name="topic" value="News"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/tiles/public/news.jsp"></put-attribute>
+    </definition>
+    
+    <definition name="view_article" extends="fitnessForce.public">
+        <put-attribute name="title" value="Fitness Force - View article"></put-attribute>
         <put-attribute name="topic" value="News"></put-attribute>
 		<put-attribute name="content" value="/WEB-INF/tiles/public/view_article.jsp"></put-attribute>
     </definition>

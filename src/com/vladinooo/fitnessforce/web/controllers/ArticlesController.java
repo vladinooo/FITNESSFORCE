@@ -48,6 +48,12 @@ public class ArticlesController {
 	}
 	
 	
+	@RequestMapping(value="/news", method = RequestMethod.GET)
+	public String showNews() {
+		return "news";
+	}
+	
+	
 	@RequestMapping(value="/view_article", method = RequestMethod.GET)
 	public String showViewArticle(@RequestParam("articleid") String articleId, Model model) {
 		Article selectedArticle = articlesService.getArticle(Integer.parseInt(articleId));
@@ -101,7 +107,7 @@ public class ArticlesController {
 			return "error";
 		}
 		model.addAttribute("selectedArticle", article);
-		return "edit_article";
+		return "articles";
 	}
 	
 	

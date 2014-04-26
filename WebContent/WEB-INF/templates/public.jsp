@@ -104,22 +104,11 @@
 	        <!-- Navbar Links -->
 	        <div class="navbar-collapse collapse">
 	          <ul class="nav navbar-nav navbar-right">
-	          
 	            <li><a href="<c:url value='/'/>" class="bg-hover-color">Home</a></li>
 	            <li><a href="<c:url value='/rules'/>" class="bg-hover-color">Rules</a></li>
 	            <li><a href="<c:url value='/timetable'/>" class="bg-hover-color">Timetable</a></li>
-	            <li class="dropdown">
-	              <a href="#" class="dropdown-toggle bg-hover-color" data-toggle="dropdown">News <b class="caret"></b></a>
-	              <ul class="dropdown-menu">
-	              	<c:forEach var="article" items="${articles}">
-	              		<li><a href="<c:url value='/view_article'>
-										<c:param name='articleid' value='${article.articleId}'/>
-								 	 </c:url>" class="bg-hover-color"><c:out value="${article.title}"/></a></li>
-					</c:forEach>
-	              </ul>
-	            </li>
+	            <li><a href="<c:url value='/news'/>" class="bg-hover-color">News</a></li>
 	            <li><a href="<c:url value='/shop'/>" class="bg-hover-color">Shop</a></li>
- 
 	          </ul>
 	
 	          <!-- Search Form (xs) -->
