@@ -28,7 +28,6 @@
 			        editor1.setValue("Test text");
 			        editor1.setRows(10);
 			        editor1.setCols(60);
-			        editor1.setLanguage("ru");
 			        editor1.setFilebrowserBrowseUrl(org.aarboard.ckeditor.connector.VaadinBrowser.getFilebrowserBrowseUrl());
 			        editor1.setFilebrowserImageBrowseUrl(org.aarboard.ckeditor.connector.VaadinBrowser.getFilebrowserImageBrowseUrl());
 			        editor1.setFilebrowserFlashBrowseUrl(org.aarboard.ckeditor.connector.VaadinBrowser.getFilebrowserFlashBrowseUrl());
