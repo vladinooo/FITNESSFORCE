@@ -96,7 +96,7 @@
 					<div class="form-group">
 						<div class="col-lg-offset-2">
 							<div class="pad-left15">
-								<button type="submit" class="btn btn-primary" onclick="convertToJstlTextarea()">Save</button>
+								<button type="submit" class="btn btn-primary">Save</button>
 								<a href="<c:url value='sessions'/>">
 									<button type="button" class="btn">Cancel</button>
 								</a>

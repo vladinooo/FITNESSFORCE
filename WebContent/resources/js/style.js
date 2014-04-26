@@ -33,7 +33,6 @@ $(document).ready(function() {
 	if (window.location.href.indexOf("delete_session") > -1) {
 		expandTimetableTab();
 	}
-	populateArticleTextarea();
 	
 	
 	//-------- Home page --------------//
@@ -107,14 +106,5 @@ function expandTimetableTab() {
 	$("#timetableTab ul").addClass("sub expand show");
 	$("#timetableTab ul li:nth-child(2)").addClass("current");
 }
-
-
-//-------- Article content textarea --------------//
-
-function populateArticleTextarea() {
-	var content = $("#articleTextareaOutput").text();
-	$("#articleTextareaInput textarea").val(content);
-}
-
 
 

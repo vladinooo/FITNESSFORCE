@@ -23,20 +23,7 @@
 			
 			<div class="panel-body noPadding">
 
-            	<%
-            		org.aarboard.ckeditor.CKEditor editor1= new org.aarboard.ckeditor.CKEditor("editor1", "editor1");
-			        editor1.setValue("Test text");
-			        editor1.setRows(10);
-			        editor1.setCols(60);
-			        editor1.setFilebrowserBrowseUrl(org.aarboard.ckeditor.connector.VaadinBrowser.getFilebrowserBrowseUrl());
-			        editor1.setFilebrowserImageBrowseUrl(org.aarboard.ckeditor.connector.VaadinBrowser.getFilebrowserImageBrowseUrl());
-			        editor1.setFilebrowserFlashBrowseUrl(org.aarboard.ckeditor.connector.VaadinBrowser.getFilebrowserFlashBrowseUrl());
-			        editor1.setFilebrowserLinkBrowseUrl(org.aarboard.ckeditor.connector.VaadinBrowser.getFilebrowserLinkBrowseUrl());
-			        editor1.setFilebrowserUploadUrl(org.aarboard.ckeditor.connector.VaadinBrowser.getFilebrowserUploadUrl());
-			        editor1.setFilebrowserImageUploadUrl(org.aarboard.ckeditor.connector.VaadinBrowser.getFilebrowserImageUploadUrl());
-			        editor1.setFilebrowserFlashUploadUrl(org.aarboard.ckeditor.connector.VaadinBrowser.getFilebrowserFlashUploadUrl());
-		        %>
-		        <%= editor1.renderField() %>
+            	
 
         
             </div><!-- End .panel-body -->

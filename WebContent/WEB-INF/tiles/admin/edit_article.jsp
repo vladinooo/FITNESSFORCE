@@ -43,18 +43,37 @@
 
 					<div class="form-group">
 						<label class="col-lg-2 control-label" for="elastic">Content</label>
-						<textarea id="articleTextareaOutput" hidden="true">
-							<c:out value="${selectedArticle.content}" />
-						</textarea>
-						<div id="articleTextareaInput" class="col-lg-8">
-							<form:textarea id='text-editor' name='text-editor' class='form-control' rows='10' path='content'/>
+						
+						<input id="articleTextareaInput" value='${selectedArticle.content}' hidden="true"/>
+						
+						<form:input path='content' id="articleTextareaOutput" hidden="true"/>
+						
+						<div class="col-lg-9">
+							
+							<%
+		            		org.aarboard.ckeditor.CKEditor articleEditor = new org.aarboard.ckeditor.CKEditor("articleEditor", "articleEditor");
+							articleEditor.setRows(10);
+							articleEditor.setCols(60);
+							articleEditor.setFilebrowserBrowseUrl(org.aarboard.ckeditor.connector.VaadinBrowser.getFilebrowserBrowseUrl());
+							articleEditor.setFilebrowserImageBrowseUrl(org.aarboard.ckeditor.connector.VaadinBrowser.getFilebrowserImageBrowseUrl());
+							articleEditor.setFilebrowserFlashBrowseUrl(org.aarboard.ckeditor.connector.VaadinBrowser.getFilebrowserFlashBrowseUrl());
+							articleEditor.setFilebrowserLinkBrowseUrl(org.aarboard.ckeditor.connector.VaadinBrowser.getFilebrowserLinkBrowseUrl());
+							articleEditor.setFilebrowserUploadUrl(org.aarboard.ckeditor.connector.VaadinBrowser.getFilebrowserUploadUrl());
+							articleEditor.setFilebrowserImageUploadUrl(org.aarboard.ckeditor.connector.VaadinBrowser.getFilebrowserImageUploadUrl());
+							articleEditor.setFilebrowserFlashUploadUrl(org.aarboard.ckeditor.connector.VaadinBrowser.getFilebrowserFlashUploadUrl());
+				        %>
+				        <%= articleEditor.renderField() %>
+				        
+				        <form:errors path="content" cssClass="fieldValidationError"></form:errors>
+				        
 						</div>
+						
 					</div>
 
 					<div class="form-group">
 						<div class="col-lg-offset-2">
 							<div class="pad-left15">
-								<button type="submit" class="btn btn-primary" onclick="convertToJstlTextarea()">Save</button>
+								<button type="submit" class="btn btn-primary" id="saveArticleBtn">Save</button>
 								<a href="<c:url value='articles'/>">
 									<button type="button" class="btn">Cancel</button>
 								</a>
@@ -72,3 +91,46 @@
 	<!-- End .col-lg-12  -->
 </div>
 <!-- End .row-fluid  -->
+
+
+<script>
+
+//-------- Article content textarea --------------//
+
+$(document).ready(function() {
+	
+	function populateArticleTextarea() {
+		var content = $("#articleTextareaInput").val();
+		CKEDITOR.instances.articleEditor.setData(content); 
+	}
+	
+	populateArticleTextarea();
+	
+	$('#saveArticleBtn').click(function(e) {
+	 	e.preventDefault();
+	 	
+	 	// escape single and double quotes from href and img src
+	 	var elements = $(CKEDITOR.instances.articleEditor.getData());
+	 	$(elements).each(function () {
+	 		
+	 	    $(this).find("a").each(function() {
+	 	        var href = $(this).attr('href');
+	 	       	href = href.replace(/["']/g, "");
+	 	       	$(this).attr('href', href);
+	 	    });
+	 	    
+	 	   $(this).find("img").each(function() {
+	 	        var src = $(this).attr('src');
+	 	       	src = src.replace(/["']/g, "");
+	 	       	$(this).attr('src', src);
+	 	    });
+
+	 	});
+	 	
+		$("#articleTextareaOutput").val($(elements).prop('outerHTML'));
+	  	$("#edit-article-form").submit();
+	});
+	
+});
+
+</script>

@@ -32,16 +32,35 @@
 					
 					<div class="form-group">
 						<label class="col-lg-2 control-label" for="elastic">Content</label>
-						<div class="col-lg-8">
-							<form:textarea id="text-editor" name="text-editor" class="form-control" path="content" rows="10" />
-							<form:errors path="content" cssClass="fieldValidationError"></form:errors>
+		
+						<form:input path='content' id="articleTextareaOutput" hidden="true"/>
+						
+						<div class="col-lg-9">
+							
+							<%
+		            		org.aarboard.ckeditor.CKEditor articleEditor = new org.aarboard.ckeditor.CKEditor("articleEditor", "articleEditor");
+							articleEditor.setRows(10);
+							articleEditor.setCols(60);
+							articleEditor.setFilebrowserBrowseUrl(org.aarboard.ckeditor.connector.VaadinBrowser.getFilebrowserBrowseUrl());
+							articleEditor.setFilebrowserImageBrowseUrl(org.aarboard.ckeditor.connector.VaadinBrowser.getFilebrowserImageBrowseUrl());
+							articleEditor.setFilebrowserFlashBrowseUrl(org.aarboard.ckeditor.connector.VaadinBrowser.getFilebrowserFlashBrowseUrl());
+							articleEditor.setFilebrowserLinkBrowseUrl(org.aarboard.ckeditor.connector.VaadinBrowser.getFilebrowserLinkBrowseUrl());
+							articleEditor.setFilebrowserUploadUrl(org.aarboard.ckeditor.connector.VaadinBrowser.getFilebrowserUploadUrl());
+							articleEditor.setFilebrowserImageUploadUrl(org.aarboard.ckeditor.connector.VaadinBrowser.getFilebrowserImageUploadUrl());
+							articleEditor.setFilebrowserFlashUploadUrl(org.aarboard.ckeditor.connector.VaadinBrowser.getFilebrowserFlashUploadUrl());
+				        %>
+				        <%= articleEditor.renderField() %>
+				        
+				        <form:errors path="content" cssClass="fieldValidationError"></form:errors>
+				        
 						</div>
+
 					</div>
 
 					<div class="form-group">
                         <div class="col-lg-offset-2">
                             <div class="pad-left15">
-                                <button type="submit" class="btn btn-primary">Save</button>
+                                <button type="submit" class="btn btn-primary" id="saveArticleBtn">Save</button>
                                 <a href='articles'>
 									<button type="button" class="btn">Cancel</button>
 								</a>
@@ -54,3 +73,37 @@
         </div><!-- End .widget -->
     </div><!-- End .col-lg-12  --> 
 </div><!-- End .row-fluid  -->
+
+<script>
+
+$(document).ready(function() {
+	
+	$('#saveArticleBtn').click(function(e) {
+	 	e.preventDefault();
+	 	
+	 	// escape single and double quotes from href and img src
+	 	var elements = $(CKEDITOR.instances.articleEditor.getData());
+	 	$(elements).each(function () {
+	 		
+	 	    $(this).find("a").each(function() {
+	 	        var href = $(this).attr('href');
+	 	       	href = href.replace(/["']/g, "");
+	 	       	$(this).attr('href', href);
+	 	    });
+	 	    
+	 	   $(this).find("img").each(function() {
+	 	        var src = $(this).attr('src');
+	 	       	src = src.replace(/["']/g, "");
+	 	       	$(this).attr('src', src);
+	 	    });
+
+	 	});
+	 	
+		$("#articleTextareaOutput").val($(elements).prop('outerHTML'));
+	  	$("#create-article-form").submit();
+	});
+	
+});
+
+
+</script>
