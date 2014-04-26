@@ -52,4 +52,66 @@
     <url-pattern>/*</url-pattern>
   </filter-mapping>
   
+    <servlet>
+        <servlet-name>CKEditorConnector</servlet-name>
+        <servlet-class>com.vaadin.terminal.gwt.server.ApplicationServlet</servlet-class>
+        <init-param>
+            <param-name>application</param-name>
+            <param-value>org.aarboard.ckeditor.connector.VaadinBrowser</param-value>
+        </init-param>
+        <init-param>
+            <param-name>widgetset</param-name>
+            <param-value>org.aarboard.ckeditor.connector.VaadinWidgetset</param-value>
+        </init-param>
+    </servlet>
+    <servlet>
+        <servlet-name>DirectUploadServlet</servlet-name>
+        <servlet-class>org.aarboard.ckeditor.connector.upload.DirectUploadServlet</servlet-class>
+        <init-param>
+            <param-name>self.root</param-name>
+            <param-value>/servlet/ckeditorconnector-dup/</param-value>
+        </init-param>
+    </servlet>
+
+
+    <servlet-mapping>
+        <servlet-name>CKEditorConnector</servlet-name>
+        <url-pattern>/servlet/ckeditorconnector/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>CKEditorConnector</servlet-name>
+        <url-pattern>/VAADIN/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>DirectUploadServlet</servlet-name>
+        <url-pattern>/servlet/ckeditorconnector-dup/*</url-pattern>
+    </servlet-mapping>
+
+    <env-entry>
+        <description>Root folder for ckeditor files</description>
+        <env-entry-name>ckeditor.filesystem.rootfolder</env-entry-name>
+        <env-entry-type>java.lang.String</env-entry-type>
+        <env-entry-value>/media/fitness_force/</env-entry-value>
+    </env-entry>
+    <env-entry>
+        <description>Root URL for ckeditor files</description>
+        <env-entry-name>ckeditor.filesystem.rooturl</env-entry-name>
+        <env-entry-type>java.lang.String</env-entry-type>
+        <env-entry-value>http://localhost:8080/images/</env-entry-value>
+    </env-entry>
+    <env-entry>
+        <description>Root URL for ckeditor files</description>
+        <env-entry-name>ckeditor.connector</env-entry-name>
+        <env-entry-type>java.lang.String</env-entry-type>
+        <env-entry-value>servlet/ckeditorconnector/</env-entry-value>
+    </env-entry>
+    <env-entry>
+        <description>Root URL for ckeditor files</description>
+        <env-entry-name>ckeditor.connector-dup</env-entry-name>
+        <env-entry-type>java.lang.String</env-entry-type>
+        <env-entry-value>servlet/ckeditorconnector-dup/</env-entry-value>
+    </env-entry>
+  
 </web-app>
