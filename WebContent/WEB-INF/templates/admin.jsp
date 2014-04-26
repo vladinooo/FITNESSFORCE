@@ -44,6 +44,7 @@
 	    <link href="${pageContext.request.contextPath}/static/plugins/jquery-timepicker/jquery.timepicker.css" rel="stylesheet" />
 	    <link href="${pageContext.request.contextPath}/static/plugins/fullcalendar/fullcalendar/fullcalendar.css" rel="stylesheet" />
 	    <link href="${pageContext.request.contextPath}/static/plugins/jquery-color-picker/jquery.colorpicker.css" rel="stylesheet" />
+	    <link href="${pageContext.request.contextPath}/static/bootstrap/genyx/js/plugins/upload/elfinder/elfinder.min.css" rel="stylesheet" />
 
 
 		<!-- app stylesheets -->
@@ -126,6 +127,9 @@
 	    
 	    <!-- kceditor plugin -->
 	    <script src="${pageContext.request.contextPath}/static/plugins/ckeditor/ckeditor.js"></script>
+	    
+	    <!-- elfinder plugin -->
+	    <script src="${pageContext.request.contextPath}/static/bootstrap/genyx/js/plugins/upload/elfinder/elfinder.min.js"></script>
 
 	    
 	    <!-- FullCalendar plugin -->
@@ -145,6 +149,7 @@
 	    <script src="${pageContext.request.contextPath}/static/bootstrap/genyx/js/pages/data-tables.js"></script><!-- Init plugins only for page -->
 	    <script src="${pageContext.request.contextPath}/static/bootstrap/genyx/js/pages/ui-elements.js"></script><!-- Init plugins only for page -->
 	    <script src="${pageContext.request.contextPath}/static/bootstrap/genyx/js/pages/form-elements.js"></script><!-- Init plugins only for page -->
+	    <script src="${pageContext.request.contextPath}/static/bootstrap/genyx/js/pages/file-manager.js"></script><!-- Init plugins only for page -->
 	    
 	    
 	    <!-- Custom CSS -->

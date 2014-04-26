@@ -53,7 +53,7 @@
                                         <a href="#"
 											class="btn btn-danger tip openModalDialog" title="" data-original-title="Delete article"><i class="icon16 i-remove-4"></i></a>
 										
-										<span class="deleteUserUrlPlaceholder" hidden="hidden">
+										<span class="deleteArticleUrlPlaceholder" hidden="hidden">
 											<c:url value='/delete_article'>
 												<c:param name='articleid' value='${article.articleId}'/>
 											</c:url>
@@ -81,5 +81,62 @@
     </div><!-- End .col-lg-12  -->                     
                         
 </div><!-- End .row-fluid  -->
+
+
+<script>
+
+//create unique ids
+$(".openModalDialog").each(function(i){
+	$(this).attr("id", "openModal" + i);
+});
+
+// create unique ids
+$(".dialog").each(function(i){
+	$(this).attr("id", "modal" + i);
+});
+
+// create unique ids
+$(".deleteArticleUrlPlaceholder").each(function(i){
+	$(this).attr("id", "deleteArticleUrl" + i);
+});
+
+
+$(".openModalDialog").each(function(i){
+	var openModalId = $(this).attr("id");
+	$("#" + openModalId).click(function(){
+		$('#modal' + i).dialog('open');
+		return false;
+	});
+	
+	// JQuery UI Modal Dialog	
+	$('#modal' + i).dialog({
+		autoOpen: false,
+		modal: true,
+		dialogClass: 'dialog modalDialogWarning',
+		buttons: [
+		          {
+		              text: "Delete",
+		              "class": "btn btn-danger",
+		              click: function() {
+		            	  var url = $("#deleteArticleUrl" + i).text();
+		            	  window.location = url;
+		            	  $(this).dialog("close");
+		              }
+		          },
+		          {
+		        	  text: "Cancel",
+		              click: function() {
+		            	  $(this).dialog("close");
+		              }
+		          }
+		      ]
+	});
+	
+});
+
+
+$("div.dialog button").addClass("btn");
+
+</script>
 
 

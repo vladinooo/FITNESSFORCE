@@ -20,6 +20,7 @@
     <servlet-name>fitnessforce</servlet-name>
     <url-pattern>/</url-pattern>
   </servlet-mapping>
+  
   <description>MySQL fitnessForceDB connection</description>
   <resource-ref>
     <description>DB Connection</description>

@@ -22,10 +22,7 @@
 			</div><!-- End .panel-heading -->
 			
 			<div class="panel-body noPadding">
-
-            	
-
-        
+        		
             </div><!-- End .panel-body -->
             
             
