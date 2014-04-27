@@ -1906,3 +1906,11 @@ table th.itemPrice, table td.itemPrice  {
 .news-list > tbody > tr > td {
 	border-top: none !important;
 }
+
+.image-left {
+	margin: 30px 50px 30px 0;
+}
+
+.image-right {
+	margin: 30px 0 30px 50px;
+}
