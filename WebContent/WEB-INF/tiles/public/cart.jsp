@@ -21,7 +21,7 @@
 		    </c:when>
 		    <c:otherwise>
 				<div class="col-sm-12">
-		            <table class="table table-bordered cartTable">
+		            <table class="table table-bordered">
 		              <thead>
 		                <tr>
 		                  <th class="deleteItem"></th>

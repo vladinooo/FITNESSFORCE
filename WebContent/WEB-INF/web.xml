@@ -100,7 +100,7 @@
         <description>Root URL for ckeditor files</description>
         <env-entry-name>ckeditor.filesystem.rooturl</env-entry-name>
         <env-entry-type>java.lang.String</env-entry-type>
-        <env-entry-value>http://localhost:8080/images/</env-entry-value>
+        <env-entry-value>http://localhost:8080/media/</env-entry-value>
     </env-entry>
     <env-entry>
         <description>Root URL for ckeditor files</description>

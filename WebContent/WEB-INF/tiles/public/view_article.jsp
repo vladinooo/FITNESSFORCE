@@ -16,6 +16,10 @@
       
       ${selectedArticle.content}
       
+      <br />
+      
+      <a href="<c:url value='/news' />"><i class="fa fa-chevron-left"></i> Back to news</a>
+      
     </div>
   </div>  <!-- / .row -->
 </div> <!-- / .container -->

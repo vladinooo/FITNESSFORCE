@@ -1901,3 +1901,8 @@ table th.itemPrice, table td.itemPrice  {
 	width: 100px;
 	text-align: center;
 }
+
+/*----- News ---------*/
+.news-list > tbody > tr > td {
+	border-top: none !important;
+}

@@ -110,7 +110,7 @@ $(document).ready(function() {
 	 	e.preventDefault();
 	 	
 	 	// escape single and double quotes from href and img src
-	 	var elements = $(CKEDITOR.instances.articleEditor.getData());
+/* 	 	var elements = $(CKEDITOR.instances.articleEditor.getData());
 	 	$(elements).each(function () {
 	 		
 	 	    $(this).find("a").each(function() {
@@ -127,7 +127,9 @@ $(document).ready(function() {
 
 	 	});
 	 	
-		$("#articleTextareaOutput").val($(elements).prop('outerHTML'));
+		$("#articleTextareaOutput").val($(elements).prop('outerHTML')); */
+		
+		$("#articleTextareaOutput").val(CKEDITOR.instances.articleEditor.getData());
 	  	$("#edit-article-form").submit();
 	});
 	

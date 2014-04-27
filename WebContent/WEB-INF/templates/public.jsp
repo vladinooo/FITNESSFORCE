@@ -223,6 +223,9 @@
 	    
 		<!-- FullCalendar plugin -->
 		<script type="text/javascript" src="${pageContext.request.contextPath}/static/plugins/fullcalendar/fullcalendar/fullcalendar.js"></script>
+		
+		<!-- Dotdotdot plugin -->
+		<script type="text/javascript" src="${pageContext.request.contextPath}/static/plugins/dotdotdot/src/js/jquery.dotdotdot.min.js"></script>
 	     
 	    <!-- Init plugins -->
 	    <script src="${pageContext.request.contextPath}/static/bootstrap/mosaic/js/pages/login.js"></script><!-- Init plugins only for page -->
