@@ -28,7 +28,7 @@ $(document).ready(function() {
 		watch		: false,
 	
 		/*	Optionally set a max-height, if null, the height will be measured. */
-		height		: 150,
+		height		: 100,
  
 		/*	Deviation for the height-option. */
 		tolerance	: 0,
