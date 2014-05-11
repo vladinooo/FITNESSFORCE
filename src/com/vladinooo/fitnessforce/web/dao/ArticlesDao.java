@@ -6,6 +6,7 @@ import java.util.List;
 
 import javax.sql.DataSource;
 
+import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.RowMapper;
@@ -14,6 +15,7 @@ import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
+@Transactional
 @Component("articlesDao")
 public class ArticlesDao {
 
@@ -23,25 +25,41 @@ public class ArticlesDao {
 	public void setDataSource(DataSource jdbc) {
 		this.jdbc = new NamedParameterJdbcTemplate(jdbc);
 	}
+	
+	
+	@Autowired
+	private SessionFactory sessionFactory;
+	
+	
+	public org.hibernate.classic.Session session() {
+		return sessionFactory.getCurrentSession();
+	}
 
+	
+//	public List<Article> getArticles() {
+//
+//		return jdbc.query("SELECT * FROM articles", new RowMapper<Article>() {
+//
+//			public Article mapRow(ResultSet rs, int rowNum) throws SQLException {
+//				Article article = new Article();
+//
+//				article.setArticleId(rs.getInt("article_id"));
+//				article.setSlug(rs.getString("slug"));
+//				article.setTitle(rs.getString("title"));
+//				article.setContent(rs.getString("content"));
+//				article.setDatetime(rs.getString("datetime"));
+//				article.setEnabled(rs.getBoolean("enabled"));
+//				return article;
+//			}
+//
+//		});
+//	}
+	
+	
+	// Hibernate
+	@SuppressWarnings("unchecked")
 	public List<Article> getArticles() {
-
-		return jdbc.query("SELECT * FROM articles", new RowMapper<Article>() {
-
-			public Article mapRow(ResultSet rs, int rowNum) throws SQLException {
-				Article article = new Article();
-
-				article.setArticleId(rs.getInt("article_id"));
-				article.setSlug(rs.getString("slug"));
-				article.setTitle(rs.getString("title"));
-				article.setContent(rs.getString("content"));
-				article.setDatetime(rs.getString("datetime"));
-				article.setOrderId(rs.getInt("order_id"));
-				article.setEnabled(rs.getBoolean("enabled"));
-				return article;
-			}
-
-		});
+		return session().createQuery("from Article").list();
 	}
 	
 	
@@ -91,7 +109,6 @@ public class ArticlesDao {
 							article.setTitle(rs.getString("title"));
 							article.setContent(rs.getString("content"));
 							article.setDatetime(rs.getString("datetime"));
-							article.setOrderId(rs.getInt("order_id"));
 							article.setEnabled(rs.getBoolean("enabled"));
 							return article;
 						}

@@ -1,14 +1,21 @@
 package com.vladinooo.fitnessforce.web.dao;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table(name="articles")
 public class Article {
 
+	@Id
+	@Column(name="article_id")
 	private int articleId;
 	private String slug;
 	private String title;
 	private String content;
 	private String datetime;
-	private int orderId;
 	private boolean enabled;
 
 	public int getArticleId() {
@@ -51,13 +58,6 @@ public class Article {
 		this.datetime = datetime;
 	}
 
-	public int getOrderId() {
-		return orderId;
-	}
-
-	public void setOrderId(int orderId) {
-		this.orderId = orderId;
-	}
 
 	public boolean isEnabled() {
 		return enabled;

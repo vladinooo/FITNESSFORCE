@@ -6,6 +6,7 @@ import java.util.List;
 
 import javax.sql.DataSource;
 
+import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.RowMapper;
@@ -16,12 +17,20 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Component("usersDao")
 public class UsersDao {
+	
+	@Autowired
+	private SessionFactory sessionFactory;
 
 	private NamedParameterJdbcTemplate jdbc;
 
 	@Autowired
 	public void setDataSource(DataSource jdbc) {
 		this.jdbc = new NamedParameterJdbcTemplate(jdbc);
+	}
+	
+	
+	public org.hibernate.Session session() {
+		return sessionFactory.getCurrentSession();
 	}
 
 	public List<User> getUsers() {
