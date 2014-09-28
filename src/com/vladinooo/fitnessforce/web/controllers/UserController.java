@@ -23,7 +23,7 @@ import com.vladinooo.fitnessforce.web.service.ArticlesService;
 import com.vladinooo.fitnessforce.web.service.UsersService;
 
 @Controller
-public class UsersController {
+public class UserController {
 	
 	@Autowired
 	private UsersService usersService;
@@ -87,6 +87,12 @@ public class UsersController {
 			return "error";
 		}
 		return "user_created";
+	}
+	
+	
+	@RequestMapping(value="/view_user", method = RequestMethod.GET)
+	public String showViewUser() {
+		return "view_user";
 	}
 	
 	
@@ -176,6 +182,25 @@ public class UsersController {
 		model.addAttribute("users", usersService.getUsers());
 		return "users";
 	}
+	
+	
+	@RequestMapping(value="/view_profile", method = RequestMethod.GET)
+	public String showViewProfile() {
+		return "view_profile";
+	}
+	
+	
+	@RequestMapping(value="/edit_profile", method = RequestMethod.GET)
+	public String showEditProfile() {
+		return "edit_profile";
+	}
+	
+	
+	@RequestMapping(value="/profile_photo", method = RequestMethod.GET)
+	public String showProfilePhoto() {
+		return "profile_photo";
+	}
+	
 	
 	@ExceptionHandler(Exception.class)
 	public String handleExceptions(Exception ex) {

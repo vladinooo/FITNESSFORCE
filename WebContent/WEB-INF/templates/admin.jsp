@@ -123,6 +123,9 @@
 	    <script src="${pageContext.request.contextPath}/static/bootstrap/genyx/js/plugins/forms/tinymce/tinymce.min.js"></script>
 	    <script src="${pageContext.request.contextPath}/static/plugins/jquery-timepicker/jquery.timepicker.min.js"></script>
 	    <script src="${pageContext.request.contextPath}/static/plugins/jquery-color-picker/jquery.colorpicker.js"></script>
+	    <script src="${pageContext.request.contextPath}/static/bootstrap/genyx/js/plugins/forms/wizard/jquery.form.js"></script>
+	    <script src="${pageContext.request.contextPath}/static/bootstrap/genyx/js/plugins/forms/wizard/jquery.form.wizard.js"></script>
+	    <script src="${pageContext.request.contextPath}/static/bootstrap/genyx/js/plugins/forms/validation/jquery.validate.js"></script>
 	    
 	    
 	    <!-- kceditor plugin -->
@@ -150,6 +153,7 @@
 	    <script src="${pageContext.request.contextPath}/static/bootstrap/genyx/js/pages/ui-elements.js"></script><!-- Init plugins only for page -->
 	    <script src="${pageContext.request.contextPath}/static/bootstrap/genyx/js/pages/form-elements.js"></script><!-- Init plugins only for page -->
 	    <script src="${pageContext.request.contextPath}/static/bootstrap/genyx/js/pages/file-manager.js"></script><!-- Init plugins only for page -->
+	    <script src="${pageContext.request.contextPath}/static/bootstrap/genyx/js/pages/form-wizard.js"></script><!-- Init plugins only for page -->
 	    
 	    
 	    <!-- Custom CSS -->
@@ -177,11 +181,7 @@
 		                        <span class="more"><i class="icon16 i-arrow-down-2"></i></span>
 		                    </a>
 		                    <ul class="dropdown-menu" role="menu">
-		                    	<li role="presentation"><a href="<c:url value='/'/>" class=""><i class="icon16 i-home-2"></i> Home</a></li>
-		                        <li role="presentation"><a href="<c:url value='/edit_user'>
-																 	<c:param name='userid' value='${currentUser.userId}'/>
-										 						 </c:url>"><i class="icon16 i-user"></i> Profile</a></li>
-		                        <li role="presentation"><a href="#" class=""><i class="icon16 i-cogs"></i> Settings</a></li>
+		                        <li role="presentation"><a href="#" class=""><i class="icon16 i-question"></i> Help</a></li>
 		                        <li role="presentation"><a href="<c:url value='/j_spring_security_logout'/>" class=""><i class="icon16 i-exit"></i> Logout</a></li>
 		                    </ul>
 		                </li>
@@ -212,41 +212,6 @@
 		                            <span class="txt">Dashboard</span>
 		                        </a>
 		                    </li>
-		                    <li id="profileTab">
-		                        <a href="<c:url value='/edit_user'>
-											<c:param name='userid' value='${currentUser.userId}'/>
-										 </c:url>">
-		                            <span class="icon"><i class="icon20 i-user"></i></span>
-		                            <span class="txt">Profile</span>
-		                        </a>
-		                    </li>
-		                    <li>
-		                        <a href="#">
-		                            <span class="icon"><i class="icon20 i-credit"></i></span>
-		                            <span class="txt">My Account</span>
-		                        </a>
-		                    </li>
-		                    <li id="bookingsTab">
-		                        <a href="#">
-		                            <span class="icon"><i class="icon20 i-calendar-2"></i></span>
-		                            <span class="txt">Bookings</span>
-		                        </a>
-		                        <ul class="sub">
-		                            <li>
-		                                <a href="#">
-		                                    <span class="icon"><i class="icon20 i-clock"></i></span>
-		                                    <span class="txt">Schedule</span>
-		                                </a>
-		                            </li>
-		                            <li>
-		                                <a href="#">
-		                                    <span class="icon"><i class="icon20 i-history"></i></span>
-		                                    <span class="txt">History</span>
-		                                </a>
-		                            </li>
-		                        </ul>
-		                    </li>
-		                    <sec:authorize access="hasRole('ROLE_ADMIN')">
 		                    <li>
 		                        <a href="<c:url value='admin_timetable'/>">
 		                            <span class="icon"><i class="icon20 icon20 i-calendar"></i></span>
@@ -273,11 +238,10 @@
 		                            </li>
 		                        </ul>
 		                    </li>
-							</sec:authorize>
 		                    <li>
 		                        <a href="<c:url value='filemanager'/>">
 		                            <span class="icon"><i class="icon20 i-cloud-upload"></i></span>
-		                            <span class="txt">File Manager</span>
+		                            <span class="txt">Media library</span>
 		                        </a>
 		                    </li>
 		                    <li>
@@ -286,8 +250,7 @@
 		                            <span class="txt">Online Shop</span>
 		                        </a>
 		                    </li>
-		                    <sec:authorize access="hasRole('ROLE_ADMIN')">
-								<li id="usersTab">
+							<li id="usersTab">
 			                        <a href="#">
 			                            <span class="icon"><i class="icon20 i-users"></i></span>
 			                            <span class="txt">Users</span>
@@ -313,7 +276,6 @@
 			                            <span class="txt">Settings</span>
 			                        </a>
 			                    </li> 
-							</sec:authorize>
 		                </ul>
 		            </nav> <!-- End #mainnav -->
 		

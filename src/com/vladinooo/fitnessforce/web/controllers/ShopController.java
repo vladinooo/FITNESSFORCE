@@ -37,6 +37,18 @@ public class ShopController {
 	}
 	
 	
+	@RequestMapping(value="/user_addressbook", method = RequestMethod.GET)
+	public String showUserAddressbook() {
+		return "user_addressbook";
+	}
+	
+	
+	@RequestMapping(value="/user_orders", method = RequestMethod.GET)
+	public String showUserOrders() {
+		return "user_orders";
+	}
+	
+	
 	@ExceptionHandler(Exception.class)
 	public String handleExceptions(Exception ex) {
 		ex.printStackTrace();

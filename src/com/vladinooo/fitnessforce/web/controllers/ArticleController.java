@@ -22,7 +22,7 @@ import com.vladinooo.fitnessforce.web.service.ArticlesService;
 import com.vladinooo.fitnessforce.web.service.UsersService;
 
 @Controller
-public class ArticlesController {
+public class ArticleController {
 	
 	@Autowired
 	private ArticlesService articlesService;

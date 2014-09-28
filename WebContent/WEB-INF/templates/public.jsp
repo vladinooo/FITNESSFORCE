@@ -28,6 +28,7 @@
 	    <!-- Plugins stylesheets -->
     	<link href="${pageContext.request.contextPath}/static/bootstrap/genyx/js/plugins/forms/select2/select2.css" rel="stylesheet" />
     	<link href="${pageContext.request.contextPath}/static/plugins/fullcalendar/fullcalendar/fullcalendar.css" rel="stylesheet" />
+    	<link href="${pageContext.request.contextPath}/static/plugins/twitter-bootstrap-wizard/prettify.css" rel="stylesheet" />
     		
 	    <!-- Custom styles for this template -->
 	    <link href="${pageContext.request.contextPath}/static/bootstrap/mosaic/css/color-styles.css" rel="stylesheet">
@@ -67,7 +68,7 @@
 	         	<a href="<c:url value='/j_spring_security_logout'/>" class="pull-right"><i class="fa fa-sign-out"></i> Log Out</a>
 	         	<a href="<c:url value='/dashboard'/>" class="pull-right"><i class="fa fa-credit-card"></i> Checkout</a>
 	         	<a href="<c:url value='/cart'/>" class="pull-right"><i class="fa fa-shopping-cart"></i> Cart (<c:out value="${fn:length(cartItems)}"/>)</a>
-	         	<a href="<c:url value='/dashboard'/>" class="pull-right"><i class="fa fa-user"></i> My Account</a>
+	         	<a href="<c:url value='/view_profile'/>" class="pull-right"><i class="fa fa-user"></i> My Account</a>
 			  </sec:authorize>
 	          
 	          
@@ -226,6 +227,10 @@
 		
 		<!-- Dotdotdot plugin -->
 		<script type="text/javascript" src="${pageContext.request.contextPath}/static/plugins/dotdotdot/src/js/jquery.dotdotdot.min.js"></script>
+		
+		<!-- Twitter Bootstrap Wizard plugin -->
+		<script type="text/javascript" src="${pageContext.request.contextPath}/static/plugins/twitter-bootstrap-wizard/jquery.bootstrap.wizard.js"></script>
+		<script type="text/javascript" src="${pageContext.request.contextPath}/static/plugins/twitter-bootstrap-wizard/prettify.js"></script>
 	     
 	    <!-- Init plugins -->
 	    <script src="${pageContext.request.contextPath}/static/bootstrap/mosaic/js/pages/login.js"></script><!-- Init plugins only for page -->

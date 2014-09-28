@@ -28,6 +28,7 @@
 		<security:intercept-url pattern="/do_create_user" access="permitAll" />
 		<security:intercept-url pattern="/user_created" access="permitAll" />
 		<security:intercept-url pattern="/dashboard" access="isAuthenticated()" />
+		<security:intercept-url pattern="/view_user*" access="isAuthenticated()" />
 		<security:intercept-url pattern="/edit_user*" access="isAuthenticated()" />
 		<security:intercept-url pattern="/do_edit_user" access="isAuthenticated()" />
 		<security:intercept-url pattern="/users" access="hasRole('ROLE_ADMIN')" />
@@ -72,6 +73,31 @@
 		
 		<!-- Shop -->
 		<security:intercept-url pattern="/shop" access="isAuthenticated()" />
+		
+		<!-- Profile -->
+		<security:intercept-url pattern="/view_profile" access="isAuthenticated()" />
+		<security:intercept-url pattern="/edit_profile" access="isAuthenticated()" />
+		
+		<!-- Profile photo -->
+		<security:intercept-url pattern="/profile_photo" access="isAuthenticated()" />
+		
+		<!-- Credit -->
+		<security:intercept-url pattern="/credit_status" access="isAuthenticated()" />
+		<security:intercept-url pattern="/credit_topup" access="isAuthenticated()" />
+		<security:intercept-url pattern="/credit_history" access="isAuthenticated()" />
+		
+		<!-- Bookings -->
+		<security:intercept-url pattern="/bookings_schedule" access="isAuthenticated()" />
+		<security:intercept-url pattern="/bookings_history" access="isAuthenticated()" />
+		
+		<!-- Online shop user -->
+		<security:intercept-url pattern="/user_addressbook" access="isAuthenticated()" />
+		<security:intercept-url pattern="/user_orders" access="isAuthenticated()" />
+		
+		<!-- User settings -->
+		<security:intercept-url pattern="/user_settings" access="isAuthenticated()" />
+
+		
 		
 		<security:intercept-url pattern="/**" access="denyAll" />
 		<security:form-login login-page="/login" default-target-url="/" authentication-failure-url="/login?auth=fail" />  
