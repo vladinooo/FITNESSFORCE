@@ -151,12 +151,6 @@
 		<put-attribute name="content" value="/WEB-INF/tiles/public/user_orders.jsp"></put-attribute>
     </definition>
     
-    <definition name="user_settings" extends="fitnessForce.public">
-        <put-attribute name="title" value="Fitness Force - Settings"></put-attribute>
-        <put-attribute name="topic" value="My Account"></put-attribute>
-		<put-attribute name="content" value="/WEB-INF/tiles/public/user_settings.jsp"></put-attribute>
-    </definition>
-    
         
     <definition name="error" extends="fitnessForce.public">
         <put-attribute name="title" value="Fitness Force - Error"></put-attribute>

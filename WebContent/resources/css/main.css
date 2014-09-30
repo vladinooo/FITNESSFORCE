@@ -199,8 +199,8 @@ a.list-group-item-success.active:focus {
 .nav-pills.nav-wizard > li {
   position: relative;
   overflow: visible;
-  border-right: 15px solid #fff;
-  border-left: 15px solid #fff;
+  border-right: 11px solid #fff;
+  border-left: 11px solid #fff;
 }
 .nav-pills.nav-wizard > li:first-child {
   border-left: 0;
@@ -224,43 +224,45 @@ a.list-group-item-success.active:focus {
 .nav-pills.nav-wizard > li .nav-arrow {
   position: absolute;
   top: 0px;
-  right: -20px;
+  right: -15px;
   width: 0px;
   height: 0px;
   border-style: solid;
-  border-width: 20px 0 20px 20px;
+  border-width: 15px 0 15px 15px;
   border-color: transparent transparent transparent #eee;
   z-index: 150;
 }
 .nav-pills.nav-wizard > li .nav-wedge {
   position: absolute;
   top: 0px;
-  left: -20px;
+  left: -15px;
   width: 0px;
   height: 0px;
   border-style: solid;
-  border-width: 20px 0 20px 20px;
+  border-width: 15px 0 15px 15px;
   border-color: #eee #eee #eee transparent;
   z-index: 150;
 }
 
 .nav-pills.nav-wizard > li.active .nav-arrow {
-  border-color: transparent transparent transparent #428bca;
+  border-color: transparent transparent transparent #c39c8a;
 }
 .nav-pills.nav-wizard > li.active .nav-wedge {
-  border-color: #428bca #428bca #428bca transparent;
+  border-color: #c39c8a #c39c8a #c39c8a transparent;
 }
 .nav-pills.nav-wizard > li.active a {
-  background-color: #428bca;
+  background-color: #c39c8a;
   outline: 0;
+}
+
+.nav-wizard > li > a {
+	padding: 5px 15px;
 }
 
 .pager li > a, .pager li > span {
     border-radius: 3px;
     padding: 6px 12px;
     color: #FFF;
-	background-color: #428BCA !important;
-	border-color: #357EBD !important;
 	width: 85px;
 }
 
@@ -268,8 +270,6 @@ a.list-group-item-success.active:focus {
     border-radius: 3px;
     padding: 6px 12px;
     color: #000;
-	background-color: #fff !important;
-	border-color: #ccc !important;
 	width: 85px;
 }
 
@@ -292,4 +292,39 @@ a.list-group-item-success.active:focus {
 
 .currency-sign {
 	float: left;
+}
+
+.profile-picture {
+	border: 1px solid #c9c9c9;
+	padding: 4px;
+	width: 120px;
+	height: 120px;
+}
+
+.profile-picture img {
+	width: 110px;
+	height: 110px;
+}
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+    width: 120px;
+    margin: 10px 0;
+}
+
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
 }

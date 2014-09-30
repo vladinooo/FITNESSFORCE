@@ -13,9 +13,7 @@
 			  
 		  <div id="MainMenu">
 		  <div class="list-group panel">
-		    <a href="<c:url value='view_profile'/>" class="list-group-item list-group-item-success" data-parent="#MainMenu">Profile</a>
-		    <a href="<c:url value='profile_photo'/>" class="list-group-item list-group-item-success" data-parent="#MainMenu">Photo</a>
-		    <a href="<c:url value='view_user'/>" class="list-group-item list-group-item-success" data-parent="#MainMenu">Account</a>
+		    <a href="<c:url value='view_profile'/>" class="list-group-item list-group-item-success active" data-parent="#MainMenu">Profile</a>
 		    <a href="#credit" class="list-group-item list-group-item-success" data-toggle="collapse" data-parent="#MainMenu">Credit</a>
 		    <div class="collapse submenu" id="credit">
 		      <a href="<c:url value='credit_status'/>" class="list-group-item list-group-item-success">- Status</a>
@@ -29,10 +27,9 @@
 		    </div>
 		    <a href="#onlineshop" class="list-group-item list-group-item-success" data-toggle="collapse" data-parent="#MainMenu">Online Shop</a>
 		    <div class="collapse submenu" id="onlineshop">
-		      <a href="<c:url value='user_addressbook'/>" class="list-group-item list-group-item-success active">- Address book</a>
+		      <a href="<c:url value='user_addressbook'/>" class="list-group-item list-group-item-success">- Address book</a>
 		      <a href="<c:url value='user_orders'/>" class="list-group-item list-group-item-success">- My orders</a>
 		    </div>
-		    <a href="<c:url value='user_settings'/>" class="list-group-item list-group-item-success" data-parent="#MainMenu">Settings</a>
 		  </div>
 		</div>
 
