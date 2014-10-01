@@ -39,22 +39,11 @@ public class CreditController {
 	}
 	
 	
-	@RequestMapping(value="/credit_status", method = RequestMethod.GET)
+	@RequestMapping(value="/credit", method = RequestMethod.GET)
 	public String showCreditStatus() {
-		return "credit_status";
+		return "credit";
 	}
 	
-	
-	@RequestMapping(value="/credit_topup", method = RequestMethod.GET)
-	public String showCreditTopup() {
-		return "credit_topup";
-	}
-	
-	
-	@RequestMapping(value="/credit_history", method = RequestMethod.GET)
-	public String showCreditHistory() {
-		return "credit_history";
-	}
 	
 	
 	@ExceptionHandler(Exception.class)

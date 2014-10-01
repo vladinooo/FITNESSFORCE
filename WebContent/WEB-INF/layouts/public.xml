@@ -109,49 +109,24 @@
 		<put-attribute name="content" value="/WEB-INF/tiles/public/profile_photo.jsp"></put-attribute>
     </definition>
     
-    <definition name="credit_status" extends="fitnessForce.public">
+    <definition name="credit" extends="fitnessForce.public">
         <put-attribute name="title" value="Fitness Force - Credit"></put-attribute>
         <put-attribute name="topic" value="My Account"></put-attribute>
-		<put-attribute name="content" value="/WEB-INF/tiles/public/credit_status.jsp"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/tiles/public/credit.jsp"></put-attribute>
     </definition>
     
-    <definition name="credit_topup" extends="fitnessForce.public">
-        <put-attribute name="title" value="Fitness Force - Credit"></put-attribute>
-        <put-attribute name="topic" value="My Account"></put-attribute>
-		<put-attribute name="content" value="/WEB-INF/tiles/public/credit_topup.jsp"></put-attribute>
-    </definition>
-    
-    <definition name="credit_history" extends="fitnessForce.public">
-        <put-attribute name="title" value="Fitness Force - Credit"></put-attribute>
-        <put-attribute name="topic" value="My Account"></put-attribute>
-		<put-attribute name="content" value="/WEB-INF/tiles/public/credit_history.jsp"></put-attribute>
-    </definition>
-    
-    <definition name="bookings_schedule" extends="fitnessForce.public">
+    <definition name="bookings" extends="fitnessForce.public">
         <put-attribute name="title" value="Fitness Force - Bookings"></put-attribute>
         <put-attribute name="topic" value="My Account"></put-attribute>
-		<put-attribute name="content" value="/WEB-INF/tiles/public/bookings_schedule.jsp"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/tiles/public/bookings.jsp"></put-attribute>
     </definition>
     
-    <definition name="bookings_history" extends="fitnessForce.public">
-        <put-attribute name="title" value="Fitness Force - Bookings"></put-attribute>
+    <definition name="onlineshop" extends="fitnessForce.public">
+        <put-attribute name="title" value="Fitness Force - Online shop"></put-attribute>
         <put-attribute name="topic" value="My Account"></put-attribute>
-		<put-attribute name="content" value="/WEB-INF/tiles/public/bookings_history.jsp"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/tiles/public/onlineshop.jsp"></put-attribute>
     </definition>
-    
-    <definition name="user_addressbook" extends="fitnessForce.public">
-        <put-attribute name="title" value="Fitness Force - Address book"></put-attribute>
-        <put-attribute name="topic" value="My Account"></put-attribute>
-		<put-attribute name="content" value="/WEB-INF/tiles/public/user_addressbook.jsp"></put-attribute>
-    </definition>
-    
-    <definition name="user_orders" extends="fitnessForce.public">
-        <put-attribute name="title" value="Fitness Force - My orders"></put-attribute>
-        <put-attribute name="topic" value="My Account"></put-attribute>
-		<put-attribute name="content" value="/WEB-INF/tiles/public/user_orders.jsp"></put-attribute>
-    </definition>
-    
-        
+            
     <definition name="error" extends="fitnessForce.public">
         <put-attribute name="title" value="Fitness Force - Error"></put-attribute>
         <put-attribute name="topic" value="Error"></put-attribute>

@@ -82,17 +82,13 @@
 		<security:intercept-url pattern="/profile_photo" access="isAuthenticated()" />
 		
 		<!-- Credit -->
-		<security:intercept-url pattern="/credit_status" access="isAuthenticated()" />
-		<security:intercept-url pattern="/credit_topup" access="isAuthenticated()" />
-		<security:intercept-url pattern="/credit_history" access="isAuthenticated()" />
+		<security:intercept-url pattern="/credit" access="isAuthenticated()" />
 		
 		<!-- Bookings -->
-		<security:intercept-url pattern="/bookings_schedule" access="isAuthenticated()" />
-		<security:intercept-url pattern="/bookings_history" access="isAuthenticated()" />
+		<security:intercept-url pattern="/bookings" access="isAuthenticated()" />
 		
 		<!-- Online shop user -->
-		<security:intercept-url pattern="/user_addressbook" access="isAuthenticated()" />
-		<security:intercept-url pattern="/user_orders" access="isAuthenticated()" />
+		<security:intercept-url pattern="/onlineshop" access="isAuthenticated()" />
 		
 		<!-- User settings -->
 		<security:intercept-url pattern="/user_settings" access="isAuthenticated()" />

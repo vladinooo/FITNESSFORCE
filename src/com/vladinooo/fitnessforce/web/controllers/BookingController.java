@@ -30,16 +30,12 @@ public class BookingController {
 	}
 	
 	
-	@RequestMapping(value="/bookings_schedule", method = RequestMethod.GET)
+	@RequestMapping(value="/bookings", method = RequestMethod.GET)
 	public String showBookingsSchedule() {
-		return "bookings_schedule";
+		return "bookings";
 	}
 	
-	
-	@RequestMapping(value="/bookings_history", method = RequestMethod.GET)
-	public String showBookingsHistory() {
-		return "bookings_history";
-	}
+
 	
 	
 	@ExceptionHandler(Exception.class)

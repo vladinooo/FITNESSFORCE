@@ -310,6 +310,8 @@ h3.headline span {
 .nav-tabs {
 	margin-bottom: 15px;
 }
+
+/*
 .nav-tabs > li > a {
 	border-bottom: 1px solid #dedede;
 	border-radius: 0;
@@ -361,7 +363,7 @@ h3.headline span {
 .nav-tabs.nav-justified > .active > a:focus {
 	border: 1px solid transparent;
 	border
-}
+} */
 
 /* 2. Nav pills */
 

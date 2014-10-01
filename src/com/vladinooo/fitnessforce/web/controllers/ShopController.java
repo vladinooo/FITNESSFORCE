@@ -37,16 +37,11 @@ public class ShopController {
 	}
 	
 	
-	@RequestMapping(value="/user_addressbook", method = RequestMethod.GET)
-	public String showUserAddressbook() {
-		return "user_addressbook";
+	@RequestMapping(value="/onlineshop", method = RequestMethod.GET)
+	public String showOnlineshop() {
+		return "onlineshop";
 	}
 	
-	
-	@RequestMapping(value="/user_orders", method = RequestMethod.GET)
-	public String showUserOrders() {
-		return "user_orders";
-	}
 	
 	
 	@ExceptionHandler(Exception.class)
