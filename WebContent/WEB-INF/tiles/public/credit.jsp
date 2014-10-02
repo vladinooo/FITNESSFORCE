@@ -36,10 +36,28 @@
 
 			<div class="tab-content">
 				<div class="tab-pane active" id="status">
-					<div class="well">
-						<div class="credit-amount">
-							Current credit:
-							<h1>£1000</h1>
+					<div class="col-sm-4">
+						<div class="well">
+							<div class="credit-amount">
+								<h5>Pay As You Go Credit</h5>
+								<h3>£0</h3>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-4">
+						<div class="well">
+							<div class="credit-amount">
+								<h5>5 Lesson Package Credit</h5>
+								<h3>£0</h3>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-4">
+						<div class="well">
+							<div class="credit-amount">
+								<h5>10 Lesson Package Credit</h5>
+								<h3>£500</h3>
+							</div>
 						</div>
 					</div>
 				</div>
