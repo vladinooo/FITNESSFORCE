@@ -31,33 +31,15 @@
             <ul class="nav nav-tabs">
 				<li class="active"><a href="#status" data-toggle="tab">Status</a></li>
 				<li><a href="#buy-credit" data-toggle="tab">Buy Credit</a></li>
-				<li><a href="#history" data-toggle="tab">History</a></li>
+				<li><a href="#transactions" data-toggle="tab">Transactions</a></li>
 			</ul>
 
 			<div class="tab-content">
 				<div class="tab-pane active" id="status">
-					<div class="col-sm-4">
-						<div class="well">
-							<div class="credit-amount">
-								<h5>Pay As You Go Credit</h5>
-								<h3>£0</h3>
-							</div>
-						</div>
-					</div>
-					<div class="col-sm-4">
-						<div class="well">
-							<div class="credit-amount">
-								<h5>5 Lesson Package Credit</h5>
-								<h3>£0</h3>
-							</div>
-						</div>
-					</div>
-					<div class="col-sm-4">
-						<div class="well">
-							<div class="credit-amount">
-								<h5>10 Lesson Package Credit</h5>
-								<h3>£500</h3>
-							</div>
+					<div class="well">
+						<div class="credit-amount">
+							Current credit:
+							<h1>£1000</h1>
 						</div>
 					</div>
 				</div>
@@ -138,34 +120,46 @@
 					</div>
 					<!-- End of rootwizard -->
 				</div>
-				<div class="tab-pane" id="history">
+				<div class="tab-pane" id="transactions">
 					<table class="table table-bordered">
 						<thead>
 							<tr>
-								<th>Purchased</th>
-								<th>Package</th>
+								<th>Date</th>
+								<th>Title</th>
 								<th>Description</th>
-								<th>Price</th>
+								<th>Amount</th>
 							</tr>
 						</thead>
 						<tbody>
 							<tr>
-								<td>01/09/2014</td>
+								<td>10/10/2014</td>
+								<td>Crossfit Session</td>
+								<td>---</td>
+								<td>- £ 15</td>
+							</tr>
+							<tr>
+								<td>04/10/2014</td>
+								<td>Running Session</td>
+								<td>---</td>
+								<td>- £ 20</td>
+							</tr>
+							<tr>
+								<td>01/10/2014</td>
 								<td>5 Session Package</td>
 								<td>I payed for 5 sessions and will use them within one month</td>
-								<td>£ 200</td>
+								<td>+ £ 200</td>
 							</tr>
 							<tr>
 								<td>12/09/2014</td>
 								<td>10 Session Package</td>
 								<td>I payed for 10 lessons and will use them within two months</td>
-								<td>£ 350</td>
+								<td>+ £ 350</td>
 							</tr>
 							<tr>
-								<td>17/09/2014</td>
+								<td>11/09/2014</td>
 								<td>Pay As You Go</td>
 								<td>I payed £500 to my virtual purse</td>
-								<td>£ 500</td>
+								<td>+ £ 500</td>
 							</tr>
 						</tbody>
 					</table>

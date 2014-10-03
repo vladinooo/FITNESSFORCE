@@ -190,6 +190,7 @@ a.list-group-item-success.active:focus {
 }
 
 .credit-amount {
+	font-size: large;
 	text-align: center;
 }
 
@@ -332,4 +333,12 @@ a.list-group-item-success.active:focus {
 .buy-credit-tbl-tr-body {
 	height: 150px;
 	vertical-align: bottom;
+}
+
+.shop-category {
+	padding-bottom: 10px;
+}
+
+.shop-product img {
+	border: solid 1px #eee;
 }
