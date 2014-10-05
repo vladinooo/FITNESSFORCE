@@ -48,6 +48,12 @@
 		<put-attribute name="content" value="/WEB-INF/tiles/public/shop.jsp"></put-attribute>
     </definition>
     
+    <definition name="shop_item" extends="fitnessForce.public">
+        <put-attribute name="title" value="Fitness Force - Shop"></put-attribute>
+        <put-attribute name="topic" value="Shop"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/tiles/public/shop_item.jsp"></put-attribute>
+    </definition>
+    
     <definition name="cart" extends="fitnessForce.public">
         <put-attribute name="title" value="Fitness Force - Shopping cart"></put-attribute>
         <put-attribute name="topic" value="Shopping Cart"></put-attribute>

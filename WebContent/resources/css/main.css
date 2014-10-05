@@ -109,44 +109,50 @@ span.ff-logo {
 
 
 /* ----- full calendar ------*/
-#external-events {
-	/*padding: 0 10px;
-	border: 1px solid #ccc;
-	background: #eee;
-	text-align: left;*/
-}
-
-#external-events h4 {
-	font-size: 16px;
-	margin-top: 0;
-	padding-top: 1em;
-}
-
-.external-event { /* try to mimick the look of a real event */
-	margin: 10px 0;
-	padding: 5px 4px;
-	background: #3a87ad;
-	color: #fff;
-	font-size: 1.2em;
-	cursor: pointer;
-	border-radius: 5px;
-}
-
-#external-events p {
-	margin: 1.5em 0 0 0;
-	font-size: 13px;
-	color: #666;
-}
-
-#external-events p input {
-	margin: 0;
-	vertical-align: middle;
-}
-
 #calendar {
 	width: 100%;
 }
 
+a.fc-event {
+	color: #fff;
+}
+
+.fc-time-grid-event .fc-bg {
+	background: none;
+}
+
+.fc-event {
+	font-size: .85em;
+	line-height: 1.3;
+	border-radius: 0;
+	border: 0;
+	background-color: #d96d6d !important;
+	font-weight: normal;
+	opacity: 0.6;
+}
+
+
+.fc-time-grid-event > .fc-content {
+	text-align: center;
+	-webkit-font-smoothing: antialiased;
+	padding: 4px;
+}
+
+.fc-time-grid-event .fc-time {
+	font-weight: bold;
+	font-size: small;
+}
+
+a.fc-event, a:hover.fc-event {
+	color: #fff;
+}
+
+
+.fc-ltr .fc-time-grid .fc-event-container {
+	margin: 0;
+}
+
+/*--- Navigation ---*/
 .list-group-item:first-child {
 	border-top-right-radius: 6px;
   	border-top-left-radius: 6px;
@@ -291,6 +297,7 @@ a.list-group-item-success.active:focus {
 	float: left;
 }
 
+/*--- profile ---*/
 .profile-picture {
 	border: 1px solid #c9c9c9;
 	padding: 4px;
@@ -341,4 +348,52 @@ a.list-group-item-success.active:focus {
 
 .shop-product img {
 	border: solid 1px #eee;
+}
+
+/*--- pagination ---*/
+.pagination > .active > a,
+.pagination > .active > span,
+.pagination > .active > a:hover,
+.pagination > .active > span:hover,
+.pagination > .active > a:focus,
+.pagination > .active > span:focus {
+	color: #fff;
+	background-color: #c39c8a;
+	border-color: #a88575;
+}
+
+
+/*--- book session*/
+.session-form-group label {
+    float: left;
+    text-align: left;
+    font-weight: normal;
+}
+
+.session-form-group select {
+    display: inline-block;
+    width: auto;
+    vertical-align: middle;
+}
+
+.book-session-tbl {
+	width: 100%;
+}
+
+.book-session-tbl-tr-body {
+	height: 240px;
+	vertical-align: top;
+}
+
+.book-session-tbl-tr-body .tab-content {
+	padding-top: 60px;
+}
+
+.caveat {
+	font-size: smaller;
+	font-style: italic;
+}
+
+.confirm-booking-tbl {
+	margin-bottom: 10px;
 }

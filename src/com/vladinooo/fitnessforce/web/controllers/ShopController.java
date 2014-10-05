@@ -37,6 +37,12 @@ public class ShopController {
 	}
 	
 	
+	@RequestMapping(value="/shop_item", method = RequestMethod.GET)
+	public String showShopItem() {
+		return "shop_item";
+	}
+	
+	
 	@RequestMapping(value="/onlineshop", method = RequestMethod.GET)
 	public String showOnlineshop() {
 		return "onlineshop";

@@ -27,7 +27,7 @@
 	    
 	    <!-- Plugins stylesheets -->
     	<link href="${pageContext.request.contextPath}/static/bootstrap/genyx/js/plugins/forms/select2/select2.css" rel="stylesheet" />
-    	<link href="${pageContext.request.contextPath}/static/plugins/fullcalendar/fullcalendar/fullcalendar.css" rel="stylesheet" />
+    	<link href="${pageContext.request.contextPath}/static/plugins/fullcalendar/fullcalendar.css" rel="stylesheet" />
     	<link href="${pageContext.request.contextPath}/static/plugins/twitter-bootstrap-wizard/prettify.css" rel="stylesheet" />
     		
 	    <!-- Custom styles for this template -->
@@ -223,7 +223,8 @@
 	    <script src="${pageContext.request.contextPath}/static/bootstrap/genyx/js/plugins/forms/select2/select2.js"></script> 
 	    
 		<!-- FullCalendar plugin -->
-		<script type="text/javascript" src="${pageContext.request.contextPath}/static/plugins/fullcalendar/fullcalendar/fullcalendar.js"></script>
+		<script type="text/javascript" src="${pageContext.request.contextPath}/static/plugins/fullcalendar/lib/moment.min.js"></script>
+		<script type="text/javascript" src="${pageContext.request.contextPath}/static/plugins/fullcalendar/fullcalendar.js"></script>
 		
 		<!-- Dotdotdot plugin -->
 		<script type="text/javascript" src="${pageContext.request.contextPath}/static/plugins/dotdotdot/src/js/jquery.dotdotdot.min.js"></script>

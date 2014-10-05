@@ -73,6 +73,7 @@
 		
 		<!-- Shop -->
 		<security:intercept-url pattern="/shop" access="isAuthenticated()" />
+		<security:intercept-url pattern="/shop_item" access="isAuthenticated()" />
 		
 		<!-- Profile -->
 		<security:intercept-url pattern="/view_profile" access="isAuthenticated()" />

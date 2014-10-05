@@ -38,8 +38,8 @@
 			<div class="row">
 				<div class="col-sm-4">
 					<div class="shop-product">
-						<a href="shop-item.html"><img src="${pageContext.request.contextPath}/static/images/product-1.jpg" class="img-responsive" alt="..."></a>
-						<a href="shop-item.html"><h5 class="primary-font">Product #1</h5></a>
+						<a href="<c:url value='shop_item'/>"><img src="${pageContext.request.contextPath}/static/images/product-1.jpg" class="img-responsive" alt="..."></a>
+						<a href="<c:url value='shop_item'/>"><h5 class="primary-font">Product #1</h5></a>
 						<p class="text-muted">Nunc in neque nec arcu vulputate ullamcorper.</p>
 						<p>£2.00</p>
 						<a href="#" class="btn btn-sm btn-color"><i class="fa fa-shopping-cart"></i> Add to cart</a>
@@ -47,8 +47,8 @@
 				</div>
 				<div class="col-sm-4">
 					<div class="shop-product">
-						<a href="shop-item.html"><img src="${pageContext.request.contextPath}/static/images/product-1.jpg" class="img-responsive" alt="..."></a>
-						<a href="shop-item.html"><h5 class="primary-font">Product #2</h5></a>
+						<a href="<c:url value='shop_item'/>"><img src="${pageContext.request.contextPath}/static/images/product-1.jpg" class="img-responsive" alt="..."></a>
+						<a href="<c:url value='shop_item'/>"><h5 class="primary-font">Product #2</h5></a>
 						<p class="text-muted">Nunc in neque nec arcu vulputate ullamcorper.</p>
 						<p>£2.00</p>
 						<a href="#" class="btn btn-sm btn-color"><i class="fa fa-shopping-cart"></i> Add to cart</a>
@@ -56,8 +56,8 @@
 				</div>
 				<div class="col-sm-4">
 					<div class="shop-product">
-						<a href="shop-item.html"><img src="${pageContext.request.contextPath}/static/images/product-1.jpg" class="img-responsive" alt="..."></a> <a
-							href="shop-item.html"><h5 class="primary-font">Product #3</h5></a>
+						<a href="<c:url value='shop_item'/>"><img src="${pageContext.request.contextPath}/static/images/product-1.jpg" class="img-responsive" alt="..."></a> <a
+							href="<c:url value='shop_item'/>"><h5 class="primary-font">Product #3</h5></a>
 						<p class="text-muted">Nunc in neque nec arcu vulputate ullamcorper.</p>
 						<p>£2.00</p>
 						<a href="#" class="btn btn-sm btn-color"><i class="fa fa-shopping-cart"></i> Add to cart</a>
@@ -65,8 +65,8 @@
 				</div>
 				<div class="col-sm-4">
 					<div class="shop-product">
-						<a href="shop-item.html"><img src="${pageContext.request.contextPath}/static/images/product-1.jpg" class="img-responsive" alt="..."></a> <a
-							href="shop-item.html"><h5 class="primary-font">Product #1</h5></a>
+						<a href="<c:url value='shop_item'/>"><img src="${pageContext.request.contextPath}/static/images/product-1.jpg" class="img-responsive" alt="..."></a> <a
+							href="<c:url value='shop_item'/>"><h5 class="primary-font">Product #1</h5></a>
 						<p class="text-muted">Nunc in neque nec arcu vulputate ullamcorper.</p>
 						<p>£2.00</p>
 						<a href="#" class="btn btn-sm btn-color"><i class="fa fa-shopping-cart"></i> Add to cart</a>
@@ -74,8 +74,8 @@
 				</div>
 				<div class="col-sm-4">
 					<div class="shop-product">
-						<a href="shop-item.html"><img src="${pageContext.request.contextPath}/static/images/product-1.jpg" class="img-responsive" alt="..."></a> <a
-							href="shop-item.html"><h5 class="primary-font">Product #2</h5></a>
+						<a href="<c:url value='shop_item'/>"><img src="${pageContext.request.contextPath}/static/images/product-1.jpg" class="img-responsive" alt="..."></a> <a
+							href="<c:url value='shop_item'/>"><h5 class="primary-font">Product #2</h5></a>
 						<p class="text-muted">Nunc in neque nec arcu vulputate ullamcorper.</p>
 						<p>£2.00</p>
 						<a href="#" class="btn btn-sm btn-color"><i class="fa fa-shopping-cart"></i> Add to cart</a>
@@ -83,8 +83,8 @@
 				</div>
 				<div class="col-sm-4">
 					<div class="shop-product">
-						<a href="shop-item.html"><img src="${pageContext.request.contextPath}/static/images/product-1.jpg" class="img-responsive" alt="..."></a> <a
-							href="shop-item.html"><h5 class="primary-font">Product #3</h5></a>
+						<a href="<c:url value='shop_item'/>"><img src="${pageContext.request.contextPath}/static/images/product-1.jpg" class="img-responsive" alt="..."></a> <a
+							href="<c:url value='shop_item'/>"><h5 class="primary-font">Product #3</h5></a>
 						<p class="text-muted">Nunc in neque nec arcu vulputate ullamcorper.</p>
 						<p>£2.00</p>
 						<a href="#" class="btn btn-sm btn-color"><i class="fa fa-shopping-cart"></i> Add to cart</a>

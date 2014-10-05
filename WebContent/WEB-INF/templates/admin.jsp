@@ -42,7 +42,7 @@
 	    <link href="${pageContext.request.contextPath}/static/bootstrap/genyx/js/plugins/forms/datepicker/datepicker.css" rel="stylesheet" /> 
 	    <link href="${pageContext.request.contextPath}/static/bootstrap/genyx/js/plugins/forms/multiselect/ui.multiselect.css" rel="stylesheet" /> 
 	    <link href="${pageContext.request.contextPath}/static/plugins/jquery-timepicker/jquery.timepicker.css" rel="stylesheet" />
-	    <link href="${pageContext.request.contextPath}/static/plugins/fullcalendar/fullcalendar/fullcalendar.css" rel="stylesheet" />
+	    <link href="${pageContext.request.contextPath}/static/plugins/fullcalendar/fullcalendar.css" rel="stylesheet" />
 	    <link href="${pageContext.request.contextPath}/static/plugins/jquery-color-picker/jquery.colorpicker.css" rel="stylesheet" />
 	    <link href="${pageContext.request.contextPath}/static/bootstrap/genyx/js/plugins/upload/elfinder/elfinder.min.css" rel="stylesheet" />
 
@@ -136,7 +136,8 @@
 
 	    
 	    <!-- FullCalendar plugin -->
-		<script type="text/javascript" src="${pageContext.request.contextPath}/static/plugins/fullcalendar/fullcalendar/fullcalendar.js"></script>
+	    <script type="text/javascript" src="${pageContext.request.contextPath}/static/plugins/fullcalendar/lib/moment.min.js"></script>
+		<script type="text/javascript" src="${pageContext.request.contextPath}/static/plugins/fullcalendar/fullcalendar.js"></script>
 	
 	    <!-- UI plugins -->
 	    <script src="${pageContext.request.contextPath}/static/bootstrap/genyx/js/plugins/ui/range-slider/rangeslider-ruler.js"></script>
